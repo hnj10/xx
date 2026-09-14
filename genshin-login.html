@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>原神 · 登录</title>
+<style>
+  :root{
+    --gold:#f0d27a;
+    --gold-deep:#c8a25a;
+    --teal:#3fd6c8;
+    --bg-1:#0b1c2b;
+    --bg-2:#102a3c;
+    --glass:rgba(18,38,54,.55);
+    --line:rgba(240,210,122,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+    background:radial-gradient(120% 120% at 50% 0%,var(--bg-2) 0%,var(--bg-1) 60%,#060f17 100%);
+    color:#eaf2f6;
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;
+  }
+  /* 背景粒子画布 */
+  #stars{position:fixed;inset:0;z-index:0;}
+  /* 旋转光环 */
+  .halo{
+    position:fixed;z-index:0;top:50%;left:50%;
+    width:720px;height:720px;transform:translate(-50%,-50%);
+    background:conic-gradient(from 0deg,transparent,rgba(63,214,200,.18),transparent,rgba(240,210,122,.18),transparent);
+    border-radius:50%;
+    filter:blur(40px);
+    animation:spin 18s linear infinite;
+    opacity:.7;
+  }
+  @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+
+  .card{
+    position:relative;z-index:2;
+    width:380px;max-width:92vw;
+    padding:38px 34px 30px;
+    background:var(--glass);
+    border:1px solid var(--line);
+    border-radius:22px;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.08);
+    animation:rise .8s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(28px) scale(.97);}to{opacity:1;transform:none;}}
+
+  .brand{text-align:center;margin-bottom:26px;}
+  .brand .logo{
+    font-size:40px;font-weight:800;letter-spacing:6px;
+    background:linear-gradient(180deg,#fff,var(--gold) 60%,var(--gold-deep));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 22px rgba(240,210,122,.35);
+    animation:glow 3s ease-in-out infinite;
+  }
+  @keyframes glow{50%{text-shadow:0 0 34px rgba(240,210,122,.6);}}
+  .brand .sub{margin-top:8px;font-size:13px;color:#9fb6c4;letter-spacing:3px;}
+
+  .field{position:relative;margin-bottom:18px;}
+  .field input{
+    width:100%;height:48px;
+    padding:0 44px 0 44px;
+    background:rgba(8,20,30,.6);
+    border:1px solid rgba(159,182,196,.25);
+    border-radius:12px;
+    color:#eaf2f6;font-size:14px;outline:none;
+    transition:border-color .25s,box-shadow .25s,background .25s;
+  }
+  .field input::placeholder{color:#6f8794;}
+  .field input:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 3px rgba(240,210,122,.18),0 0 18px rgba(63,214,200,.25);
+    background:rgba(8,20,30,.85);
+  }
+  .field .ic{
+    position:absolute;left:14px;top:50%;transform:translateY(-50%);
+    width:18px;height:18px;opacity:.7;pointer-events:none;
+  }
+  .field .eye{
+    position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:20px;height:20px;cursor:pointer;opacity:.65;transition:opacity .2s;
+  }
+  .field .eye:hover{opacity:1;}
+
+  .row{display:flex;align-items:center;justify-content:space-between;font-size:13px;margin:-4px 0 22px;}
+  .remember{display:flex;align-items:center;gap:7px;color:#9fb6c4;cursor:pointer;user-select:none;}
+  .remember input{display:none;}
+  .remember .box{
+    width:16px;height:16px;border-radius:5px;border:1px solid var(--gold-deep);
+    display:grid;place-items:center;transition:.2s;
+  }
+  .remember input:checked + .box{background:linear-gradient(135deg,var(--gold),var(--gold-deep));}
+  .remember input:checked + .box::after{content:"";width:5px;height:9px;border:solid #0b1c2b;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-1px);}
+  .forgot{color:var(--teal);text-decoration:none;}
+  .forgot:hover{text-decoration:underline;}
+
+  .btn{
+    width:100%;height:50px;border:none;border-radius:12px;cursor:pointer;
+    font-size:16px;font-weight:700;letter-spacing:4px;color:#0b1c2b;
+    background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+    position:relative;overflow:hidden;
+    transition:transform .15s,box-shadow .25s;
+    box-shadow:0 8px 24px rgba(200,162,90,.35);
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(200,162,90,.5);}
+  .btn:active{transform:translateY(0);}
+  .btn::after{
+    content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+    transform:skewX(-20deg);animation:shine 3s infinite;
+  }
+  @keyframes shine{0%{left:-120%;}55%,100%{left:140%;}}
+  .btn .spin{display:none;width:18px;height:18px;border:2px solid rgba(11,28,43,.4);border-top-color:#0b1c2b;border-radius:50%;animation:rot .7s linear infinite;}
+  .btn.loading .txt{display:none;}
+  .btn.loading .spin{display:inline-block;}
+  @keyframes rot{to{transform:rotate(360deg);}}
+
+  .divider{display:flex;align-items:center;gap:12px;color:#6f8794;font-size:12px;margin:22px 0 16px;}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:rgba(159,182,196,.2);}
+  .socials{display:flex;justify-content:center;gap:16px;}
+  .socials .s{
+    width:42px;height:42px;border-radius:50%;border:1px solid rgba(159,182,196,.25);
+    display:grid;place-items:center;cursor:pointer;transition:.25s;background:rgba(8,20,30,.5);
+  }
+  .socials .s:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 6px 16px rgba(240,210,122,.25);}
+
+  .msg{min-height:18px;text-align:center;font-size:13px;margin-top:14px;color:var(--teal);transition:.2s;}
+
+  /* 错误抖动 */
+  .shake{animation:shake .4s; border-color:#ff6b6b !important;}
+  @keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-7px);}40%,80%{transform:translateX(7px);}}
+
+  .ok-overlay{
+    position:fixed;inset:0;z-index:5;display:none;place-items:center;
+    background:rgba(6,15,23,.75);backdrop-filter:blur(6px);
+  }
+  .ok-overlay.show{display:grid;animation:fade .4s;}
+  @keyframes fade{from{opacity:0;}to{opacity:1;}}
+  .ok-card{text-align:center;}
+  .ok-card .ring{
+    width:90px;height:90px;border-radius:50%;margin:0 auto 18px;
+    border:3px solid var(--gold);display:grid;place-items:center;
+    box-shadow:0 0 30px rgba(240,210,122,.5);animation:pop .5s cubic-bezier(.2,1.4,.4,1);
+  }
+  @keyframes pop{from{transform:scale(.4);opacity:0;}to{transform:scale(1);opacity:1;}}
+  .ok-card .ring svg{width:44px;height:44px;}
+  .ok-card h2{font-size:22px;margin-bottom:6px;color:var(--gold);}
+  .ok-card p{color:#9fb6c4;font-size:14px;}
+
+  @media(max-width:420px){.card{padding:30px 22px;}}
+</style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="halo"></div>
+
+  <form class="card" id="form" autocomplete="off">
+    <div class="brand">
+      <div class="logo">原神</div>
+      <div class="sub">GENSHIN · 旅行者登录</div>
+    </div>
+
+    <div class="field">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#9fb6c4" stroke-width="2">
+        <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/>
+      </svg>
+      <input id="user" type="text" placeholder="账号 / 手机号 / 邮箱" />
+    </div>
+
+    <div class="field">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="#9fb6c4" stroke-width="2">
+        <rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+      </svg>
+      <input id="pass" type="password" placeholder="密码" />
+      <svg class="eye" id="eye" viewBox="0 0 24 24" fill="none" stroke="#9fb6c4" stroke-width="2">
+        <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>
+      </svg>
+    </div>
+
+    <div class="row">
+      <label class="remember">
+        <input type="checkbox" id="remember" />
+        <span class="box"></span> 记住我
+      </label>
+      <a class="forgot" href="#">忘记密码？</a>
+    </div>
+
+    <button class="btn" id="submit" type="submit">
+      <span class="txt">登 录</span>
+      <span class="spin"></span>
+    </button>
+
+    <div class="msg" id="msg"></div>
+
+    <div class="divider">其他登录方式</div>
+    <div class="socials">
+      <div class="s" title="米哈游通行证">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#9fb6c4" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+      </div>
+      <div class="s" title="微信">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#9fb6c4" stroke-width="2"><circle cx="9" cy="10" r="6"/><circle cx="16" cy="15" r="5"/></svg>
+      </div>
+      <div class="s" title="QQ">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#9fb6c4" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.4" fill="#9fb6c4"/><circle cx="15" cy="10" r="1.4" fill="#9fb6c4"/></svg>
+      </div>
+    </div>
+  </form>
+
+  <div class="ok-overlay" id="ok">
+    <div class="ok-card">
+      <div class="ring">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f0d27a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h2>登录成功</h2>
+      <p>欢迎回来，旅行者 ✦</p>
+    </div>
+  </div>
+
+<script>
+  // ===== 背景粒子（元素微粒）=====
+  const cv = document.getElementById('stars');
+  const ctx = cv.getContext('2d');
+  let W,H,parts=[];
+  function resize(){W=cv.width=innerWidth;H=cv.height=innerHeight;init();}
+  function init(){
+    parts=[];
+    const n = Math.min(120, Math.floor(W*H/12000));
+    for(let i=0;i<n;i++){
+      parts.push({
+        x:Math.random()*W, y:Math.random()*H,
+        r:Math.random()*1.8+.4,
+        vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25,
+        a:Math.random()*.5+.2,
+        c:Math.random()>.5?'240,210,122':'63,214,200'
+      });
+    }
+  }
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of parts){
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;
+      if(p.y<0||p.y>H)p.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle=`rgba(${p.c},${p.a})`;
+      ctx.shadowBlur=8; ctx.shadowColor=`rgba(${p.c},.8)`;
+      ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+  addEventListener('resize',resize); resize(); loop();
+
+  // ===== 密码显隐 =====
+  const eye=document.getElementById('eye'), pass=document.getElementById('pass');
+  eye.addEventListener('click',()=>{
+    const show = pass.type==='password';
+    pass.type = show?'text':'password';
+    eye.style.opacity = show?'.95':'.65';
+  });
+
+  // ===== 表单校验 + 交互 =====
+  const form=document.getElementById('form');
+  const user=document.getElementById('user');
+  const btn=document.getElementById('submit');
+  const msg=document.getElementById('msg');
+  const ok=document.getElementById('ok');
+
+  function shake(el){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
+
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    msg.textContent='';
+    let okFlag=true;
+    if(!user.value.trim()){shake(user.parentElement);okFlag=false;}
+    if(!pass.value.trim()){shake(pass.parentElement);okFlag=false;}
+    if(!okFlag){msg.style.color='#ff8a8a';msg.textContent='请填写账号与密码';return;}
+
+    btn.classList.add('loading'); btn.disabled=true;
+    msg.style.color='#3fd6c8'; msg.textContent='正在连接提瓦特…';
+
+    // 模拟登录请求
+    setTimeout(()=>{
+      btn.classList.remove('loading'); btn.disabled=false;
+      ok.classList.add('show');
+    },1600);
+  });
+
+  ok.addEventListener('click',()=>ok.classList.remove('show'));
+</script>
+</body>
+</html>
