@@ -1,0 +1,53 @@
+# 原神登录项目 —— AI 启动备忘录 (AGENT_NOTES.txt)
+# 用途：每次电脑重置后，AI 读取本文件即可跳过重复排查，直接按脚本启动。
+# 最后更新：2026-10-26
+
+## 项目结构 (均在 D:\workSpace\xx\ 下)
+- springBootTest\     : Spring Boot 3.4.5 后端 (Java 17), MyBatis-Plus, MySQL
+- genshin-login-vue\  : Vue3 + Vite 5 前端
+- apache-maven-3.9.9\ : 本机 Maven 发行版 (wrapper 已损坏，勿用 mvnw)
+- start-all.bat       : 一键启动 (本备忘录配套)
+- stop-all.bat        : 一键停止
+
+## 端口与服务
+- 前端 Vite : http://localhost:5173/  (自动打开浏览器, 代理 /api -> 8081)
+- 后端 API  : http://localhost:8081/api  (Tomcat, context-path=/api)
+- MySQL     : 127.0.0.1:3306, 库 genshin_db, 账号 root/123456
+
+## 测试账号
+- traveler / 123456
+- paimon   / 123456
+- 登录: POST /api/user/login  body {"username":"traveler","password":"123456"} -> code 200
+
+## 重置后会丢失的东西 (每次都要重建)
+- genshin-login-vue\node_modules  -> 启动脚本会自动 npm install
+- springBootTest\target           -> 启动脚本会自动 mvn 重新编译
+- (apache-maven-3.9.9 一般保留，但脚本会检测缺失并自动下载)
+
+## 三个致命坑 (务必记住)
+1. SERVER__PORT 环境变量劫持
+   - 沙箱每次注入 SERVER__PORT=61437 (内部代理端口)
+   - Spring Boot 宽松绑定把 SERVER__PORT(双下划线) 解析成 server.port=61437
+   - 优先级高于 application-dev.properties 的 8081，导致后端绑 61437 撞端口失败
+   - 解决: 启动后端前必须 set "SERVER__PORT=" (清空)。start-all.bat 已做。
+   - 注意: -Dserver.port=8081 参数压不住这个 env 变量，必须清空 env 才行。
+2. Maven Wrapper 损坏
+   - 项目 mvnw 缺 maven-wrapper.jar，且 Git Bash 下 bash mvn 报 classworlds.Launcher 找不到
+   - 解决: 用 apache-maven-3.9.9\bin\mvn.cmd (Windows 原生)，不要 bash mvn，也不要 cmd //c 包裹
+3. MySQL 库需初始化
+   - 首次需执行 springBootTest/sql/genshin_db.sql 建库建表灌数据
+   - 启动脚本已幂等处理 (表存在则跳过)
+
+## 标准启动流程 (重置后)
+1. 双击 start-all.bat (或 cmd /c start-all.bat)
+   - 它会: 初始化DB -> 检查Maven -> 开两个窗口启动前后端
+2. 等待约 30-90 秒 (首次 mvn 编译 + npm install)
+3. 验证:
+   - netstat 看 8081 / 5173 是否在 LISTENING
+   - curl -X POST localhost:8081/api/user/login -H "Content-Type: application/json" -d "{\"username\":\"traveler\",\"password\":\"123456\"}"
+   - 或浏览器开 http://localhost:5173/ 用账号登录
+4. 停止: 双击 stop-all.bat
+
+## 注意
+- 不要依赖已存在的 node_modules / target (重置即删)
+- 若 Maven 每次都要重下依赖很慢，说明 .m2 缓存也被清了，属正常
