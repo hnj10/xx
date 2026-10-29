@@ -188,7 +188,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { NATIONS, svgFull } from '../data/nations.js'
 import {
   ELEMENT_NATION,
@@ -240,13 +240,54 @@ onMounted(async () => {
 // ---------------- 搜索 ----------------
 const keyword = ref('')
 
+// 后端搜索结果：null 表示未拿到（后端未上线/出错），此时回退到本地过滤
+const searchResults = ref(null)
+let searchTimer = null
+
 function match(text, kw) {
   return String(text || '').toLowerCase().includes(kw)
+}
+
+// 后端搜索：GET /api/home/search?keyword=xxx
+// 返回 [{ category: 'character'|'weapon'|'team', data: {...} }]
+// 拿到 code=200 且 data 是数组就以接口结果为准（空数组也是有效结果）；
+// 请求失败则 searchResults 置 null，自动回退到本地演示数据过滤。
+watch(keyword, (val) => {
+  const kw = String(val || '').trim()
+  clearTimeout(searchTimer)
+  if (!kw) {
+    searchResults.value = null
+    return
+  }
+  searchTimer = setTimeout(async () => {
+    try {
+      const res = await fetch(`${API}/home/search?keyword=${encodeURIComponent(kw)}`)
+      if (res.ok) {
+        const data = await res.json()
+        if (data && data.code === 200 && Array.isArray(data.data)) {
+          searchResults.value = data.data
+          return
+        }
+      }
+    } catch (e) {
+      /* 后端接口不可用，使用本地演示数据 */
+    }
+    searchResults.value = null
+  }, 250)
+})
+
+// 按 category 取出某一类结果；未拿到后端结果时返回 null，交给本地过滤
+function pickFromBackend(category) {
+  const list = searchResults.value
+  if (!list) return null
+  return list.filter((r) => r.category === category).map((r) => r.data)
 }
 
 const hitChars = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
   if (!kw) return []
+  const remote = pickFromBackend('character')
+  if (remote) return remote
   return chars.value.filter(
     (c) =>
       match(c.name, kw) ||
@@ -260,6 +301,8 @@ const hitChars = computed(() => {
 const hitWeapons = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
   if (!kw) return []
+  const remote = pickFromBackend('weapon')
+  if (remote) return remote
   return weapons.value.filter(
     (w) =>
       match(w.name, kw) ||
@@ -273,6 +316,8 @@ const hitWeapons = computed(() => {
 const hitTeams = computed(() => {
   const kw = keyword.value.trim().toLowerCase()
   if (!kw) return []
+  const remote = pickFromBackend('team')
+  if (remote) return remote
   return teams.value.filter(
     (t) =>
       match(t.name, kw) ||

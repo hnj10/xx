@@ -1,53 +1,110 @@
 # 原神登录项目 —— AI 启动备忘录 (AGENT_NOTES.txt)
-# 用途：每次电脑重置后，AI 读取本文件即可跳过重复排查，直接按脚本启动。
-# 最后更新：2026-10-26
+# 用途：每次电脑重置后，AI 或人读取本文件即可跳过重复排查，直接按脚本启动。
+# 最后更新：2026-10-29
+
+## ⚠️ 第一件事：先读这个文件，别自己重新排查！
+本文件已经把所有踩过的坑记全了。直接跳到「标准启动流程」执行即可。
+（2026-10-29 血泪教训：没先读本文件，重复排查 20+ 步才解决同一个 SERVER__PORT 问题。）
 
 ## 项目结构 (均在 D:\workSpace\xx\ 下)
-- springBootTest\     : Spring Boot 3.4.5 后端 (Java 17), MyBatis-Plus, MySQL
+- springBootTest\     : Spring Boot 3.4.5 后端 (需 Java 17+, 本机 21), MyBatis-Plus, MySQL
 - genshin-login-vue\  : Vue3 + Vite 5 前端
-- apache-maven-3.9.9\ : 本机 Maven 发行版 (wrapper 已损坏，勿用 mvnw)
-- start-all.bat       : 一键启动 (本备忘录配套)
+- apache-maven-3.9.9\ : 【已损坏，勿用】boot\ 和 lib\ 只有 *.license，没有任何 jar
+- start-all.bat       : 一键启动 (新开两个窗口跑前后端)
+- start-backend.bat   : 只启动后端
+- start-frontend.bat  : 只启动前端
 - stop-all.bat        : 一键停止
+- 所有 .bat 均为 GBK(936) 编码，路径全部用 %~dp0 相对定位
 
 ## 端口与服务
-- 前端 Vite : http://localhost:5173/  (自动打开浏览器, 代理 /api -> 8081)
-- 后端 API  : http://localhost:8081/api  (Tomcat, context-path=/api)
-- MySQL     : 127.0.0.1:3306, 库 genshin_db, 账号 root/123456
+- 前端 Vite : http://localhost:5173/  (自动打开浏览器；代理 /api -> 8081，不改写路径)
+- 后端 API  : http://localhost:8081/api  (Tomcat，context-path=/api)
+- MySQL     : 127.0.0.1:3306，库 genshin_db，账号 root / 123456
 
-## 测试账号
-- traveler / 123456
-- paimon   / 123456
-- 登录: POST /api/user/login  body {"username":"traveler","password":"123456"} -> code 200
+## 测试账号 (密码均为 123456)
+- traveler (蒙德) / paimon (璃月)
+- POST /api/user/login  body {"username":"traveler","password":"123456"}  -> code 200
 
-## 重置后会丢失的东西 (每次都要重建)
-- genshin-login-vue\node_modules  -> 启动脚本会自动 npm install
-- springBootTest\target           -> 启动脚本会自动 mvn 重新编译
-- (apache-maven-3.9.9 一般保留，但脚本会检测缺失并自动下载)
+## 重置后会丢失的东西 (脚本已自动处理，排查时别假设它们存在)
+- genshin-login-vue\node_modules  -> start-frontend.bat 自动 npm install
+- springBootTest\target           -> mvn spring-boot:run 自动重新编译
+- 写脚本时：运行前不能使用这两个目录的内容。
 
-## 三个致命坑 (务必记住)
-1. SERVER__PORT 环境变量劫持
-   - 沙箱每次注入 SERVER__PORT=61437 (内部代理端口)
-   - Spring Boot 宽松绑定把 SERVER__PORT(双下划线) 解析成 server.port=61437
-   - 优先级高于 application-dev.properties 的 8081，导致后端绑 61437 撞端口失败
-   - 解决: 启动后端前必须 set "SERVER__PORT=" (清空)。start-all.bat 已做。
-   - 注意: -Dserver.port=8081 参数压不住这个 env 变量，必须清空 env 才行。
-2. Maven Wrapper 损坏
-   - 项目 mvnw 缺 maven-wrapper.jar，且 Git Bash 下 bash mvn 报 classworlds.Launcher 找不到
-   - 解决: 用 apache-maven-3.9.9\bin\mvn.cmd (Windows 原生)，不要 bash mvn，也不要 cmd //c 包裹
-3. MySQL 库需初始化
-   - 首次需执行 springBootTest/sql/genshin_db.sql 建库建表灌数据
-   - 启动脚本已幂等处理 (表存在则跳过)
+============================================================
+## 三个致命坑（务必记住）
+============================================================
 
-## 标准启动流程 (重置后)
-1. 双击 start-all.bat (或 cmd /c start-all.bat)
-   - 它会: 初始化DB -> 检查Maven -> 开两个窗口启动前后端
-2. 等待约 30-90 秒 (首次 mvn 编译 + npm install)
-3. 验证:
-   - netstat 看 8081 / 5173 是否在 LISTENING
-   - curl -X POST localhost:8081/api/user/login -H "Content-Type: application/json" -d "{\"username\":\"traveler\",\"password\":\"123456\"}"
-   - 或浏览器开 http://localhost:5173/ 用账号登录
-4. 停止: 双击 stop-all.bat
+### 坑 1：SERVER__PORT 环境变量劫持后端端口 【每次必踩，最高频】
+- 沙箱/WorkBuddy 每次启动会注入：
+      SERVER__PORT=<随机端口>
+      SERVER__HOST=127.0.0.1
+  实测出现过 61437、64359 —— **值每次开机都变，不要写死，清空即可**。
+- Spring Boot 宽松绑定把 SERVER__PORT（双下划线）解析为 server.port，
+  优先级高于 application-dev.properties 里的 8081。
+- 症状：后端日志
+      Tomcat initialized with port 6xxxx (http)
+      Web server failed to start. Port 6xxxx was already in use.
+  注意：占用 6xxxx 的是 WorkBuddy.exe 自己，不是 Java 进程（别去杀 Java，找不到）。
+- 解决（必须）：启动后端前清空这两个变量
+      set "SERVER__PORT="
+      set "SERVER__HOST="
+  start-backend.bat / start-all.bat 已做。
+- 已验证无效的做法：`-Dserver.port=8081` 压不住 env 变量（实测仍绑 6xxxx）。
+  正确组合 = 清空 env + `-Dspring-boot.run.arguments=--server.port=8081` 双保险。
 
-## 注意
-- 不要依赖已存在的 node_modules / target (重置即删)
-- 若 Maven 每次都要重下依赖很慢，说明 .m2 缓存也被清了，属正常
+### 坑 2：Maven 不可用（两个陷阱，都要避开）
+- (a) 项目自带 mvnw 损坏：.m2\wrapper 下的分发不完整，
+      报 ClassNotFoundException: org.codehaus.plexus.classworlds.launcher.Launcher
+      → 不要用 mvnw；也不要用 Git Bash 的 bash mvn（同样报错）。
+- (b) 项目内 apache-maven-3.9.9 也是坏的：boot\ 与 lib\ 只有 *.license，无 jar
+      → mvn.cmd 文件存在但一跑就报同样的 classworlds 错。
+      → 判断真假 Maven 要看 `boot\plexus-classworlds-*.jar` 是否存在，不能只看 mvn.cmd。
+- 解决：用 IntelliJ 自带的完整 Maven（已验证可用）
+      D:\IntelliJ IDEA 2024.3.2.2\plugins\maven\lib\maven3\bin\mvn.cmd
+  脚本会依次尝试：MAVEN_HOME -> 项目内(带 jar 校验) -> IntelliJ -> PATH，取第一个真可用的。
+- Git Bash 里调 Maven 的两个注意：
+  * JAVA_HOME 必须是 Windows 反斜杠格式：C:\Program Files\Zulu\zulu-21
+    （用正斜杠会报 "JAVA_HOME is not defined correctly"）
+  * 直接调用 .cmd 文件即可；不要用 cmd //c（被安全策略拦截，引号也难处理）
+- 本机 JDK：C:\Program Files\Zulu\zulu-21（Java 21，满足 Boot3 的 17+）
+
+### 坑 3：MySQL 需初始化（脚本已幂等处理）
+- 首次执行 springBootTest\sql\genshin_db.sql 建库建表灌数据（表存在则跳过）
+- mysql.exe：C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe
+- 若 MySQL 没启动，后端会连不上库，先确认 3306 在监听。
+
+============================================================
+## 标准启动流程（重置后）
+============================================================
+1. 双击 start-all.bat
+   - 会：清端口劫持变量 -> 初始化DB -> 找真 Maven + JDK -> 新开两窗口启动前后端
+   - 首次较慢（npm install + mvn 编译），约 30-90 秒
+2. 验证（任选其一）：
+   - netstat -ano | findstr ":8081 :5173"  看是否 LISTENING
+   - curl -s http://localhost:8081/api/user/list
+   - curl -s -X POST http://localhost:5173/api/user/login ^
+       -H "Content-Type: application/json" ^
+       -d "{\"username\":\"traveler\",\"password\":\"123456\"}"
+     走前端代理，返回「登录成功」说明整条链路通。
+3. 停止：双击 stop-all.bat
+
+============================================================
+## AI 须知：若不用脚本、手动启动
+============================================================
+- 后台进程**不要**用 `nohup ... &`：进程会随 shell 退出被回收（假启动）。
+  正确做法：用工具的 run_in_background 直接托管长跑命令（不加 & / nohup）。
+- 手动后端命令：
+      unset SERVER__PORT SERVER__HOST
+      export JAVA_HOME='C:\Program Files\Zulu\zulu-21'
+      cd springBootTest
+      "<IntelliJ maven 路径>\mvn.cmd" -DskipTests ^
+        -Dspring-boot.run.arguments=--server.port=8081 spring-boot:run
+- 手动前端命令：
+      cd genshin-login-vue && npm install && npm run dev
+
+## 其他注意
+- wmic.exe 被安全黑名单拦截；查进程用 tasklist /fi "PID eq X"
+- 前端 vite.config.js 的 /api 代理不改写路径，后端 context-path=/api，两边刚好对上，不要改
+- .m2 依赖缓存一般在，编译不会太慢；若每次都重下依赖，说明 .m2 也被清了（正常）
+- 后端 mybatis-plus.mapper-locations 指向 classpath*:/mapper/**/*.xml，但项目无 mapper xml
+  （用的是 BaseMapper 通用方法），属正常，不是缺失。
