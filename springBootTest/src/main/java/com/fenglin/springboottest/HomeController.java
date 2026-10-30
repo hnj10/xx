@@ -4,6 +4,7 @@ import com.fenglin.springboottest.common.Result;
 import com.fenglin.springboottest.service.HomeService;
 import com.fenglin.springboottest.vo.CharWeaponVO;
 import com.fenglin.springboottest.vo.CharacterVO;
+import com.fenglin.springboottest.vo.GroupVO;
 import com.fenglin.springboottest.vo.SearchResultVO;
 import com.fenglin.springboottest.vo.TeamVO;
 import com.fenglin.springboottest.vo.WeaponVO;
@@ -28,6 +29,10 @@ import java.util.List;
  *   GET /api/home/weapons               武器养成攻略列表
  *   GET /api/home/teams                 角色队伍推荐列表
  *   GET /api/home/search?keyword=xxx    全站搜索（角色 / 武器 / 队伍）
+ *   GET /api/home/search?keyword=xxx&category=character  仅搜索角色
+ *   GET /api/home/characters/elements   角色按元素分级分类
+ *   GET /api/home/weapons/types         武器按类型分级分类
+ *   GET /api/home/teams/cores           队伍按核心机制分级分类
  * </pre>
  *
  * 响应结构：{ "code": 200, "message": "success", "data": [ ... ] }
@@ -73,10 +78,36 @@ public class HomeController {
 
     /**
      * 全站搜索。返回 [{ category, data }]，category 取值 character / weapon / team。
+     * 可选参数 category 用于限定搜索范围（只搜某一类）。
      */
     @GetMapping("/search")
     public Result<List<SearchResultVO>> search(
-            @RequestParam(value = "keyword", required = false, defaultValue = "") String keyword) {
-        return Result.ok(homeService.search(keyword));
+            @RequestParam(value = "keyword", required = false, defaultValue = "") String keyword,
+            @RequestParam(value = "category", required = false) String category) {
+        return Result.ok(homeService.search(keyword, category));
+    }
+
+    /**
+     * 角色按元素分级分类，返回 [{ name, count, items }]。
+     */
+    @GetMapping("/characters/elements")
+    public Result<List<GroupVO<CharacterVO>>> charactersByElement() {
+        return Result.ok(homeService.listCharactersByElement());
+    }
+
+    /**
+     * 武器按类型分级分类，返回 [{ name, count, items }]。
+     */
+    @GetMapping("/weapons/types")
+    public Result<List<GroupVO<WeaponVO>>> weaponsByType() {
+        return Result.ok(homeService.listWeaponsByType());
+    }
+
+    /**
+     * 队伍按核心机制分级分类，返回 [{ name, count, items }]。
+     */
+    @GetMapping("/teams/cores")
+    public Result<List<GroupVO<TeamVO>>> teamsByCore() {
+        return Result.ok(homeService.listTeamsByCore());
     }
 }

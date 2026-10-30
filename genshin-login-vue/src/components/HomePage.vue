@@ -86,8 +86,39 @@
           <span class="sec-tag c-green">模块一</span>
           <h2>角色养成攻略</h2>
           <span class="sec-count">{{ chars.length }} 位角色</span>
+          <div v-if="charGroups.length" class="view-toggle">
+            <button :class="{ active: charGrouped }" @click="charGrouped = true">按元素</button>
+            <button :class="{ active: !charGrouped }" @click="charGrouped = false">平铺</button>
+          </div>
         </div>
-        <div class="grid chars">
+
+        <!-- 分组视图：按元素分栏 -->
+        <template v-if="charGrouped && charGroups.length">
+          <div v-for="g in charGroups" :key="'cg' + g.name" class="group-block">
+            <div class="group-head">
+              <span class="ele-dot" :style="{ background: eleColor(g.name) }" v-html="eleSvg(g.name)"></span>
+              <span class="group-name">{{ g.name }}元素</span>
+              <span class="group-count">{{ g.count }} 位</span>
+            </div>
+            <div class="grid chars">
+              <div v-for="c in g.items" :key="c.id" class="card char-card" @click="todo('角色养成攻略 · ' + c.name)">
+                <div class="char-top">
+                  <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
+                  <span class="char-name">{{ c.name }}</span>
+                  <span class="role">{{ c.role }}</span>
+                </div>
+                <div class="stars" :class="'r' + c.rarity">{{ star(c.rarity) }}</div>
+                <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
+                <div class="row"><span class="k">圣遗物</span><span class="v">{{ c.artifacts }}</span></div>
+                <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
+                <p class="summary">{{ c.summary }}</p>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- 平铺视图 -->
+        <div v-else class="grid chars">
           <div v-for="c in chars" :key="c.id" class="card char-card" @click="todo('角色养成攻略 · ' + c.name)">
             <div class="char-top">
               <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
@@ -135,8 +166,38 @@
           <span class="sec-tag c-purple">模块三</span>
           <h2>武器养成攻略</h2>
           <span class="sec-count">{{ weapons.length }} 件武器</span>
+          <div v-if="weaponGroups.length" class="view-toggle">
+            <button :class="{ active: weaponGrouped }" @click="weaponGrouped = true">按类型</button>
+            <button :class="{ active: !weaponGrouped }" @click="weaponGrouped = false">平铺</button>
+          </div>
         </div>
-        <div class="grid weapons">
+
+        <!-- 分组视图：按类型分栏 -->
+        <template v-if="weaponGrouped && weaponGroups.length">
+          <div v-for="g in weaponGroups" :key="'wg' + g.name" class="group-block">
+            <div class="group-head">
+              <span class="group-name">{{ g.name }}</span>
+              <span class="group-count">{{ g.count }} 件</span>
+            </div>
+            <div class="grid weapons">
+              <div v-for="w in g.items" :key="w.name" class="card weapon-card" @click="todo('武器养成 · ' + w.name)">
+                <div class="w-top">
+                  <span class="w-name">{{ w.name }}</span>
+                  <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
+                </div>
+                <div class="w-meta">{{ w.type }} · {{ w.stat }}</div>
+                <p class="summary">{{ w.desc }}</p>
+                <div class="users">
+                  <span class="k">适配角色</span>
+                  <span v-for="u in w.users" :key="u" class="chip">{{ u }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- 平铺视图 -->
+        <div v-else class="grid weapons">
           <div v-for="w in weapons" :key="w.name" class="card weapon-card" @click="todo('武器养成 · ' + w.name)">
             <div class="w-top">
               <span class="w-name">{{ w.name }}</span>
@@ -212,6 +273,15 @@ const charWeapons = ref(CHAR_WEAPONS)
 const weapons = ref(WEAPONS)
 const teams = ref(TEAMS)
 
+// ---------------- 分级分类数据 ----------------
+// 后端分类接口返回 [{ name, count, items:[...] }]；为空数组表示后端未提供分类能力
+const charGroups = ref([])
+const weaponGroups = ref([])
+
+// 视图切换：true 按分类（元素/类型）分组展示，false 平铺列表
+const charGrouped = ref(true)
+const weaponGrouped = ref(true)
+
 // 预留的后端接口加载器：后端实现 /api/home/* 后，返回 code=200 即自动使用接口数据；
 // 后端未实现（404/500/连接失败）时静默回退到本地演示数据，页面不受影响。
 async function loadFromBackend(path, fallback) {
@@ -235,6 +305,10 @@ onMounted(async () => {
   charWeapons.value = await loadFromBackend('/home/char-weapons', CHAR_WEAPONS)
   weapons.value = await loadFromBackend('/home/weapons', WEAPONS)
   teams.value = await loadFromBackend('/home/teams', TEAMS)
+
+  // 分级分类接口（后端实现后返回分组结构）
+  charGroups.value = await loadFromBackend('/home/characters/elements', [])
+  weaponGroups.value = await loadFromBackend('/home/weapons/types', [])
 })
 
 // ---------------- 搜索 ----------------
@@ -560,6 +634,65 @@ function logout() {
 .c-purple { background: #a781e0; }
 .c-red { background: #ff7a59; }
 .sec-count {
+  font-size: 12px;
+  color: #8295bd;
+  letter-spacing: 1px;
+}
+
+/* ===== 视图切换 ===== */
+.view-toggle {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.view-toggle button {
+  border: none;
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #9fb0d8;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.view-toggle button.active {
+  color: #06121f;
+  background: linear-gradient(95deg, #4ec6f0, #6fd6c0);
+  font-weight: 700;
+}
+
+/* ===== 分组视图 ===== */
+.group-block {
+  margin-bottom: 26px;
+}
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.group-head .ele-dot {
+  width: 24px;
+  height: 24px;
+}
+.group-head :deep(svg) {
+  width: 14px;
+  height: 14px;
+}
+.group-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e9eefb;
+}
+.group-count {
   font-size: 12px;
   color: #8295bd;
   letter-spacing: 1px;

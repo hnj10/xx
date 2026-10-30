@@ -16,6 +16,7 @@ import com.fenglin.springboottest.mapper.WeaponUserMapper;
 import com.fenglin.springboottest.service.HomeService;
 import com.fenglin.springboottest.vo.CharWeaponVO;
 import com.fenglin.springboottest.vo.CharacterVO;
+import com.fenglin.springboottest.vo.GroupVO;
 import com.fenglin.springboottest.vo.SearchResultVO;
 import com.fenglin.springboottest.vo.TeamMemberVO;
 import com.fenglin.springboottest.vo.TeamVO;
@@ -162,6 +163,11 @@ public class HomeServiceImpl implements HomeService {
 
     @Override
     public List<SearchResultVO> search(String keyword) {
+        return search(keyword, null);
+    }
+
+    @Override
+    public List<SearchResultVO> search(String keyword, String category) {
         if (!StringUtils.hasText(keyword)) {
             return Collections.emptyList();
         }
@@ -171,98 +177,184 @@ public class HomeServiceImpl implements HomeService {
         }
         // lambda 中只能引用 final 或实际 final 的变量，这里固化一份
         final String key = kw;
+        // 分类过滤：仅当取值为 character / weapon / team 时才生效
+        final String cat = ("character".equals(category) || "weapon".equals(category) || "team".equals(category))
+                ? category : null;
 
         List<SearchResultVO> result = new ArrayList<>();
 
         // ---- 1. 角色：名称 / 定位 / 元素 / 圣遗物 / 主词条 / 攻略 ----
-        LambdaQueryWrapper<GenshinCharacter> charQuery = new LambdaQueryWrapper<>();
-        charQuery.eq(GenshinCharacter::getStatus, 1)
-                .and(w -> w.like(GenshinCharacter::getName, key)
-                        .or().like(GenshinCharacter::getRoleName, key)
-                        .or().like(GenshinCharacter::getElement, key)
-                        .or().like(GenshinCharacter::getArtifacts, key)
-                        .or().like(GenshinCharacter::getMainStats, key)
-                        .or().like(GenshinCharacter::getSummary, key))
-                .orderByAsc(GenshinCharacter::getSortOrder)
-                .orderByAsc(GenshinCharacter::getId);
-        for (GenshinCharacter entity : characterMapper.selectList(charQuery)) {
-            result.add(wrap("character", toCharacterVO(entity)));
+        if (cat == null || "character".equals(cat)) {
+            LambdaQueryWrapper<GenshinCharacter> charQuery = new LambdaQueryWrapper<>();
+            charQuery.eq(GenshinCharacter::getStatus, 1)
+                    .and(w -> w.like(GenshinCharacter::getName, key)
+                            .or().like(GenshinCharacter::getRoleName, key)
+                            .or().like(GenshinCharacter::getElement, key)
+                            .or().like(GenshinCharacter::getArtifacts, key)
+                            .or().like(GenshinCharacter::getMainStats, key)
+                            .or().like(GenshinCharacter::getSummary, key))
+                    .orderByAsc(GenshinCharacter::getSortOrder)
+                    .orderByAsc(GenshinCharacter::getId);
+            for (GenshinCharacter entity : characterMapper.selectList(charQuery)) {
+                result.add(wrap("character", toCharacterVO(entity)));
+            }
         }
 
         // ---- 2. 武器：名称 / 类型 / 副属性 / 描述 / 适配角色 ----
-        LambdaQueryWrapper<Weapon> weaponQuery = new LambdaQueryWrapper<>();
-        weaponQuery.eq(Weapon::getStatus, 1)
-                .and(w -> w.like(Weapon::getName, key)
-                        .or().like(Weapon::getType, key)
-                        .or().like(Weapon::getStat, key)
-                        .or().like(Weapon::getDescription, key))
-                .orderByAsc(Weapon::getSortOrder)
-                .orderByAsc(Weapon::getId);
-        List<Weapon> weapons = new ArrayList<>(weaponMapper.selectList(weaponQuery));
-
-        // 适配角色命中时，把对应武器也补进来
-        Set<String> hitWeaponNames = weapons.stream().map(Weapon::getName).collect(Collectors.toCollection(LinkedHashSet::new));
-        List<WeaponUser> matchedUsers = weaponUserMapper.selectList(
-                new LambdaQueryWrapper<WeaponUser>().like(WeaponUser::getUserName, key));
-        List<String> extraWeaponNames = matchedUsers.stream()
-                .map(WeaponUser::getWeaponName)
-                .filter(name -> !hitWeaponNames.contains(name))
-                .distinct()
-                .collect(Collectors.toList());
-        if (!extraWeaponNames.isEmpty()) {
-            weapons.addAll(weaponMapper.selectList(new LambdaQueryWrapper<Weapon>()
-                    .eq(Weapon::getStatus, 1)
-                    .in(Weapon::getName, extraWeaponNames)
+        if (cat == null || "weapon".equals(cat)) {
+            LambdaQueryWrapper<Weapon> weaponQuery = new LambdaQueryWrapper<>();
+            weaponQuery.eq(Weapon::getStatus, 1)
+                    .and(w -> w.like(Weapon::getName, key)
+                            .or().like(Weapon::getType, key)
+                            .or().like(Weapon::getStat, key)
+                            .or().like(Weapon::getDescription, key))
                     .orderByAsc(Weapon::getSortOrder)
-                    .orderByAsc(Weapon::getId)));
-        }
+                    .orderByAsc(Weapon::getId);
+            List<Weapon> weapons = new ArrayList<>(weaponMapper.selectList(weaponQuery));
 
-        List<String> weaponNames = weapons.stream().map(Weapon::getName).collect(Collectors.toList());
-        Map<String, List<String>> userMap = weaponUserMap(weaponNames);
-        for (Weapon entity : weapons) {
-            result.add(wrap("weapon", toWeaponVO(entity, userMap.getOrDefault(entity.getName(), Collections.emptyList()))));
+            // 适配角色命中时，把对应武器也补进来
+            Set<String> hitWeaponNames = weapons.stream().map(Weapon::getName).collect(Collectors.toCollection(LinkedHashSet::new));
+            List<WeaponUser> matchedUsers = weaponUserMapper.selectList(
+                    new LambdaQueryWrapper<WeaponUser>().like(WeaponUser::getUserName, key));
+            List<String> extraWeaponNames = matchedUsers.stream()
+                    .map(WeaponUser::getWeaponName)
+                    .filter(name -> !hitWeaponNames.contains(name))
+                    .distinct()
+                    .collect(Collectors.toList());
+            if (!extraWeaponNames.isEmpty()) {
+                weapons.addAll(weaponMapper.selectList(new LambdaQueryWrapper<Weapon>()
+                        .eq(Weapon::getStatus, 1)
+                        .in(Weapon::getName, extraWeaponNames)
+                        .orderByAsc(Weapon::getSortOrder)
+                        .orderByAsc(Weapon::getId)));
+            }
+
+            List<String> weaponNames = weapons.stream().map(Weapon::getName).collect(Collectors.toList());
+            Map<String, List<String>> userMap = weaponUserMap(weaponNames);
+            for (Weapon entity : weapons) {
+                result.add(wrap("weapon", toWeaponVO(entity, userMap.getOrDefault(entity.getName(), Collections.emptyList()))));
+            }
         }
 
         // ---- 3. 队伍：队名 / 核心机制 / 手法要点 / 成员名 / 成员元素 ----
-        LambdaQueryWrapper<Team> teamQuery = new LambdaQueryWrapper<>();
-        teamQuery.eq(Team::getStatus, 1)
-                .and(w -> w.like(Team::getName, key)
-                        .or().like(Team::getCore, key)
-                        .or().like(Team::getTip, key))
-                .orderByAsc(Team::getSortOrder)
-                .orderByAsc(Team::getId);
-        List<Team> teams = new ArrayList<>(teamMapper.selectList(teamQuery));
-
-        Set<Long> hitTeamIds = teams.stream().map(Team::getId).collect(Collectors.toCollection(LinkedHashSet::new));
-        List<TeamMember> matchedMembers = teamMemberMapper.selectList(
-                new LambdaQueryWrapper<TeamMember>()
-                        .like(TeamMember::getMemberName, key)
-                        .or().like(TeamMember::getElement, key));
-        List<Long> extraTeamIds = matchedMembers.stream()
-                .map(TeamMember::getTeamId)
-                .filter(id -> !hitTeamIds.contains(id))
-                .distinct()
-                .collect(Collectors.toList());
-        if (!extraTeamIds.isEmpty()) {
-            teams.addAll(teamMapper.selectList(new LambdaQueryWrapper<Team>()
-                    .eq(Team::getStatus, 1)
-                    .in(Team::getId, extraTeamIds)
+        if (cat == null || "team".equals(cat)) {
+            LambdaQueryWrapper<Team> teamQuery = new LambdaQueryWrapper<>();
+            teamQuery.eq(Team::getStatus, 1)
+                    .and(w -> w.like(Team::getName, key)
+                            .or().like(Team::getCore, key)
+                            .or().like(Team::getTip, key))
                     .orderByAsc(Team::getSortOrder)
-                    .orderByAsc(Team::getId)));
-        }
+                    .orderByAsc(Team::getId);
+            List<Team> teams = new ArrayList<>(teamMapper.selectList(teamQuery));
 
-        List<Long> teamIds = teams.stream().map(Team::getId).collect(Collectors.toList());
-        Map<Long, List<TeamMemberVO>> memberMap = teamMemberMap(teamIds);
-        for (Team entity : teams) {
-            result.add(wrap("team", toTeamVO(entity, memberMap.getOrDefault(entity.getId(), Collections.emptyList()))));
+            Set<Long> hitTeamIds = teams.stream().map(Team::getId).collect(Collectors.toCollection(LinkedHashSet::new));
+            List<TeamMember> matchedMembers = teamMemberMapper.selectList(
+                    new LambdaQueryWrapper<TeamMember>()
+                            .like(TeamMember::getMemberName, key)
+                            .or().like(TeamMember::getElement, key));
+            List<Long> extraTeamIds = matchedMembers.stream()
+                    .map(TeamMember::getTeamId)
+                    .filter(id -> !hitTeamIds.contains(id))
+                    .distinct()
+                    .collect(Collectors.toList());
+            if (!extraTeamIds.isEmpty()) {
+                teams.addAll(teamMapper.selectList(new LambdaQueryWrapper<Team>()
+                        .eq(Team::getStatus, 1)
+                        .in(Team::getId, extraTeamIds)
+                        .orderByAsc(Team::getSortOrder)
+                        .orderByAsc(Team::getId)));
+            }
+
+            List<Long> teamIds = teams.stream().map(Team::getId).collect(Collectors.toList());
+            Map<Long, List<TeamMemberVO>> memberMap = teamMemberMap(teamIds);
+            for (Team entity : teams) {
+                result.add(wrap("team", toTeamVO(entity, memberMap.getOrDefault(entity.getId(), Collections.emptyList()))));
+            }
         }
 
         return result;
     }
 
     // ------------------------------------------------------------------
-    // 私有工具方法
+    // 分级分类（按维度分组）
     // ------------------------------------------------------------------
+
+    @Override
+    public List<GroupVO<CharacterVO>> listCharactersByElement() {
+        List<CharacterVO> all = listCharacters();
+        // 固定元素顺序，保证前端展示稳定；未知元素排在最后
+        Map<String, Integer> elementOrder = new HashMap<>();
+        elementOrder.put("火", 0);
+        elementOrder.put("水", 1);
+        elementOrder.put("雷", 2);
+        elementOrder.put("草", 3);
+        elementOrder.put("风", 4);
+        elementOrder.put("岩", 5);
+        elementOrder.put("冰", 6);
+
+        Map<String, List<CharacterVO>> grouped = new LinkedHashMap<>();
+        for (CharacterVO vo : all) {
+            grouped.computeIfAbsent(vo.getElement(), key -> new ArrayList<>()).add(vo);
+        }
+
+        List<GroupVO<CharacterVO>> result = new ArrayList<>(grouped.size());
+        for (Map.Entry<String, List<CharacterVO>> entry : grouped.entrySet()) {
+            result.add(new GroupVO<>(entry.getKey(), entry.getValue()));
+        }
+        result.sort(Comparator.comparingInt(g -> elementOrder.getOrDefault(g.getName(), Integer.MAX_VALUE)));
+        return result;
+    }
+
+    @Override
+    public List<GroupVO<WeaponVO>> listWeaponsByType() {
+        List<WeaponVO> all = listWeapons();
+        // 固定类型顺序
+        Map<String, Integer> typeOrder = new HashMap<>();
+        typeOrder.put("长柄武器", 0);
+        typeOrder.put("单手剑", 1);
+        typeOrder.put("双手剑", 2);
+        typeOrder.put("法器", 3);
+        typeOrder.put("弓", 4);
+
+        Map<String, List<WeaponVO>> grouped = new LinkedHashMap<>();
+        for (WeaponVO vo : all) {
+            grouped.computeIfAbsent(vo.getType(), key -> new ArrayList<>()).add(vo);
+        }
+
+        List<GroupVO<WeaponVO>> result = new ArrayList<>(grouped.size());
+        for (Map.Entry<String, List<WeaponVO>> entry : grouped.entrySet()) {
+            result.add(new GroupVO<>(entry.getKey(), entry.getValue()));
+        }
+        result.sort(Comparator.comparingInt(g -> typeOrder.getOrDefault(g.getName(), Integer.MAX_VALUE)));
+        return result;
+    }
+
+    @Override
+    public List<GroupVO<TeamVO>> listTeamsByCore() {
+        List<TeamVO> all = listTeams();
+        // 核心机制可能带「 · 」子标题，这里取「·」前的粗分类作为分组名，
+        // 保证「主C · 蒸发」「主C · 永冻」能归到同一大分类下
+        Map<String, List<TeamVO>> grouped = new LinkedHashMap<>();
+        for (TeamVO vo : all) {
+            String groupName = vo.getCore();
+            if (groupName != null) {
+                int idx = groupName.indexOf('·');
+                if (idx > 0) {
+                    groupName = groupName.substring(0, idx).trim();
+                }
+            }
+            if (groupName == null || groupName.isEmpty()) {
+                groupName = "其他";
+            }
+            grouped.computeIfAbsent(groupName, key -> new ArrayList<>()).add(vo);
+        }
+
+        List<GroupVO<TeamVO>> result = new ArrayList<>(grouped.size());
+        for (Map.Entry<String, List<TeamVO>> entry : grouped.entrySet()) {
+            result.add(new GroupVO<>(entry.getKey(), entry.getValue()));
+        }
+        return result;
+    }
 
     /** 角色名 -> 展示顺序（t_character.sort_order） */
     private Map<String, Integer> loadCharacterOrder() {

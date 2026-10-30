@@ -2,6 +2,7 @@ package com.fenglin.springboottest.service;
 
 import com.fenglin.springboottest.vo.CharWeaponVO;
 import com.fenglin.springboottest.vo.CharacterVO;
+import com.fenglin.springboottest.vo.GroupVO;
 import com.fenglin.springboottest.vo.SearchResultVO;
 import com.fenglin.springboottest.vo.TeamVO;
 import com.fenglin.springboottest.vo.WeaponVO;
@@ -47,4 +48,28 @@ public interface HomeService {
      * @param keyword 搜索关键字，空白时返回空列表
      */
     List<SearchResultVO> search(String keyword);
+
+    /**
+     * 全站搜索（带分类过滤）：只返回指定类别的命中结果。
+     *
+     * @param keyword  搜索关键字，空白时返回空列表
+     * @param category 分类，取值 character / weapon / team，其它值等同于不过滤
+     */
+    List<SearchResultVO> search(String keyword, String category);
+
+    /**
+     * 角色按元素分组（分级分类）。按元素顺序（火/水/雷/草/风/岩/冰）返回分组，
+     * 组内保持原有 sort_order 排序。
+     */
+    List<GroupVO<CharacterVO>> listCharactersByElement();
+
+    /**
+     * 武器按类型分组（分级分类）。按类型（长柄武器/单手剑/双手剑/法器/弓）返回分组。
+     */
+    List<GroupVO<WeaponVO>> listWeaponsByType();
+
+    /**
+     * 队伍按核心机制分组（分级分类）。按 sort_order 聚合出唯一的核心机制作为分组名。
+     */
+    List<GroupVO<TeamVO>> listTeamsByCore();
 }
