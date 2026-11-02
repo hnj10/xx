@@ -2496,6 +2496,1006 @@ export const WEAPONS = [
     desc: '至冬锻造，触发元素反应回能，星烁反应加攻。',
     users: []
   },
+  {
+    name: '赦罪',
+    rarity: 5,
+    type: '单手剑',
+    stat: '副属性：暴击率',
+    desc: '克洛琳德专武，基于生命契约提升攻击与暴击，突进流雷伤输出。',
+    users: []
+  },
+  {
+    name: '有乐御簾切',
+    rarity: 5,
+    type: '单手剑',
+    stat: '副属性：暴击率',
+    desc: '普攻与重击增伤，千织核心武器。',
+    users: []
+  },
+  {
+    name: '苇海信标',
+    rarity: 5,
+    type: '双手剑',
+    stat: '副属性：暴击率',
+    desc: '命中敌人叠层增伤，迪希雅专武，兼顾生存与输出。',
+    users: []
+  },
+  {
+    name: '白雨心弦',
+    rarity: 5,
+    type: '弓',
+    stat: '副属性：暴击伤害',
+    desc: '夜兰专武，基于生命上限提升伤害，后台增伤强力。',
+    users: []
+  },
+  {
+    name: '碧落之珑',
+    rarity: 5,
+    type: '法器',
+    stat: '副属性：生命值',
+    desc: '白术专武，基于生命提升治疗与元素伤害。',
+    users: []
+  },
+  {
+    name: '笛剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '普攻与重击命中叠加音符，范围伤害。',
+    users: []
+  },
+  {
+    name: '辰砂之纺锤',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：防御力',
+    desc: '阿贝多专武，基于防御提升战技伤害。',
+    users: []
+  },
+  {
+    name: '降临之剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：物理伤害加成',
+    desc: '旅行者初期武器，命中回血并附加风伤。',
+    users: []
+  },
+  {
+    name: '宗室长剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '造成伤害后叠层暴击率，宗室系列通用。',
+    users: []
+  },
+  {
+    name: '黑岩长剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：暴击伤害',
+    desc: '击败敌人后攻击力提升，可叠加。',
+    users: []
+  },
+  {
+    name: '试作斩岩',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '蒙德锻造，普攻与重击命中提升攻击。',
+    users: []
+  },
+  {
+    name: '腐殖之剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：元素充能效率',
+    desc: '1.2活动限定，元素战技伤害提升。',
+    users: []
+  },
+  {
+    name: '暗巷闪光',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '蒙德限定，攻击力加成稳定的四星输出剑。',
+    users: []
+  },
+  {
+    name: '西福斯的月光',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：元素精通',
+    desc: '万叶适配，战技后为全队提供充能。',
+    users: []
+  },
+  {
+    name: '笼钓瓶一心',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：元素充能效率',
+    desc: '万叶传说任务获取，普攻增伤。',
+    users: []
+  },
+  {
+    name: '原木刀',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：元素精通',
+    desc: '须弥锻造，触发反应后为队友提供精通。',
+    users: []
+  },
+  {
+    name: '东花坊时雨',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：暴击率',
+    desc: '3.3活动限定，命中敌人叠加增伤。',
+    users: []
+  },
+  {
+    name: '水仙十字之剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：元素充能效率',
+    desc: '世界任务获取，为旅行者水元素形态设计。',
+    users: []
+  },
+  {
+    name: '狼牙',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：暴击率',
+    desc: '纪行武器，普攻与战技增伤。',
+    users: []
+  },
+  {
+    name: '船坞长剑',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：暴击伤害',
+    desc: '枫丹限定，娜维娅适配，攻击力与爆伤兼顾。',
+    users: []
+  },
+  {
+    name: '海渊终曲',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '枫丹锻造，攻击力加成。',
+    users: []
+  },
+  {
+    name: '厄水之祸',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '5.2活动限定，单手剑输出向。',
+    users: []
+  },
+  {
+    name: '息燧之笛',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：暴击伤害',
+    desc: '纳塔锻造，火系单手剑。',
+    users: []
+  },
+  {
+    name: '弥坚骨',
+    rarity: 4,
+    type: '单手剑',
+    stat: '副属性：生命值',
+    desc: '纳塔限定，生命值加成。',
+    users: []
+  },
+  {
+    name: '试作古华',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '蒙德锻造，普攻与重击命中概率范围伤害。',
+    users: []
+  },
+  {
+    name: '雪葬的星银',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：物理伤害加成',
+    desc: '龙脊雪山锻造，普攻命中概率范围冰伤。',
+    users: []
+  },
+  {
+    name: '桂木斩长正',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素充能效率',
+    desc: '稻妻锻造，战技后回能。',
+    users: []
+  },
+  {
+    name: '钟剑',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：生命值',
+    desc: '护盾角色适配，生命值加成。',
+    users: []
+  },
+  {
+    name: '千岩古剑',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '璃月限定，队伍中璃月角色越多增伤越高。',
+    users: []
+  },
+  {
+    name: '恶王丸',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '稻妻限定，元素爆发增伤。',
+    users: []
+  },
+  {
+    name: '衔珠海皇',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '2.1活动限定，元素爆发伤害提升。',
+    users: []
+  },
+  {
+    name: '白影剑',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：防御力',
+    desc: '锻造武器，命中叠层提升攻防。',
+    users: []
+  },
+  {
+    name: '雨裁',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素精通',
+    desc: '对水雷附着敌人增伤。',
+    users: []
+  },
+  {
+    name: '宗室大剑',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '宗室系列，叠层暴击率。',
+    users: []
+  },
+  {
+    name: '黑岩斩刀',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：暴击伤害',
+    desc: '击败敌人叠攻击。',
+    users: []
+  },
+  {
+    name: '玛海菈的水色',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素精通',
+    desc: '须弥限定，触发反应为全队提供精通。',
+    users: []
+  },
+  {
+    name: '森林王器',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素精通',
+    desc: '须弥锻造，触发反应后队友获得精通。',
+    users: []
+  },
+  {
+    name: '饰铁之花',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素精通',
+    desc: '3.5活动限定，战技与爆发增伤。',
+    users: []
+  },
+  {
+    name: '「究极霸王超级魔剑」',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '4.3活动限定，梅洛彼得堡梗系武器。',
+    users: []
+  },
+  {
+    name: '聊聊棒',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素充能效率',
+    desc: '纪行武器，双手剑辅助向。',
+    users: []
+  },
+  {
+    name: '便携动力锯',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '枫丹限定，普攻重击增伤。',
+    users: []
+  },
+  {
+    name: '浪影阔剑',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '枫丹锻造，双手剑输出向。',
+    users: []
+  },
+  {
+    name: '撼地者',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：防御力',
+    desc: '纳塔锻造，防御系双手剑。',
+    users: []
+  },
+  {
+    name: '镇山之钉',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '纳塔限定，岩系双手剑。',
+    users: []
+  },
+  {
+    name: '拾慧铸熔',
+    rarity: 4,
+    type: '双手剑',
+    stat: '副属性：元素充能效率',
+    desc: '5.8活动限定，双手剑。',
+    users: []
+  },
+  {
+    name: '祭礼弓',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：元素充能效率',
+    desc: '战技概率重置，辅助充能。',
+    users: []
+  },
+  {
+    name: '掠食者',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：物理伤害加成',
+    desc: 'PS平台限定，对火元素附着敌人增伤。',
+    users: []
+  },
+  {
+    name: '苍翠猎弓',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：暴击率',
+    desc: '纪行武器，普攻与重击概率范围风伤。',
+    users: []
+  },
+  {
+    name: '风花之颂',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：元素精通',
+    desc: '1.4活动限定，战技后攻击提升。',
+    users: []
+  },
+  {
+    name: '钢轮弓',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '锻造武器，命中叠层增伤。',
+    users: []
+  },
+  {
+    name: '黑岩战弓',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：暴击伤害',
+    desc: '击败敌人叠攻击。',
+    users: []
+  },
+  {
+    name: '试作澹月',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '锻造武器，命中弱点后移速攻击提升。',
+    users: []
+  },
+  {
+    name: '宗室长弓',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '宗室系列，叠层暴击率。',
+    users: []
+  },
+  {
+    name: '曚云之月',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '稻妻限定，元素爆发增伤。',
+    users: []
+  },
+  {
+    name: '王下近侍',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '须弥锻造，普攻增伤。',
+    users: []
+  },
+  {
+    name: '竭泽',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：元素充能效率',
+    desc: '须弥钓鱼兑换，战技后元素爆发增伤。',
+    users: []
+  },
+  {
+    name: '落霞',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：元素精通',
+    desc: '2.7活动限定，全伤害提升。',
+    users: []
+  },
+  {
+    name: '鹮穿之喙',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '3.7活动限定，重击增伤。',
+    users: []
+  },
+  {
+    name: '筑云',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '4.7活动限定，弓系输出。',
+    users: []
+  },
+  {
+    name: '烈阳之嗣',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：暴击率',
+    desc: '纪行武器，蓄力箭增伤。',
+    users: []
+  },
+  {
+    name: '峡湾长歌',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：元素精通',
+    desc: '纪行武器，元素反应增伤。',
+    users: []
+  },
+  {
+    name: '测距规',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '枫丹限定，弓系输出。',
+    users: []
+  },
+  {
+    name: '缀花之翎',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '纳塔限定，弓系输出。',
+    users: []
+  },
+  {
+    name: '冷寂迸音',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '5.6活动限定，弓系输出。',
+    users: []
+  },
+  {
+    name: '虹蛇的雨弦',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：元素精通',
+    desc: '月之三活动限定，挪德卡莱武器。',
+    users: []
+  },
+  {
+    name: '暗巷猎手',
+    rarity: 4,
+    type: '弓',
+    stat: '副属性：攻击力',
+    desc: '蒙德限定，后台增伤。',
+    users: []
+  },
+  {
+    name: '宗室秘法录',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '宗室系列，叠层暴击率。',
+    users: []
+  },
+  {
+    name: '匣里日月',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：暴击率',
+    desc: '纪行武器，普攻与战技互相增伤。',
+    users: []
+  },
+  {
+    name: '忍冬之果',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '龙脊雪山锻造，命中概率范围冰伤。',
+    users: []
+  },
+  {
+    name: '试作金珀',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：生命值',
+    desc: '锻造武器，施放元素爆发后回血回能。',
+    users: []
+  },
+  {
+    name: '黑岩绯玉',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：暴击伤害',
+    desc: '击败敌人叠攻击。',
+    users: []
+  },
+  {
+    name: '白辰之环',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：元素充能效率',
+    desc: '稻妻锻造，触发反应后为队友提供对应元素增伤。',
+    users: []
+  },
+  {
+    name: '证誓之明瞳',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '2.5活动限定，攻击力加成。',
+    users: []
+  },
+  {
+    name: '昭心',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '命中概率发射追击弹。',
+    users: []
+  },
+  {
+    name: '万国诸海图谱',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：元素精通',
+    desc: '锻造武器，触发反应叠层增伤。',
+    users: []
+  },
+  {
+    name: '嘟嘟可故事集',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '1.6活动限定，可莉外观契合。',
+    users: []
+  },
+  {
+    name: '暗巷的酒与诗',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：元素充能效率',
+    desc: '蒙德限定，辅助充能。',
+    users: []
+  },
+  {
+    name: '盈满之实',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '须弥锻造，触发反应叠层。',
+    users: []
+  },
+  {
+    name: '遗祀玉珑',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：生命值',
+    desc: '纪行武器，后台增伤。',
+    users: []
+  },
+  {
+    name: '勘探钻机',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '枫丹限定，法器输出。',
+    users: []
+  },
+  {
+    name: '公义的酬报',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：元素充能效率',
+    desc: '枫丹锻造，治疗与充能兼顾。',
+    users: []
+  },
+  {
+    name: '纯水流华',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '枫丹锻造，法器输出。',
+    users: []
+  },
+  {
+    name: '木棉之环',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：元素精通',
+    desc: '纳塔锻造，法器。',
+    users: []
+  },
+  {
+    name: '硕果钩',
+    rarity: 4,
+    type: '法器',
+    stat: '副属性：元素精通',
+    desc: '纳塔限定，法器。',
+    users: []
+  },
+  {
+    name: '千岩长枪',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '璃月限定，队伍中璃月角色越多增伤越高。',
+    users: []
+  },
+  {
+    name: '试作星镰',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '锻造武器，普攻与重击命中叠层增伤。',
+    users: []
+  },
+  {
+    name: '黑岩刺枪',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：暴击伤害',
+    desc: '击败敌人叠攻击。',
+    users: []
+  },
+  {
+    name: '喜多院十文字',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素充能效率',
+    desc: '稻妻锻造，战技后回能。',
+    users: []
+  },
+  {
+    name: '龙脊长枪',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：物理伤害加成',
+    desc: '龙脊雪山锻造，命中概率范围冰伤。',
+    users: []
+  },
+  {
+    name: '断浪长鳍',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '稻妻限定，元素爆发增伤。',
+    users: []
+  },
+  {
+    name: '宗室猎枪',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '宗室系列，叠层暴击率。',
+    users: []
+  },
+  {
+    name: '流月针',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：物理伤害加成',
+    desc: '锻造武器，命中叠加伤害。',
+    users: []
+  },
+  {
+    name: '风信之锋',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '3.1活动限定，攻击力加成。',
+    users: []
+  },
+  {
+    name: '贯月矢',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素精通',
+    desc: '须弥锻造，触发反应叠层精通。',
+    users: []
+  },
+  {
+    name: '峡湾长歌',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素精通',
+    desc: '纪行武器，元素反应增伤。',
+    users: []
+  },
+  {
+    name: '沙中伟贤的对答',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素充能效率',
+    desc: '4.5活动限定，充能辅助。',
+    users: []
+  },
+  {
+    name: '且住亭御咄',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素充能效率',
+    desc: '5.4活动限定，长柄武器。',
+    users: []
+  },
+  {
+    name: '虹的行迹',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素精通',
+    desc: '纳塔锻造，长柄武器。',
+    users: []
+  },
+  {
+    name: '乘浪的回旋',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '纳塔限定，长柄武器。',
+    users: []
+  },
+  {
+    name: '灰河渡手',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素充能效率',
+    desc: '枫丹钓鱼兑换，充能辅助。',
+    users: []
+  },
+  {
+    name: '天光的纺琴',
+    rarity: 4,
+    type: '长柄武器',
+    stat: '副属性：元素充能效率',
+    desc: '月之一活动限定，挪德卡莱武器。',
+    users: []
+  },
+  {
+    name: '旅行剑',
+    rarity: 3,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '普攻与重击命中概率回血。',
+    users: []
+  },
+  {
+    name: '暗铁剑',
+    rarity: 3,
+    type: '单手剑',
+    stat: '副属性：元素精通',
+    desc: '璃月对话获取，触发反应后精通提升。',
+    users: []
+  },
+  {
+    name: '冷刃',
+    rarity: 3,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '对水雷附着敌人增伤。',
+    users: []
+  },
+  {
+    name: '飞天御剑',
+    rarity: 3,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '施放元素爆发后攻击提升。',
+    users: []
+  },
+  {
+    name: '吃虎鱼刀',
+    rarity: 3,
+    type: '单手剑',
+    stat: '副属性：攻击力',
+    desc: '普攻命中概率追击伤害。',
+    users: []
+  },
+  {
+    name: '黎明神剑',
+    rarity: 3,
+    type: '单手剑',
+    stat: '副属性：暴击伤害',
+    desc: '生命值高于90%时暴击率大幅提升，凯亚传说任务获取。',
+    users: []
+  },
+  {
+    name: '白铁大剑',
+    rarity: 3,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '击败敌人后回血。',
+    users: []
+  },
+  {
+    name: '铁影阔剑',
+    rarity: 3,
+    type: '双手剑',
+    stat: '副属性：生命值',
+    desc: '对生命值低于一定比例敌人增伤。',
+    users: []
+  },
+  {
+    name: '飞天大御剑',
+    rarity: 3,
+    type: '双手剑',
+    stat: '副属性：物理伤害加成',
+    desc: '普攻与重击命中叠层攻击。',
+    users: []
+  },
+  {
+    name: '以理服人',
+    rarity: 3,
+    type: '双手剑',
+    stat: '副属性：攻击力',
+    desc: '施放元素战技后普攻与重击伤害提升。',
+    users: []
+  },
+  {
+    name: '沐浴龙血的剑',
+    rarity: 3,
+    type: '双手剑',
+    stat: '副属性：元素精通',
+    desc: '对火元素附着敌人增伤。',
+    users: []
+  },
+  {
+    name: '反曲弓',
+    rarity: 3,
+    type: '弓',
+    stat: '副属性：生命值',
+    desc: '击败敌人回血。',
+    users: []
+  },
+  {
+    name: '神射手之誓',
+    rarity: 3,
+    type: '弓',
+    stat: '副属性：暴击伤害',
+    desc: '对弱点伤害提升。',
+    users: []
+  },
+  {
+    name: '鸦羽弓',
+    rarity: 3,
+    type: '弓',
+    stat: '副属性：元素精通',
+    desc: '对水雷附着敌人增伤。',
+    users: []
+  },
+  {
+    name: '信使',
+    rarity: 3,
+    type: '弓',
+    stat: '副属性：暴击伤害',
+    desc: '重击命中弱点概率额外伤害。',
+    users: []
+  },
+  {
+    name: '弹弓',
+    rarity: 3,
+    type: '弓',
+    stat: '副属性：暴击率',
+    desc: '近身命中增伤。',
+    users: []
+  },
+  {
+    name: '翡玉法球',
+    rarity: 3,
+    type: '法器',
+    stat: '副属性：元素精通',
+    desc: '触发反应后攻击提升。',
+    users: []
+  },
+  {
+    name: '甲级宝珏',
+    rarity: 3,
+    type: '法器',
+    stat: '副属性：暴击率',
+    desc: '击败敌人后移速与攻击提升。',
+    users: []
+  },
+  {
+    name: '魔导绪论',
+    rarity: 3,
+    type: '法器',
+    stat: '副属性：元素精通',
+    desc: '对水雷附着敌人增伤。',
+    users: []
+  },
+  {
+    name: '讨龙英杰谭',
+    rarity: 3,
+    type: '法器',
+    stat: '副属性：生命值',
+    desc: '切换角色后为下一位角色提供攻击加成，辅助神器。',
+    users: []
+  },
+  {
+    name: '异世界行记',
+    rarity: 3,
+    type: '法器',
+    stat: '副属性：攻击力',
+    desc: '触发反应后全队元素伤害提升。',
+    users: []
+  },
+  {
+    name: '白缨枪',
+    rarity: 3,
+    type: '长柄武器',
+    stat: '副属性：暴击率',
+    desc: '普攻与重击伤害提升。',
+    users: []
+  },
+  {
+    name: '黑缨枪',
+    rarity: 3,
+    type: '长柄武器',
+    stat: '副属性：生命值',
+    desc: '对史莱姆类敌人增伤。',
+    users: []
+  },
+  {
+    name: '钺矛',
+    rarity: 3,
+    type: '长柄武器',
+    stat: '副属性：攻击力',
+    desc: '普攻与重击命中叠层增伤。',
+    users: []
+  },
 ]
 
 export const TEAMS = [
@@ -2505,65 +3505,109 @@ export const TEAMS = [
     members: [
       { name: '胡桃', element: '火' },
       { name: '行秋', element: '水' },
-      { name: '枫原万叶', element: '风' },
+      { name: '夜兰', element: '水' },
       { name: '钟离', element: '岩' },
     ],
-    tip: '行秋先 Q 挂水 → 万叶扩散减抗 → 钟离开盾 → 胡桃 E 后重击输出。'
+    tip: '行秋+夜兰双水挂水 → 钟离开盾减抗 → 胡桃 E 后重击蒸发，双水共鸣提升生命与充能。'
   },
   {
-    name: '雷九万班',
-    core: '雷电将军爆发流',
+    name: '迪卢克融化队',
+    core: '融化蒸发 · 火系站场',
     members: [
-      { name: '雷电将军', element: '雷' },
-      { name: '九条裟罗', element: '雷' },
-      { name: '枫原万叶', element: '风' },
+      { name: '迪卢克', element: '火' },
       { name: '班尼特', element: '火' },
-    ],
-    tip: '九条 E+Q 增攻 → 班尼特 Q 加攻 → 万叶扩散 → 雷神 Q 一刀收割。'
-  },
-  {
-    name: '神鹤万心（永冻）',
-    core: '冻结控场 · 绫华站场',
-    members: [
-      { name: '神里绫华', element: '冰' },
-      { name: '申鹤', element: '冰' },
-      { name: '枫原万叶', element: '风' },
-      { name: '珊瑚宫心海', element: '水' },
-    ],
-    tip: '心海 E 挂水 → 万叶聚怪 → 申鹤 E 增冰伤 → 绫华霰步贴脸 Q+重击。'
-  },
-  {
-    name: '纳西妲绽放队',
-    core: '草原核绽放 · 范围高伤',
-    members: [
-      { name: '纳西妲', element: '草' },
-      { name: '妮露', element: '水' },
-      { name: '夜兰', element: '水' },
-      { name: '柯莱', element: '草' },
-    ],
-    tip: '双水双草凑加成 → 妮露 E 丰穰之核 → 纳西妲 E 挂草生成草原核炸场。'
-  },
-  {
-    name: '甘雨永冻队',
-    core: '范围永冻 · 蓄力狙杀',
-    members: [
-      { name: '甘雨', element: '冰' },
-      { name: '莫娜', element: '水' },
-      { name: '温迪', element: '风' },
-      { name: '迪奥娜', element: '冰' },
-    ],
-    tip: '温迪 Q 聚怪 → 莫娜 Q 挂水增伤 → 甘雨远程蓄力箭逐个点名。'
-  },
-  {
-    name: '国家队',
-    core: '元素反应 · 亲民四星',
-    members: [
-      { name: '香菱', element: '火' },
       { name: '行秋', element: '水' },
-      { name: '班尼特', element: '火' },
-      { name: '重云', element: '冰' },
+      { name: '枫原万叶', element: '风' },
     ],
-    tip: '全四星高性价比：班尼特加攻治疗 → 行秋挂水 → 香菱 Q 蒸发 → 重云附魔收割。'
+    tip: '班尼特 Q 加攻 → 万叶扩散减抗 → 行秋挂水 → 迪卢克 E+Q 三段融化蒸发。'
+  },
+  {
+    name: '可莉蒸发队',
+    core: '站场蒸发 · 诡雷输出',
+    members: [
+      { name: '可莉', element: '火' },
+      { name: '行秋', element: '水' },
+      { name: '夜兰', element: '水' },
+      { name: '班尼特', element: '火' },
+    ],
+    tip: '双水挂水 → 班尼特加攻 → 可莉重击与诡雷稳定蒸发，双火共鸣加攻。'
+  },
+  {
+    name: '宵宫蒸发队',
+    core: '普攻蒸发 · 对单极强',
+    members: [
+      { name: '宵宫', element: '火' },
+      { name: '行秋', element: '水' },
+      { name: '夜兰', element: '水' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '钟离开盾保站场 → 行秋+夜兰双水挂水 → 宵宫 E 附魔普攻连射蒸发。'
+  },
+  {
+    name: '林尼纯火队',
+    core: '蓄力箭 · 纯火叠层',
+    members: [
+      { name: '林尼', element: '火' },
+      { name: '班尼特', element: '火' },
+      { name: '枫原万叶', element: '风' },
+      { name: '香菱', element: '火' },
+    ],
+    tip: '三火共鸣加攻 → 万叶减抗 → 班尼特加攻 → 林尼蓄力箭+猫猫弹叠层输出。'
+  },
+  {
+    name: '阿蕾奇诺蒸发队',
+    core: '战技叠层 · 蒸发爆发',
+    members: [
+      { name: '阿蕾奇诺', element: '火' },
+      { name: '行秋', element: '水' },
+      { name: '夜兰', element: '水' },
+      { name: '班尼特', element: '火' },
+    ],
+    tip: '班尼特加攻 → 双水挂水 → 阿蕾奇诺 E 叠层后重击蒸发爆发。'
+  },
+  {
+    name: '玛薇卡战舰',
+    core: '火神爆发 · 纳塔体系',
+    members: [
+      { name: '玛薇卡', element: '火' },
+      { name: '希诺宁', element: '岩' },
+      { name: '茜特菈莉', element: '冰' },
+      { name: '班尼特', element: '火' },
+    ],
+    tip: '希诺宁减抗 → 茜特菈莉挂冰 → 班尼特加攻 → 玛薇卡 Q 战意爆发收割，危战最优解。'
+  },
+  {
+    name: '杜林双魔导',
+    core: '风火混伤 · 破盾利器',
+    members: [
+      { name: '杜林', element: '火' },
+      { name: '法尔伽', element: '风' },
+      { name: '布伦妮', element: '风' },
+      { name: '尼可', element: '火' },
+    ],
+    tip: '6.6 魔导套质变，风火混伤破盾优势大，法尔伽+杜林双核输出，环境适应力强。'
+  },
+  {
+    name: '达达利亚国际队',
+    core: '断流蒸发 · 万班香体系',
+    members: [
+      { name: '达达利亚', element: '水' },
+      { name: '香菱', element: '火' },
+      { name: '班尼特', element: '火' },
+      { name: '枫原万叶', element: '风' },
+    ],
+    tip: '班尼特加攻 → 万叶减抗 → 香菱挂火 → 公子开 E 断流蒸发，经典万达国际队。'
+  },
+  {
+    name: '神里绫人水队',
+    core: '站场水伤 · 攻速输出',
+    members: [
+      { name: '神里绫人', element: '水' },
+      { name: '夜兰', element: '水' },
+      { name: '枫原万叶', element: '风' },
+      { name: '班尼特', element: '火' },
+    ],
+    tip: '万叶减抗 → 班尼特加攻 → 夜兰增伤 → 绫人 E 站场水伤连斩，蒸发增伤。'
   },
   {
     name: '那维莱特纯水队',
@@ -2577,26 +3621,224 @@ export const TEAMS = [
     tip: '芙宁娜 Q 增伤 → 万叶扩散减抗 → 心海治疗保层 → 那维莱特重击水炮群伤。'
   },
   {
-    name: '玛薇卡战舰',
-    core: '火神爆发 · 纳塔体系',
+    name: '玛拉妮蒸发队',
+    core: '冲浪蒸发 · 高额爆发',
     members: [
-      { name: '玛薇卡', element: '火' },
+      { name: '玛拉妮', element: '水' },
+      { name: '香菱', element: '火' },
+      { name: '班尼特', element: '火' },
       { name: '希诺宁', element: '岩' },
-      { name: '茜特菈莉', element: '冰' },
-      { name: '芙宁娜', element: '水' },
     ],
-    tip: '希诺宁增岩 → 茜特菈莉挂冰 → 芙宁娜增伤 → 玛薇卡 Q 爆发收割。'
+    tip: '希诺宁减抗 → 班尼特加攻 → 香菱挂火 → 玛拉妮冲浪蒸发爆发。'
   },
   {
-    name: '丝柯克冰水队',
-    core: '冰水冻结 · 双C输出',
+    name: '刻晴激化队',
+    core: '激化 · 高机动输出',
     members: [
-      { name: '丝柯克', element: '冰' },
+      { name: '刻晴', element: '雷' },
+      { name: '纳西妲', element: '草' },
+      { name: '菲谢尔', element: '雷' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '纳西妲挂草 → 菲谢尔后台雷 → 钟离开盾 → 刻晴 E+Q 激化高机动输出。'
+  },
+  {
+    name: '雷电将军爆发队',
+    core: '雷九万班 · 一刀收割',
+    members: [
+      { name: '雷电将军', element: '雷' },
+      { name: '九条裟罗', element: '雷' },
+      { name: '枫原万叶', element: '风' },
+      { name: '班尼特', element: '火' },
+    ],
+    tip: '九条 E+Q 增攻 → 班尼特 Q 加攻 → 万叶扩散 → 雷神 Q 一刀收割，经典雷九万班。'
+  },
+  {
+    name: '赛诺激化队',
+    core: '激化 · 长轴站场',
+    members: [
+      { name: '赛诺', element: '雷' },
+      { name: '纳西妲', element: '草' },
+      { name: '白术', element: '草' },
+      { name: '菲谢尔', element: '雷' },
+    ],
+    tip: '纳西妲+白术双草 → 菲谢尔后台雷 → 赛诺 Q 长轴激化站场，白术保生存。'
+  },
+  {
+    name: '克洛琳德突进队',
+    core: '突进雷伤 · 生命契约',
+    members: [
+      { name: '克洛琳德', element: '雷' },
+      { name: '纳西妲', element: '草' },
+      { name: '菲谢尔', element: '雷' },
+      { name: '白术', element: '草' },
+    ],
+    tip: '纳西妲挂草 → 菲谢尔后台雷 → 白术治疗 → 克洛琳德 E 突进激化输出。'
+  },
+  {
+    name: '瓦蕾莎站场队',
+    core: '站场雷伤 · 下落输出',
+    members: [
+      { name: '瓦蕾莎', element: '雷' },
+      { name: '纳西妲', element: '草' },
+      { name: '菲谢尔', element: '雷' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '纳西妲挂草 → 菲谢尔后台雷 → 钟离开盾 → 瓦蕾莎站场激化输出。'
+  },
+  {
+    name: '菲林斯月感电队',
+    core: '月感电 · 站场主C',
+    members: [
+      { name: '菲林斯', element: '雷' },
+      { name: '伊涅芙', element: '雷' },
+      { name: '菈乌玛', element: '草' },
+      { name: '爱诺', element: '水' },
+    ],
+    tip: '伊涅芙护盾+月感电 → 菈乌玛挂草 → 爱诺水兆 → 菲林斯站场驱动月感电，输出丝滑。'
+  },
+  {
+    name: '米提亚星超导队',
+    core: '星超导 · 后台雷伤',
+    members: [
+      { name: '米提亚', element: '雷' },
+      { name: '奥黛塔', element: '冰' },
+      { name: '瓦列里', element: '雷' },
+      { name: '爱诺', element: '水' },
+    ],
+    tip: '奥黛塔挂冰触发星超导 → 瓦列里护盾增超导 → 米提亚战技+大招后台雷伤，至冬三战舰上限最高。'
+  },
+  {
+    name: '甘雨永冻队',
+    core: '范围永冻 · 蓄力狙杀',
+    members: [
+      { name: '甘雨', element: '冰' },
+      { name: '珊瑚宫心海', element: '水' },
+      { name: '枫原万叶', element: '风' },
+      { name: '申鹤', element: '冰' },
+    ],
+    tip: '心海挂水 → 万叶聚怪 → 申鹤增冰伤 → 甘雨远程蓄力箭逐个点名，永冻控场。'
+  },
+  {
+    name: '优菈物理队',
+    core: '物理爆发 · 核弹流',
+    members: [
+      { name: '优菈', element: '冰' },
+      { name: '雷电将军', element: '雷' },
+      { name: '罗莎莉亚', element: '冰' },
+      { name: '班尼特', element: '火' },
+    ],
+    tip: '雷神后台超导减物抗 → 罗莎莉亚暴击拐 → 班尼特加攻 → 优菈 E+Q 核弹爆发。'
+  },
+  {
+    name: '神里绫华永冻队',
+    core: '神鹤万心 · 冻结爆发',
+    members: [
+      { name: '神里绫华', element: '冰' },
+      { name: '申鹤', element: '冰' },
+      { name: '枫原万叶', element: '风' },
+      { name: '珊瑚宫心海', element: '水' },
+    ],
+    tip: '心海挂水 → 万叶聚怪 → 申鹤 E 增冰伤 → 绫华霰步贴脸 Q+重击，经典神鹤万心。'
+  },
+  {
+    name: '莱欧斯利站场队',
+    core: '站场冰伤 · 近战拳击',
+    members: [
+      { name: '莱欧斯利', element: '冰' },
       { name: '芙宁娜', element: '水' },
       { name: '爱可菲', element: '冰' },
-      { name: '塔利雅', element: '水' },
+      { name: '珊瑚宫心海', element: '水' },
     ],
-    tip: '爱可菲减抗 → 芙宁娜增伤挂水 → 塔利雅水盾 → 丝柯克站场输出。'
+    tip: '爱可菲减抗 → 芙宁娜增伤挂水 → 心海治疗 → 莱欧斯利站场冰伤拳击。'
+  },
+  {
+    name: '丝柯克冰水战舰',
+    core: '冰水协同 · 断流爆发',
+    members: [
+      { name: '丝柯克', element: '冰' },
+      { name: '爱可菲', element: '冰' },
+      { name: '芙宁娜', element: '水' },
+      { name: '申鹤', element: '冰' },
+    ],
+    tip: '爱可菲减抗增伤 → 芙宁娜增伤挂水 → 申鹤增冰伤 → 丝柯克断流引爆，至冬冰C天花板。'
+  },
+  {
+    name: '洛恩站场队',
+    core: '站场冰伤 · 至冬输出',
+    members: [
+      { name: '洛恩', element: '冰' },
+      { name: '爱可菲', element: '冰' },
+      { name: '芙宁娜', element: '水' },
+      { name: '奥黛塔', element: '冰' },
+    ],
+    tip: '爱可菲减抗 → 芙宁娜增伤 → 奥黛塔挂冰 → 洛恩站场冰伤输出。'
+  },
+  {
+    name: '魈下落队',
+    core: '下落攻击 · 风伤爆发',
+    members: [
+      { name: '魈', element: '风' },
+      { name: '珐露珊', element: '风' },
+      { name: '班尼特', element: '火' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '珐露珊风伤减抗 → 班尼特加攻 → 钟离开盾 → 魈 Q 后连续下落攻击爆发。'
+  },
+  {
+    name: '流浪者风队',
+    core: '站场风伤 · 高机动',
+    members: [
+      { name: '流浪者', element: '风' },
+      { name: '珐露珊', element: '风' },
+      { name: '班尼特', element: '火' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '珐露珊风伤减抗 → 班尼特加攻 → 钟离开盾 → 流浪者 E 站场风伤高机动输出。'
+  },
+  {
+    name: '恰斯卡多元素队',
+    core: '多元素 · 龙息输出',
+    members: [
+      { name: '恰斯卡', element: '风' },
+      { name: '芙宁娜', element: '水' },
+      { name: '班尼特', element: '火' },
+      { name: '欧洛伦', element: '雷' },
+    ],
+    tip: '芙宁娜增伤 → 班尼特加攻 → 欧洛伦后台雷 → 恰斯卡多元素龙息输出。'
+  },
+  {
+    name: '法尔伽双魔导队',
+    core: '风火混伤 · 双持输出',
+    members: [
+      { name: '法尔伽', element: '风' },
+      { name: '杜林', element: '火' },
+      { name: '布伦妮', element: '风' },
+      { name: '尼可', element: '火' },
+    ],
+    tip: '6.6 魔导套质变，法尔伽+杜林双核风火混伤，布伦妮增风伤、尼可增火伤，破盾优势大。'
+  },
+  {
+    name: '薇斯纳星扩散队',
+    core: '星扩散 · 浮空输出',
+    members: [
+      { name: '薇斯纳', element: '风' },
+      { name: '奥黛塔', element: '冰' },
+      { name: '沃雅妮莎', element: '水' },
+      { name: '珐露珊', element: '风' },
+    ],
+    tip: '奥黛塔挂冰触发星扩散 → 沃雅妮莎减抗治疗 → 珐露珊风伤拐 → 薇斯纳浮空星扩散输出。'
+  },
+  {
+    name: '荒泷一斗岩队',
+    core: '站场岩伤 · 重击输出',
+    members: [
+      { name: '荒泷一斗', element: '岩' },
+      { name: '五郎', element: '岩' },
+      { name: '阿贝多', element: '岩' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '纯岩队：五郎增岩伤 → 阿贝多后台 → 钟离开盾 → 一斗 Q 后重击爆发，三岩共鸣。'
   },
   {
     name: '娜维娅结晶队',
@@ -2610,7 +3852,51 @@ export const TEAMS = [
     tip: '双岩共鸣 → 班尼特加攻 → 香菱挂火产结晶 → 娜维娅收集弹片 E 炮击。'
   },
   {
-    name: '月绽放队',
+    name: '兹白月结晶队',
+    core: '月结晶 · 岩系完全体',
+    members: [
+      { name: '兹白', element: '岩' },
+      { name: '叶洛亚', element: '岩' },
+      { name: '希诺宁', element: '岩' },
+      { name: '钟离', element: '岩' },
+    ],
+    tip: '叶洛亚+希诺宁增岩减抗 → 钟离开盾 → 兹白月结晶爆发，岩系数值怪跨环境执法。'
+  },
+  {
+    name: '提纳里激化队',
+    core: '激化 · 蓄力箭输出',
+    members: [
+      { name: '提纳里', element: '草' },
+      { name: '纳西妲', element: '草' },
+      { name: '菲谢尔', element: '雷' },
+      { name: '八重神子', element: '雷' },
+    ],
+    tip: '纳西妲挂草 → 菲谢尔+八重后台雷 → 提纳里蓄力箭激化输出。'
+  },
+  {
+    name: '艾尔海森激化队',
+    core: '站场激化 · 光幕输出',
+    members: [
+      { name: '艾尔海森', element: '草' },
+      { name: '纳西妲', element: '草' },
+      { name: '菲谢尔', element: '雷' },
+      { name: '白术', element: '草' },
+    ],
+    tip: '纳西妲挂草 → 菲谢尔后台雷 → 白术治疗 → 艾尔海森 E+光幕站场激化。'
+  },
+  {
+    name: '基尼奇燃烧队',
+    core: '燃烧 · 高爆发输出',
+    members: [
+      { name: '基尼奇', element: '草' },
+      { name: '纳西妲', element: '草' },
+      { name: '班尼特', element: '火' },
+      { name: '迪希雅', element: '火' },
+    ],
+    tip: '纳西妲挂草 → 班尼特+迪希雅触发燃烧 → 基尼奇燃烧高爆发。'
+  },
+  {
+    name: '奈芙尔月绽放队',
     core: '月绽放 · 高金数上限',
     members: [
       { name: '奈芙尔', element: '草' },
@@ -2618,17 +3904,6 @@ export const TEAMS = [
       { name: '芙宁娜', element: '水' },
       { name: '爱诺', element: '水' },
     ],
-    tip: '菈乌玛挂草触发月绽放 → 爱诺水兆 → 芙宁娜增伤 → 奈芙尔站场输出。'
-  },
-  {
-    name: '菲机组合',
-    core: '月感电 · 站场主C',
-    members: [
-      { name: '菲林斯', element: '雷' },
-      { name: '伊涅芙', element: '雷' },
-      { name: '菈乌玛', element: '草' },
-      { name: '爱诺', element: '水' },
-    ],
-    tip: '伊涅芙护盾+月感电 → 菈乌玛挂草 → 爱诺水兆 → 菲林斯站场驱动月感电。'
+    tip: '菈乌玛挂草触发月绽放 → 爱诺水兆 → 芙宁娜增伤 → 奈芙尔站场月绽放输出。'
   },
 ]

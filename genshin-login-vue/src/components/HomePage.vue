@@ -33,6 +33,21 @@
           </svg>
         </button>
       </div>
+
+      <!-- ===== 模块导航：点击模块名切换展示 ===== -->
+      <nav v-if="!keyword" class="module-nav">
+        <button
+          v-for="m in modules"
+          :key="m.key"
+          class="module-tab"
+          :class="{ active: activeModule === m.key }"
+          @click="activeModule = m.key"
+        >
+          <span class="module-dot" :style="{ background: m.color }"></span>
+          <span class="module-label">{{ m.name }}</span>
+          <span class="module-count">{{ m.count }}</span>
+        </button>
+      </nav>
     </section>
 
     <!-- ===== 搜索结果 ===== -->
@@ -81,7 +96,7 @@
     <!-- ===== 四大功能模块 ===== -->
     <template v-else>
       <!-- 模块 1：角色养成攻略 -->
-      <section class="sec">
+      <section v-if="activeModule === 'all' || activeModule === 'characters'" class="sec">
         <div class="sec-head">
           <span class="sec-tag c-green">模块一</span>
           <h2>角色养成攻略</h2>
@@ -135,7 +150,7 @@
       </section>
 
       <!-- 模块 2：角色武器推荐 -->
-      <section class="sec">
+      <section v-if="activeModule === 'all' || activeModule === 'charWeapons'" class="sec">
         <div class="sec-head">
           <span class="sec-tag c-gold">模块二</span>
           <h2>角色武器推荐</h2>
@@ -161,7 +176,7 @@
       </section>
 
       <!-- 模块 3：武器养成攻略 -->
-      <section class="sec">
+      <section v-if="activeModule === 'all' || activeModule === 'weapons'" class="sec">
         <div class="sec-head">
           <span class="sec-tag c-purple">模块三</span>
           <h2>武器养成攻略</h2>
@@ -214,7 +229,7 @@
       </section>
 
       <!-- 模块 4：角色队伍推荐 -->
-      <section class="sec">
+      <section v-if="activeModule === 'all' || activeModule === 'teams'" class="sec">
         <div class="sec-head">
           <span class="sec-tag c-red">模块四</span>
           <h2>角色队伍推荐</h2>
@@ -281,6 +296,17 @@ const weaponGroups = ref([])
 // 视图切换：true 按分类（元素/类型）分组展示，false 平铺列表
 const charGrouped = ref(true)
 const weaponGrouped = ref(true)
+
+// ---------------- 模块导航 ----------------
+// activeModule 取值：'all' 展示全部；其余对应模块 key，仅展示该模块
+const activeModule = ref('all')
+const modules = computed(() => [
+  { key: 'all', name: '全部', color: '#4ec6f0', count: chars.value.length + charWeapons.value.length + weapons.value.length + teams.value.length },
+  { key: 'characters', name: '角色养成', color: '#6fd6c0', count: chars.value.length },
+  { key: 'charWeapons', name: '武器推荐', color: '#f6c35b', count: charWeapons.value.length },
+  { key: 'weapons', name: '武器养成', color: '#a781e0', count: weapons.value.length },
+  { key: 'teams', name: '队伍推荐', color: '#ff7a59', count: teams.value.length }
+])
 
 // 预留的后端接口加载器：后端实现 /api/home/* 后，返回 code=200 即自动使用接口数据；
 // 后端未实现（404/500/连接失败）时静默回退到本地演示数据，页面不受影响。
@@ -601,6 +627,65 @@ function logout() {
 .searchbar .clear:hover {
   background: rgba(255, 122, 89, 0.3);
   color: #fff;
+}
+
+/* ===== 模块导航栏 ===== */
+.module-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px auto 0;
+}
+.module-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: #bccbe8;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.22s;
+}
+.module-tab:hover {
+  color: #fff;
+  border-color: rgba(78, 198, 240, 0.45);
+  background: rgba(78, 198, 240, 0.12);
+  transform: translateY(-2px);
+}
+.module-tab.active {
+  color: #06121f;
+  font-weight: 700;
+  background: linear-gradient(95deg, #4ec6f0, #6fd6c0);
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(78, 198, 240, 0.35);
+}
+.module-tab.active .module-count {
+  color: rgba(6, 18, 31, 0.75);
+  border-color: rgba(6, 18, 31, 0.3);
+}
+.module-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  box-shadow: 0 0 8px currentColor;
+}
+.module-label {
+  letter-spacing: 1px;
+}
+.module-count {
+  font-size: 11px;
+  color: #8295bd;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 1px 8px;
+  line-height: 1.4;
 }
 
 /* ===== 区块 ===== */
