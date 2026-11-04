@@ -67,11 +67,12 @@
         <div v-if="hitChars.length" class="grid chars">
           <div v-for="c in hitChars" :key="'sc' + c.id" class="card char-card" @click="todo('角色详情')">
             <div class="char-top">
+              <img v-if="charImg(c.name)" class="char-avatar" :src="charImg(c.name)" :alt="c.name" />
               <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
               <span class="char-name">{{ c.name }}</span>
               <span class="role">{{ c.role }}</span>
             </div>
-            <div class="row"><span class="k">养成</span><span class="v">{{ c.artifacts }} · {{ c.talents }}</span></div>
+            <div class="row"><span class="k">养成</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }} · {{ c.talents }}</span></div>
           </div>
         </div>
         <div v-if="hitWeapons.length" class="grid weapons">
@@ -118,13 +119,14 @@
             <div class="grid chars">
               <div v-for="c in g.items" :key="c.id" class="card char-card" @click="todo('角色养成攻略 · ' + c.name)">
                 <div class="char-top">
+                  <img v-if="charImg(c.name)" class="char-avatar" :src="charImg(c.name)" :alt="c.name" />
                   <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
                   <span class="char-name">{{ c.name }}</span>
                   <span class="role">{{ c.role }}</span>
                 </div>
                 <div class="stars" :class="'r' + c.rarity">{{ star(c.rarity) }}</div>
                 <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
-                <div class="row"><span class="k">圣遗物</span><span class="v">{{ c.artifacts }}</span></div>
+                <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
                 <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
                 <p class="summary">{{ c.summary }}</p>
               </div>
@@ -136,13 +138,14 @@
         <div v-else class="grid chars">
           <div v-for="c in chars" :key="c.id" class="card char-card" @click="todo('角色养成攻略 · ' + c.name)">
             <div class="char-top">
+              <img v-if="charImg(c.name)" class="char-avatar" :src="charImg(c.name)" :alt="c.name" />
               <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
               <span class="char-name">{{ c.name }}</span>
               <span class="role">{{ c.role }}</span>
             </div>
             <div class="stars" :class="'r' + c.rarity">{{ star(c.rarity) }}</div>
             <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
-            <div class="row"><span class="k">圣遗物</span><span class="v">{{ c.artifacts }}</span></div>
+            <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
             <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
             <p class="summary">{{ c.summary }}</p>
           </div>
@@ -159,6 +162,7 @@
         <div class="grid pair">
           <div v-for="p in charWeapons" :key="p.character" class="card pair-card" @click="todo('武器推荐 · ' + p.character)">
             <div class="pair-char">
+              <img v-if="charImg(p.character)" class="char-avatar" :src="charImg(p.character)" :alt="p.character" />
               <span class="ele-dot" :style="{ background: eleColor(p.element) }" v-html="eleSvg(p.element)"></span>
               <span class="char-name">{{ p.character }}</span>
             </div>
@@ -266,6 +270,7 @@
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue'
 import { NATIONS, svgFull } from '../data/nations.js'
+import { charImg, artifactImg } from '../data/imageMap.js'
 import {
   ELEMENT_NATION,
   CHARACTERS,
@@ -825,6 +830,30 @@ function logout() {
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
+}
+/* 角色立绘头像：放在名字位置 */
+.char-avatar {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 16px rgba(120, 180, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+/* 圣遗物小图标：出现在圣遗物文字前 */
+.art-icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border-radius: 6px;
+  object-fit: cover;
+  vertical-align: -4px;
+  margin-right: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 .ele-dot {
   width: 30px;

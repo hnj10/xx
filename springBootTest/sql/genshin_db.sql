@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 80039 (8.0.39)
+ Source Server Version : 80046 (8.0.46)
  Source Host           : localhost:3306
  Source Schema         : genshin_db
 
  Target Server Type    : MySQL
- Target Server Version : 80039 (8.0.39)
+ Target Server Version : 80046 (8.0.46)
  File Encoding         : 65001
 
- Date: 02/11/2026 09:55:45
+ Date: 04/11/2026 16:57:31
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `t_char_weapon`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cw`(`character_name` ASC, `weapon_name` ASC) USING BTREE,
   INDEX `idx_cw_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 177 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色武器推荐' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 177 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色武器推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_char_weapon
@@ -198,7 +198,7 @@ CREATE TABLE `t_character`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_character_name`(`name` ASC) USING BTREE,
   INDEX `idx_character_element`(`element` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色养成攻略' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色养成攻略' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_character
@@ -337,7 +337,7 @@ CREATE TABLE `t_team`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_team_name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色队伍推荐' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色队伍推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_team
@@ -393,7 +393,7 @@ CREATE TABLE `t_team_member`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_tm`(`team_id` ASC, `member_name` ASC) USING BTREE,
   INDEX `idx_tm_team`(`team_id` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 149 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '队伍成员' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 149 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '队伍成员' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_team_member
@@ -562,7 +562,7 @@ CREATE TABLE `t_user`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_username`(`username` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '旅行者(用户)表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '旅行者(用户)表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_user
@@ -589,7 +589,7 @@ CREATE TABLE `t_weapon`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_weapon_name`(`name` ASC) USING BTREE,
   INDEX `idx_weapon_type`(`type` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 488 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '武器养成攻略' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 488 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '武器养成攻略' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_weapon
@@ -810,7 +810,7 @@ CREATE TABLE `t_weapon_user`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_wu`(`weapon_name` ASC, `user_name` ASC) USING BTREE,
   INDEX `idx_wu_weapon`(`weapon_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '武器适配角色' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '武器适配角色' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_weapon_user
