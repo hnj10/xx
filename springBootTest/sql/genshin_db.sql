@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 80046 (8.0.46)
+ Source Server Version : 80039 (8.0.39)
  Source Host           : localhost:3306
  Source Schema         : genshin_db
 
  Target Server Type    : MySQL
- Target Server Version : 80046 (8.0.46)
+ Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 06/11/2026 09:53:17
+ Date: 06/11/2026 15:13:22
 */
 
 SET NAMES utf8mb4;
@@ -296,7 +296,7 @@ CREATE TABLE `t_character`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_character_name`(`name` ASC) USING BTREE,
   INDEX `idx_character_element`(`element` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 119 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色养成攻略' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 121 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色养成攻略' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_character
@@ -435,7 +435,7 @@ CREATE TABLE `t_team`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_team_name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色队伍推荐' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色队伍推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_team
@@ -656,6 +656,7 @@ CREATE TABLE `t_user`  (
   `nickname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '昵称, 注册时默认等于账号',
   `nation` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '所属国度: 蒙德/璃月/稻妻/须弥/枫丹/纳塔/至冬',
   `status` tinyint NOT NULL DEFAULT 1 COMMENT '状态: 1-正常 0-封禁',
+  `role` tinyint NOT NULL DEFAULT 1 COMMENT '权限: 0-管理员 1-默认用户',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
@@ -665,9 +666,9 @@ CREATE TABLE `t_user`  (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, 'traveler', '$2a$10$Hdd/CpTjIM275SamMofic.bNWmqL1ewDoy6KhKjRdAaHspW6f5682', 'traveler', '蒙德', 1, '2026-11-02 08:58:32', '2026-11-02 08:58:32');
-INSERT INTO `t_user` VALUES (2, 'paimon', '$2a$10$tQ/Db2XNsWXcpzpmUyCb4uhhckKGAoBgH881/0TY4fJL1NOCzzZJu', 'paimon', '璃月', 1, '2026-11-02 08:58:32', '2026-11-02 08:58:32');
-INSERT INTO `t_user` VALUES (3, '小何露', '$2a$10$9t857MQYl0xY5WNFytNTdOk35UQlsZxeCk7BLIOjIxRzgrVvw0Ojm', '小何露', '蒙德', 1, '2026-11-02 09:08:07', '2026-11-02 09:08:07');
+INSERT INTO `t_user` VALUES (1, 'traveler', '$2a$10$Hdd/CpTjIM275SamMofic.bNWmqL1ewDoy6KhKjRdAaHspW6f5682', 'traveler', '蒙德', 1, 0, '2026-11-02 08:58:32', '2026-11-06 15:10:55');
+INSERT INTO `t_user` VALUES (2, 'paimon', '$2a$10$tQ/Db2XNsWXcpzpmUyCb4uhhckKGAoBgH881/0TY4fJL1NOCzzZJu', 'paimon', '璃月', 1, 1, '2026-11-02 08:58:32', '2026-11-02 08:58:32');
+INSERT INTO `t_user` VALUES (3, '小何露', '$2a$10$9t857MQYl0xY5WNFytNTdOk35UQlsZxeCk7BLIOjIxRzgrVvw0Ojm', '小何露', '蒙德', 1, 1, '2026-11-02 09:08:07', '2026-11-02 09:08:07');
 
 -- ----------------------------
 -- Table structure for t_weapon
@@ -687,7 +688,7 @@ CREATE TABLE `t_weapon`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_weapon_name`(`name` ASC) USING BTREE,
   INDEX `idx_weapon_type`(`type` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 488 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '武器养成攻略' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 489 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '武器养成攻略' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_weapon

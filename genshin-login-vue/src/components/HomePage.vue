@@ -9,6 +9,7 @@
       <div class="user">
         <div class="avatar">{{ (username || '旅').slice(0, 1) }}</div>
         <span class="uname">欢迎回来，{{ username || '旅行者' }}</span>
+        <button class="admin-entry" @click="$emit('goto', 'admin-login')">后台管理系统</button>
         <button class="logout" @click="logout">退出登录</button>
       </div>
     </header>
@@ -535,6 +536,23 @@ function logout() {
 .uname {
   font-size: 14px;
   color: #c7d4f0;
+}
+.admin-entry {
+  padding: 8px 16px;
+  border: 1px solid rgba(111, 214, 192, 0.45);
+  border-radius: 10px;
+  background: rgba(111, 214, 192, 0.12);
+  color: #8fe6d4;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.admin-entry:hover {
+  color: #06121f;
+  border-color: #6fd6c0;
+  background: linear-gradient(95deg, #6fd6c0, #4ec6f0);
+  box-shadow: 0 8px 22px rgba(111, 214, 192, 0.3);
 }
 .logout {
   padding: 8px 16px;

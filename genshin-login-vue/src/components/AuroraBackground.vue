@@ -1,6 +1,7 @@
 <template>
-  <!-- 七国极光背景 -->
+  <!-- 派蒙背景图 + 七国极光氛围 -->
   <div class="aurora"></div>
+  <div class="paimon-bg"></div>
   <div class="vignette"></div>
 
   <!-- 漂浮的七元素符文 -->
@@ -18,6 +19,9 @@
 <script setup>
 import { ref } from 'vue'
 import { NATIONS, svgFull } from '../data/nations.js'
+import paimonBg from '../assets/paimon-bg.png'
+
+const bgUrl = paimonBg
 
 const runes = ref([])
 
@@ -67,10 +71,34 @@ NATIONS.forEach((n) => {
   50% { transform: translate(2%, -2%) scale(1.08) rotate(4deg); }
   100% { transform: translate(-2%, 2%) scale(1.04) rotate(-3deg); }
 }
-.vignette {
+
+/* 派蒙背景图层：cover 铺满 + 缓慢呼吸浮动 */
+.paimon-bg {
   position: fixed;
   inset: 0;
   z-index: 1;
+  background-image: v-bind('`url("${bgUrl}")`');
+  background-size: cover;
+  background-position: center 30%;
+  animation: breathe 16s ease-in-out infinite alternate;
+  will-change: transform, scale;
+}
+@keyframes breathe {
+  0% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.07) translate(0.6%, -0.8%);
+  }
+  100% {
+    transform: scale(1.03) translate(-0.4%, 0.5%);
+  }
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
   background: radial-gradient(120% 120% at 50% 45%, transparent 45%, rgba(3, 5, 12, 0.85) 100%);
   pointer-events: none;
 }
@@ -78,7 +106,7 @@ NATIONS.forEach((n) => {
 .runes {
   position: fixed;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 .rune {

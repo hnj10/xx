@@ -117,6 +117,9 @@ public class UserServiceImpl implements UserService {
         vo.put("nickname", user.getNickname());
         vo.put("nation", user.getNation());
         vo.put("status", user.getStatus());
+        // 权限：0 管理员 / 1 默认用户。新注册账号实体里 role 为 null（由 DB 默认值 1 填充），
+        // 这里统一按 1 返回，前端据此隐藏「后台管理系统」按钮。
+        vo.put("role", user.getRole() == null ? 1 : user.getRole());
         return vo;
     }
 }
