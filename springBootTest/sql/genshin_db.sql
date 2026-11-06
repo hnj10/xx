@@ -11,7 +11,7 @@
  Target Server Version : 80046 (8.0.46)
  File Encoding         : 65001
 
- Date: 04/11/2026 16:57:31
+ Date: 06/11/2026 09:53:17
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `t_char_weapon`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cw`(`character_name` ASC, `weapon_name` ASC) USING BTREE,
   INDEX `idx_cw_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 177 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色武器推荐' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 254 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色武器推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_char_weapon
@@ -176,6 +176,104 @@ INSERT INTO `t_char_weapon` VALUES (136, '米提亚', '雷', '流浪乐章', 4, 
 INSERT INTO `t_char_weapon` VALUES (137, '瓦列里', '雷', '西风剑', 4, '充能副属性，辅助循环', 1);
 INSERT INTO `t_char_weapon` VALUES (138, '瓦列里', '雷', '匣里龙吟', 4, '攻击副属性', 2);
 INSERT INTO `t_char_weapon` VALUES (155, '玛薇卡', '火', '狼末', 4, '攻击副属性，平民过渡', 2);
+INSERT INTO `t_char_weapon` VALUES (156, '迪希雅', '火', '赤沙之王', 5, '专武，元素战技协同输出增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (157, '迪希雅', '火', '螭骨剑', 4, '暴击率副属性，减伤型后台火', 2);
+INSERT INTO `t_char_weapon` VALUES (158, '安柏', '火', '天空之翼', 5, '高白值+暴击，蓄力/破盾通用', 1);
+INSERT INTO `t_char_weapon` VALUES (159, '安柏', '火', '破魔之弓', 4, '满能量重击增伤，平民之选', 2);
+INSERT INTO `t_char_weapon` VALUES (160, '辛焱', '火', '赤角石溃杵', 5, '防御转攻，物伤大招契合', 1);
+INSERT INTO `t_char_weapon` VALUES (161, '辛焱', '火', '白影剑', 4, '防御副属性，叠层增攻防', 2);
+INSERT INTO `t_char_weapon` VALUES (162, '烟绯', '火', '四风原典', 5, '重击站场叠层增元素伤', 1);
+INSERT INTO `t_char_weapon` VALUES (163, '烟绯', '火', '流浪乐章', 4, '上场随机增伤，爆发极高', 2);
+INSERT INTO `t_char_weapon` VALUES (164, '嘉明', '火', '苇海信标', 5, '下落攻击增伤，专武契合', 1);
+INSERT INTO `t_char_weapon` VALUES (165, '嘉明', '火', '螭骨剑', 4, '暴击率副属性，平民高收益', 2);
+INSERT INTO `t_char_weapon` VALUES (166, '托马', '火', '天空之脊', 5, '充能副属性，盾辅循环', 1);
+INSERT INTO `t_char_weapon` VALUES (167, '托马', '火', '西风长枪', 4, '充能+产球，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (168, '夏沃蕾', '火', '天空之脊', 5, '高白值+充能，增攻奶妈', 1);
+INSERT INTO `t_char_weapon` VALUES (169, '夏沃蕾', '火', '西风长枪', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (170, '莫娜', '水', '万世流涌大典', 5, '元素爆发增伤，核爆核心', 1);
+INSERT INTO `t_char_weapon` VALUES (171, '莫娜', '水', '流浪乐章', 4, '上场随机增伤，爆发窗口', 2);
+INSERT INTO `t_char_weapon` VALUES (172, '希格雯', '水', '白雨心弦', 5, '专武，生命+治疗提升', 1);
+INSERT INTO `t_char_weapon` VALUES (173, '希格雯', '水', '西风猎弓', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (174, '芭芭拉', '水', '不灭月华', 5, '治疗+生命，奶量拉满', 1);
+INSERT INTO `t_char_weapon` VALUES (175, '芭芭拉', '水', '试作金珀', 4, '生命副属性，治疗回能', 2);
+INSERT INTO `t_char_weapon` VALUES (176, '塔利雅', '水', '苍古自由之誓', 5, '元素反应增伤，辅助副C', 1);
+INSERT INTO `t_char_weapon` VALUES (177, '塔利雅', '水', '西风剑', 4, '充能副属性，挂水循环', 2);
+INSERT INTO `t_char_weapon` VALUES (178, '坎蒂丝', '水', '和璞鸢', 5, '高白值+暴击，盾辅输出', 1);
+INSERT INTO `t_char_weapon` VALUES (179, '坎蒂丝', '水', '西风长枪', 4, '充能副属性，附魔辅助', 2);
+INSERT INTO `t_char_weapon` VALUES (180, '爱诺', '水', '冬极白星', 5, '普攻增伤，后台挂水输出', 1);
+INSERT INTO `t_char_weapon` VALUES (181, '爱诺', '水', '绝弦', 4, '元素战技爆发增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (182, '伊涅芙', '雷', '镜中月', 5, '专武，月感电体系增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (183, '伊涅芙', '雷', '流浪乐章', 4, '上场随机增伤，爆发', 2);
+INSERT INTO `t_char_weapon` VALUES (184, '丽莎', '雷', '千夜浮梦', 5, '元素精通与增伤，站场副C', 1);
+INSERT INTO `t_char_weapon` VALUES (185, '丽莎', '雷', '流浪乐章', 4, '上场随机增伤，爆发', 2);
+INSERT INTO `t_char_weapon` VALUES (186, '雷泽', '雷', '狼的末路', 5, '物伤大剑，站场主C', 1);
+INSERT INTO `t_char_weapon` VALUES (187, '雷泽', '雷', '试作古华', 4, '攻击副属性，物伤通用', 2);
+INSERT INTO `t_char_weapon` VALUES (188, '北斗', '雷', '狼的末路', 5, '反击增伤，后台挂雷输出', 1);
+INSERT INTO `t_char_weapon` VALUES (189, '北斗', '雷', '西风大剑', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (190, '九条裟罗', '雷', '天空之翼', 5, '高白值+暴击，增攻副C', 1);
+INSERT INTO `t_char_weapon` VALUES (191, '九条裟罗', '雷', '绝弦', 4, '元素战技爆发增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (192, '多莉', '雷', '狼的末路', 5, '治疗+充能，站场主C', 1);
+INSERT INTO `t_char_weapon` VALUES (193, '多莉', '雷', '西风大剑', 4, '充能副属性，治疗循环', 2);
+INSERT INTO `t_char_weapon` VALUES (194, '赛索斯', '雷', '天空之翼', 5, '蓄力主C，暴击增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (195, '赛索斯', '雷', '破魔之弓', 4, '满能量重击增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (196, '欧洛伦', '雷', '若水', 5, '后台夜魂输出，暴伤+生命', 1);
+INSERT INTO `t_char_weapon` VALUES (197, '欧洛伦', '雷', '绝弦', 4, '元素战技爆发增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (198, '伊安珊', '雷', '天空之脊', 5, '增攻辅助，充能循环', 1);
+INSERT INTO `t_char_weapon` VALUES (199, '伊安珊', '雷', '西风长枪', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (200, '凯亚', '冰', '雾切之回光', 5, '元素伤+暴击，站场副C', 1);
+INSERT INTO `t_char_weapon` VALUES (201, '凯亚', '冰', '黑剑', 4, '暴击率副属性，纪行获取', 2);
+INSERT INTO `t_char_weapon` VALUES (202, '迪奥娜', '冰', '终末嗟叹之诗', 5, '全队增攻+充能，辅助最优', 1);
+INSERT INTO `t_char_weapon` VALUES (203, '迪奥娜', '冰', '祭礼弓', 4, '双盾+充能，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (204, '罗莎莉亚', '冰', '天空之脊', 5, '充能+暴击，辅助副C', 1);
+INSERT INTO `t_char_weapon` VALUES (205, '罗莎莉亚', '冰', '西风长枪', 4, '充能副属性，暴击拐', 2);
+INSERT INTO `t_char_weapon` VALUES (206, '米卡', '冰', '天空之脊', 5, '充能+攻速辅助', 1);
+INSERT INTO `t_char_weapon` VALUES (207, '米卡', '冰', '西风长枪', 4, '充能副属性，治疗循环', 2);
+INSERT INTO `t_char_weapon` VALUES (208, '重云', '冰', '天空之傲', 5, '物伤附魔，副C输出', 1);
+INSERT INTO `t_char_weapon` VALUES (209, '重云', '冰', '螭骨剑', 4, '暴击率副属性，副C高收益', 2);
+INSERT INTO `t_char_weapon` VALUES (210, '莱依拉', '冰', '静水流涌之辉', 5, '生命+充能，护盾辅助', 1);
+INSERT INTO `t_char_weapon` VALUES (211, '莱依拉', '冰', '祭礼剑', 4, '双盾+充能，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (212, '菲米尼', '冰', '松籁响起之时', 5, '物伤大剑，专武契合', 1);
+INSERT INTO `t_char_weapon` VALUES (213, '菲米尼', '冰', '雪葬的星银', 4, '物伤副属性，平民之选', 2);
+INSERT INTO `t_char_weapon` VALUES (214, '夏洛蒂', '冰', '千夜浮梦', 5, '元素精通+治疗，辅助副C', 1);
+INSERT INTO `t_char_weapon` VALUES (215, '夏洛蒂', '冰', '试作金珀', 4, '生命副属性，治疗回能', 2);
+INSERT INTO `t_char_weapon` VALUES (216, '梦见月瑞希', '风', '尘光七谕', 5, '专武，治疗+生命+精通', 1);
+INSERT INTO `t_char_weapon` VALUES (217, '梦见月瑞希', '风', '试作金珀', 4, '生命副属性，治疗回能', 2);
+INSERT INTO `t_char_weapon` VALUES (218, '砂糖', '风', '千夜浮梦', 5, '元素精通，扩散增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (219, '砂糖', '风', '祭礼残章', 4, '元素精通副属性，聚怪增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (220, '蓝砚', '风', '千夜浮梦', 5, '元素精通，挂风盾辅', 1);
+INSERT INTO `t_char_weapon` VALUES (221, '蓝砚', '风', '祭礼残章', 4, '元素精通副属性', 2);
+INSERT INTO `t_char_weapon` VALUES (222, '鹿野院平藏', '风', '图莱杜拉的回忆', 5, '拳法主C，元素战技增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (223, '鹿野院平藏', '风', '流浪乐章', 4, '上场随机增伤，爆发', 2);
+INSERT INTO `t_char_weapon` VALUES (224, '早柚', '风', '狼的末路', 5, '滚地主C，扩散增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (225, '早柚', '风', '西风大剑', 4, '充能副属性，治疗循环', 2);
+INSERT INTO `t_char_weapon` VALUES (226, '珐露珊', '风', '终末嗟叹之诗', 5, '全队增攻+充能，风拐最优', 1);
+INSERT INTO `t_char_weapon` VALUES (227, '珐露珊', '风', '西风猎弓', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (228, '琳妮特', '风', '雾切之回光', 5, '元素伤+暴击，副C输出', 1);
+INSERT INTO `t_char_weapon` VALUES (229, '琳妮特', '风', '西风剑', 4, '充能副属性，挂风循环', 2);
+INSERT INTO `t_char_weapon` VALUES (230, '伊法', '风', '苍古自由之誓', 5, '元素反应增伤，治疗辅助', 1);
+INSERT INTO `t_char_weapon` VALUES (231, '伊法', '风', '西风秘典', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (232, '雅珂达', '风', '千夜浮梦', 5, '元素精通，挂风副C', 1);
+INSERT INTO `t_char_weapon` VALUES (233, '雅珂达', '风', '流浪乐章', 4, '上场随机增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (234, '千织', '岩', '有乐御簾切', 5, '专武，普攻重击增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (235, '千织', '岩', '狼牙', 4, '暴击率副属性，后台副C', 2);
+INSERT INTO `t_char_weapon` VALUES (236, '诺艾尔', '岩', '赤角石溃杵', 5, '防御转攻，盾辅主C', 1);
+INSERT INTO `t_char_weapon` VALUES (237, '诺艾尔', '岩', '白影剑', 4, '防御副属性，叠层增攻防', 2);
+INSERT INTO `t_char_weapon` VALUES (238, '云堇', '岩', '天空之脊', 5, '充能+防御，普攻拐', 1);
+INSERT INTO `t_char_weapon` VALUES (239, '云堇', '岩', '西风长枪', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (240, '五郎', '岩', '终末嗟叹之诗', 5, '全队增攻+充能，岩拐最优', 1);
+INSERT INTO `t_char_weapon` VALUES (241, '五郎', '岩', '西风猎弓', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (242, '卡齐娜', '岩', '天空之脊', 5, '充能+增伤，岩拐辅助', 1);
+INSERT INTO `t_char_weapon` VALUES (243, '卡齐娜', '岩', '西风长枪', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (244, '叶洛亚', '岩', '尘世之锁', 5, '护盾增攻，岩拐辅助', 1);
+INSERT INTO `t_char_weapon` VALUES (245, '叶洛亚', '岩', '西风秘典', 4, '充能副属性，辅助循环', 2);
+INSERT INTO `t_char_weapon` VALUES (246, '瑶瑶', '草', '和璞鸢', 5, '高白值+暴击，治疗挂草', 1);
+INSERT INTO `t_char_weapon` VALUES (247, '瑶瑶', '草', '西风长枪', 4, '充能副属性，治疗循环', 2);
+INSERT INTO `t_char_weapon` VALUES (248, '柯莱', '草', '猎人之径', 5, '元素精通+挂草，副C输出', 1);
+INSERT INTO `t_char_weapon` VALUES (249, '柯莱', '草', '绝弦', 4, '元素战技爆发增伤', 2);
+INSERT INTO `t_char_weapon` VALUES (250, '卡维', '草', '狼的末路', 5, '绽放主C，攻击增伤', 1);
+INSERT INTO `t_char_weapon` VALUES (251, '卡维', '草', '西风大剑', 4, '充能副属性，绽放循环', 2);
+INSERT INTO `t_char_weapon` VALUES (252, '绮良良', '草', '磐岩结绿', 5, '生命+护盾，挂草盾辅', 1);
+INSERT INTO `t_char_weapon` VALUES (253, '绮良良', '草', '祭礼剑', 4, '双盾+充能，辅助循环', 2);
 
 -- ----------------------------
 -- Table structure for t_character

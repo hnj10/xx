@@ -1861,6 +1861,398 @@ export const CHAR_WEAPONS = [
       { name: '匣里龙吟', rarity: 4, reason: '攻击副属性' },
     ]
   },
+  {
+    character: '迪希雅',
+    element: '火',
+    best: [
+      { name: '赤沙之王', rarity: 5, reason: '专武，元素战技协同输出增伤' },
+      { name: '螭骨剑', rarity: 4, reason: '暴击率副属性，减伤型后台火' },
+    ]
+  },
+  {
+    character: '安柏',
+    element: '火',
+    best: [
+      { name: '天空之翼', rarity: 5, reason: '高白值+暴击，蓄力/破盾通用' },
+      { name: '破魔之弓', rarity: 4, reason: '满能量重击增伤，平民之选' },
+    ]
+  },
+  {
+    character: '辛焱',
+    element: '火',
+    best: [
+      { name: '赤角石溃杵', rarity: 5, reason: '防御转攻，物伤大招契合' },
+      { name: '白影剑', rarity: 4, reason: '防御副属性，叠层增攻防' },
+    ]
+  },
+  {
+    character: '烟绯',
+    element: '火',
+    best: [
+      { name: '四风原典', rarity: 5, reason: '重击站场叠层增元素伤' },
+      { name: '流浪乐章', rarity: 4, reason: '上场随机增伤，爆发极高' },
+    ]
+  },
+  {
+    character: '嘉明',
+    element: '火',
+    best: [
+      { name: '苇海信标', rarity: 5, reason: '下落攻击增伤，专武契合' },
+      { name: '螭骨剑', rarity: 4, reason: '暴击率副属性，平民高收益' },
+    ]
+  },
+  {
+    character: '托马',
+    element: '火',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '充能副属性，盾辅循环' },
+      { name: '西风长枪', rarity: 4, reason: '充能+产球，辅助循环' },
+    ]
+  },
+  {
+    character: '夏沃蕾',
+    element: '火',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '高白值+充能，增攻奶妈' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '莫娜',
+    element: '水',
+    best: [
+      { name: '万世流涌大典', rarity: 5, reason: '元素爆发增伤，核爆核心' },
+      { name: '流浪乐章', rarity: 4, reason: '上场随机增伤，爆发窗口' },
+    ]
+  },
+  {
+    character: '希格雯',
+    element: '水',
+    best: [
+      { name: '白雨心弦', rarity: 5, reason: '专武，生命+治疗提升' },
+      { name: '西风猎弓', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '芭芭拉',
+    element: '水',
+    best: [
+      { name: '不灭月华', rarity: 5, reason: '治疗+生命，奶量拉满' },
+      { name: '试作金珀', rarity: 4, reason: '生命副属性，治疗回能' },
+    ]
+  },
+  {
+    character: '塔利雅',
+    element: '水',
+    best: [
+      { name: '苍古自由之誓', rarity: 5, reason: '元素反应增伤，辅助副C' },
+      { name: '西风剑', rarity: 4, reason: '充能副属性，挂水循环' },
+    ]
+  },
+  {
+    character: '坎蒂丝',
+    element: '水',
+    best: [
+      { name: '和璞鸢', rarity: 5, reason: '高白值+暴击，盾辅输出' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，附魔辅助' },
+    ]
+  },
+  {
+    character: '爱诺',
+    element: '水',
+    best: [
+      { name: '冬极白星', rarity: 5, reason: '普攻增伤，后台挂水输出' },
+      { name: '绝弦', rarity: 4, reason: '元素战技爆发增伤' },
+    ]
+  },
+  {
+    character: '伊涅芙',
+    element: '雷',
+    best: [
+      { name: '镜中月', rarity: 5, reason: '专武，月感电体系增伤' },
+      { name: '流浪乐章', rarity: 4, reason: '上场随机增伤，爆发' },
+    ]
+  },
+  {
+    character: '丽莎',
+    element: '雷',
+    best: [
+      { name: '千夜浮梦', rarity: 5, reason: '元素精通与增伤，站场副C' },
+      { name: '流浪乐章', rarity: 4, reason: '上场随机增伤，爆发' },
+    ]
+  },
+  {
+    character: '雷泽',
+    element: '雷',
+    best: [
+      { name: '狼的末路', rarity: 5, reason: '物伤大剑，站场主C' },
+      { name: '试作古华', rarity: 4, reason: '攻击副属性，物伤通用' },
+    ]
+  },
+  {
+    character: '北斗',
+    element: '雷',
+    best: [
+      { name: '狼的末路', rarity: 5, reason: '反击增伤，后台挂雷输出' },
+      { name: '西风大剑', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '九条裟罗',
+    element: '雷',
+    best: [
+      { name: '天空之翼', rarity: 5, reason: '高白值+暴击，增攻副C' },
+      { name: '绝弦', rarity: 4, reason: '元素战技爆发增伤' },
+    ]
+  },
+  {
+    character: '多莉',
+    element: '雷',
+    best: [
+      { name: '狼的末路', rarity: 5, reason: '治疗+充能，站场主C' },
+      { name: '西风大剑', rarity: 4, reason: '充能副属性，治疗循环' },
+    ]
+  },
+  {
+    character: '赛索斯',
+    element: '雷',
+    best: [
+      { name: '天空之翼', rarity: 5, reason: '蓄力主C，暴击增伤' },
+      { name: '破魔之弓', rarity: 4, reason: '满能量重击增伤' },
+    ]
+  },
+  {
+    character: '欧洛伦',
+    element: '雷',
+    best: [
+      { name: '若水', rarity: 5, reason: '后台夜魂输出，暴伤+生命' },
+      { name: '绝弦', rarity: 4, reason: '元素战技爆发增伤' },
+    ]
+  },
+  {
+    character: '伊安珊',
+    element: '雷',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '增攻辅助，充能循环' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '凯亚',
+    element: '冰',
+    best: [
+      { name: '雾切之回光', rarity: 5, reason: '元素伤+暴击，站场副C' },
+      { name: '黑剑', rarity: 4, reason: '暴击率副属性，纪行获取' },
+    ]
+  },
+  {
+    character: '迪奥娜',
+    element: '冰',
+    best: [
+      { name: '终末嗟叹之诗', rarity: 5, reason: '全队增攻+充能，辅助最优' },
+      { name: '祭礼弓', rarity: 4, reason: '双盾+充能，辅助循环' },
+    ]
+  },
+  {
+    character: '罗莎莉亚',
+    element: '冰',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '充能+暴击，辅助副C' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，暴击拐' },
+    ]
+  },
+  {
+    character: '米卡',
+    element: '冰',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '充能+攻速辅助' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，治疗循环' },
+    ]
+  },
+  {
+    character: '重云',
+    element: '冰',
+    best: [
+      { name: '天空之傲', rarity: 5, reason: '物伤附魔，副C输出' },
+      { name: '螭骨剑', rarity: 4, reason: '暴击率副属性，副C高收益' },
+    ]
+  },
+  {
+    character: '莱依拉',
+    element: '冰',
+    best: [
+      { name: '静水流涌之辉', rarity: 5, reason: '生命+充能，护盾辅助' },
+      { name: '祭礼剑', rarity: 4, reason: '双盾+充能，辅助循环' },
+    ]
+  },
+  {
+    character: '菲米尼',
+    element: '冰',
+    best: [
+      { name: '松籁响起之时', rarity: 5, reason: '物伤大剑，专武契合' },
+      { name: '雪葬的星银', rarity: 4, reason: '物伤副属性，平民之选' },
+    ]
+  },
+  {
+    character: '夏洛蒂',
+    element: '冰',
+    best: [
+      { name: '千夜浮梦', rarity: 5, reason: '元素精通+治疗，辅助副C' },
+      { name: '试作金珀', rarity: 4, reason: '生命副属性，治疗回能' },
+    ]
+  },
+  {
+    character: '梦见月瑞希',
+    element: '风',
+    best: [
+      { name: '尘光七谕', rarity: 5, reason: '专武，治疗+生命+精通' },
+      { name: '试作金珀', rarity: 4, reason: '生命副属性，治疗回能' },
+    ]
+  },
+  {
+    character: '砂糖',
+    element: '风',
+    best: [
+      { name: '千夜浮梦', rarity: 5, reason: '元素精通，扩散增伤' },
+      { name: '祭礼残章', rarity: 4, reason: '元素精通副属性，聚怪增伤' },
+    ]
+  },
+  {
+    character: '蓝砚',
+    element: '风',
+    best: [
+      { name: '千夜浮梦', rarity: 5, reason: '元素精通，挂风盾辅' },
+      { name: '祭礼残章', rarity: 4, reason: '元素精通副属性' },
+    ]
+  },
+  {
+    character: '鹿野院平藏',
+    element: '风',
+    best: [
+      { name: '图莱杜拉的回忆', rarity: 5, reason: '拳法主C，元素战技增伤' },
+      { name: '流浪乐章', rarity: 4, reason: '上场随机增伤，爆发' },
+    ]
+  },
+  {
+    character: '早柚',
+    element: '风',
+    best: [
+      { name: '狼的末路', rarity: 5, reason: '滚地主C，扩散增伤' },
+      { name: '西风大剑', rarity: 4, reason: '充能副属性，治疗循环' },
+    ]
+  },
+  {
+    character: '珐露珊',
+    element: '风',
+    best: [
+      { name: '终末嗟叹之诗', rarity: 5, reason: '全队增攻+充能，风拐最优' },
+      { name: '西风猎弓', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '琳妮特',
+    element: '风',
+    best: [
+      { name: '雾切之回光', rarity: 5, reason: '元素伤+暴击，副C输出' },
+      { name: '西风剑', rarity: 4, reason: '充能副属性，挂风循环' },
+    ]
+  },
+  {
+    character: '伊法',
+    element: '风',
+    best: [
+      { name: '苍古自由之誓', rarity: 5, reason: '元素反应增伤，治疗辅助' },
+      { name: '西风秘典', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '雅珂达',
+    element: '风',
+    best: [
+      { name: '千夜浮梦', rarity: 5, reason: '元素精通，挂风副C' },
+      { name: '流浪乐章', rarity: 4, reason: '上场随机增伤' },
+    ]
+  },
+  {
+    character: '千织',
+    element: '岩',
+    best: [
+      { name: '有乐御簾切', rarity: 5, reason: '专武，普攻重击增伤' },
+      { name: '狼牙', rarity: 4, reason: '暴击率副属性，后台副C' },
+    ]
+  },
+  {
+    character: '诺艾尔',
+    element: '岩',
+    best: [
+      { name: '赤角石溃杵', rarity: 5, reason: '防御转攻，盾辅主C' },
+      { name: '白影剑', rarity: 4, reason: '防御副属性，叠层增攻防' },
+    ]
+  },
+  {
+    character: '云堇',
+    element: '岩',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '充能+防御，普攻拐' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '五郎',
+    element: '岩',
+    best: [
+      { name: '终末嗟叹之诗', rarity: 5, reason: '全队增攻+充能，岩拐最优' },
+      { name: '西风猎弓', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '卡齐娜',
+    element: '岩',
+    best: [
+      { name: '天空之脊', rarity: 5, reason: '充能+增伤，岩拐辅助' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '叶洛亚',
+    element: '岩',
+    best: [
+      { name: '尘世之锁', rarity: 5, reason: '护盾增攻，岩拐辅助' },
+      { name: '西风秘典', rarity: 4, reason: '充能副属性，辅助循环' },
+    ]
+  },
+  {
+    character: '瑶瑶',
+    element: '草',
+    best: [
+      { name: '和璞鸢', rarity: 5, reason: '高白值+暴击，治疗挂草' },
+      { name: '西风长枪', rarity: 4, reason: '充能副属性，治疗循环' },
+    ]
+  },
+  {
+    character: '柯莱',
+    element: '草',
+    best: [
+      { name: '猎人之径', rarity: 5, reason: '元素精通+挂草，副C输出' },
+      { name: '绝弦', rarity: 4, reason: '元素战技爆发增伤' },
+    ]
+  },
+  {
+    character: '卡维',
+    element: '草',
+    best: [
+      { name: '狼的末路', rarity: 5, reason: '绽放主C，攻击增伤' },
+      { name: '西风大剑', rarity: 4, reason: '充能副属性，绽放循环' },
+    ]
+  },
+  {
+    character: '绮良良',
+    element: '草',
+    best: [
+      { name: '磐岩结绿', rarity: 5, reason: '生命+护盾，挂草盾辅' },
+      { name: '祭礼剑', rarity: 4, reason: '双盾+充能，辅助循环' },
+    ]
+  },
 ]
 
 export const WEAPONS = [
