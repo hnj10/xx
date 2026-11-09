@@ -1,5 +1,6 @@
 package com.fenglin.springboottest.service;
 
+import com.fenglin.springboottest.entity.ArtifactSet;
 import com.fenglin.springboottest.vo.CharWeaponVO;
 import com.fenglin.springboottest.vo.CharacterDetailVO;
 import com.fenglin.springboottest.vo.CharacterVO;
@@ -45,6 +46,12 @@ public interface HomeService {
      * 角色队伍推荐列表（t_team + t_team_member，members 为四个位置）。
      */
     List<TeamVO> listTeams();
+
+    /**
+     * 圣遗物套装一览（t_artifact_set，status=1，按 sort_order 升序）。
+     * 后台管理系统可维护此表数据，首页实时读取。
+     */
+    List<ArtifactSet> listArtifactSets();
 
     /**
      * 全站搜索：按角色 / 武器 / 队伍顺序返回命中结果。

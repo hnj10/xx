@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// 本机局域网 IP（以太网适配器）。前后端统一通过这个地址对外提供访问。
-const LAN_IP = '192.168.68.4'
+// 代理请求由 Vite 服务端发起，指向本机回环地址最稳；
+// 原写死的 192.168.68.4 是旧网络环境的 IP，当前本机为 192.168.1.18，已失效。
+const LAN_IP = '127.0.0.1'
 
 export default defineConfig({
   plugins: [vue()],

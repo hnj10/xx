@@ -113,7 +113,14 @@
             <span v-if="w.reason" class="reason">{{ w.reason }}</span>
           </div>
           <div v-if="w.weapon" class="w-info">
-            <span class="w-meta">{{ w.weapon.type }} · {{ w.weapon.stat }}</span>
+            <div class="w-meta">{{ w.weapon.type }} · {{ w.weapon.stat }}</div>
+            <div v-if="w.weapon.atk90" class="w90">
+              <div class="w90-line">
+                <span class="w90-badge">90级</span><span class="w90-k">基础攻击力</span><b>{{ w.weapon.atk90 }}</b>
+                <span class="w90-gain">1级 {{ w.weapon.atk1 }} → 提升 +{{ w.weapon.atk90 - w.weapon.atk1 }}</span>
+              </div>
+              <div class="w90-line"><span class="w90-k">副词条提升</span><b class="sub">{{ w.weapon.subStat }} +{{ w.weapon.subValue }}</b></div>
+            </div>
             <p>{{ w.weapon.desc }}</p>
             <div v-if="w.weapon.users && w.weapon.users.length" class="users">
               <span class="k">适配角色</span>
@@ -161,6 +168,8 @@ import { ELEMENT_NATION, CHARACTERS, CHAR_WEAPONS, WEAPONS, TEAMS } from '../dat
 import { CHARACTER_MATERIALS, WEAPON_MATERIALS, MATERIAL_NOTICE } from '../data/materialsData.js'
 import { charImg } from '../data/imageMap.js'
 
+const WEAPON_ALIAS = { '狼末': '狼的末路', '西风弓': '西风猎弓' }
+
 const props = defineProps({
   name: { type: String, required: true }
 })
@@ -176,7 +185,7 @@ function localDetail(name) {
     name: b.name,
     rarity: b.rarity,
     reason: b.reason,
-    weapon: WEAPONS.find((w) => w.name === b.name) || null,
+    weapon: WEAPONS.find((w) => w.name === b.name || w.name === WEAPON_ALIAS[b.name]) || null,
     material: WEAPON_MATERIALS[b.name] || null
   }))
   return {
@@ -624,4 +633,24 @@ function eleSvg(element) {
   .hero-avatar { width: 100px; height: 100px; }
   .crumb { display: none; }
 }
+
+/* 武器 90 级基础攻击力 / 副词条提升 */
+.w90 {
+  margin-top: 9px;
+  padding: 9px 11px;
+  border-radius: 10px;
+  background: rgba(246, 195, 91, 0.08);
+  border: 1px solid rgba(246, 195, 91, 0.24);
+}
+.w90-line { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; font-size: 12px; line-height: 1.8; }
+.w90-line + .w90-line { margin-top: 2px; }
+.w90-k { color: #7f92b8; flex-shrink: 0; }
+.w90-line b { color: #f6c35b; font-size: 16px; font-weight: 700; }
+.w90-line b.sub { color: #6fd6c0; font-size: 13px; }
+.w90-gain { color: #8092b6; }
+.w90-badge {
+  display: inline-block; padding: 1px 7px; border-radius: 999px;
+  font-size: 10px; font-weight: 700; color: #0b1020; background: #f6c35b;
+}
+
 </style>

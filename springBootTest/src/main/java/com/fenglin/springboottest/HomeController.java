@@ -1,6 +1,7 @@
 package com.fenglin.springboottest;
 
 import com.fenglin.springboottest.common.Result;
+import com.fenglin.springboottest.entity.ArtifactSet;
 import com.fenglin.springboottest.service.HomeService;
 import com.fenglin.springboottest.vo.CharWeaponVO;
 import com.fenglin.springboottest.vo.CharacterDetailVO;
@@ -81,6 +82,14 @@ public class HomeController {
     @GetMapping("/teams")
     public Result<List<TeamVO>> teams() {
         return Result.ok(homeService.listTeams());
+    }
+
+    /**
+     * 圣遗物套装一览（首页模块五）。后台可维护 t_artifact_set，首页实时读取 status=1 的套装。
+     */
+    @GetMapping("/artifact-sets")
+    public Result<List<ArtifactSet>> artifactSets() {
+        return Result.ok(homeService.listArtifactSets());
     }
 
     /**

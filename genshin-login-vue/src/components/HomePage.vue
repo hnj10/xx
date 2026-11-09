@@ -11,7 +11,13 @@
       <div class="user">
         <div class="avatar">{{ (username || '旅').slice(0, 1) }}</div>
         <span class="uname">欢迎回来，{{ username || '旅行者' }}</span>
-        <button class="admin-entry" @click="$emit('goto', 'admin-login')">后台管理系统</button>
+        <button class="admin-entry" title="维护首页展示的角色与武器数据" @click="$emit('goto', 'admin-login')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3Z" />
+            <path d="m9 12 2 2 4-4" />
+          </svg>
+          后台管理系统
+        </button>
         <button class="logout" @click="logout">退出登录</button>
       </div>
     </header>
@@ -82,6 +88,7 @@
           <div v-for="w in hitWeapons" :key="'sw' + w.name" class="card weapon-card" @click="todo('武器详情')">
             <div class="w-top"><span class="w-name">{{ w.name }}</span><span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span></div>
             <div class="row"><span class="k">{{ w.type }}</span><span class="v">{{ w.stat }}</span></div>
+            <div v-if="w.atk90" class="row"><span class="k">90级数值</span><span class="v">基础攻击力 {{ w.atk90 }}（+{{ w.atk90 - w.atk1 }}）· {{ w.subStat }} +{{ w.subValue }}</span></div>
           </div>
         </div>
         <div v-if="hitTeams.length" class="grid teams">
@@ -91,6 +98,22 @@
               <span v-for="m in t.members" :key="m.name" class="member">
                 <i class="ele-dot sm" :style="{ background: eleColor(m.element) }"></i>{{ m.name }}
               </span>
+            </div>
+          </div>
+        </div>
+        <div v-if="hitArtifacts.length" class="grid artifacts">
+          <div v-for="a in hitArtifacts" :key="'sa' + (a.id || a.name)" class="card artifact-card"
+               :style="{ '--tint': a.themeColor || '#6f8fe0' }">
+            <div class="art-head">
+              <img class="art-figure" :src="a.image" :alt="a.name" loading="lazy" />
+              <div class="art-title">
+                <span class="art-name">{{ a.name }}</span>
+                <span class="art-stars" :class="'r' + a.rarity">{{ star(a.rarity) }}</span>
+              </div>
+            </div>
+            <div class="art-effect">
+              <div class="eff-row"><span class="eff-label">2 件套</span><p>{{ a.twoPiece }}</p></div>
+              <div class="eff-row"><span class="eff-label four">4 件套</span><p>{{ a.fourPiece }}</p></div>
             </div>
           </div>
         </div>
@@ -132,6 +155,7 @@
                 <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
                 <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
                 <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
+                <div class="row weapon-line"><span class="k">推荐武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
                 <p class="summary">{{ c.summary }}</p>
                 <div class="detail-link">查看角色详情 →</div>
               </div>
@@ -153,6 +177,7 @@
             <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
             <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
             <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
+            <div class="row weapon-line"><span class="k">推荐武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
             <p class="summary">{{ c.summary }}</p>
             <div class="detail-link">查看角色详情 →</div>
           </div>
@@ -167,7 +192,7 @@
           <span class="sec-count">{{ charWeapons.length }} 条推荐</span>
         </div>
         <div class="grid pair">
-          <div v-for="p in charWeapons" :key="p.character" class="card pair-card" @click="todo('武器推荐 · ' + p.character)">
+          <div v-for="p in shownCharWeapons" :key="p.character" class="card pair-card" @click="todo('武器推荐 · ' + p.character)">
             <div class="pair-char">
               <img v-if="charImg(p.character)" class="char-avatar" :src="charImg(p.character)" :alt="p.character" />
               <span class="ele-dot" :style="{ background: eleColor(p.element) }" v-html="eleSvg(p.element)"></span>
@@ -180,6 +205,10 @@
                   <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
                 </div>
                 <p class="p-reason">{{ w.reason }}</p>
+                <div v-if="w.atk90" class="p-stats">
+                  <div><span class="w90-badge">90级</span> 基础攻击力 <b class="atk">{{ w.atk90 }}</b><span class="p-gain">（1级 {{ w.atk1 }} → 提升 +{{ w.atk90 - w.atk1 }}）</span></div>
+                  <div>副词条提升 <b>{{ w.subStat }} +{{ w.subValue }}</b></div>
+                </div>
               </div>
             </div>
           </div>
@@ -212,6 +241,13 @@
                   <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
                 </div>
                 <div class="w-meta">{{ w.type }} · {{ w.stat }}</div>
+                <div v-if="w.atk90" class="w90">
+                  <div class="w90-line">
+                    <span class="w90-badge">90级</span><span class="w90-k">基础攻击力</span><b>{{ w.atk90 }}</b>
+                    <span class="w90-gain">1级 {{ w.atk1 }} → 提升 +{{ w.atk90 - w.atk1 }}</span>
+                  </div>
+                  <div class="w90-line"><span class="w90-k">副词条提升</span><b class="sub">{{ w.subStat }} +{{ w.subValue }}</b></div>
+                </div>
                 <div class="row mat-row"><span class="k">突破材料</span><span class="v">{{ weaponMatLine(w.name) }}</span></div>
                 <p class="summary">{{ w.desc }}</p>
                 <div class="users">
@@ -231,6 +267,13 @@
               <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
             </div>
             <div class="w-meta">{{ w.type }} · {{ w.stat }}</div>
+            <div v-if="w.atk90" class="w90">
+              <div class="w90-line">
+                <span class="w90-badge">90级</span><span class="w90-k">基础攻击力</span><b>{{ w.atk90 }}</b>
+                <span class="w90-gain">1级 {{ w.atk1 }} → 提升 +{{ w.atk90 - w.atk1 }}</span>
+              </div>
+              <div class="w90-line"><span class="w90-k">副词条提升</span><b class="sub">{{ w.subStat }} +{{ w.subValue }}</b></div>
+            </div>
             <div class="row mat-row"><span class="k">突破材料</span><span class="v">{{ weaponMatLine(w.name) }}</span></div>
             <p class="summary">{{ w.desc }}</p>
             <div class="users">
@@ -264,8 +307,54 @@
         </div>
       </section>
 
+      <!-- 模块 5：圣遗物套装一览 -->
+      <section v-if="activeModule === 'all' || activeModule === 'artifacts'" class="sec">
+        <div class="sec-head">
+          <span class="sec-tag c-gold">模块五</span>
+          <h2>圣遗物套装一览</h2>
+          <span class="sec-count">{{ artifactSets.length }} 套圣遗物</span>
+          <div class="view-toggle">
+            <button :class="{ active: artifactRarity === 0 }" @click="artifactRarity = 0">全部</button>
+            <button :class="{ active: artifactRarity === 5 }" @click="artifactRarity = 5">5★</button>
+            <button :class="{ active: artifactRarity === 4 }" @click="artifactRarity = 4">4★</button>
+            <button :class="{ active: artifactRarity === 3 }" @click="artifactRarity = 3">3★</button>
+          </div>
+        </div>
+        <div class="grid artifacts">
+          <div v-for="a in shownArtifactSets" :key="a.id || a.name" class="card artifact-card"
+               :style="{ '--tint': a.themeColor || '#6f8fe0' }">
+            <div class="art-head">
+              <img class="art-figure" :src="a.image" :alt="a.name" loading="lazy" />
+              <div class="art-title">
+                <span class="art-name">{{ a.name }}</span>
+                <span class="art-stars" :class="'r' + a.rarity">{{ star(a.rarity) }}</span>
+              </div>
+            </div>
+            <div class="art-meta">
+              <span class="art-chip">{{ a.element }}</span>
+              <span class="art-chip region">{{ a.region }}</span>
+              <span class="art-chip flavor">{{ a.flavor }}</span>
+            </div>
+            <div class="art-effect">
+              <div class="eff-row">
+                <span class="eff-label">2 件套</span>
+                <p>{{ a.twoPiece }}</p>
+              </div>
+              <div class="eff-row">
+                <span class="eff-label four">4 件套</span>
+                <p>{{ a.fourPiece }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="!shownArtifactSets.length" class="empty">
+          <div class="empty-icon">◇</div>
+          <p>该星级暂无圣遗物套装</p>
+        </div>
+      </section>
+
       <footer class="foot">
-        当前为本地演示数据 · 后端接口已预留（/api/home/*）· 点击角色卡片进入角色详情
+        数据由后台管理系统维护 · 角色 / 武器 / 队伍 / 圣遗物实时读取（/api/home/*）· 点击角色卡片进入角色详情
       </footer>
     </template>
     </template>
@@ -290,6 +379,7 @@ import {
   TEAMS
 } from '../data/homeData.js'
 import { CHARACTER_MATERIALS, WEAPON_MATERIALS } from '../data/materialsData.js'
+import { ARTIFACT_SETS } from '../data/artifactSets.js'
 
 defineProps({
   username: { type: String, default: '' }
@@ -349,6 +439,12 @@ const chars = ref(CHARACTERS)
 const charWeapons = ref(CHAR_WEAPONS)
 const weapons = ref(WEAPONS)
 const teams = ref(TEAMS)
+const artifactSets = ref(ARTIFACT_SETS)
+const artifactRarity = ref(0)
+const shownArtifactSets = computed(() => {
+  if (!artifactRarity.value) return artifactSets.value
+  return artifactSets.value.filter(a => Number(a.rarity) === artifactRarity.value)
+})
 
 // ---------------- 分级分类数据 ----------------
 // 后端分类接口返回 [{ name, count, items:[...] }]；为空数组表示后端未提供分类能力
@@ -362,12 +458,44 @@ const weaponGrouped = ref(true)
 // ---------------- 模块导航 ----------------
 // activeModule 取值：'all' 展示全部；其余对应模块 key，仅展示该模块
 const activeModule = ref('all')
+// 武器 90 级数值：以武器养成数据为唯一口径，保证角色养成 / 武器推荐 / 武器养成三处一致
+const WEAPON_ALIAS = { '狼末': '狼的末路', '西风弓': '西风猎弓' }
+const weapon90Map = computed(() => {
+  const m = {}
+  for (const w of weapons.value) if (w && w.name) m[w.name] = w
+  for (const [alias, real] of Object.entries(WEAPON_ALIAS)) if (m[real]) m[alias] = m[real]
+  return m
+})
+// 角色武器推荐：后端已返回数值时优先，否则按武器名从武器养成数据补齐（本地兜底数据的场景）
+const shownCharWeapons = computed(() => (charWeapons.value || []).map(p => ({
+  ...p,
+  best: (p.best || []).map(b => {
+    const w = weapon90Map.value[b.name] || {}
+    return {
+      ...b,
+      atk1: b.atk1 ?? w.atk1,
+      atk90: b.atk90 ?? w.atk90,
+      subStat: b.subStat ?? w.subStat,
+      subValue: b.subValue ?? w.subValue
+    }
+  })
+})))
+function charWeaponLine(name) {
+  const p = (charWeapons.value || []).find(x => x.character === name)
+  const b = p && p.best && p.best[0]
+  if (!b) return '暂无推荐武器'
+  const w = weapon90Map.value[b.name]
+  if (!w || !w.atk90) return `${b.name} · 90级数值待补充`
+  return `${b.name} · 90级基础攻击力 ${w.atk90}（1级 ${w.atk1}，提升 +${w.atk90 - w.atk1}） · 副词条 ${w.subStat} +${w.subValue}`
+}
+
 const modules = computed(() => [
-  { key: 'all', name: '全部', color: '#4ec6f0', count: chars.value.length + charWeapons.value.length + weapons.value.length + teams.value.length },
+  { key: 'all', name: '全部', color: '#4ec6f0', count: chars.value.length + charWeapons.value.length + weapons.value.length + teams.value.length + artifactSets.value.length },
   { key: 'characters', name: '角色养成', color: '#6fd6c0', count: chars.value.length },
   { key: 'charWeapons', name: '武器推荐', color: '#f6c35b', count: charWeapons.value.length },
   { key: 'weapons', name: '武器养成', color: '#a781e0', count: weapons.value.length },
-  { key: 'teams', name: '队伍推荐', color: '#ff7a59', count: teams.value.length }
+  { key: 'teams', name: '队伍推荐', color: '#ff7a59', count: teams.value.length },
+  { key: 'artifacts', name: '圣遗物', color: '#d9a45b', count: artifactSets.value.length }
 ])
 
 // 预留的后端接口加载器：后端实现 /api/home/* 后，返回 code=200 即自动使用接口数据；
@@ -393,6 +521,8 @@ onMounted(async () => {
   charWeapons.value = await loadFromBackend('/home/char-weapons', CHAR_WEAPONS)
   weapons.value = await loadFromBackend('/home/weapons', WEAPONS)
   teams.value = await loadFromBackend('/home/teams', TEAMS)
+  // 圣遗物套装：后台管理系统维护，接口优先，挂了回退到本地兜底数据
+  artifactSets.value = await loadFromBackend('/home/artifact-sets', ARTIFACT_SETS)
 
   // 分级分类接口
   charGroups.value = await loadFromBackend('/home/characters/elements', [])
@@ -507,7 +637,17 @@ const hitTeams = computed(() => {
   )
 })
 
-const searchTotal = computed(() => hitChars.value.length + hitWeapons.value.length + hitTeams.value.length)
+// 圣遗物搜索：后端 search 接口不含此分类，始终用本地数据过滤，保证新模块可被搜索到
+const hitArtifacts = computed(() => {
+  const kw = keyword.value.trim().toLowerCase()
+  if (!kw) return []
+  return artifactSets.value.filter(a =>
+    match(a.name, kw) || match(a.element, kw) || match(a.region, kw) ||
+    match(a.flavor, kw) || match(a.twoPiece, kw) || match(a.fourPiece, kw)
+  )
+})
+
+const searchTotal = computed(() => hitChars.value.length + hitWeapons.value.length + hitTeams.value.length + hitArtifacts.value.length)
 
 // ---------------- 工具函数 ----------------
 function eleNation(element) {
@@ -634,6 +774,9 @@ function logout() {
   color: #c7d4f0;
 }
 .admin-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 16px;
   border: 1px solid rgba(111, 214, 192, 0.45);
   border-radius: 10px;
@@ -644,6 +787,7 @@ function logout() {
   cursor: pointer;
   transition: 0.2s;
 }
+.admin-entry svg { width: 14px; height: 14px; flex: none; }
 .admin-entry:hover {
   color: #06121f;
   border-color: #6fd6c0;
@@ -915,6 +1059,9 @@ function logout() {
 .grid.teams {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
+.grid.artifacts {
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+}
 
 .card {
   border-radius: 18px;
@@ -1162,6 +1309,96 @@ function logout() {
   background: rgba(78, 198, 240, 0.07);
 }
 
+/* ===== 圣遗物套装卡（模块五 / 搜索结果） ===== */
+.artifact-card {
+  --tint: #6f8fe0;
+  padding: 0;
+  overflow: hidden;
+  cursor: default;
+  border-color: color-mix(in srgb, var(--tint) 40%, transparent);
+  background: linear-gradient(165deg,
+      color-mix(in srgb, var(--tint) 16%, rgba(20, 28, 52, 0.86)),
+      rgba(9, 13, 28, 0.9));
+}
+.artifact-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--tint) 75%, transparent);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.5),
+              0 0 26px color-mix(in srgb, var(--tint) 26%, transparent);
+}
+.art-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px 12px;
+}
+.art-figure {
+  width: 74px;
+  height: 74px;
+  flex: 0 0 74px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid color-mix(in srgb, var(--tint) 65%, transparent);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--tint) 30%, transparent);
+  background: rgba(8, 11, 24, 0.6);
+}
+.art-title { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.art-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f3f6ff;
+  line-height: 1.35;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.art-stars { font-size: 13px; letter-spacing: 2px; color: #f6c35b; }
+.art-stars.r5 { color: #f6c35b; }
+.art-stars.r4 { color: #b79be8; }
+.art-stars.r3 { color: #8fb6d8; }
+.art-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 18px 12px;
+}
+.art-chip {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #eaf1ff;
+  background: color-mix(in srgb, var(--tint) 32%, rgba(255, 255, 255, 0.06));
+  border: 1px solid color-mix(in srgb, var(--tint) 45%, transparent);
+  white-space: nowrap;
+}
+.art-chip.region { color: #b9c8e8; background: rgba(255, 255, 255, 0.05); border-color: rgba(180, 205, 255, 0.18); }
+.art-chip.flavor { color: #f6c35b; background: rgba(246, 195, 91, 0.1); border-color: rgba(246, 195, 91, 0.28); }
+.art-effect {
+  border-top: 1px solid rgba(180, 205, 255, 0.12);
+  padding: 12px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.eff-row { display: flex; gap: 10px; align-items: flex-start; }
+.eff-label {
+  flex: 0 0 52px;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  padding: 2px 4px;
+  border-radius: 6px;
+  color: #06121f;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--tint) 78%, #ffffff);
+}
+.eff-label.four { background: color-mix(in srgb, var(--tint) 55%, #f6c35b); }
+.eff-row p {
+  margin: 0;
+  flex: 1;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #cdd9f2;
+}
+
 /* 页脚 */
 .foot {
   text-align: center;
@@ -1197,4 +1434,53 @@ function logout() {
   .uname { display: none; }
   .topbar .sub { display: none; }
 }
+
+/* ===== 武器 90 级基础攻击力 / 副词条提升 ===== */
+.w90 {
+  margin-top: 9px;
+  padding: 9px 11px;
+  border-radius: 10px;
+  background: rgba(246, 195, 91, 0.08);
+  border: 1px solid rgba(246, 195, 91, 0.24);
+}
+.w90-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 11.5px;
+  line-height: 1.75;
+}
+.w90-line + .w90-line { margin-top: 2px; }
+.w90-k { color: #8fa2c7; flex-shrink: 0; }
+.w90-line b { color: #f6c35b; font-size: 15px; font-weight: 700; letter-spacing: 0.5px; }
+.w90-line b.sub { color: #6fd6c0; font-size: 13px; }
+.w90-gain { color: #8092b6; }
+.w90-badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #0b1020;
+  background: #f6c35b;
+}
+.p-stats {
+  margin-top: 7px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: rgba(111, 214, 192, 0.08);
+  border: 1px solid rgba(111, 214, 192, 0.2);
+  display: grid;
+  gap: 3px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: #9fb0d8;
+}
+.p-stats b { color: #6fd6c0; font-weight: 700; font-size: 13px; }
+.p-stats b.atk { color: #f6c35b; font-size: 14px; }
+.p-stats .p-gain { color: #8092b6; }
+.weapon-line .v { color: #d8e3fa; font-size: 11.5px; line-height: 1.6; }
+
 </style>

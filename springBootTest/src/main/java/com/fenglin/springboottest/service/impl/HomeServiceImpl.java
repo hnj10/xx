@@ -60,6 +60,15 @@ public class HomeServiceImpl implements HomeService {
     /** 搜索关键字最大长度，防止超长输入拖慢模糊查询 */
     private static final int MAX_KEYWORD_LENGTH = 50;
 
+    /** 角色武器推荐里少量简称，关联 t_weapon 时还原成正式武器名 */
+    private static final Map<String, String> WEAPON_ALIAS = Map.of(
+            "狼末", "狼的末路",
+            "西风弓", "西风猎弓");
+
+    private static String resolveWeaponName(String name) {
+        return WEAPON_ALIAS.getOrDefault(name, name);
+    }
+
     @Autowired
     private CharacterMapper characterMapper;
 
@@ -80,6 +89,9 @@ public class HomeServiceImpl implements HomeService {
 
     @Autowired
     private MaterialItemMapper materialItemMapper;
+
+    @Autowired
+    private com.fenglin.springboottest.mapper.ArtifactSetMapper artifactSetMapper;
 
     /** 数据口径说明，与前端 materialsData.js 的 MATERIAL_NOTICE 保持一致 */
     private static final String MATERIAL_NOTICE =
@@ -114,6 +126,12 @@ public class HomeServiceImpl implements HomeService {
                 .orderByAsc(CharWeapon::getId);
         List<CharWeapon> rows = charWeaponMapper.selectList(query);
 
+        // 推荐武器按名称关联 t_weapon，补出 90 级基础攻击力与副词条数值
+        Map<String, Weapon> weaponMap = new LinkedHashMap<>();
+        for (Weapon w : weaponMapper.selectList(null)) {
+            weaponMap.put(w.getName(), w);
+        }
+
         // character_name -> { element, best[] }
         Map<String, CharWeaponVO> grouped = new LinkedHashMap<>();
         for (CharWeapon row : rows) {
@@ -128,6 +146,13 @@ public class HomeServiceImpl implements HomeService {
             brief.setName(row.getWeaponName());
             brief.setRarity(row.getRarity());
             brief.setReason(row.getReason());
+            Weapon w = weaponMap.get(resolveWeaponName(row.getWeaponName()));
+            if (w != null) {
+                brief.setAtk1(w.getAtk1());
+                brief.setAtk90(w.getAtk90());
+                brief.setSubStat(w.getSubStat());
+                brief.setSubValue(w.getSubValue());
+            }
             vo.getBest().add(brief);
         }
 
@@ -170,6 +195,15 @@ public class HomeServiceImpl implements HomeService {
             result.add(toTeamVO(entity, memberMap.getOrDefault(entity.getId(), Collections.emptyList())));
         }
         return result;
+    }
+
+    @Override
+    public List<com.fenglin.springboottest.entity.ArtifactSet> listArtifactSets() {
+        LambdaQueryWrapper<com.fenglin.springboottest.entity.ArtifactSet> query = new LambdaQueryWrapper<>();
+        query.eq(com.fenglin.springboottest.entity.ArtifactSet::getStatus, 1)
+                .orderByAsc(com.fenglin.springboottest.entity.ArtifactSet::getSortOrder)
+                .orderByAsc(com.fenglin.springboottest.entity.ArtifactSet::getId);
+        return artifactSetMapper.selectList(query);
     }
 
     // ------------------------------------------------------------------
@@ -438,6 +472,10 @@ public class HomeServiceImpl implements HomeService {
         vo.setRarity(entity.getRarity());
         vo.setType(entity.getType());
         vo.setStat(entity.getStat());
+        vo.setAtk1(entity.getAtk1());
+        vo.setAtk90(entity.getAtk90());
+        vo.setSubStat(entity.getSubStat());
+        vo.setSubValue(entity.getSubValue());
         vo.setDesc(entity.getDescription());
         vo.setUsers(new ArrayList<>(users));
         return vo;
@@ -587,7 +625,7 @@ public class HomeServiceImpl implements HomeService {
             wd.setRarity(row.getRarity());
             wd.setReason(row.getReason());
             Weapon w = weaponMapper.selectOne(
-                    new LambdaQueryWrapper<Weapon>().eq(Weapon::getName, row.getWeaponName()));
+                    new LambdaQueryWrapper<Weapon>().eq(Weapon::getName, resolveWeaponName(row.getWeaponName())));
             if (w != null) {
                 wd.setWeapon(toWeaponVO(w, weaponUserMap(Collections.singletonList(w.getName()))
                         .getOrDefault(w.getName(), Collections.emptyList())));

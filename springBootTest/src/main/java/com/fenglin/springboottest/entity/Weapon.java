@@ -34,6 +34,18 @@ public class Weapon implements Serializable {
     /** 副属性 */
     private String stat;
 
+    /** 1 级基础攻击力（白值） */
+    private Integer atk1;
+
+    /** 90 级基础攻击力（白值） */
+    private Integer atk90;
+
+    /** 副词条名称，如 暴击伤害 */
+    private String subStat;
+
+    /** 副词条 90 级提升值，如 44.1% / 198 */
+    private String subValue;
+
     /** 武器效果描述（列名 description，desc 是 MySQL 关键字） */
     private String description;
 
@@ -90,6 +102,38 @@ public class Weapon implements Serializable {
 
     public void setStat(String stat) {
         this.stat = stat;
+    }
+
+    public Integer getAtk1() {
+        return atk1;
+    }
+
+    public void setAtk1(Integer atk1) {
+        this.atk1 = atk1;
+    }
+
+    public Integer getAtk90() {
+        return atk90;
+    }
+
+    public void setAtk90(Integer atk90) {
+        this.atk90 = atk90;
+    }
+
+    public String getSubStat() {
+        return subStat;
+    }
+
+    public void setSubStat(String subStat) {
+        this.subStat = subStat;
+    }
+
+    public String getSubValue() {
+        return subValue;
+    }
+
+    public void setSubValue(String subValue) {
+        this.subValue = subValue;
     }
 
     public String getDescription() {

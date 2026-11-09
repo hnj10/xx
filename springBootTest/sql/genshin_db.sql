@@ -11531,7 +11531,7 @@ CREATE TABLE `t_user`  (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES (1, 'traveler', '$2a$10$Hdd/CpTjIM275SamMofic.bNWmqL1ewDoy6KhKjRdAaHspW6f5682', 'traveler', '蒙德', 1, 0, '2026-11-02 08:58:32', '2026-11-06 15:10:55');
+INSERT INTO `t_user` VALUES (1, 'hhy', '$2a$10$V1Z7392z83TRqyQR0YqBI.a5sdHqf374JeUot9Fun3BTQ9T.z5jl2', 'hhy', '蒙德', 1, 0, '2026-11-02 08:58:32', '2026-11-06 15:10:55');
 INSERT INTO `t_user` VALUES (2, 'paimon', '$2a$10$tQ/Db2XNsWXcpzpmUyCb4uhhckKGAoBgH881/0TY4fJL1NOCzzZJu', 'paimon', '璃月', 1, 1, '2026-11-02 08:58:32', '2026-11-02 08:58:32');
 INSERT INTO `t_user` VALUES (3, '小何露', '$2a$10$9t857MQYl0xY5WNFytNTdOk35UQlsZxeCk7BLIOjIxRzgrVvw0Ojm', '小何露', '蒙德', 1, 1, '2026-11-02 09:08:07', '2026-11-02 09:08:07');
 
@@ -11545,6 +11545,10 @@ CREATE TABLE `t_weapon`  (
   `rarity` tinyint NOT NULL DEFAULT 5 COMMENT '星级',
   `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '类型: 单手剑/双手剑/长柄武器/法器/弓',
   `stat` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '副属性',
+  `atk1` int NULL DEFAULT NULL COMMENT '1级基础攻击力(白值)',
+  `atk90` int NULL DEFAULT NULL COMMENT '90级基础攻击力(白值)',
+  `sub_stat` varchar(30) NULL DEFAULT NULL COMMENT '副词条名称',
+  `sub_value` varchar(20) NULL DEFAULT NULL COMMENT '副词条90级提升值',
   `description` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '武器效果描述',
   `sort_order` int NOT NULL DEFAULT 0 COMMENT '排序',
   `status` tinyint NOT NULL DEFAULT 1 COMMENT '状态: 1-显示 0-隐藏',
