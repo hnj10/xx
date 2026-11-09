@@ -40,6 +40,11 @@ if errorlevel 1 (
 ) else (
   echo         数据表已存在, 跳过。
 )
+"%MYSQL%" -uroot -p123456 -e "USE genshin_db; SELECT COUNT(*) FROM t_material_item;" >nul 2>&1
+if errorlevel 1 (
+  echo         导入养成材料数据 ...
+  "%MYSQL%" -uroot -p123456 --default-character-set=utf8mb4 genshin_db < "%~dp0springBootTest\sql\materials_data.sql" 2>nul
+)
 echo         数据库就绪。
 
 :FIND_MVN

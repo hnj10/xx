@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <CharacterDetail v-if="detailName" :name="detailName" @back="detailName = ''" />
+    <template v-else>
     <!-- ===== 顶部导航 ===== -->
     <header class="topbar">
       <div class="brand">
@@ -118,7 +120,7 @@
               <span class="group-count">{{ g.count }} 位</span>
             </div>
             <div class="grid chars">
-              <div v-for="c in g.items" :key="c.id" class="card char-card" @click="todo('角色养成攻略 · ' + c.name)">
+              <div v-for="c in g.items" :key="c.id" class="card char-card" @click="openDetail(c.name)">
                 <div class="char-top">
                   <img v-if="charImg(c.name)" class="char-avatar" :src="charImg(c.name)" :alt="c.name" />
                   <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
@@ -129,7 +131,9 @@
                 <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
                 <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
                 <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
+                <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
                 <p class="summary">{{ c.summary }}</p>
+                <div class="detail-link">查看角色详情 →</div>
               </div>
             </div>
           </div>
@@ -137,7 +141,7 @@
 
         <!-- 平铺视图 -->
         <div v-else class="grid chars">
-          <div v-for="c in chars" :key="c.id" class="card char-card" @click="todo('角色养成攻略 · ' + c.name)">
+          <div v-for="c in chars" :key="c.id" class="card char-card" @click="openDetail(c.name)">
             <div class="char-top">
               <img v-if="charImg(c.name)" class="char-avatar" :src="charImg(c.name)" :alt="c.name" />
               <span class="ele-dot" :style="{ background: eleColor(c.element) }" v-html="eleSvg(c.element)"></span>
@@ -148,7 +152,9 @@
             <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
             <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
             <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
+            <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
             <p class="summary">{{ c.summary }}</p>
+            <div class="detail-link">查看角色详情 →</div>
           </div>
         </div>
       </section>
@@ -206,6 +212,7 @@
                   <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
                 </div>
                 <div class="w-meta">{{ w.type }} · {{ w.stat }}</div>
+                <div class="row mat-row"><span class="k">突破材料</span><span class="v">{{ weaponMatLine(w.name) }}</span></div>
                 <p class="summary">{{ w.desc }}</p>
                 <div class="users">
                   <span class="k">适配角色</span>
@@ -224,6 +231,7 @@
               <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
             </div>
             <div class="w-meta">{{ w.type }} · {{ w.stat }}</div>
+            <div class="row mat-row"><span class="k">突破材料</span><span class="v">{{ weaponMatLine(w.name) }}</span></div>
             <p class="summary">{{ w.desc }}</p>
             <div class="users">
               <span class="k">适配角色</span>
@@ -257,8 +265,9 @@
       </section>
 
       <footer class="foot">
-        当前为本地演示数据 · 后端接口已预留（/api/home/*）· 点击卡片可查看模块入口
+        当前为本地演示数据 · 后端接口已预留（/api/home/*）· 点击角色卡片进入角色详情
       </footer>
+    </template>
     </template>
 
     <!-- ===== 轻提示 ===== -->
@@ -272,6 +281,7 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import { NATIONS, svgFull } from '../data/nations.js'
 import { charImg, artifactImg } from '../data/imageMap.js'
+import CharacterDetail from './CharacterDetail.vue'
 import {
   ELEMENT_NATION,
   CHARACTERS,
@@ -279,14 +289,60 @@ import {
   WEAPONS,
   TEAMS
 } from '../data/homeData.js'
+import { CHARACTER_MATERIALS, WEAPON_MATERIALS } from '../data/materialsData.js'
 
 defineProps({
   username: { type: String, default: '' }
 })
 const emit = defineEmits(['goto'])
 
-// 后端接口前缀（开发环境由 vite.config.js 代理到 http://localhost:8081）
+// 后端接口前缀（开发环境由 vite.config.js 代理到 http://192.168.68.4:8081）
 const API = '/api'
+
+// 角色详情：非空时整个首页切换为详情页（保留首页状态，返回时无需重新拉数据）
+const detailName = ref('')
+function openDetail(name) {
+  detailName.value = name
+}
+
+// ---------------- 养成材料摘要（首页卡片） ----------------
+// 与详情页一样采用「接口优先、本地兜底」：先从 materialsData.js 生成摘要，
+// 后端 /home/materials/summary 可用时再覆盖，接口挂了页面也不缺数据。
+function localSummary(map) {
+  const out = {}
+  for (const [name, mat] of Object.entries(map)) {
+    const seen = new Set()
+    const highlights = []
+    for (const it of mat.items || []) {
+      if (it.stage !== 0 || it.category === '升级消耗') continue
+      if (!seen.has(it.category)) {
+        seen.add(it.category)
+        highlights.push(it.name)
+      }
+      if (highlights.length >= 3) break
+    }
+    out[name] = { ...(mat.summary || {}), highlights }
+  }
+  return out
+}
+const charMats = ref(localSummary(CHARACTER_MATERIALS))
+const weaponMats = ref(localSummary(WEAPON_MATERIALS))
+
+function fmtWan(n) {
+  return ((Number(n) || 0) / 10000).toFixed(1)
+}
+function charMatLine(name) {
+  const s = charMats.value[name]
+  if (!s) return ''
+  const main = (s.highlights || []).slice(0, 2).join(' / ')
+  return `经验书 ${s.books} · 摩拉 ${fmtWan(s.moraTotal)}万${main ? ' · ' + main : ''}`
+}
+function weaponMatLine(name) {
+  const s = weaponMats.value[name]
+  if (!s) return ''
+  const main = (s.highlights || []).slice(0, 2).join(' / ')
+  return `精锻矿 ${s.ore} · 摩拉 ${fmtWan(s.moraTotal)}万${main ? ' · ' + main : ''}`
+}
 
 // ---------------- 数据（本地演示，后端接口预留） ----------------
 const chars = ref(CHARACTERS)
@@ -332,15 +388,33 @@ async function loadFromBackend(path, fallback) {
 }
 
 onMounted(async () => {
-  // 以下四个接口后端暂未实现，预留契约见 src/data/homeData.js 顶部注释
+  // 接口优先，失败时回退到本地 homeData.js（契约见该文件顶部注释）
   chars.value = await loadFromBackend('/home/characters', CHARACTERS)
   charWeapons.value = await loadFromBackend('/home/char-weapons', CHAR_WEAPONS)
   weapons.value = await loadFromBackend('/home/weapons', WEAPONS)
   teams.value = await loadFromBackend('/home/teams', TEAMS)
 
-  // 分级分类接口（后端实现后返回分组结构）
+  // 分级分类接口
   charGroups.value = await loadFromBackend('/home/characters/elements', [])
   weaponGroups.value = await loadFromBackend('/home/weapons/types', [])
+
+  // 养成材料摘要：接口可用就覆盖本地生成的摘要
+  try {
+    const res = await fetch(API + '/home/materials/summary')
+    if (res.ok) {
+      const json = await res.json()
+      if (json && json.code === 200 && json.data) {
+        if (json.data.characters && Object.keys(json.data.characters).length) {
+          charMats.value = json.data.characters
+        }
+        if (json.data.weapons && Object.keys(json.data.weapons).length) {
+          weaponMats.value = json.data.weapons
+        }
+      }
+    }
+  } catch (e) {
+    // 后端材料接口不可用，沿用本地摘要
+  }
 })
 
 // ---------------- 搜索 ----------------
@@ -482,6 +556,28 @@ function logout() {
 .home::-webkit-scrollbar-thumb {
   background: rgba(120, 170, 255, 0.3);
   border-radius: 8px;
+}
+
+/* ===== 养成材料摘要 / 角色详情入口 ===== */
+.mat-row {
+  margin-top: 2px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(180, 205, 255, 0.18);
+}
+.mat-row .v {
+  color: #f6c35b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.detail-link {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #4ec6f0;
+}
+.char-card {
+  cursor: pointer;
 }
 
 /* ===== 顶部导航 ===== */

@@ -36,8 +36,8 @@ if %errorlevel%==0 (
 
 echo ============================================
 echo   已发出启动指令, 请查看弹出的两个窗口。
-echo   前端: http://localhost:5173/
-echo   后端: http://localhost:8081/api
+echo   前端: http://192.168.68.4:5173/
+echo   后端: http://192.168.68.4:8081/api
 echo   账号: traveler/123456   或   paimon/123456
 echo   停止: 双击 stop-all.bat
 echo ============================================

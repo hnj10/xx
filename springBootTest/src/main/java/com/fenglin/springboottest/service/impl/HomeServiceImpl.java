@@ -3,24 +3,31 @@ package com.fenglin.springboottest.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fenglin.springboottest.entity.CharWeapon;
 import com.fenglin.springboottest.entity.GenshinCharacter;
+import com.fenglin.springboottest.entity.MaterialItem;
 import com.fenglin.springboottest.entity.Team;
 import com.fenglin.springboottest.entity.TeamMember;
 import com.fenglin.springboottest.entity.Weapon;
 import com.fenglin.springboottest.entity.WeaponUser;
 import com.fenglin.springboottest.mapper.CharWeaponMapper;
 import com.fenglin.springboottest.mapper.CharacterMapper;
+import com.fenglin.springboottest.mapper.MaterialItemMapper;
 import com.fenglin.springboottest.mapper.TeamMapper;
 import com.fenglin.springboottest.mapper.TeamMemberMapper;
 import com.fenglin.springboottest.mapper.WeaponMapper;
 import com.fenglin.springboottest.mapper.WeaponUserMapper;
 import com.fenglin.springboottest.service.HomeService;
 import com.fenglin.springboottest.vo.CharWeaponVO;
+import com.fenglin.springboottest.vo.CharacterDetailVO;
 import com.fenglin.springboottest.vo.CharacterVO;
 import com.fenglin.springboottest.vo.GroupVO;
+import com.fenglin.springboottest.vo.MaterialItemVO;
+import com.fenglin.springboottest.vo.MaterialSummaryVO;
+import com.fenglin.springboottest.vo.MaterialVO;
 import com.fenglin.springboottest.vo.SearchResultVO;
 import com.fenglin.springboottest.vo.TeamMemberVO;
 import com.fenglin.springboottest.vo.TeamVO;
 import com.fenglin.springboottest.vo.WeaponBriefVO;
+import com.fenglin.springboottest.vo.WeaponDetailVO;
 import com.fenglin.springboottest.vo.WeaponVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,6 +77,14 @@ public class HomeServiceImpl implements HomeService {
 
     @Autowired
     private TeamMemberMapper teamMemberMapper;
+
+    @Autowired
+    private MaterialItemMapper materialItemMapper;
+
+    /** 数据口径说明，与前端 materialsData.js 的 MATERIAL_NOTICE 保持一致 */
+    private static final String MATERIAL_NOTICE =
+            "养成消耗按官方通用模板估算：数量依据统一等级曲线，元素宝石按元素、特产按国度、"
+                    + "武器突破系列按来源关键词推断（未命中时按名称规则分配），具体以游戏内为准。";
 
     // ------------------------------------------------------------------
     // 列表查询
@@ -441,6 +456,210 @@ public class HomeServiceImpl implements HomeService {
         SearchResultVO vo = new SearchResultVO();
         vo.setCategory(category);
         vo.setData(data);
+        return vo;
+    }
+
+    // ------------------------------------------------------------------
+    // 养成材料：摘要 / 明细 / 角色详情聚合
+    // ------------------------------------------------------------------
+
+    @Override
+    public Map<String, Map<String, MaterialSummaryVO>> listMaterialSummaries() {
+        // 只取 stage=0 的汇总行，避免把上万条突破阶段明细拉到首页
+        List<MaterialItem> rows = materialItemMapper.selectList(
+                new LambdaQueryWrapper<MaterialItem>()
+                        .eq(MaterialItem::getStage, 0)
+                        .orderByAsc(MaterialItem::getOwnerType)
+                        .orderByAsc(MaterialItem::getSortOrder));
+
+        Map<String, List<MaterialItem>> grouped = new LinkedHashMap<>();
+        for (MaterialItem row : rows) {
+            grouped.computeIfAbsent(row.getOwnerType() + "|" + row.getOwnerName(),
+                    key -> new ArrayList<>()).add(row);
+        }
+
+        Map<String, MaterialSummaryVO> characters = new LinkedHashMap<>();
+        Map<String, MaterialSummaryVO> weapons = new LinkedHashMap<>();
+        for (Map.Entry<String, List<MaterialItem>> entry : grouped.entrySet()) {
+            String[] key = entry.getKey().split("\\|", 2);
+            MaterialSummaryVO vo = toSummary(key[1], entry.getValue());
+            if ("weapon".equals(key[0])) {
+                weapons.put(key[1], vo);
+            } else {
+                characters.put(key[1], vo);
+            }
+        }
+        Map<String, Map<String, MaterialSummaryVO>> result = new LinkedHashMap<>();
+        result.put("characters", characters);
+        result.put("weapons", weapons);
+        return result;
+    }
+
+    @Override
+    public MaterialVO getMaterial(String ownerType, String name) {
+        List<MaterialItem> rows = materialItemMapper.selectList(
+                new LambdaQueryWrapper<MaterialItem>()
+                        .eq(MaterialItem::getOwnerType, ownerType)
+                        .eq(MaterialItem::getOwnerName, name)
+                        .orderByAsc(MaterialItem::getSortOrder));
+        if (rows.isEmpty()) {
+            return null;
+        }
+
+        MaterialVO vo = new MaterialVO();
+        vo.setName(name);
+        vo.setOwnerType(ownerType);
+        List<MaterialItem> summaryRows = new ArrayList<>();
+        List<MaterialItemVO> items = new ArrayList<>(rows.size());
+        Set<Integer> stageSet = new LinkedHashSet<>();
+        Map<Integer, Integer> moraByStage = new HashMap<>();
+
+        for (MaterialItem row : rows) {
+            int stage = row.getStage() == null ? 0 : row.getStage();
+            if (stage == 0) {
+                summaryRows.add(row);
+            } else {
+                stageSet.add(stage);
+                if ("摩拉".equals(row.getCategory())) {
+                    moraByStage.put(stage, row.getItemCount());
+                }
+            }
+            items.add(new MaterialItemVO(row.getCategory(), row.getItemName(),
+                    row.getItemCount(), stage, row.getSortOrder()));
+        }
+        vo.setSummary(toSummary(name, summaryRows));
+        vo.setItems(items);
+
+        // 每个突破阶段对应的等级上限（官方统一：20/40/50/60/70/80）
+        int[] levels = {20, 40, 50, 60, 70, 80};
+        List<Map<String, Object>> stages = new ArrayList<>();
+        for (Integer stage : stageSet) {
+            Map<String, Object> m = new LinkedHashMap<>();
+            m.put("stage", stage);
+            m.put("level", stage >= 1 && stage <= levels.length ? levels[stage - 1] : stage * 10);
+            m.put("mora", moraByStage.getOrDefault(stage, 0));
+            stages.add(m);
+        }
+        vo.setStages(stages);
+
+        // 补元数据：角色给元素 / 星级，武器给类型 / 星级
+        if ("weapon".equals(ownerType)) {
+            Weapon w = weaponMapper.selectOne(
+                    new LambdaQueryWrapper<Weapon>().eq(Weapon::getName, name));
+            if (w != null) {
+                vo.setRarity(w.getRarity());
+                vo.setType(w.getType());
+            }
+        } else {
+            GenshinCharacter c = characterMapper.selectOne(
+                    new LambdaQueryWrapper<GenshinCharacter>().eq(GenshinCharacter::getName, name));
+            if (c != null) {
+                vo.setElement(c.getElement());
+                vo.setRarity(c.getRarity());
+            }
+        }
+        return vo;
+    }
+
+    @Override
+    public CharacterDetailVO getCharacterDetail(String name) {
+        CharacterDetailVO detail = new CharacterDetailVO();
+        detail.setNotice(MATERIAL_NOTICE);
+
+        GenshinCharacter charEntity = characterMapper.selectOne(
+                new LambdaQueryWrapper<GenshinCharacter>().eq(GenshinCharacter::getName, name));
+        if (charEntity == null) {
+            return detail;
+        }
+        detail.setCharacter(toCharacterVO(charEntity));
+        detail.setMaterial(getMaterial("character", name));
+
+        // 该角色的武器推荐：每条都带上武器养成攻略与武器材料
+        List<CharWeapon> rows = charWeaponMapper.selectList(
+                new LambdaQueryWrapper<CharWeapon>()
+                        .eq(CharWeapon::getCharacterName, name)
+                        .orderByAsc(CharWeapon::getSortOrder)
+                        .orderByAsc(CharWeapon::getId));
+        List<WeaponDetailVO> weaponDetails = new ArrayList<>(rows.size());
+        for (CharWeapon row : rows) {
+            WeaponDetailVO wd = new WeaponDetailVO();
+            wd.setName(row.getWeaponName());
+            wd.setRarity(row.getRarity());
+            wd.setReason(row.getReason());
+            Weapon w = weaponMapper.selectOne(
+                    new LambdaQueryWrapper<Weapon>().eq(Weapon::getName, row.getWeaponName()));
+            if (w != null) {
+                wd.setWeapon(toWeaponVO(w, weaponUserMap(Collections.singletonList(w.getName()))
+                        .getOrDefault(w.getName(), Collections.emptyList())));
+            }
+            wd.setMaterial(getMaterial("weapon", row.getWeaponName()));
+            weaponDetails.add(wd);
+        }
+        detail.setWeapons(weaponDetails);
+
+        // 包含该角色的队伍推荐：从成员表反查队伍 id，再组装完整队伍
+        List<TeamMember> memberRows = teamMemberMapper.selectList(
+                new LambdaQueryWrapper<TeamMember>().eq(TeamMember::getMemberName, name));
+        List<Long> teamIds = memberRows.stream()
+                .map(TeamMember::getTeamId)
+                .filter(id -> id != null)
+                .distinct()
+                .collect(Collectors.toList());
+        List<TeamVO> teams = new ArrayList<>();
+        if (!teamIds.isEmpty()) {
+            List<Team> teamEntities = teamMapper.selectList(new LambdaQueryWrapper<Team>()
+                    .in(Team::getId, teamIds)
+                    .eq(Team::getStatus, 1)
+                    .orderByAsc(Team::getSortOrder)
+                    .orderByAsc(Team::getId));
+            Map<Long, List<TeamMemberVO>> memberMap = teamMemberMap(teamIds);
+            for (Team t : teamEntities) {
+                teams.add(toTeamVO(t, memberMap.getOrDefault(t.getId(), Collections.emptyList())));
+            }
+        }
+        detail.setTeams(teams);
+        return detail;
+    }
+
+    /**
+     * 把 stage=0 的汇总行转成首页卡片用的轻量摘要。
+     * highlights 按类别各取一个代表材料名，避免 4 个元素宝石把名额占满。
+     */
+    private MaterialSummaryVO toSummary(String name, List<MaterialItem> rows) {
+        MaterialSummaryVO vo = new MaterialSummaryVO();
+        vo.setName(name);
+        int books = 0, ore = 0, moraLevel = 0, moraAscension = 0, moraTotal = 0;
+        String bookName = "", oreName = "";
+        Set<String> seenCategories = new LinkedHashSet<>();
+        List<String> highlights = new ArrayList<>();
+
+        for (MaterialItem row : rows) {
+            String itemName = row.getItemName();
+            int count = row.getItemCount() == null ? 0 : row.getItemCount();
+            if ("大英雄的经验".equals(itemName)) {
+                books = count;
+                bookName = itemName;
+            } else if ("精锻用魔矿".equals(itemName)) {
+                ore = count;
+                oreName = itemName;
+            } else if (itemName.contains("摩拉（") && itemName.contains("升级")) {
+                moraLevel = count;
+            } else if (itemName.contains("摩拉（") && itemName.contains("突破")) {
+                moraAscension = count;
+            } else if (itemName.contains("摩拉（合计）")) {
+                moraTotal = count;
+            } else if (highlights.size() < 4 && seenCategories.add(row.getCategory())) {
+                highlights.add(itemName);
+            }
+        }
+        vo.setBooks(books);
+        vo.setBookName(bookName);
+        vo.setOre(ore);
+        vo.setOreName(oreName);
+        vo.setMoraLevel(moraLevel);
+        vo.setMoraAscension(moraAscension);
+        vo.setMoraTotal(moraTotal);
+        vo.setHighlights(highlights);
         return vo;
     }
 }

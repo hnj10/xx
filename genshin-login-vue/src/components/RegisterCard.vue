@@ -103,7 +103,7 @@ import { NATIONS, svgFull } from '../data/nations.js'
 
 const emit = defineEmits(['goto'])
 
-// 后端接口前缀（开发环境由 vite.config.js 代理到 http://localhost:8081）
+// 后端接口前缀（开发环境由 vite.config.js 代理到 http://192.168.68.4:8081）
 const API = '/api'
 
 const user = ref('')
@@ -156,7 +156,7 @@ async function register() {
     }
   } catch (err) {
     console.error(err)
-    alert('连接服务器失败，请确认后端已启动（http://localhost:8081）')
+    alert('连接服务器失败，请确认后端已启动（http://192.168.68.4:8081）')
   } finally {
     btnText.value = '注册并进入提瓦特'
   }

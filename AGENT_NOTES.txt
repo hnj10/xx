@@ -17,8 +17,8 @@
 - 所有 .bat 均为 GBK(936) 编码，路径全部用 %~dp0 相对定位
 
 ## 端口与服务
-- 前端 Vite : http://localhost:5173/  (自动打开浏览器；代理 /api -> 8081，不改写路径)
-- 后端 API  : http://localhost:8081/api  (Tomcat，context-path=/api)
+- 前端 Vite : http://192.168.68.4:5173/  (自动打开浏览器；代理 /api -> 8081，不改写路径)
+- 后端 API  : http://192.168.68.4:8081/api  (Tomcat，context-path=/api)
 - MySQL     : 127.0.0.1:3306，库 genshin_db，账号 root / 123456
 
 ## 测试账号 (密码均为 123456)
@@ -81,8 +81,8 @@
    - 首次较慢（npm install + mvn 编译），约 30-90 秒
 2. 验证（任选其一）：
    - netstat -ano | findstr ":8081 :5173"  看是否 LISTENING
-   - curl -s http://localhost:8081/api/user/list
-   - curl -s -X POST http://localhost:5173/api/user/login ^
+   - curl -s http://192.168.68.4:8081/api/user/list
+   - curl -s -X POST http://192.168.68.4:5173/api/user/login ^
        -H "Content-Type: application/json" ^
        -d "{\"username\":\"traveler\",\"password\":\"123456\"}"
      走前端代理，返回「登录成功」说明整条链路通。
@@ -108,3 +108,66 @@
 - .m2 依赖缓存一般在，编译不会太慢；若每次都重下依赖，说明 .m2 也被清了（正常）
 - 后端 mybatis-plus.mapper-locations 指向 classpath*:/mapper/**/*.xml，但项目无 mapper xml
   （用的是 BaseMapper 通用方法），属正常，不是缺失。
+
+============================================================
+## 2026-11-09 复核补充（本机实测）
+============================================================
+
+- 坑 1 复核：SERVER__PORT=53969 / SERVER__HOST=127.0.0.1 确实仍在注入。
+  只传 -Dspring-boot.run.arguments=--server.port=8081（应用命令行参数，优先级最高）、
+  不清空 env，实测也能绑定 8081 并正常启动；但清空 env 仍是首选，双保险别省。
+  注意 -Dserver.port=8081 是 JVM 属性，压不住 env，两者不要混淆。
+- 坑 2 复核：%USERPROFILE%\.m2\wrapper\dists\apache-maven-3.9.9-bin\...\apache-maven-3.9.9
+  这个分发已完整可用（boot 下有 plexus-classworlds-2.8.0.jar），本轮用它成功编译并启动后端，
+  可作为 IntelliJ Maven 之外的备选。项目内 apache-maven-3.9.9\ 仍只有 license，确实坏的。
+  D:\IntelliJ IDEA 2024.3.2.2\plugins\maven\lib\maven3 也完整可用，start-backend.bat 会优先找到它。
+  若要给 .bat 增加候选路径，注意所有 .bat 是 GBK(936) 编码，别用 UTF-8 覆盖写，否则中文全乱码。
+- 坑 4（新）：前端 App.vue / AuroraBackground.vue 引用了仓库里根本不存在的 3 个文件：
+  src/components/AdminLogin.vue、src/components/AdminDashboard.vue、src/assets/paimon-bg.png。
+  Git 历史与远程均无，Vite 会报 Failed to resolve import，页面白屏。
+  本轮已补「临时占位」版本（未跟踪文件，未提交），后台管理功能本身仍未实现；
+  若重置后再次出现，按同样方式补占位，或直接实现正式组件。
+- AI 提醒：动手前先看项目根目录有没有 AGENT_NOTES.txt / start-*.bat 这类自带说明。
+  本轮没先读，把坑 1/2/3 又排查了一遍，纯属浪费。
+
+============================================================
+## 2026-11-09 局域网 IP 变更
+============================================================
+- 前后端访问地址统一改成本机以太网 IP `192.168.68.4`：
+  前端 http://192.168.68.4:5173/ ，后端 http://192.168.68.4:8081/api 。
+- `genshin-login-vue/vite.config.js`：`server.host='0.0.0.0'` 监听所有网卡
+  （局域网 IP 与本机 localhost 都能访问），`/api` 代理 target 改为
+  `http://192.168.68.4:8081`；IP 集中在常量 `LAN_IP`，以后换 IP 只改这一处。
+- 组件里的接口前缀仍是相对路径 `/api`（别改成绝对地址），只把注释和报错提示里的
+  localhost 地址同步换成新 IP。
+- 后端 `application-dev.properties` 显式加了 `server.address=0.0.0.0`（原本就是默认值，
+  写死单个 IP 会让 localhost 失效、DHCP 换 IP 后还会启动失败）。
+  MySQL 仍连 `127.0.0.1:3306`，不要跟着改成局域网 IP。
+- CORS 是 `allowedOriginPattern("*")`，换 IP 无需改。
+- 若别的设备访问不了，检查 Windows 防火墙是否放行 5173 / 8081 入站。
+- 所有 .bat 是 GBK(936)，改地址时按字节替换，别用 UTF-8 覆盖写。
+
+============================================================
+## 2026-11-09 养成材料 + 角色详情页（新增功能）
+============================================================
+- 新表 `t_material_item`（10843 行）：通用明细表，owner_type=character/weapon，
+  owner_name 为角色名或武器名，stage=0 是 1→90 汇总、stage=1..6 是逐突破阶段。
+  覆盖 118 位角色（突破材料 + 大英雄的经验）与 203 件武器（突破材料 + 精锻用魔矿）。
+- 数据由项目根目录 `gen_materials.py` 生成，一次产出两份：
+  `springBootTest/sql/materials_data.sql` 和 `genshin-login-vue/src/data/materialsData.js`。
+  要调整规则就改脚本后重跑，再重新导入 SQL；前后端代码不用动。
+- 【数据口径，务必如实告知】项目里含未实装/未来版本角色，公开资料查不到真实突破材料。
+  因此数量按官方统一等级曲线，材料名按元素宝石 / 国度特产 / 武器来源系列规则映射，
+  属于「通用模板估算」，界面已标注，不是逐角色实测数据。
+- `start-backend.bat` 的数据库初始化段已加入该表的幂等导入检查
+  （检查 t_material_item 是否存在，不存在才导入）。重置电脑后不会丢材料数据。
+  这段是用 Python 按 GBK 字节级替换写入的，别用 UTF-8 覆盖写。
+- 新增 3 个后端接口：
+  GET /api/home/materials/summary                     首页卡片轻量摘要
+  GET /api/home/materials?type=character|weapon&name=xxx  单个完整材料明细
+  GET /api/home/characters/detail?name=xxx           角色详情聚合（角色+材料+武器推荐+武器养成/材料+相关队伍）
+- 新增前端 `src/components/CharacterDetail.vue`；首页角色卡片点击改为进入详情页
+  （原来只弹「页面开发中」toast），角色与武器卡片新增材料摘要行。
+  详情页、首页摘要都沿用「接口优先 + 本地兜底」，后端挂了也能看。
+- 后端新增了 Java 类，**改完必须重启 spring-boot:run 才生效**（devtools 不会自动加载新类）。
+  重启前先停掉占用 8081 的 java 进程，再按标准命令启动。

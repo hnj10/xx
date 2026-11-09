@@ -3,8 +3,11 @@ package com.fenglin.springboottest;
 import com.fenglin.springboottest.common.Result;
 import com.fenglin.springboottest.service.HomeService;
 import com.fenglin.springboottest.vo.CharWeaponVO;
+import com.fenglin.springboottest.vo.CharacterDetailVO;
 import com.fenglin.springboottest.vo.CharacterVO;
 import com.fenglin.springboottest.vo.GroupVO;
+import com.fenglin.springboottest.vo.MaterialSummaryVO;
+import com.fenglin.springboottest.vo.MaterialVO;
 import com.fenglin.springboottest.vo.SearchResultVO;
 import com.fenglin.springboottest.vo.TeamVO;
 import com.fenglin.springboottest.vo.WeaponVO;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 首页接口。
@@ -33,6 +37,9 @@ import java.util.List;
  *   GET /api/home/characters/elements   角色按元素分级分类
  *   GET /api/home/weapons/types         武器按类型分级分类
  *   GET /api/home/teams/cores           队伍按核心机制分级分类
+ *   GET /api/home/materials/summary     角色 / 武器养成消耗摘要（首页卡片用）
+ *   GET /api/home/materials?type=character&name=xxx  单个角色或武器的完整材料明细
+ *   GET /api/home/characters/detail?name=xxx         角色详情聚合
  * </pre>
  *
  * 响应结构：{ "code": 200, "message": "success", "data": [ ... ] }
@@ -109,5 +116,32 @@ public class HomeController {
     @GetMapping("/teams/cores")
     public Result<List<GroupVO<TeamVO>>> teamsByCore() {
         return Result.ok(homeService.listTeamsByCore());
+    }
+
+    /**
+     * 首页卡片用的轻量摘要：{ characters: { 角色名: {...} }, weapons: { 武器名: {...} } }。
+     */
+    @GetMapping("/materials/summary")
+    public Result<Map<String, Map<String, MaterialSummaryVO>>> materialSummaries() {
+        return Result.ok(homeService.listMaterialSummaries());
+    }
+
+    /**
+     * 单个角色 / 武器的完整养成材料。type 取 character / weapon，默认 character。
+     */
+    @GetMapping("/materials")
+    public Result<MaterialVO> material(
+            @RequestParam(value = "type", required = false, defaultValue = "character") String type,
+            @RequestParam("name") String name) {
+        String ownerType = "weapon".equalsIgnoreCase(type) ? "weapon" : "character";
+        return Result.ok(homeService.getMaterial(ownerType, name));
+    }
+
+    /**
+     * 角色详情聚合：角色基础攻略 + 突破材料与经验书 + 武器推荐（含武器养成与材料）+ 相关队伍。
+     */
+    @GetMapping("/characters/detail")
+    public Result<CharacterDetailVO> characterDetail(@RequestParam("name") String name) {
+        return Result.ok(homeService.getCharacterDetail(name));
     }
 }

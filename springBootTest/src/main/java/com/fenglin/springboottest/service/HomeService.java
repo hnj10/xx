@@ -1,13 +1,17 @@
 package com.fenglin.springboottest.service;
 
 import com.fenglin.springboottest.vo.CharWeaponVO;
+import com.fenglin.springboottest.vo.CharacterDetailVO;
 import com.fenglin.springboottest.vo.CharacterVO;
 import com.fenglin.springboottest.vo.GroupVO;
+import com.fenglin.springboottest.vo.MaterialSummaryVO;
+import com.fenglin.springboottest.vo.MaterialVO;
 import com.fenglin.springboottest.vo.SearchResultVO;
 import com.fenglin.springboottest.vo.TeamVO;
 import com.fenglin.springboottest.vo.WeaponVO;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 首页业务接口：角色养成、角色武器推荐、武器养成、队伍推荐、全站搜索。
@@ -72,4 +76,25 @@ public interface HomeService {
      * 队伍按核心机制分组（分级分类）。按 sort_order 聚合出唯一的核心机制作为分组名。
      */
     List<GroupVO<TeamVO>> listTeamsByCore();
+
+    /**
+     * 首页卡片用的轻量养成摘要。只查 stage=0 的汇总行，返回
+     * { "characters": { 角色名: 摘要 }, "weapons": { 武器名: 摘要 } }。
+     */
+    Map<String, Map<String, MaterialSummaryVO>> listMaterialSummaries();
+
+    /**
+     * 单个角色 / 武器的完整养成材料（含逐突破阶段明细）。
+     *
+     * @param ownerType character / weapon
+     * @param name      角色名或武器名
+     */
+    MaterialVO getMaterial(String ownerType, String name);
+
+    /**
+     * 角色详情聚合：基础攻略 + 养成材料 + 武器推荐（含武器养成与材料）+ 相关队伍。
+     *
+     * @param name 角色名
+     */
+    CharacterDetailVO getCharacterDetail(String name);
 }
