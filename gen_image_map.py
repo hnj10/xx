@@ -2,7 +2,7 @@
 """从前端侧清单生成 imageMap.js：中文名 -> 图片文件名映射 + 圣遗物套装映射"""
 import json
 
-with open(r'C:/Users/user/IdeaProjects/xx/gen_manifest.json', encoding='utf-8') as f:
+with open(r'C:/Users/20285/IdeaProjects/xx/gen_manifest.json', encoding='utf-8') as f:
     chars = json.load(f)
 
 # 圣遗物套装 -> 图标文件名（生成图标时按此命名）
@@ -75,7 +75,7 @@ A('  }')
 A("  return ''")
 A('}')
 
-out = r'C:/Users/user/IdeaProjects/xx/genshin-login-vue/src/data/imageMap.js'
+out = r'C:/Users/20285/IdeaProjects/xx/genshin-login-vue/src/data/imageMap.js'
 with open(out, 'w', encoding='utf-8') as f:
     f.write('\n'.join(L) + '\n')
 print('written', out, len(chars), 'chars,', len(ARTIFACTS), 'artifacts')

@@ -1,6 +1,15 @@
 <template>
   <div class="home">
     <CharacterDetail v-if="detailName" :name="detailName" @back="detailName = ''" />
+    <TeamDetail v-else-if="detailTeam" :team="detailTeam" @back="closeTeam" />
+    <WeaponRecommendDetail
+      v-else-if="detailWeaponChar"
+      :name="detailWeaponChar"
+      :weapons="weapons"
+      :char-weapons="charWeapons"
+      :characters="chars"
+      @back="closeWeaponChar"
+    />
     <template v-else>
     <!-- ===== 顶部导航 ===== -->
     <header class="topbar">
@@ -92,7 +101,7 @@
           </div>
         </div>
         <div v-if="hitTeams.length" class="grid teams">
-          <div v-for="t in hitTeams" :key="'st' + t.name" class="card team-card" @click="todo('配队详情')">
+          <div v-for="t in hitTeams" :key="'st' + t.name" class="card team-card" @click="openTeam(t)">
             <div class="t-top"><span class="t-name">{{ t.name }}</span><span class="t-core">{{ t.core }}</span></div>
             <div class="t-members">
               <span v-for="m in t.members" :key="m.name" class="member">
@@ -131,6 +140,29 @@
           <div v-if="charGroups.length" class="view-toggle">
             <button :class="{ active: charGrouped }" @click="charGrouped = true">按元素</button>
             <button :class="{ active: !charGrouped }" @click="charGrouped = false">平铺</button>
+          </div>
+        </div>
+
+        <!-- 旅行者 · 七元素共鸣：七种元素形态各自独立养成，点击进入角色详情 -->
+        <div v-if="travelers.length" class="traveler-strip">
+          <div class="ts-head">
+            <span class="ts-badge">主角</span>
+            <div class="ts-titles">
+              <h3>旅行者 · 七元素共鸣</h3>
+              <p>同一位主角与七种元素共鸣后的七套独立养成方案、武器推荐与配队，点击卡片查看详情</p>
+            </div>
+            <span class="ts-count">{{ travelers.length }} / 7</span>
+          </div>
+          <div class="ts-grid">
+            <button v-for="t in travelers" :key="t.name" class="ts-card"
+                    :style="{ '--tint': eleColor(t.element) }" @click="openDetail(t.name)">
+              <img v-if="charImg(t.name)" class="ts-avatar" :src="charImg(t.name)" :alt="t.name" />
+              <span class="ele-dot ts-dot" :style="{ background: eleColor(t.element) }" v-html="eleSvg(t.element)"></span>
+              <span class="ts-name">{{ t.name }}</span>
+              <span class="ts-role">{{ t.role }}</span>
+              <span class="ts-art">{{ t.artifacts }}</span>
+              <span class="ts-go">查看详情 →</span>
+            </button>
           </div>
         </div>
 
@@ -192,7 +224,7 @@
           <span class="sec-count">{{ charWeapons.length }} 条推荐</span>
         </div>
         <div class="grid pair">
-          <div v-for="p in shownCharWeapons" :key="p.character" class="card pair-card" @click="todo('武器推荐 · ' + p.character)">
+          <div v-for="p in shownCharWeapons" :key="p.character" class="card pair-card" title="点击查看该角色全部可用武器与适配度" @click="openWeaponChar(p.character)">
             <div class="pair-char">
               <img v-if="charImg(p.character)" class="char-avatar" :src="charImg(p.character)" :alt="p.character" />
               <span class="ele-dot" :style="{ background: eleColor(p.element) }" v-html="eleSvg(p.element)"></span>
@@ -292,7 +324,7 @@
           <span class="sec-count">{{ teams.length }} 套阵容</span>
         </div>
         <div class="grid teams">
-          <div v-for="t in teams" :key="t.name" class="card team-card" @click="todo('配队详情 · ' + t.name)">
+          <div v-for="t in teams" :key="t.name" class="card team-card" @click="openTeam(t)">
             <div class="t-top">
               <span class="t-name">{{ t.name }}</span>
               <span class="t-core">{{ t.core }}</span>
@@ -303,6 +335,7 @@
               </span>
             </div>
             <p class="summary">{{ t.tip }}</p>
+            <div class="detail-link">查看队伍详情 · {{ (t.members || []).length }} 位角色 →</div>
           </div>
         </div>
       </section>
@@ -367,10 +400,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { NATIONS, svgFull } from '../data/nations.js'
 import { charImg, artifactImg } from '../data/imageMap.js'
 import CharacterDetail from './CharacterDetail.vue'
+import TeamDetail from './TeamDetail.vue'
+import WeaponRecommendDetail from './WeaponRecommendDetail.vue'
 import {
   ELEMENT_NATION,
   CHARACTERS,
@@ -393,6 +428,34 @@ const API = '/api'
 const detailName = ref('')
 function openDetail(name) {
   detailName.value = name
+}
+
+// 队伍详情：点击队伍卡片进入独立界面，展示 4 位成员及其在本队的养成攻略
+const detailTeam = ref(null)
+let savedTeamScroll = 0
+function openTeam(t) {
+  savedTeamScroll = document.querySelector('.home')?.scrollTop || 0
+  detailTeam.value = t
+  nextTick(() => document.querySelector('.home')?.scrollTo({ top: 0 }))
+}
+function closeTeam() {
+  const pos = savedTeamScroll
+  detailTeam.value = null
+  nextTick(() => document.querySelector('.home')?.scrollTo({ top: pos }))
+}
+
+// 武器推荐详情：点击角色卡进入独立界面，展示该角色全部可用武器、适配度与五星/四星分区
+const detailWeaponChar = ref('')
+let savedWeaponScroll = 0
+function openWeaponChar(name) {
+  savedWeaponScroll = document.querySelector('.home')?.scrollTop || 0
+  detailWeaponChar.value = name
+  nextTick(() => document.querySelector('.home')?.scrollTo({ top: 0 }))
+}
+function closeWeaponChar() {
+  const pos = savedWeaponScroll
+  detailWeaponChar.value = ''
+  nextTick(() => document.querySelector('.home')?.scrollTo({ top: pos }))
 }
 
 // ---------------- 养成材料摘要（首页卡片） ----------------
@@ -436,6 +499,8 @@ function weaponMatLine(name) {
 
 // ---------------- 数据（本地演示，后端接口预留） ----------------
 const chars = ref(CHARACTERS)
+// 旅行者七元素形态：随后端数据动态变化，后台改名/增删后自动跟随
+const travelers = computed(() => (chars.value || []).filter(c => (c.name || '').includes('旅行者')))
 const charWeapons = ref(CHAR_WEAPONS)
 const weapons = ref(WEAPONS)
 const teams = ref(TEAMS)
@@ -718,6 +783,14 @@ function logout() {
 }
 .char-card {
   cursor: pointer;
+}
+.team-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.team-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 122, 89, 0.45);
 }
 
 /* ===== 顶部导航 ===== */
@@ -1014,6 +1087,70 @@ function logout() {
   font-weight: 700;
 }
 
+/* ===== 旅行者 · 七元素共鸣 ===== */
+.traveler-strip {
+  margin: 0 0 28px;
+  padding: 18px 20px 20px;
+  border-radius: 18px;
+  background: linear-gradient(150deg, rgba(26, 36, 64, 0.82), rgba(12, 17, 34, 0.78));
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.ts-head { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.ts-badge {
+  flex: none;
+  padding: 7px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #06121f;
+  background: linear-gradient(95deg, #f6c35b, #ff9a3c);
+}
+.ts-titles h3 { font-size: 17px; font-weight: 700; letter-spacing: 1px; color: #e9eefb; }
+.ts-titles p { margin-top: 4px; font-size: 12px; color: #8295bd; line-height: 1.5; }
+.ts-count {
+  margin-left: auto;
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #f6c35b;
+}
+.ts-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
+.ts-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(165deg, color-mix(in srgb, var(--tint) 20%, rgba(16, 22, 42, 0.9)), rgba(12, 17, 34, 0.92));
+  color: #e9eefb;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.ts-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--tint);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--tint) 28%, transparent);
+}
+.ts-avatar {
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+.ts-dot { width: 20px; height: 20px; }
+.ts-name { font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+.ts-role { font-size: 11px; color: #9fb0d8; }
+.ts-art { font-size: 10px; color: #7f92b8; text-align: center; line-height: 1.4; }
+.ts-go { margin-top: 2px; font-size: 10px; color: var(--tint); letter-spacing: 1px; }
+@media (max-width: 1080px) { .ts-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .ts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 /* ===== 分组视图 ===== */
 .group-block {
   margin-bottom: 26px;
@@ -1186,7 +1323,11 @@ function logout() {
 .stars.r5 { color: #f6c35b; }
 .stars.r4 { color: #a781e0; }
 
-/* 角色武器推荐卡 */
+/* 角色武器推荐卡（点击进入该角色的武器适配详情） */
+.pair-card:hover {
+  border-color: rgba(246, 195, 91, 0.55);
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.5), 0 0 24px rgba(246, 195, 91, 0.14);
+}
 .pair-card .pair-list {
   display: flex;
   flex-direction: column;

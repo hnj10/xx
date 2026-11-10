@@ -1306,6 +1306,138 @@ export const CHARACTERS = [
     mainStats: '时之沙：充能% / 空之杯：雷伤% / 理之冠：暴击',
     summary: '至冬单手剑角色，后台挂雷副C，星烁反应辅助。'
   },
+  {
+    id: 119,
+    name: "哥伦比娅",
+    element: "水",
+    rarity: 5,
+    role: "副C · 月反应核心",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "纺月的夜歌 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：水伤% / 理之冠：暴击",
+    summary: "「空月归乡」月之少女，Q 领域让全队可触发月感电 / 月绽放 / 月结晶，是月反应体系的核心挂水位。"
+  },
+  {
+    id: 120,
+    name: "莉奈娅",
+    element: "岩",
+    rarity: 5,
+    role: "主C · 结晶狙击",
+    talents: "普通攻击 > 元素战技 > 元素爆发",
+    artifacts: "华馆梦醒形骸记 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：岩伤% / 理之冠：暴击",
+    summary: "6.5 岩系弓角色，蓄力结晶弹高频输出，依赖双岩共鸣与护盾保证站场。"
+  },
+  {
+    id: 121,
+    name: "桑多涅",
+    element: "冰",
+    rarity: 5,
+    role: "副C · 后台挂冰",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "冰风迷途的勇士 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：冰伤% / 理之冠：暴击",
+    summary: "「镜水析谬」愚人众执行官木偶，后台持续挂冰并提供减抗，是永冻与冰伤队的强力副C。"
+  },
+  {
+    id: 122,
+    name: "艾莉丝",
+    element: "火",
+    rarity: 5,
+    role: "主C · 火法站场",
+    talents: "普通攻击 > 元素爆发 > 元素战技",
+    artifacts: "炽烈的炎之魔女 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：火伤% / 理之冠：暴击",
+    summary: "魔女会成员，火系法器站场主C，大范围火伤兼顾蒸发与融化，配水系辅助出伤最高。"
+  },
+  {
+    id: 123,
+    name: "埃洛伊",
+    element: "冰",
+    rarity: 5,
+    role: "主C · 冰弓",
+    talents: "普通攻击 > 元素战技 > 元素爆发",
+    artifacts: "冰风迷途的勇士 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：冰伤% / 理之冠：暴击",
+    summary: "联动限定冰弓角色，E 冰弹附魔普攻并叠加线圈，融化 / 永冻皆可，绝版收藏向主C。"
+  },
+  {
+    id: 124,
+    name: "旅行者·风",
+    element: "风",
+    rarity: 5,
+    role: "副C · 聚怪扩散",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "翠绿之影 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：风伤% / 理之冠：暴击",
+    summary: "与风元素共鸣，Q 风涡卷聚怪扩散、E 风刃击退；翠绿之影 4 件套减抗，平民泛用副C。"
+  },
+  {
+    id: 125,
+    name: "旅行者·岩",
+    element: "岩",
+    rarity: 5,
+    role: "副C · 岩造物",
+    talents: "元素战技 > 元素爆发 > 普通攻击",
+    artifacts: "华馆梦醒形骸记 4件套",
+    mainStats: "时之沙：防御% / 空之杯：岩伤% / 理之冠：暴击",
+    summary: "与岩元素共鸣，E 荒星造物挡伤并共鸣、Q 岩潮结界控场；双岩队稳定副C，养成成本低。"
+  },
+  {
+    id: 126,
+    name: "旅行者·雷",
+    element: "雷",
+    rarity: 5,
+    role: "辅助 · 全队充能",
+    talents: "元素战技 > 元素爆发 > 普通攻击",
+    artifacts: "绝缘之旗印 4件套",
+    mainStats: "时之沙：充能% / 空之杯：雷伤% / 理之冠：暴击",
+    summary: "与雷元素共鸣，E 落雷勾玉为全队回能、Q 雷影斩后台挂雷；激化 / 超导队的充能功能位。"
+  },
+  {
+    id: 127,
+    name: "旅行者·草",
+    element: "草",
+    rarity: 5,
+    role: "副C · 持续挂草",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "深林的记忆 4件套",
+    mainStats: "时之沙：元素精通 / 空之杯：草伤% / 理之冠：元素精通",
+    summary: "与草元素共鸣，Q 草灯莲持续挂草，配合水 / 雷触发绽放与激化；深林 4 件套减草抗。"
+  },
+  {
+    id: 128,
+    name: "旅行者·水",
+    element: "水",
+    rarity: 5,
+    role: "辅助 · 挂水治疗",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "昔时之歌 4件套",
+    mainStats: "时之沙：生命% / 空之杯：水伤% / 理之冠：治疗加成",
+    summary: "与水元素共鸣，E 水球挂水、Q 潮汐领域持续治疗；蒸发 / 绽放队兼顾挂水与生存的功能位。"
+  },
+  {
+    id: 129,
+    name: "旅行者·火",
+    element: "火",
+    rarity: 5,
+    role: "副C · 后台挂火",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "炽烈的炎之魔女 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：火伤% / 理之冠：暴击",
+    summary: "与火元素共鸣，Q 火莲后台持续挂火，配合冰 / 水打融化与蒸发；纳塔火体系的功能副C。"
+  },
+  {
+    id: 130,
+    name: "旅行者·冰",
+    element: "冰",
+    rarity: 5,
+    role: "主C · 星烁反应",
+    talents: "元素爆发 > 元素战技 > 普通攻击",
+    artifacts: "穹境示现之夜 4件套",
+    mainStats: "时之沙：攻击% / 空之杯：冰伤% / 理之冠：暴击",
+    summary: "7.0 至冬七天神像共鸣解锁冰元素：配雷走站场「星超导」、配风走后台「星扩散」；主线赠送五星专武「星锋剑」。"
+  },
 ]
 
 export const CHAR_WEAPONS = [
@@ -2253,10 +2385,106 @@ export const CHAR_WEAPONS = [
       { name: '祭礼剑', rarity: 4, reason: '双盾+充能，辅助循环' },
     ]
   },
+  {
+    character: "哥伦比娅",
+    element: "水",
+    best: [
+      { name: "千夜浮梦", rarity: 5, reason: "专精精通与全队增益，月反应收益最高" },
+      { name: "流浪的晚星", rarity: 4, reason: "精通副属性，锻造即可入手" },
+    ]
+  },
+  {
+    character: "莉奈娅",
+    element: "岩",
+    best: [
+      { name: "阿莫斯之弓", rarity: 5, reason: "蓄力箭增伤，结晶弹全额吃到" },
+      { name: "破魔之弓", rarity: 4, reason: "锻造获取，满能量重击增伤 32%" },
+    ]
+  },
+  {
+    character: "桑多涅",
+    element: "冰",
+    best: [
+      { name: "狼的末路", rarity: 5, reason: "高白值攻击，后台冰伤收益稳定" },
+      { name: "螭骨剑", rarity: 4, reason: "暴击率副属性，纪行获取" },
+    ]
+  },
+  {
+    character: "艾莉丝",
+    element: "火",
+    best: [
+      { name: "四风原典", rarity: 5, reason: "站场叠层元素伤，暴击率副属性缓解双暴压力" },
+      { name: "流浪乐章", rarity: 4, reason: "三类增益轮换，爆发期收益极高" },
+    ]
+  },
+  {
+    character: "埃洛伊",
+    element: "冰",
+    best: [
+      { name: "阿莫斯之弓", rarity: 5, reason: "蓄力与普攻增伤，冰弓输出最优" },
+      { name: "破魔之弓", rarity: 4, reason: "锻造获取，满能量重击增伤" },
+    ]
+  },
+  {
+    character: "旅行者·风",
+    element: "风",
+    best: [
+      { name: "苍古自由之誓", rarity: 5, reason: "精通与全队增伤，扩散队最优" },
+      { name: "铁蜂刺", rarity: 4, reason: "锻造获取，精通副属性扩散收益稳定" },
+    ]
+  },
+  {
+    character: "旅行者·岩",
+    element: "岩",
+    best: [
+      { name: "磐岩结绿", rarity: 5, reason: "生命与暴击率兼顾，泛用五星单手剑" },
+      { name: "西风剑", rarity: 4, reason: "充能副属性，缓解全队循环压力" },
+    ]
+  },
+  {
+    character: "旅行者·雷",
+    element: "雷",
+    best: [
+      { name: "天空之刃", rarity: 5, reason: "充能副属性，开大循环最顺" },
+      { name: "西风剑", rarity: 4, reason: "产球辅助，全队充能无忧" },
+    ]
+  },
+  {
+    character: "旅行者·草",
+    element: "草",
+    best: [
+      { name: "圣显之钥", rarity: 5, reason: "生命转精通，绽放队辅助向" },
+      { name: "西风剑", rarity: 4, reason: "充能副属性，保证 Q 循环不断档" },
+    ]
+  },
+  {
+    character: "旅行者·水",
+    element: "水",
+    best: [
+      { name: "静水流涌之辉", rarity: 5, reason: "生命副属性，战技伤害与治疗双收益" },
+      { name: "祭礼剑", rarity: 4, reason: "重置战技，挂水覆盖更稳" },
+    ]
+  },
+  {
+    character: "旅行者·火",
+    element: "火",
+    best: [
+      { name: "雾切之回光", rarity: 5, reason: "元素伤害加成与普攻增伤，火伤收益高" },
+      { name: "铁蜂刺", rarity: 4, reason: "锻造获取，精通副属性反应收益稳定" },
+    ]
+  },
+  {
+    character: "旅行者·冰",
+    element: "冰",
+    best: [
+      { name: "星锋剑", rarity: 5, reason: "7.0 主线赠送专武，攻击/双暴/充能全面加成，随神像解锁层数强化" },
+      { name: "西风剑", rarity: 4, reason: "充能副属性，速切循环更顺" },
+    ]
+  },
 ]
 
 export const WEAPONS = [
-  {
+{
     name: '雾切之回光',
     rarity: 5,
     type: '单手剑',
@@ -2268,7 +2496,7 @@ export const WEAPONS = [
     desc: '获得元素伤害加成，普攻命中叠层进一步提高元素伤害。',
     users: []
   },
-  {
+{
     name: '磐岩结绿',
     rarity: 5,
     type: '单手剑',
@@ -2280,7 +2508,7 @@ export const WEAPONS = [
     desc: '生命值提升 20%，并基于生命上限的 1.2% 获得攻击力。',
     users: []
   },
-  {
+{
     name: '苍古自由之誓',
     rarity: 5,
     type: '单手剑',
@@ -2292,7 +2520,7 @@ export const WEAPONS = [
     desc: '触发元素反应后全队普攻/重击伤害提升，持续 12s。',
     users: []
   },
-  {
+{
     name: '天空之刃',
     rarity: 5,
     type: '单手剑',
@@ -2304,7 +2532,7 @@ export const WEAPONS = [
     desc: '普攻与重击额外风伤，提升移速与攻击力。',
     users: []
   },
-  {
+{
     name: '斫峰之刃',
     rarity: 5,
     type: '单手剑',
@@ -2316,7 +2544,7 @@ export const WEAPONS = [
     desc: '护盾保护下攻击力提升，效果翻倍。',
     users: []
   },
-  {
+{
     name: '风鹰剑',
     rarity: 5,
     type: '单手剑',
@@ -2328,7 +2556,7 @@ export const WEAPONS = [
     desc: '受击回血，攻击时范围风伤。',
     users: []
   },
-  {
+{
     name: '波乱月白经津',
     rarity: 5,
     type: '单手剑',
@@ -2340,7 +2568,7 @@ export const WEAPONS = [
     desc: '普攻增伤，生命回满时叠层提高攻击力。',
     users: []
   },
-  {
+{
     name: '圣显之钥',
     rarity: 5,
     type: '单手剑',
@@ -2352,7 +2580,7 @@ export const WEAPONS = [
     desc: '生命转精通，绽放队辅助法器。',
     users: []
   },
-  {
+{
     name: '静水流涌之辉',
     rarity: 5,
     type: '单手剑',
@@ -2364,7 +2592,7 @@ export const WEAPONS = [
     desc: '基于生命上限提升元素战技伤害，契合水神芙宁娜。',
     users: []
   },
-  {
+{
     name: '赦罪之锏',
     rarity: 5,
     type: '单手剑',
@@ -2376,7 +2604,7 @@ export const WEAPONS = [
     desc: '突进输出与雷伤全面契合，克洛琳德专武。',
     users: []
   },
-  {
+{
     name: '镜中月',
     rarity: 5,
     type: '单手剑',
@@ -2388,7 +2616,7 @@ export const WEAPONS = [
     desc: '丝柯克核心武器，冰水体系输出上限极高。',
     users: []
   },
-  {
+{
     name: '裁叶萃光',
     rarity: 5,
     type: '单手剑',
@@ -2400,7 +2628,7 @@ export const WEAPONS = [
     desc: '强化结晶弹片伤害，娜维娅核心武器。',
     users: []
   },
-  {
+{
     name: '狼的末路',
     rarity: 5,
     type: '双手剑',
@@ -2412,7 +2640,7 @@ export const WEAPONS = [
     desc: '命中低血敌人全队加攻，范围伤害。',
     users: []
   },
-  {
+{
     name: '天空之傲',
     rarity: 5,
     type: '双手剑',
@@ -2424,7 +2652,7 @@ export const WEAPONS = [
     desc: 'Q 后真空刃，普攻重击范围风伤。',
     users: []
   },
-  {
+{
     name: '无工之剑',
     rarity: 5,
     type: '双手剑',
@@ -2436,7 +2664,7 @@ export const WEAPONS = [
     desc: '护盾下攻击提升，护盾强度加成。',
     users: []
   },
-  {
+{
     name: '松籁响起之时',
     rarity: 5,
     type: '双手剑',
@@ -2448,7 +2676,7 @@ export const WEAPONS = [
     desc: '普攻叠层提升攻速与攻击力，物伤武器。',
     users: []
   },
-  {
+{
     name: '赤角石溃杵',
     rarity: 5,
     type: '双手剑',
@@ -2460,7 +2688,7 @@ export const WEAPONS = [
     desc: '防御转攻击，重击增伤，一斗专武。',
     users: []
   },
-  {
+{
     name: '赤沙之王',
     rarity: 5,
     type: '双手剑',
@@ -2472,7 +2700,7 @@ export const WEAPONS = [
     desc: '火神玛薇卡专属，Q 爆发与夜魂体系完美契合。',
     users: []
   },
-  {
+{
     name: '护摩之杖',
     rarity: 5,
     type: '长柄武器',
@@ -2484,7 +2712,7 @@ export const WEAPONS = [
     desc: '生命值提升 20%，基于生命上限的 0.8% 获得攻击力。',
     users: []
   },
-  {
+{
     name: '和璞鸢',
     rarity: 5,
     type: '长柄武器',
@@ -2496,7 +2724,7 @@ export const WEAPONS = [
     desc: '命中叠层提高攻击力，满层额外增伤。',
     users: []
   },
-  {
+{
     name: '贯虹之槊',
     rarity: 5,
     type: '长柄武器',
@@ -2508,7 +2736,7 @@ export const WEAPONS = [
     desc: '护盾下攻击力提升，效果翻倍。',
     users: []
   },
-  {
+{
     name: '薙草之稻光',
     rarity: 5,
     type: '长柄武器',
@@ -2520,7 +2748,7 @@ export const WEAPONS = [
     desc: '充能效率超 100% 部分每 1% 转 0.4% 攻击力。',
     users: []
   },
-  {
+{
     name: '天空之脊',
     rarity: 5,
     type: '长柄武器',
@@ -2532,7 +2760,7 @@ export const WEAPONS = [
     desc: '普攻命中额外刃伤，Q 后移速提升。',
     users: []
   },
-  {
+{
     name: '息灾',
     rarity: 5,
     type: '长柄武器',
@@ -2544,7 +2772,7 @@ export const WEAPONS = [
     desc: '申鹤专武，攻击力提升，冰系辅助。',
     users: []
   },
-  {
+{
     name: '赤沙之杖',
     rarity: 5,
     type: '长柄武器',
@@ -2556,7 +2784,7 @@ export const WEAPONS = [
     desc: '基于精通提升攻击力，赛诺专武。',
     users: []
   },
-  {
+{
     name: '血染荒城',
     rarity: 5,
     type: '长柄武器',
@@ -2568,7 +2796,7 @@ export const WEAPONS = [
     desc: '月感电输出核心长柄，菲林斯专武。',
     users: []
   },
-  {
+{
     name: '天空之卷',
     rarity: 5,
     type: '法器',
@@ -2580,7 +2808,7 @@ export const WEAPONS = [
     desc: '普攻命中额外伤害，触发风伤效果。',
     users: []
   },
-  {
+{
     name: '四风原典',
     rarity: 5,
     type: '法器',
@@ -2592,7 +2820,7 @@ export const WEAPONS = [
     desc: '移动速度提升，站场叠层增元素伤。',
     users: []
   },
-  {
+{
     name: '尘世之锁',
     rarity: 5,
     type: '法器',
@@ -2604,7 +2832,7 @@ export const WEAPONS = [
     desc: '护盾下攻击力提升，效果翻倍。',
     users: []
   },
-  {
+{
     name: '神乐之真意',
     rarity: 5,
     type: '法器',
@@ -2616,7 +2844,7 @@ export const WEAPONS = [
     desc: '施放战技叠层增伤，八重神子专武。',
     users: []
   },
-  {
+{
     name: '不灭月华',
     rarity: 5,
     type: '法器',
@@ -2628,7 +2856,7 @@ export const WEAPONS = [
     desc: '治疗+生命加成，珊瑚宫心海专武。',
     users: []
   },
-  {
+{
     name: '千夜浮梦',
     rarity: 5,
     type: '法器',
@@ -2640,7 +2868,7 @@ export const WEAPONS = [
     desc: '按队伍元素类型数量提供精通与全队元素伤害。',
     users: []
   },
-  {
+{
     name: '图莱杜拉的回忆',
     rarity: 5,
     type: '法器',
@@ -2652,7 +2880,7 @@ export const WEAPONS = [
     desc: '艾尔海森专武，激化输出。',
     users: []
   },
-  {
+{
     name: '万世流涌大典',
     rarity: 5,
     type: '法器',
@@ -2664,7 +2892,7 @@ export const WEAPONS = [
     desc: '重击蓄力伤害与生命收益极高，那维莱特专武。',
     users: []
   },
-  {
+{
     name: '纺夜天镜',
     rarity: 5,
     type: '法器',
@@ -2676,7 +2904,7 @@ export const WEAPONS = [
     desc: '月绽放体系核心法器，菈乌玛与奈芙尔专武。',
     users: []
   },
-  {
+{
     name: '天空之翼',
     rarity: 5,
     type: '弓',
@@ -2688,7 +2916,7 @@ export const WEAPONS = [
     desc: '暴击后范围物伤，攻击力提升。',
     users: []
   },
-  {
+{
     name: '阿莫斯之弓',
     rarity: 5,
     type: '弓',
@@ -2700,7 +2928,7 @@ export const WEAPONS = [
     desc: '普攻与瞄准射击伤害提升，箭矢飞行增伤。',
     users: []
   },
-  {
+{
     name: '终末嗟叹之诗',
     rarity: 5,
     type: '弓',
@@ -2712,7 +2940,7 @@ export const WEAPONS = [
     desc: '精通+充能+全队精通增益，辅助最优。',
     users: []
   },
-  {
+{
     name: '冬极白星',
     rarity: 5,
     type: '弓',
@@ -2724,7 +2952,7 @@ export const WEAPONS = [
     desc: '普攻重击叠层增伤，达达利亚专武。',
     users: []
   },
-  {
+{
     name: '飞雷之弦振',
     rarity: 5,
     type: '弓',
@@ -2736,7 +2964,7 @@ export const WEAPONS = [
     desc: '普攻增伤，叠层强化，宵宫专武。',
     users: []
   },
-  {
+{
     name: '猎人之径',
     rarity: 5,
     type: '弓',
@@ -2748,7 +2976,7 @@ export const WEAPONS = [
     desc: '基于精通提升普攻伤害，提纳里专武。',
     users: []
   },
-  {
+{
     name: '若水',
     rarity: 5,
     type: '弓',
@@ -2760,7 +2988,7 @@ export const WEAPONS = [
     desc: '生命提升，夜兰专武，泛用输出弓。',
     users: []
   },
-  {
+{
     name: '铁蜂刺',
     rarity: 4,
     type: '单手剑',
@@ -2772,7 +3000,7 @@ export const WEAPONS = [
     desc: '锻造获取，精通副属性，扩散收益稳定。',
     users: []
   },
-  {
+{
     name: '祭礼剑',
     rarity: 4,
     type: '单手剑',
@@ -2784,7 +3012,7 @@ export const WEAPONS = [
     desc: '战技概率重置冷却，行秋/万叶常用。',
     users: []
   },
-  {
+{
     name: '西风剑',
     rarity: 4,
     type: '单手剑',
@@ -2796,7 +3024,7 @@ export const WEAPONS = [
     desc: '暴击回能，帮助全队循环。',
     users: []
   },
-  {
+{
     name: '天目影打刀',
     rarity: 4,
     type: '单手剑',
@@ -2808,7 +3036,7 @@ export const WEAPONS = [
     desc: '稻妻锻造，充能缓解 Q 启动压力。',
     users: []
   },
-  {
+{
     name: '黑剑',
     rarity: 4,
     type: '单手剑',
@@ -2820,7 +3048,7 @@ export const WEAPONS = [
     desc: '纪行获取，普攻重击增伤+回血。',
     users: []
   },
-  {
+{
     name: '匣里龙吟',
     rarity: 4,
     type: '单手剑',
@@ -2832,7 +3060,7 @@ export const WEAPONS = [
     desc: '对附着元素敌人增伤。',
     users: []
   },
-  {
+{
     name: '螭骨剑',
     rarity: 4,
     type: '双手剑',
@@ -2844,7 +3072,7 @@ export const WEAPONS = [
     desc: '叠层增伤，纪行高性价比双手剑。',
     users: []
   },
-  {
+{
     name: '西风大剑',
     rarity: 4,
     type: '双手剑',
@@ -2856,7 +3084,7 @@ export const WEAPONS = [
     desc: '暴击回能，辅助型双手剑。',
     users: []
   },
-  {
+{
     name: '祭礼大剑',
     rarity: 4,
     type: '双手剑',
@@ -2868,7 +3096,7 @@ export const WEAPONS = [
     desc: '战技概率重置，重云常用。',
     users: []
   },
-  {
+{
     name: '决斗之枪',
     rarity: 4,
     type: '长柄武器',
@@ -2880,7 +3108,7 @@ export const WEAPONS = [
     desc: '纪行获取，暴击副属性缓解双暴压力。',
     users: []
   },
-  {
+{
     name: '渔获',
     rarity: 4,
     type: '长柄武器',
@@ -2892,7 +3120,7 @@ export const WEAPONS = [
     desc: '钓鱼兑换，充能+Q 增伤，平民神器。',
     users: []
   },
-  {
+{
     name: '西风长枪',
     rarity: 4,
     type: '长柄武器',
@@ -2904,7 +3132,7 @@ export const WEAPONS = [
     desc: '暴击回能，帮助全队回能。',
     users: []
   },
-  {
+{
     name: '匣里灭辰',
     rarity: 4,
     type: '长柄武器',
@@ -2916,7 +3144,7 @@ export const WEAPONS = [
     desc: '对水/火元素敌人增伤，蒸发队副C。',
     users: []
   },
-  {
+{
     name: '流浪乐章',
     rarity: 4,
     type: '法器',
@@ -2928,7 +3156,7 @@ export const WEAPONS = [
     desc: '上场随机增伤，爆发型法器。',
     users: []
   },
-  {
+{
     name: '西风秘典',
     rarity: 4,
     type: '法器',
@@ -2940,7 +3168,7 @@ export const WEAPONS = [
     desc: '暴击回能，辅助法器。',
     users: []
   },
-  {
+{
     name: '祭礼残章',
     rarity: 4,
     type: '法器',
@@ -2952,7 +3180,7 @@ export const WEAPONS = [
     desc: '战技概率重置，精通法器。',
     users: []
   },
-  {
+{
     name: '流浪的晚星',
     rarity: 4,
     type: '法器',
@@ -2964,7 +3192,7 @@ export const WEAPONS = [
     desc: '精通副属性+全队增伤，锻造法器。',
     users: []
   },
-  {
+{
     name: '西风猎弓',
     rarity: 4,
     type: '弓',
@@ -2976,7 +3204,7 @@ export const WEAPONS = [
     desc: '充能副属性，帮助全队回能。',
     users: []
   },
-  {
+{
     name: '绝弦',
     rarity: 4,
     type: '弓',
@@ -2988,7 +3216,7 @@ export const WEAPONS = [
     desc: '元素战技与爆发增伤。',
     users: []
   },
-  {
+{
     name: '弓藏',
     rarity: 4,
     type: '弓',
@@ -3000,7 +3228,7 @@ export const WEAPONS = [
     desc: '普攻增伤，宵宫平民替代。',
     users: []
   },
-  {
+{
     name: '破魔之弓',
     rarity: 4,
     type: '弓',
@@ -3012,7 +3240,7 @@ export const WEAPONS = [
     desc: '锻造获取，满能量重击增伤 32%。',
     users: []
   },
-  {
+{
     name: '狼的武功歌',
     rarity: 5,
     type: '双手剑',
@@ -3024,7 +3252,7 @@ export const WEAPONS = [
     desc: '法尔伽专武，攻速提升，普攻/战技/重击叠「四风诗系」增伤，魔导体系叠暴伤。',
     users: []
   },
-  {
+{
     name: '尘光七谕',
     rarity: 5,
     type: '法器',
@@ -3036,7 +3264,7 @@ export const WEAPONS = [
     desc: '尼可专武，护盾后按攻击力提升场上角色伤害，护盾时回能。',
     users: []
   },
-  {
+{
     name: '黑蚀',
     rarity: 5,
     type: '法器',
@@ -3048,7 +3276,7 @@ export const WEAPONS = [
     desc: '杜林相关法器，魔导体系输出武器。',
     users: []
   },
-  {
+{
     name: '灾悔',
     rarity: 5,
     type: '长柄武器',
@@ -3060,7 +3288,7 @@ export const WEAPONS = [
     desc: '洛恩专武，战技后普攻重击与战技爆发增伤。',
     users: []
   },
-  {
+{
     name: '焚曜千阳',
     rarity: 5,
     type: '双手剑',
@@ -3072,7 +3300,7 @@ export const WEAPONS = [
     desc: '玛薇卡复刻专武，火神爆发与夜魂体系契合。',
     users: []
   },
-  {
+{
     name: '朏魄含光',
     rarity: 5,
     type: '单手剑',
@@ -3084,7 +3312,7 @@ export const WEAPONS = [
     desc: '兹白专武，数值暴力，大幅提升月结晶输出。',
     users: []
   },
-  {
+{
     name: '织月者的曙色',
     rarity: 4,
     type: '单手剑',
@@ -3096,7 +3324,7 @@ export const WEAPONS = [
     desc: '挪德卡莱四星单手剑，月反应体系。',
     users: []
   },
-  {
+{
     name: '幽夜华尔兹',
     rarity: 4,
     type: '弓',
@@ -3108,31 +3336,7 @@ export const WEAPONS = [
     desc: '四星弓，暴击副属性，平民输出弓。',
     users: []
   },
-  {
-    name: '白湖冬羽',
-    rarity: 5,
-    type: '单手剑',
-    stat: '副属性：暴击伤害',
-    atk1: 48,
-    atk90: 674,
-    subStat: '暴击伤害',
-    subValue: '44.1%',
-    desc: '奥黛塔专武，大幅提升攻击与星烁反应暴伤，回能。',
-    users: []
-  },
-  {
-    name: '蝶变',
-    rarity: 5,
-    type: '单手剑',
-    stat: '副属性：暴击率',
-    atk1: 48,
-    atk90: 674,
-    subStat: '暴击率',
-    subValue: '22.1%',
-    desc: '薇斯纳专武，战技爆发依次获得暴伤/星扩散增伤/回能。',
-    users: []
-  },
-  {
+{
     name: '漩流颂歌',
     rarity: 5,
     type: '法器',
@@ -3144,19 +3348,7 @@ export const WEAPONS = [
     desc: '沃雅妮莎专武，治疗+生命上限提升+加攻，冻结/星扩散增益。',
     users: []
   },
-  {
-    name: '星锋剑',
-    rarity: 5,
-    type: '单手剑',
-    stat: '副属性：攻击力',
-    atk1: 46,
-    atk90: 608,
-    subStat: '攻击力',
-    subValue: '49.6%',
-    desc: '旅行者至冬剧情获取，提升攻击并命中回能，可强化。',
-    users: []
-  },
-  {
+{
     name: '新枝',
     rarity: 4,
     type: '单手剑',
@@ -3168,7 +3360,7 @@ export const WEAPONS = [
     desc: '四星单手剑，战技后命中提升攻击与精通。',
     users: []
   },
-  {
+{
     name: '引火之源',
     rarity: 4,
     type: '单手剑',
@@ -3180,7 +3372,7 @@ export const WEAPONS = [
     desc: '至冬锻造，触发元素反应提升攻击，星烁反应增伤。',
     users: []
   },
-  {
+{
     name: '救赎之斩',
     rarity: 4,
     type: '双手剑',
@@ -3192,7 +3384,7 @@ export const WEAPONS = [
     desc: '至冬锻造，触发元素反应提升精通，星烁反应加攻。',
     users: []
   },
-  {
+{
     name: '戍望谣歌',
     rarity: 4,
     type: '长柄武器',
@@ -3204,7 +3396,7 @@ export const WEAPONS = [
     desc: '至冬锻造，触发元素反应回能，星烁反应加攻。',
     users: []
   },
-  {
+{
     name: '赦罪',
     rarity: 5,
     type: '单手剑',
@@ -3216,7 +3408,7 @@ export const WEAPONS = [
     desc: '克洛琳德专武，基于生命契约提升攻击与暴击，突进流雷伤输出。',
     users: []
   },
-  {
+{
     name: '有乐御簾切',
     rarity: 5,
     type: '单手剑',
@@ -3228,7 +3420,7 @@ export const WEAPONS = [
     desc: '普攻与重击增伤，千织核心武器。',
     users: []
   },
-  {
+{
     name: '苇海信标',
     rarity: 5,
     type: '双手剑',
@@ -3240,7 +3432,7 @@ export const WEAPONS = [
     desc: '命中敌人叠层增伤，迪希雅专武，兼顾生存与输出。',
     users: []
   },
-  {
+{
     name: '白雨心弦',
     rarity: 5,
     type: '弓',
@@ -3252,7 +3444,7 @@ export const WEAPONS = [
     desc: '夜兰专武，基于生命上限提升伤害，后台增伤强力。',
     users: []
   },
-  {
+{
     name: '碧落之珑',
     rarity: 5,
     type: '法器',
@@ -3264,7 +3456,7 @@ export const WEAPONS = [
     desc: '白术专武，基于生命提升治疗与元素伤害。',
     users: []
   },
-  {
+{
     name: '笛剑',
     rarity: 4,
     type: '单手剑',
@@ -3276,7 +3468,7 @@ export const WEAPONS = [
     desc: '普攻与重击命中叠加音符，范围伤害。',
     users: []
   },
-  {
+{
     name: '辰砂之纺锤',
     rarity: 4,
     type: '单手剑',
@@ -3288,7 +3480,7 @@ export const WEAPONS = [
     desc: '阿贝多专武，基于防御提升战技伤害。',
     users: []
   },
-  {
+{
     name: '降临之剑',
     rarity: 4,
     type: '单手剑',
@@ -3300,7 +3492,7 @@ export const WEAPONS = [
     desc: '旅行者初期武器，命中回血并附加风伤。',
     users: []
   },
-  {
+{
     name: '宗室长剑',
     rarity: 4,
     type: '单手剑',
@@ -3312,7 +3504,7 @@ export const WEAPONS = [
     desc: '造成伤害后叠层暴击率，宗室系列通用。',
     users: []
   },
-  {
+{
     name: '黑岩长剑',
     rarity: 4,
     type: '单手剑',
@@ -3324,7 +3516,7 @@ export const WEAPONS = [
     desc: '击败敌人后攻击力提升，可叠加。',
     users: []
   },
-  {
+{
     name: '试作斩岩',
     rarity: 4,
     type: '单手剑',
@@ -3336,7 +3528,7 @@ export const WEAPONS = [
     desc: '蒙德锻造，普攻与重击命中提升攻击。',
     users: []
   },
-  {
+{
     name: '腐殖之剑',
     rarity: 4,
     type: '单手剑',
@@ -3348,7 +3540,7 @@ export const WEAPONS = [
     desc: '1.2活动限定，元素战技伤害提升。',
     users: []
   },
-  {
+{
     name: '暗巷闪光',
     rarity: 4,
     type: '单手剑',
@@ -3360,7 +3552,7 @@ export const WEAPONS = [
     desc: '蒙德限定，攻击力加成稳定的四星输出剑。',
     users: []
   },
-  {
+{
     name: '西福斯的月光',
     rarity: 4,
     type: '单手剑',
@@ -3372,7 +3564,7 @@ export const WEAPONS = [
     desc: '万叶适配，战技后为全队提供充能。',
     users: []
   },
-  {
+{
     name: '笼钓瓶一心',
     rarity: 4,
     type: '单手剑',
@@ -3384,7 +3576,7 @@ export const WEAPONS = [
     desc: '万叶传说任务获取，普攻增伤。',
     users: []
   },
-  {
+{
     name: '原木刀',
     rarity: 4,
     type: '单手剑',
@@ -3396,7 +3588,7 @@ export const WEAPONS = [
     desc: '须弥锻造，触发反应后为队友提供精通。',
     users: []
   },
-  {
+{
     name: '东花坊时雨',
     rarity: 4,
     type: '单手剑',
@@ -3408,7 +3600,7 @@ export const WEAPONS = [
     desc: '3.3活动限定，命中敌人叠加增伤。',
     users: []
   },
-  {
+{
     name: '水仙十字之剑',
     rarity: 4,
     type: '单手剑',
@@ -3420,7 +3612,7 @@ export const WEAPONS = [
     desc: '世界任务获取，为旅行者水元素形态设计。',
     users: []
   },
-  {
+{
     name: '狼牙',
     rarity: 4,
     type: '单手剑',
@@ -3432,7 +3624,7 @@ export const WEAPONS = [
     desc: '纪行武器，普攻与战技增伤。',
     users: []
   },
-  {
+{
     name: '船坞长剑',
     rarity: 4,
     type: '单手剑',
@@ -3444,7 +3636,7 @@ export const WEAPONS = [
     desc: '枫丹限定，娜维娅适配，攻击力与爆伤兼顾。',
     users: []
   },
-  {
+{
     name: '海渊终曲',
     rarity: 4,
     type: '单手剑',
@@ -3456,7 +3648,7 @@ export const WEAPONS = [
     desc: '枫丹锻造，攻击力加成。',
     users: []
   },
-  {
+{
     name: '厄水之祸',
     rarity: 4,
     type: '单手剑',
@@ -3468,7 +3660,7 @@ export const WEAPONS = [
     desc: '5.2活动限定，单手剑输出向。',
     users: []
   },
-  {
+{
     name: '息燧之笛',
     rarity: 4,
     type: '单手剑',
@@ -3480,7 +3672,7 @@ export const WEAPONS = [
     desc: '纳塔锻造，火系单手剑。',
     users: []
   },
-  {
+{
     name: '弥坚骨',
     rarity: 4,
     type: '单手剑',
@@ -3492,7 +3684,7 @@ export const WEAPONS = [
     desc: '纳塔限定，生命值加成。',
     users: []
   },
-  {
+{
     name: '试作古华',
     rarity: 4,
     type: '双手剑',
@@ -3504,7 +3696,7 @@ export const WEAPONS = [
     desc: '蒙德锻造，普攻与重击命中概率范围伤害。',
     users: []
   },
-  {
+{
     name: '雪葬的星银',
     rarity: 4,
     type: '双手剑',
@@ -3516,7 +3708,7 @@ export const WEAPONS = [
     desc: '龙脊雪山锻造，普攻命中概率范围冰伤。',
     users: []
   },
-  {
+{
     name: '桂木斩长正',
     rarity: 4,
     type: '双手剑',
@@ -3528,7 +3720,7 @@ export const WEAPONS = [
     desc: '稻妻锻造，战技后回能。',
     users: []
   },
-  {
+{
     name: '钟剑',
     rarity: 4,
     type: '双手剑',
@@ -3540,7 +3732,7 @@ export const WEAPONS = [
     desc: '护盾角色适配，生命值加成。',
     users: []
   },
-  {
+{
     name: '千岩古剑',
     rarity: 4,
     type: '双手剑',
@@ -3552,7 +3744,7 @@ export const WEAPONS = [
     desc: '璃月限定，队伍中璃月角色越多增伤越高。',
     users: []
   },
-  {
+{
     name: '恶王丸',
     rarity: 4,
     type: '双手剑',
@@ -3564,7 +3756,7 @@ export const WEAPONS = [
     desc: '稻妻限定，元素爆发增伤。',
     users: []
   },
-  {
+{
     name: '衔珠海皇',
     rarity: 4,
     type: '双手剑',
@@ -3576,7 +3768,7 @@ export const WEAPONS = [
     desc: '2.1活动限定，元素爆发伤害提升。',
     users: []
   },
-  {
+{
     name: '白影剑',
     rarity: 4,
     type: '双手剑',
@@ -3588,7 +3780,7 @@ export const WEAPONS = [
     desc: '锻造武器，命中叠层提升攻防。',
     users: []
   },
-  {
+{
     name: '雨裁',
     rarity: 4,
     type: '双手剑',
@@ -3600,7 +3792,7 @@ export const WEAPONS = [
     desc: '对水雷附着敌人增伤。',
     users: []
   },
-  {
+{
     name: '宗室大剑',
     rarity: 4,
     type: '双手剑',
@@ -3612,7 +3804,7 @@ export const WEAPONS = [
     desc: '宗室系列，叠层暴击率。',
     users: []
   },
-  {
+{
     name: '黑岩斩刀',
     rarity: 4,
     type: '双手剑',
@@ -3624,7 +3816,7 @@ export const WEAPONS = [
     desc: '击败敌人叠攻击。',
     users: []
   },
-  {
+{
     name: '玛海菈的水色',
     rarity: 4,
     type: '双手剑',
@@ -3636,7 +3828,7 @@ export const WEAPONS = [
     desc: '须弥限定，触发反应为全队提供精通。',
     users: []
   },
-  {
+{
     name: '森林王器',
     rarity: 4,
     type: '双手剑',
@@ -3648,7 +3840,7 @@ export const WEAPONS = [
     desc: '须弥锻造，触发反应后队友获得精通。',
     users: []
   },
-  {
+{
     name: '饰铁之花',
     rarity: 4,
     type: '双手剑',
@@ -3660,7 +3852,7 @@ export const WEAPONS = [
     desc: '3.5活动限定，战技与爆发增伤。',
     users: []
   },
-  {
+{
     name: '「究极霸王超级魔剑」',
     rarity: 4,
     type: '双手剑',
@@ -3672,7 +3864,7 @@ export const WEAPONS = [
     desc: '4.3活动限定，梅洛彼得堡梗系武器。',
     users: []
   },
-  {
+{
     name: '聊聊棒',
     rarity: 4,
     type: '双手剑',
@@ -3684,7 +3876,7 @@ export const WEAPONS = [
     desc: '纪行武器，双手剑辅助向。',
     users: []
   },
-  {
+{
     name: '便携动力锯',
     rarity: 4,
     type: '双手剑',
@@ -3696,7 +3888,7 @@ export const WEAPONS = [
     desc: '枫丹限定，普攻重击增伤。',
     users: []
   },
-  {
+{
     name: '浪影阔剑',
     rarity: 4,
     type: '双手剑',
@@ -3708,7 +3900,7 @@ export const WEAPONS = [
     desc: '枫丹锻造，双手剑输出向。',
     users: []
   },
-  {
+{
     name: '撼地者',
     rarity: 4,
     type: '双手剑',
@@ -3720,7 +3912,7 @@ export const WEAPONS = [
     desc: '纳塔锻造，防御系双手剑。',
     users: []
   },
-  {
+{
     name: '镇山之钉',
     rarity: 4,
     type: '双手剑',
@@ -3732,7 +3924,7 @@ export const WEAPONS = [
     desc: '纳塔限定，岩系双手剑。',
     users: []
   },
-  {
+{
     name: '拾慧铸熔',
     rarity: 4,
     type: '双手剑',
@@ -3744,7 +3936,7 @@ export const WEAPONS = [
     desc: '5.8活动限定，双手剑。',
     users: []
   },
-  {
+{
     name: '祭礼弓',
     rarity: 4,
     type: '弓',
@@ -3756,7 +3948,7 @@ export const WEAPONS = [
     desc: '战技概率重置，辅助充能。',
     users: []
   },
-  {
+{
     name: '掠食者',
     rarity: 4,
     type: '弓',
@@ -3768,7 +3960,7 @@ export const WEAPONS = [
     desc: 'PS平台限定，对火元素附着敌人增伤。',
     users: []
   },
-  {
+{
     name: '苍翠猎弓',
     rarity: 4,
     type: '弓',
@@ -3780,7 +3972,7 @@ export const WEAPONS = [
     desc: '纪行武器，普攻与重击概率范围风伤。',
     users: []
   },
-  {
+{
     name: '风花之颂',
     rarity: 4,
     type: '弓',
@@ -3792,7 +3984,7 @@ export const WEAPONS = [
     desc: '1.4活动限定，战技后攻击提升。',
     users: []
   },
-  {
+{
     name: '钢轮弓',
     rarity: 4,
     type: '弓',
@@ -3804,7 +3996,7 @@ export const WEAPONS = [
     desc: '锻造武器，命中叠层增伤。',
     users: []
   },
-  {
+{
     name: '黑岩战弓',
     rarity: 4,
     type: '弓',
@@ -3816,7 +4008,7 @@ export const WEAPONS = [
     desc: '击败敌人叠攻击。',
     users: []
   },
-  {
+{
     name: '试作澹月',
     rarity: 4,
     type: '弓',
@@ -3828,7 +4020,7 @@ export const WEAPONS = [
     desc: '锻造武器，命中弱点后移速攻击提升。',
     users: []
   },
-  {
+{
     name: '宗室长弓',
     rarity: 4,
     type: '弓',
@@ -3840,7 +4032,7 @@ export const WEAPONS = [
     desc: '宗室系列，叠层暴击率。',
     users: []
   },
-  {
+{
     name: '曚云之月',
     rarity: 4,
     type: '弓',
@@ -3852,7 +4044,7 @@ export const WEAPONS = [
     desc: '稻妻限定，元素爆发增伤。',
     users: []
   },
-  {
+{
     name: '王下近侍',
     rarity: 4,
     type: '弓',
@@ -3864,7 +4056,7 @@ export const WEAPONS = [
     desc: '须弥锻造，普攻增伤。',
     users: []
   },
-  {
+{
     name: '竭泽',
     rarity: 4,
     type: '弓',
@@ -3876,7 +4068,7 @@ export const WEAPONS = [
     desc: '须弥钓鱼兑换，战技后元素爆发增伤。',
     users: []
   },
-  {
+{
     name: '落霞',
     rarity: 4,
     type: '弓',
@@ -3888,7 +4080,7 @@ export const WEAPONS = [
     desc: '2.7活动限定，全伤害提升。',
     users: []
   },
-  {
+{
     name: '鹮穿之喙',
     rarity: 4,
     type: '弓',
@@ -3900,7 +4092,7 @@ export const WEAPONS = [
     desc: '3.7活动限定，重击增伤。',
     users: []
   },
-  {
+{
     name: '筑云',
     rarity: 4,
     type: '弓',
@@ -3912,7 +4104,7 @@ export const WEAPONS = [
     desc: '4.7活动限定，弓系输出。',
     users: []
   },
-  {
+{
     name: '烈阳之嗣',
     rarity: 4,
     type: '弓',
@@ -3924,7 +4116,7 @@ export const WEAPONS = [
     desc: '纪行武器，蓄力箭增伤。',
     users: []
   },
-  {
+{
     name: '峡湾长歌',
     rarity: 4,
     type: '弓',
@@ -3936,7 +4128,7 @@ export const WEAPONS = [
     desc: '纪行武器，元素反应增伤。',
     users: []
   },
-  {
+{
     name: '测距规',
     rarity: 4,
     type: '弓',
@@ -3948,7 +4140,7 @@ export const WEAPONS = [
     desc: '枫丹限定，弓系输出。',
     users: []
   },
-  {
+{
     name: '缀花之翎',
     rarity: 4,
     type: '弓',
@@ -3960,7 +4152,7 @@ export const WEAPONS = [
     desc: '纳塔限定，弓系输出。',
     users: []
   },
-  {
+{
     name: '冷寂迸音',
     rarity: 4,
     type: '弓',
@@ -3972,7 +4164,7 @@ export const WEAPONS = [
     desc: '5.6活动限定，弓系输出。',
     users: []
   },
-  {
+{
     name: '虹蛇的雨弦',
     rarity: 4,
     type: '弓',
@@ -3984,7 +4176,7 @@ export const WEAPONS = [
     desc: '月之三活动限定，挪德卡莱武器。',
     users: []
   },
-  {
+{
     name: '暗巷猎手',
     rarity: 4,
     type: '弓',
@@ -3996,7 +4188,7 @@ export const WEAPONS = [
     desc: '蒙德限定，后台增伤。',
     users: []
   },
-  {
+{
     name: '宗室秘法录',
     rarity: 4,
     type: '法器',
@@ -4008,7 +4200,7 @@ export const WEAPONS = [
     desc: '宗室系列，叠层暴击率。',
     users: []
   },
-  {
+{
     name: '匣里日月',
     rarity: 4,
     type: '法器',
@@ -4020,7 +4212,7 @@ export const WEAPONS = [
     desc: '纪行武器，普攻与战技互相增伤。',
     users: []
   },
-  {
+{
     name: '忍冬之果',
     rarity: 4,
     type: '法器',
@@ -4032,7 +4224,7 @@ export const WEAPONS = [
     desc: '龙脊雪山锻造，命中概率范围冰伤。',
     users: []
   },
-  {
+{
     name: '试作金珀',
     rarity: 4,
     type: '法器',
@@ -4044,7 +4236,7 @@ export const WEAPONS = [
     desc: '锻造武器，施放元素爆发后回血回能。',
     users: []
   },
-  {
+{
     name: '黑岩绯玉',
     rarity: 4,
     type: '法器',
@@ -4056,7 +4248,7 @@ export const WEAPONS = [
     desc: '击败敌人叠攻击。',
     users: []
   },
-  {
+{
     name: '白辰之环',
     rarity: 4,
     type: '法器',
@@ -4068,7 +4260,7 @@ export const WEAPONS = [
     desc: '稻妻锻造，触发反应后为队友提供对应元素增伤。',
     users: []
   },
-  {
+{
     name: '证誓之明瞳',
     rarity: 4,
     type: '法器',
@@ -4080,7 +4272,7 @@ export const WEAPONS = [
     desc: '2.5活动限定，攻击力加成。',
     users: []
   },
-  {
+{
     name: '昭心',
     rarity: 4,
     type: '法器',
@@ -4092,7 +4284,7 @@ export const WEAPONS = [
     desc: '命中概率发射追击弹。',
     users: []
   },
-  {
+{
     name: '万国诸海图谱',
     rarity: 4,
     type: '法器',
@@ -4104,7 +4296,7 @@ export const WEAPONS = [
     desc: '锻造武器，触发反应叠层增伤。',
     users: []
   },
-  {
+{
     name: '嘟嘟可故事集',
     rarity: 4,
     type: '法器',
@@ -4116,7 +4308,7 @@ export const WEAPONS = [
     desc: '1.6活动限定，可莉外观契合。',
     users: []
   },
-  {
+{
     name: '暗巷的酒与诗',
     rarity: 4,
     type: '法器',
@@ -4128,7 +4320,7 @@ export const WEAPONS = [
     desc: '蒙德限定，辅助充能。',
     users: []
   },
-  {
+{
     name: '盈满之实',
     rarity: 4,
     type: '法器',
@@ -4140,7 +4332,7 @@ export const WEAPONS = [
     desc: '须弥锻造，触发反应叠层。',
     users: []
   },
-  {
+{
     name: '遗祀玉珑',
     rarity: 4,
     type: '法器',
@@ -4152,7 +4344,7 @@ export const WEAPONS = [
     desc: '纪行武器，后台增伤。',
     users: []
   },
-  {
+{
     name: '勘探钻机',
     rarity: 4,
     type: '法器',
@@ -4164,7 +4356,7 @@ export const WEAPONS = [
     desc: '枫丹限定，法器输出。',
     users: []
   },
-  {
+{
     name: '公义的酬报',
     rarity: 4,
     type: '法器',
@@ -4176,7 +4368,7 @@ export const WEAPONS = [
     desc: '枫丹锻造，治疗与充能兼顾。',
     users: []
   },
-  {
+{
     name: '纯水流华',
     rarity: 4,
     type: '法器',
@@ -4188,7 +4380,7 @@ export const WEAPONS = [
     desc: '枫丹锻造，法器输出。',
     users: []
   },
-  {
+{
     name: '木棉之环',
     rarity: 4,
     type: '法器',
@@ -4200,7 +4392,7 @@ export const WEAPONS = [
     desc: '纳塔锻造，法器。',
     users: []
   },
-  {
+{
     name: '硕果钩',
     rarity: 4,
     type: '法器',
@@ -4212,7 +4404,7 @@ export const WEAPONS = [
     desc: '纳塔限定，法器。',
     users: []
   },
-  {
+{
     name: '千岩长枪',
     rarity: 4,
     type: '长柄武器',
@@ -4224,7 +4416,7 @@ export const WEAPONS = [
     desc: '璃月限定，队伍中璃月角色越多增伤越高。',
     users: []
   },
-  {
+{
     name: '试作星镰',
     rarity: 4,
     type: '长柄武器',
@@ -4236,7 +4428,7 @@ export const WEAPONS = [
     desc: '锻造武器，普攻与重击命中叠层增伤。',
     users: []
   },
-  {
+{
     name: '黑岩刺枪',
     rarity: 4,
     type: '长柄武器',
@@ -4248,7 +4440,7 @@ export const WEAPONS = [
     desc: '击败敌人叠攻击。',
     users: []
   },
-  {
+{
     name: '喜多院十文字',
     rarity: 4,
     type: '长柄武器',
@@ -4260,7 +4452,7 @@ export const WEAPONS = [
     desc: '稻妻锻造，战技后回能。',
     users: []
   },
-  {
+{
     name: '龙脊长枪',
     rarity: 4,
     type: '长柄武器',
@@ -4272,7 +4464,7 @@ export const WEAPONS = [
     desc: '龙脊雪山锻造，命中概率范围冰伤。',
     users: []
   },
-  {
+{
     name: '断浪长鳍',
     rarity: 4,
     type: '长柄武器',
@@ -4284,7 +4476,7 @@ export const WEAPONS = [
     desc: '稻妻限定，元素爆发增伤。',
     users: []
   },
-  {
+{
     name: '宗室猎枪',
     rarity: 4,
     type: '长柄武器',
@@ -4296,7 +4488,7 @@ export const WEAPONS = [
     desc: '宗室系列，叠层暴击率。',
     users: []
   },
-  {
+{
     name: '流月针',
     rarity: 4,
     type: '长柄武器',
@@ -4308,7 +4500,7 @@ export const WEAPONS = [
     desc: '锻造武器，命中叠加伤害。',
     users: []
   },
-  {
+{
     name: '风信之锋',
     rarity: 4,
     type: '长柄武器',
@@ -4320,7 +4512,7 @@ export const WEAPONS = [
     desc: '3.1活动限定，攻击力加成。',
     users: []
   },
-  {
+{
     name: '贯月矢',
     rarity: 4,
     type: '长柄武器',
@@ -4332,7 +4524,7 @@ export const WEAPONS = [
     desc: '须弥锻造，触发反应叠层精通。',
     users: []
   },
-  {
+{
     name: '峡湾长歌',
     rarity: 4,
     type: '长柄武器',
@@ -4344,7 +4536,7 @@ export const WEAPONS = [
     desc: '纪行武器，元素反应增伤。',
     users: []
   },
-  {
+{
     name: '沙中伟贤的对答',
     rarity: 4,
     type: '长柄武器',
@@ -4356,7 +4548,7 @@ export const WEAPONS = [
     desc: '4.5活动限定，充能辅助。',
     users: []
   },
-  {
+{
     name: '且住亭御咄',
     rarity: 4,
     type: '长柄武器',
@@ -4368,7 +4560,7 @@ export const WEAPONS = [
     desc: '5.4活动限定，长柄武器。',
     users: []
   },
-  {
+{
     name: '虹的行迹',
     rarity: 4,
     type: '长柄武器',
@@ -4380,7 +4572,7 @@ export const WEAPONS = [
     desc: '纳塔锻造，长柄武器。',
     users: []
   },
-  {
+{
     name: '乘浪的回旋',
     rarity: 4,
     type: '长柄武器',
@@ -4392,7 +4584,7 @@ export const WEAPONS = [
     desc: '纳塔限定，长柄武器。',
     users: []
   },
-  {
+{
     name: '灰河渡手',
     rarity: 4,
     type: '长柄武器',
@@ -4404,7 +4596,7 @@ export const WEAPONS = [
     desc: '枫丹钓鱼兑换，充能辅助。',
     users: []
   },
-  {
+{
     name: '天光的纺琴',
     rarity: 4,
     type: '长柄武器',
@@ -4416,7 +4608,7 @@ export const WEAPONS = [
     desc: '月之一活动限定，挪德卡莱武器。',
     users: []
   },
-  {
+{
     name: '旅行剑',
     rarity: 3,
     type: '单手剑',
@@ -4428,7 +4620,7 @@ export const WEAPONS = [
     desc: '普攻与重击命中概率回血。',
     users: []
   },
-  {
+{
     name: '暗铁剑',
     rarity: 3,
     type: '单手剑',
@@ -4440,7 +4632,7 @@ export const WEAPONS = [
     desc: '璃月对话获取，触发反应后精通提升。',
     users: []
   },
-  {
+{
     name: '冷刃',
     rarity: 3,
     type: '单手剑',
@@ -4452,7 +4644,7 @@ export const WEAPONS = [
     desc: '对水雷附着敌人增伤。',
     users: []
   },
-  {
+{
     name: '飞天御剑',
     rarity: 3,
     type: '单手剑',
@@ -4464,7 +4656,7 @@ export const WEAPONS = [
     desc: '施放元素爆发后攻击提升。',
     users: []
   },
-  {
+{
     name: '吃虎鱼刀',
     rarity: 3,
     type: '单手剑',
@@ -4476,7 +4668,7 @@ export const WEAPONS = [
     desc: '普攻命中概率追击伤害。',
     users: []
   },
-  {
+{
     name: '黎明神剑',
     rarity: 3,
     type: '单手剑',
@@ -4488,7 +4680,7 @@ export const WEAPONS = [
     desc: '生命值高于90%时暴击率大幅提升，凯亚传说任务获取。',
     users: []
   },
-  {
+{
     name: '白铁大剑',
     rarity: 3,
     type: '双手剑',
@@ -4500,7 +4692,7 @@ export const WEAPONS = [
     desc: '击败敌人后回血。',
     users: []
   },
-  {
+{
     name: '铁影阔剑',
     rarity: 3,
     type: '双手剑',
@@ -4512,7 +4704,7 @@ export const WEAPONS = [
     desc: '对生命值低于一定比例敌人增伤。',
     users: []
   },
-  {
+{
     name: '飞天大御剑',
     rarity: 3,
     type: '双手剑',
@@ -4524,7 +4716,7 @@ export const WEAPONS = [
     desc: '普攻与重击命中叠层攻击。',
     users: []
   },
-  {
+{
     name: '以理服人',
     rarity: 3,
     type: '双手剑',
@@ -4536,7 +4728,7 @@ export const WEAPONS = [
     desc: '施放元素战技后普攻与重击伤害提升。',
     users: []
   },
-  {
+{
     name: '沐浴龙血的剑',
     rarity: 3,
     type: '双手剑',
@@ -4548,7 +4740,7 @@ export const WEAPONS = [
     desc: '对火元素附着敌人增伤。',
     users: []
   },
-  {
+{
     name: '反曲弓',
     rarity: 3,
     type: '弓',
@@ -4560,7 +4752,7 @@ export const WEAPONS = [
     desc: '击败敌人回血。',
     users: []
   },
-  {
+{
     name: '神射手之誓',
     rarity: 3,
     type: '弓',
@@ -4572,7 +4764,7 @@ export const WEAPONS = [
     desc: '对弱点伤害提升。',
     users: []
   },
-  {
+{
     name: '鸦羽弓',
     rarity: 3,
     type: '弓',
@@ -4584,7 +4776,7 @@ export const WEAPONS = [
     desc: '对水雷附着敌人增伤。',
     users: []
   },
-  {
+{
     name: '信使',
     rarity: 3,
     type: '弓',
@@ -4596,7 +4788,7 @@ export const WEAPONS = [
     desc: '重击命中弱点概率额外伤害。',
     users: []
   },
-  {
+{
     name: '弹弓',
     rarity: 3,
     type: '弓',
@@ -4608,7 +4800,7 @@ export const WEAPONS = [
     desc: '近身命中增伤。',
     users: []
   },
-  {
+{
     name: '翡玉法球',
     rarity: 3,
     type: '法器',
@@ -4620,7 +4812,7 @@ export const WEAPONS = [
     desc: '触发反应后攻击提升。',
     users: []
   },
-  {
+{
     name: '甲级宝珏',
     rarity: 3,
     type: '法器',
@@ -4632,7 +4824,7 @@ export const WEAPONS = [
     desc: '击败敌人后移速与攻击提升。',
     users: []
   },
-  {
+{
     name: '魔导绪论',
     rarity: 3,
     type: '法器',
@@ -4644,7 +4836,7 @@ export const WEAPONS = [
     desc: '对水雷附着敌人增伤。',
     users: []
   },
-  {
+{
     name: '讨龙英杰谭',
     rarity: 3,
     type: '法器',
@@ -4656,7 +4848,7 @@ export const WEAPONS = [
     desc: '切换角色后为下一位角色提供攻击加成，辅助神器。',
     users: []
   },
-  {
+{
     name: '异世界行记',
     rarity: 3,
     type: '法器',
@@ -4668,7 +4860,7 @@ export const WEAPONS = [
     desc: '触发反应后全队元素伤害提升。',
     users: []
   },
-  {
+{
     name: '白缨枪',
     rarity: 3,
     type: '长柄武器',
@@ -4680,7 +4872,7 @@ export const WEAPONS = [
     desc: '普攻与重击伤害提升。',
     users: []
   },
-  {
+{
     name: '黑缨枪',
     rarity: 3,
     type: '长柄武器',
@@ -4692,7 +4884,7 @@ export const WEAPONS = [
     desc: '对史莱姆类敌人增伤。',
     users: []
   },
-  {
+{
     name: '钺矛',
     rarity: 3,
     type: '长柄武器',
@@ -4704,6 +4896,54 @@ export const WEAPONS = [
     desc: '普攻与重击命中叠层增伤。',
     users: []
   },
+{
+    name: "星锋剑",
+    rarity: 5,
+    type: "单手剑",
+    stat: "副属性：暴击率",
+    atk1: 46,
+    atk90: 608,
+    subStat: "暴击率",
+    subValue: "22.1%",
+    desc: "7.0 主线赠送的旅行者(冰)专武，攻击、双暴与充能全面加成，随至冬七天神像解锁层数强化。",
+    users: []
+  },
+{
+    name: "秘星典谕",
+    rarity: 5,
+    type: "法器",
+    stat: "副属性：暴击伤害",
+    atk1: 44,
+    atk90: 542,
+    subStat: "暴击伤害",
+    subValue: "66.2%",
+    desc: "7.2 米提亚专武：施放战技提升精通，触发反应叠加「炬中法度」，星超导暴伤进一步提升。",
+    users: []
+  },
+{
+    name: "白湖冬羽",
+    rarity: 5,
+    type: "单手剑",
+    stat: "副属性：暴击伤害",
+    atk1: 48,
+    atk90: 674,
+    subStat: "暴击伤害",
+    subValue: "44.1%",
+    desc: "7.0 奥黛塔专武，提升冰伤与星烁反应伤害，后台挂冰时依然生效。",
+    users: []
+  },
+{
+    name: "蝶变",
+    rarity: 5,
+    type: "单手剑",
+    stat: "副属性：暴击率",
+    atk1: 46,
+    atk90: 608,
+    subStat: "暴击率",
+    subValue: "22.1%",
+    desc: "7.1 薇斯纳专武，触发星扩散后提升全队风伤与扩散伤害。",
+    users: []
+  }
 ]
 
 export const TEAMS = [
@@ -5113,5 +5353,137 @@ export const TEAMS = [
       { name: '爱诺', element: '水' },
     ],
     tip: '菈乌玛挂草触发月绽放 → 爱诺水兆 → 芙宁娜增伤 → 奈芙尔站场月绽放输出。'
+  },
+  {
+    name: "哥伦比娅月反应队",
+    core: "月反应 · 三系联动",
+    members: [
+      { name: "哥伦比娅", element: "水" },
+      { name: "菈乌玛", element: "草" },
+      { name: "伊涅芙", element: "雷" },
+      { name: "兹白", element: "岩" },
+    ],
+    tip: "哥伦比娅 Q 开领域挂水 → 菈乌玛挂草触发月绽放 → 伊涅芙挂雷触发月感电 → 兹白结晶触发月结晶，三系月反应全覆盖。"
+  },
+  {
+    name: "莉奈娅双岩队",
+    core: "蓄力岩伤 · 双岩共鸣",
+    members: [
+      { name: "莉奈娅", element: "岩" },
+      { name: "钟离", element: "岩" },
+      { name: "希诺宁", element: "岩" },
+      { name: "班尼特", element: "火" },
+    ],
+    tip: "钟离开盾减抗 → 希诺宁减抗加伤 → 班尼特 Q 加攻 → 莉奈娅蓄力结晶弹站场输出。"
+  },
+  {
+    name: "桑多涅永冻队",
+    core: "永冻 · 冰伤爆发",
+    members: [
+      { name: "桑多涅", element: "冰" },
+      { name: "神里绫华", element: "冰" },
+      { name: "芙宁娜", element: "水" },
+      { name: "枫原万叶", element: "风" },
+    ],
+    tip: "芙宁娜 Q 增伤挂水 → 万叶扩散减抗聚怪 → 桑多涅后台挂冰 → 绫华重击与 Q 永冻收割。"
+  },
+  {
+    name: "艾莉丝蒸发队",
+    core: "蒸发 · 火法站场",
+    members: [
+      { name: "艾莉丝", element: "火" },
+      { name: "芙宁娜", element: "水" },
+      { name: "枫原万叶", element: "风" },
+      { name: "班尼特", element: "火" },
+    ],
+    tip: "班尼特 Q 加攻 → 万叶扩散减抗 → 芙宁娜挂水增伤 → 艾莉丝站场普攻与 Q 连续蒸发。"
+  },
+  {
+    name: "埃洛伊融化队",
+    core: "融化 · 冰弓站场",
+    members: [
+      { name: "埃洛伊", element: "冰" },
+      { name: "班尼特", element: "火" },
+      { name: "香菱", element: "火" },
+      { name: "钟离", element: "岩" },
+    ],
+    tip: "钟离开盾保站场 → 班尼特 Q 加攻 → 香菱 Q 后台挂火 → 埃洛伊 E 附魔普攻连续融化。"
+  },
+  {
+    name: "风主扩散队",
+    core: "扩散 · 双风聚怪",
+    members: [
+      { name: "旅行者·风", element: "风" },
+      { name: "枫原万叶", element: "风" },
+      { name: "班尼特", element: "火" },
+      { name: "香菱", element: "火" },
+    ],
+    tip: "班尼特 Q 加攻 → 香菱 Q 挂火 → 万叶 E 聚怪扩散减抗 → 旅行者·风 Q 风涡卷持续扩散收尾。"
+  },
+  {
+    name: "岩主结晶队",
+    core: "双岩共鸣 · 结晶护盾",
+    members: [
+      { name: "旅行者·岩", element: "岩" },
+      { name: "钟离", element: "岩" },
+      { name: "阿贝多", element: "岩" },
+      { name: "班尼特", element: "火" },
+    ],
+    tip: "钟离开盾减抗 → 班尼特 Q 加攻 → 阿贝多 E 后台岩伤 → 旅行者·岩 荒星与 Q 结晶补伤。"
+  },
+  {
+    name: "雷主激化队",
+    core: "激化 · 充能辅助",
+    members: [
+      { name: "旅行者·雷", element: "雷" },
+      { name: "纳西妲", element: "草" },
+      { name: "菲谢尔", element: "雷" },
+      { name: "钟离", element: "岩" },
+    ],
+    tip: "钟离开盾 → 纳西妲 E 全场挂草 → 旅行者·雷 E 勾玉回能 → 菲谢尔奥兹后台雷触发激化。"
+  },
+  {
+    name: "草主绽放队",
+    core: "超绽放 · 双草挂草",
+    members: [
+      { name: "旅行者·草", element: "草" },
+      { name: "纳西妲", element: "草" },
+      { name: "行秋", element: "水" },
+      { name: "久岐忍", element: "雷" },
+    ],
+    tip: "纳西妲 E 挂草 → 行秋 Q 挂水生成草原核 → 旅行者·草 Q 草灯莲续草 → 久岐忍 E 触发超绽放。"
+  },
+  {
+    name: "水主蒸发队",
+    core: "蒸发 · 双水挂水",
+    members: [
+      { name: "旅行者·水", element: "水" },
+      { name: "胡桃", element: "火" },
+      { name: "行秋", element: "水" },
+      { name: "钟离", element: "岩" },
+    ],
+    tip: "钟离开盾减抗 → 行秋 Q 挂水 → 旅行者·水 E+Q 持续挂水治疗 → 胡桃 E 后重击蒸发。"
+  },
+  {
+    name: "火主融化队",
+    core: "融化 · 后台挂火",
+    members: [
+      { name: "旅行者·火", element: "火" },
+      { name: "甘雨", element: "冰" },
+      { name: "班尼特", element: "火" },
+      { name: "钟离", element: "岩" },
+    ],
+    tip: "钟离开盾保站场 → 班尼特 Q 加攻 → 旅行者·火 Q 火莲后台挂火 → 甘雨蓄力霜华矢连续融化。"
+  },
+  {
+    name: "冰主星烁队",
+    core: "星超导 · 星扩散双路线",
+    members: [
+      { name: "旅行者·冰", element: "冰" },
+      { name: "米提亚", element: "雷" },
+      { name: "奥黛塔", element: "冰" },
+      { name: "枫原万叶", element: "风" },
+    ],
+    tip: "米提亚 Q 铺极星辉域 → 万叶扩散触发星扩散清群 → 奥黛塔后台挂冰增伤 → 旅行者·冰 站场星超导收割。"
   },
 ]

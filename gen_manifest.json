@@ -8,27 +8,11 @@
     "rarity": 5
   },
   {
-    "id": 9,
-    "name": "迪卢克",
-    "file": "diluke",
-    "element": "火",
-    "role": "主C · 蒸发",
-    "rarity": 5
-  },
-  {
     "id": 2,
     "name": "钟离",
     "file": "zhongli",
     "element": "岩",
     "role": "盾辅 · 减抗",
-    "rarity": 5
-  },
-  {
-    "id": 10,
-    "name": "可莉",
-    "file": "keli",
-    "element": "火",
-    "role": "主C · 站场",
     "rarity": 5
   },
   {
@@ -48,27 +32,11 @@
     "rarity": 5
   },
   {
-    "id": 11,
-    "name": "宵宫",
-    "file": "xiaogong",
-    "element": "火",
-    "role": "主C · 普攻",
-    "rarity": 5
-  },
-  {
     "id": 5,
     "name": "神里绫华",
     "file": "shenli-linghua",
     "element": "冰",
     "role": "主C · 永冻",
-    "rarity": 5
-  },
-  {
-    "id": 12,
-    "name": "迪希雅",
-    "file": "dixiya",
-    "element": "火",
-    "role": "副C · 减伤",
     "rarity": 5
   },
   {
@@ -80,14 +48,6 @@
     "rarity": 5
   },
   {
-    "id": 13,
-    "name": "林尼",
-    "file": "linni",
-    "element": "火",
-    "role": "主C · 蓄力",
-    "rarity": 5
-  },
-  {
     "id": 7,
     "name": "枫原万叶",
     "file": "fengyuan-wanye",
@@ -96,19 +56,59 @@
     "rarity": 5
   },
   {
-    "id": 14,
-    "name": "阿蕾奇诺",
-    "file": "aleiqinuo",
-    "element": "火",
-    "role": "主C · 战技",
-    "rarity": 5
-  },
-  {
     "id": 8,
     "name": "温迪",
     "file": "wendi",
     "element": "风",
     "role": "聚怪 · 充能辅",
+    "rarity": 5
+  },
+  {
+    "id": 9,
+    "name": "迪卢克",
+    "file": "diluke",
+    "element": "火",
+    "role": "主C · 蒸发",
+    "rarity": 5
+  },
+  {
+    "id": 10,
+    "name": "可莉",
+    "file": "keli",
+    "element": "火",
+    "role": "主C · 站场",
+    "rarity": 5
+  },
+  {
+    "id": 11,
+    "name": "宵宫",
+    "file": "xiaogong",
+    "element": "火",
+    "role": "主C · 普攻",
+    "rarity": 5
+  },
+  {
+    "id": 12,
+    "name": "迪希雅",
+    "file": "dixiya",
+    "element": "火",
+    "role": "副C · 减伤",
+    "rarity": 5
+  },
+  {
+    "id": 13,
+    "name": "林尼",
+    "file": "linni",
+    "element": "火",
+    "role": "主C · 蓄力",
+    "rarity": 5
+  },
+  {
+    "id": 14,
+    "name": "阿蕾奇诺",
+    "file": "aleiqinuo",
+    "element": "火",
+    "role": "主C · 战技",
     "rarity": 5
   },
   {
@@ -942,5 +942,101 @@
     "element": "雷",
     "role": "副C · 挂雷",
     "rarity": 4
+  },
+  {
+    "id": 119,
+    "name": "哥伦比娅",
+    "file": "gelunbiya",
+    "element": "水",
+    "role": "副C · 月反应核心",
+    "rarity": 5
+  },
+  {
+    "id": 120,
+    "name": "莉奈娅",
+    "file": "linaiya",
+    "element": "岩",
+    "role": "主C · 结晶狙击",
+    "rarity": 5
+  },
+  {
+    "id": 121,
+    "name": "桑多涅",
+    "file": "sangduonie",
+    "element": "冰",
+    "role": "副C · 后台挂冰",
+    "rarity": 5
+  },
+  {
+    "id": 122,
+    "name": "艾莉丝",
+    "file": "ailisi",
+    "element": "火",
+    "role": "主C · 火法站场",
+    "rarity": 5
+  },
+  {
+    "id": 123,
+    "name": "埃洛伊",
+    "file": "ailuoyi",
+    "element": "冰",
+    "role": "主C · 冰弓",
+    "rarity": 5
+  },
+  {
+    "id": 124,
+    "name": "旅行者·风",
+    "file": "traveler-feng",
+    "element": "风",
+    "role": "副C · 聚怪扩散",
+    "rarity": 5
+  },
+  {
+    "id": 125,
+    "name": "旅行者·岩",
+    "file": "traveler-yan",
+    "element": "岩",
+    "role": "副C · 岩造物",
+    "rarity": 5
+  },
+  {
+    "id": 126,
+    "name": "旅行者·雷",
+    "file": "traveler-lei",
+    "element": "雷",
+    "role": "辅助 · 全队充能",
+    "rarity": 5
+  },
+  {
+    "id": 127,
+    "name": "旅行者·草",
+    "file": "traveler-cao",
+    "element": "草",
+    "role": "副C · 持续挂草",
+    "rarity": 5
+  },
+  {
+    "id": 128,
+    "name": "旅行者·水",
+    "file": "traveler-shui",
+    "element": "水",
+    "role": "辅助 · 挂水治疗",
+    "rarity": 5
+  },
+  {
+    "id": 129,
+    "name": "旅行者·火",
+    "file": "traveler-huo",
+    "element": "火",
+    "role": "副C · 后台挂火",
+    "rarity": 5
+  },
+  {
+    "id": 130,
+    "name": "旅行者·冰",
+    "file": "traveler-bing",
+    "element": "冰",
+    "role": "主C · 星烁反应",
+    "rarity": 5
   }
 ]

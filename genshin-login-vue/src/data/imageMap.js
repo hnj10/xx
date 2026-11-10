@@ -1,24 +1,24 @@
 // 自动生成：角色中文名 -> assets/chars 文件名 映射
-// 由 gen_image_map.py 生成，勿手工编辑
+// 由 gen_new_chars.py / gen_image_map.py 生成，勿手工编辑
 const charFiles = import.meta.glob("../assets/chars/*.png", { eager: true, import: "default" })
 const artifactFiles = import.meta.glob("../assets/artifacts/*.png", { eager: true, import: "default" })
 
 // 中文名 -> 拼音文件名（不含扩展名）
 export const CHAR_NAME_TO_FILE = {
   '胡桃': 'hutao',
-  '迪卢克': 'diluke',
   '钟离': 'zhongli',
-  '可莉': 'keli',
   '纳西妲': 'naxida',
   '雷电将军': 'leidian-jiangjun',
-  '宵宫': 'xiaogong',
   '神里绫华': 'shenli-linghua',
-  '迪希雅': 'dixiya',
   '甘雨': 'ganyu',
-  '林尼': 'linni',
   '枫原万叶': 'fengyuan-wanye',
-  '阿蕾奇诺': 'aleiqinuo',
   '温迪': 'wendi',
+  '迪卢克': 'diluke',
+  '可莉': 'keli',
+  '宵宫': 'xiaogong',
+  '迪希雅': 'dixiya',
+  '林尼': 'linni',
+  '阿蕾奇诺': 'aleiqinuo',
   '玛薇卡': 'maweika',
   '安柏': 'anbai',
   '班尼特': 'bannite',
@@ -123,9 +123,20 @@ export const CHAR_NAME_TO_FILE = {
   '沃雅妮莎': 'woyanisha',
   '米提亚': 'mitiya',
   '瓦列里': 'walieili',
+  '哥伦比娅': 'gelunbiya',
+  '莉奈娅': 'linaiya',
+  '桑多涅': 'sangduonie',
+  '艾莉丝': 'ailisi',
+  '埃洛伊': 'ailuoyi',
+  '旅行者·风': 'traveler-feng',
+  '旅行者·岩': 'traveler-yan',
+  '旅行者·雷': 'traveler-lei',
+  '旅行者·草': 'traveler-cao',
+  '旅行者·水': 'traveler-shui',
+  '旅行者·火': 'traveler-huo',
+  '旅行者·冰': 'traveler-bing',
 }
 
-// 圣遗物套装名 -> assets/artifacts 图标文件名
 export const ARTIFACT_NAME_TO_FILE = {
   '炽烈的炎之魔女': 'xilie-yan-zhi-monv',
   '追忆之注连': 'zhuiyi-zhulian',
