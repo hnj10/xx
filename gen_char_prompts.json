@@ -1,0 +1,782 @@
+[
+ {
+  "name": "胡桃",
+  "file": "hutao",
+  "element": "火",
+  "prompt": "胡桃,双马尾深棕近黑长发,梅花形发簪,大而圆的梅花红瞳,黑色金边短款旗袍风上衣,白色短裤,外搭深红斗篷,肩扛朱漆木杖,古灵精怪, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "钟离",
+  "file": "zhongli",
+  "element": "岩",
+  "prompt": "钟离,深棕渐变金发,金瞳,璃月深棕长袍,金色纹饰,岩元素权柄,沉稳威严, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "纳西妲",
+  "file": "naxida",
+  "element": "草",
+  "prompt": "纳西妲,银白短发,绿瞳,嫩绿白配色仙灵服饰,草叶发饰,手持法器,幼态聪慧, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "雷电将军",
+  "file": "leidian-jiangjun",
+  "element": "雷",
+  "prompt": "雷电将军,紫色长发,紫瞳,紫色和风将军服,雷纹,手持长柄刀,威严, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "神里绫华",
+  "file": "shenli-linghua",
+  "element": "冰",
+  "prompt": "神里绫华,银白色高马尾长发,蓝灰瞳,白色配浅蓝和风振袖,蓝色发饰,持单手剑,优雅端庄, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "甘雨",
+  "file": "ganyu",
+  "element": "冰",
+  "prompt": "甘雨,浅蓝紫色长发,金色眼瞳,白蓝渐变仙服,头顶麒麟角,持长弓,温婉, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "枫原万叶",
+  "file": "fengyuan-wanye",
+  "element": "风",
+  "prompt": "枫原万叶,银白色短发带一撮红挑染,红瞳,红黑和风武士服,肩披红围巾,持单手剑,飘逸, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "温迪",
+  "file": "wendi",
+  "element": "风",
+  "prompt": "温迪,深蓝近黑渐变青绿的双麻花辫长发,青绿色眼瞳,白绿吟游诗人装,披风,持弓,慵懒随性, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "迪卢克",
+  "file": "diluke",
+  "element": "火",
+  "prompt": "迪卢克,火红色高马尾长发,酒红色眼睛,黑色高领长款大衣,红色内衬,戴黑色手套,手持深色大剑,沉稳俊朗, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "可莉",
+  "file": "keli",
+  "element": "火",
+  "prompt": "可莉,金色双马尾小萝莉,红瞳,红色贝雷帽,红色连衣裙配白色围裙,背着红色大背包,活泼可爱, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "宵宫",
+  "file": "xiaogong",
+  "element": "火",
+  "prompt": "宵宫,棕红色长发盘起,金瞳,红色发绳,日式和风浴衣,金色焰纹,手持长弓,元气少女, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "迪希雅",
+  "file": "dixiya",
+  "element": "火",
+  "prompt": "迪希雅,黑红相间长发,蜜色皮肤,金色眼瞳,佣兵风黑色抹胸上衣,红色披风,手持大剑,飒爽, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "林尼",
+  "file": "linni",
+  "element": "火",
+  "prompt": "林尼,浅金发,蓝瞳,枫丹魔术师黑白红礼服,持弓,华丽, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "阿蕾奇诺",
+  "file": "aleiqinuo",
+  "element": "火",
+  "prompt": "阿蕾奇诺,灰白色短发,黑红异色瞳,黑红配色修身高领制服,贵族气质,手持红色长柄武器,冷峻, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "玛薇卡",
+  "file": "maweika",
+  "element": "火",
+  "prompt": "玛薇卡,红棕色长发,金色眼瞳,部落风红色羽毛头饰,暖色战甲,纳塔火焰纹,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "安柏",
+  "file": "anbai",
+  "element": "火",
+  "prompt": "安柏,金色短发,绿瞳,红色蝴蝶结发饰,红白配色无袖上衣,棕色护目镜,活泼, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "班尼特",
+  "file": "bannite",
+  "element": "火",
+  "prompt": "班尼特,银白色短发,蓝绿色眼瞳,护目镜推在额前,橙黑色探险服,短裤,手持单手剑,阳光, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "香菱",
+  "file": "xiangling",
+  "element": "火",
+  "prompt": "香菱,深蓝紫色双丸子头,金瞳,白色厨师服,红色围裙,熊猫锅巴,手持长枪,元气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "辛焱",
+  "file": "xinyan",
+  "element": "火",
+  "prompt": "辛焱,黑发双马尾带橙色挑染,红色发饰,摇滚风黑色皮衣,手持双手剑,酷, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "烟绯",
+  "file": "yanfei",
+  "element": "火",
+  "prompt": "烟绯,粉棕色长发,绿瞳,红色鹿角,红色金边旗袍风制服,手持法器,聪慧, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "嘉明",
+  "file": "jiaming",
+  "element": "火",
+  "prompt": "嘉明,黑发,金瞳,枫丹魔术师风黑白礼服,手持单手剑,帅气少年, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "托马",
+  "file": "tuoma",
+  "element": "火",
+  "prompt": "托马,金色短发,绿瞳,黑色针织背心内搭白衬衫,手持长枪,温柔可靠, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "夏沃蕾",
+  "file": "xiawolei",
+  "element": "火",
+  "prompt": "夏沃蕾,浅蓝灰长发,紫瞳,蓝色系制服风,火铳,英姿飒爽, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "莫娜",
+  "file": "mona",
+  "element": "水",
+  "prompt": "莫娜,深紫色双马尾长发,蓝紫色眼瞳,深蓝巫师帽带金饰,蓝紫渐变连衣裙,黑色长袜,手持法器, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "达达利亚",
+  "file": "dadaliya",
+  "element": "水",
+  "prompt": "达达利亚,橙棕色短发,蓝色眼瞳,灰白军装风大衣,红围巾,手持弓箭与双刃,锐气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "珊瑚宫心海",
+  "file": "shanhugong-xinhai",
+  "element": "水",
+  "prompt": "珊瑚宫心海,浅粉长发,粉蓝渐变眼瞳,珍珠发饰,蓝白渐变和风巫女服,手持法器,优雅, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "神里绫人",
+  "file": "shenli-lingren",
+  "element": "水",
+  "prompt": "神里绫人,浅蓝灰色短发,蓝瞳,白色剑道服,蓝色披肩,手持单手剑,温润, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "夜兰",
+  "file": "yelan",
+  "element": "水",
+  "prompt": "夜兰,深蓝近黑长发,蓝瞳,黑色紧身长款风衣,蓝色缎带,手持长弓,神秘, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "妮露",
+  "file": "nilu",
+  "element": "水",
+  "prompt": "妮露,红棕色长发,蓝瞳,舞者风红白舞裙,金饰,手持单手剑,柔美, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "那维莱特",
+  "file": "naweilaike",
+  "element": "水",
+  "prompt": "那维莱特,银白长发,蓝瞳,白蓝配色高领长袍,水龙权柄气质,手持法器,威严, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "芙宁娜",
+  "file": "funingna",
+  "element": "水",
+  "prompt": "芙宁娜,银白短发,蓝瞳,蓝白配色礼服,水元素冠冕,手持单手剑,高贵, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "希格雯",
+  "file": "xigewen",
+  "element": "水",
+  "prompt": "希格雯,浅蓝长发,蓝瞳,蓝白护士服,医疗法器,温柔, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "玛拉妮",
+  "file": "malanni",
+  "element": "水",
+  "prompt": "玛拉妮,浅蓝长发,蓝瞳,泳装风蓝白服饰,冲浪元素,活泼, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "芭芭拉",
+  "file": "babala",
+  "element": "水",
+  "prompt": "芭芭拉,浅金长发,蓝绿眼瞳,白色神职服,蓝色发饰,手持法器,治愈系, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "塔利雅",
+  "file": "taliya",
+  "element": "水",
+  "prompt": "塔利雅,浅蓝长发,蓝瞳,纳塔风部落服饰,水纹,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "行秋",
+  "file": "xingqiu",
+  "element": "水",
+  "prompt": "行秋,深蓝色短发,蓝瞳,水色书生装,持单手剑,书卷气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "坎蒂丝",
+  "file": "kandisi",
+  "element": "水",
+  "prompt": "坎蒂丝,深蓝长发,蓝瞳,沙漠风蓝金服饰,持长柄武器,异域, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "爱诺",
+  "file": "ainuo",
+  "element": "水",
+  "prompt": "爱诺,浅蓝长发,蓝瞳,轻灵水元素少女,蓝白服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "刻晴",
+  "file": "keqing",
+  "element": "雷",
+  "prompt": "刻晴,浅紫色双马尾长发,紫瞳,蓝紫配色璃月短旗袍风,手持单手剑,干练, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "八重神子",
+  "file": "bazhong-shenzi",
+  "element": "雷",
+  "prompt": "八重神子,浅粉长发,粉瞳,粉色巫女服,狐狸耳与狐尾,手持法器,妩媚, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "赛诺",
+  "file": "sainuo",
+  "element": "雷",
+  "prompt": "赛诺,白发,红瞳,黑金配色沙漠风,手持长柄武器,神秘, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "克洛琳德",
+  "file": "keluolinde",
+  "element": "雷",
+  "prompt": "克洛琳德,浅蓝短发,蓝瞳,枫丹风蓝白制服,火铳,干练, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "瓦蕾莎",
+  "file": "waleisha",
+  "element": "雷",
+  "prompt": "瓦蕾莎,金发,蓝瞳,纳塔风战甲,雷纹,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "伊涅芙",
+  "file": "yineifu",
+  "element": "雷",
+  "prompt": "伊涅芙,紫发,紫瞳,雷元素轻甲,灵动, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "菲林斯",
+  "file": "feilinsi",
+  "element": "雷",
+  "prompt": "菲林斯,浅金发,蓝瞳,雷元素少女,轻盈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "丽莎",
+  "file": "lisha",
+  "element": "雷",
+  "prompt": "丽莎,棕色长发,绿瞳,紫色魔女帽与长裙,手持法器,优雅慵懒, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "雷泽",
+  "file": "leize",
+  "element": "雷",
+  "prompt": "雷泽,银灰长发,红瞳,狼少年风毛皮短装,持大剑,野性, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "菲谢尔",
+  "file": "feixieer",
+  "element": "雷",
+  "prompt": "菲谢尔,浅金长发,绿瞳,黑紫哥特风,乌鸦奥兹,手持长弓,中二, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "北斗",
+  "file": "beidou",
+  "element": "雷",
+  "prompt": "北斗,棕色长发,红瞳,船长风深色大衣,持双手大剑,豪爽, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "九条裟罗",
+  "file": "jiutiao-shaluo",
+  "element": "雷",
+  "prompt": "九条裟罗,黑发,金瞳,天狗黑羽,紫黑武士服,持长弓,英武, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "久岐忍",
+  "file": "jiuqiren",
+  "element": "雷",
+  "prompt": "久岐忍,灰绿色短发,紫瞳,忍装,雷纹,酷, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "多莉",
+  "file": "duoli",
+  "element": "雷",
+  "prompt": "多莉,粉发小萝莉,蓝瞳,金饰,商人风,雷元素, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "赛索斯",
+  "file": "saisuosi",
+  "element": "雷",
+  "prompt": "赛索斯,灰发,金瞳,沙漠风轻甲,持弓,神秘, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "欧洛伦",
+  "file": "oluolun",
+  "element": "雷",
+  "prompt": "欧洛伦,蓝灰发,蓝瞳,雷元素少年,轻盈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "伊安珊",
+  "file": "yianshan",
+  "element": "雷",
+  "prompt": "伊安珊,浅紫发,紫瞳,雷元素轻甲少女,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "七七",
+  "file": "qiqi",
+  "element": "冰",
+  "prompt": "七七,白色短发,红瞳,僵尸符咒贴额,白蓝童装,手持法器,呆萌, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "优菈",
+  "file": "youla",
+  "element": "冰",
+  "prompt": "优菈,浅蓝长发,蓝瞳,西风骑士蓝白制服,持大剑,高傲, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "申鹤",
+  "file": "shenhe",
+  "element": "冰",
+  "prompt": "申鹤,银白长发,银瞳,红绳发饰,白蓝仙服,持长柄武器,清冷, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "莱欧斯利",
+  "file": "laiousili",
+  "element": "冰",
+  "prompt": "莱欧斯利,灰黑发,蓝瞳,冰原风深色大衣,毛领,持拳套,冷峻, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "茜特菈莉",
+  "file": "xitelali",
+  "element": "冰",
+  "prompt": "茜特菈莉,银蓝长发,蓝瞳,冰元素少女,白蓝服饰,灵动, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "爱可菲",
+  "file": "aikefei",
+  "element": "冰",
+  "prompt": "爱可菲,浅蓝短发,蓝瞳,冰元素轻甲少女,清冷, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "丝柯克",
+  "file": "sikeke",
+  "element": "冰",
+  "prompt": "丝柯克,银白长发,银瞳,冰元素贵气服饰,持法器,神秘, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "凯亚",
+  "file": "kaiya",
+  "element": "冰",
+  "prompt": "凯亚,蓝黑短发,蓝瞳,眼罩,蓝黑军装,持单手剑,痞帅, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "迪奥娜",
+  "file": "diaona",
+  "element": "冰",
+  "prompt": "迪奥娜,浅粉长发,绿瞳,猫耳猫尾,蓝白调酒服,持弓,傲娇, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "罗莎莉亚",
+  "file": "luosaliya",
+  "element": "冰",
+  "prompt": "罗莎莉亚,暗红短发,紫瞳,黑紫修女服,持长柄武器,冷艳, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "米卡",
+  "file": "mika",
+  "element": "冰",
+  "prompt": "米卡,浅金发,蓝瞳,骑士少年,蓝白轻甲,持弓, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "重云",
+  "file": "zhongyun",
+  "element": "冰",
+  "prompt": "重云,深蓝短发,蓝瞳,蓝白道士服,冰晶,持大剑,少年, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "莱依拉",
+  "file": "layila",
+  "element": "冰",
+  "prompt": "莱依拉,浅蓝长发,蓝瞳,星空图案睡衣风,月牙发饰,困倦, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "菲米尼",
+  "file": "feimini",
+  "element": "冰",
+  "prompt": "菲米尼,浅蓝短发,蓝瞳,潜水服风,持大剑,温柔, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "夏洛蒂",
+  "file": "xialuodi",
+  "element": "冰",
+  "prompt": "夏洛蒂,粉棕发,蓝瞳,记者风,相机,持法器,活泼, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "琴",
+  "file": "qin",
+  "element": "风",
+  "prompt": "琴,金色长发,蓝瞳,西风骑士蓝白制服,披风,持单手剑,端庄, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "魈",
+  "file": "xiao",
+  "element": "风",
+  "prompt": "魈,青绿色短发,金瞳,夜叉面具,青白仙服,持长柄武器,清冷, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "流浪者",
+  "file": "liulangzhe",
+  "element": "风",
+  "prompt": "流浪者,深蓝紫发,蓝瞳,笠帽,青白和风服,持法器,孤高, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "闲云",
+  "file": "xianyun",
+  "element": "风",
+  "prompt": "闲云,银白发,蓝瞳,仙人风白青仙服,持法器,仙风, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "恰斯卡",
+  "file": "qiasika",
+  "element": "风",
+  "prompt": "恰斯卡,浅蓝发,蓝瞳,纳塔风轻甲,风纹,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "梦见月瑞希",
+  "file": "mengjian-yue-ruixi",
+  "element": "风",
+  "prompt": "梦见月瑞希,浅紫发,粉瞳,梦幻风服饰,风元素,优雅, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "砂糖",
+  "file": "shatang",
+  "element": "风",
+  "prompt": "砂糖,浅绿发,绿瞳,眼镜,白绿实验服,持法器,学者, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "蓝砚",
+  "file": "lanyan",
+  "element": "风",
+  "prompt": "蓝砚,蓝发,蓝瞳,风元素少女,轻盈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "鹿野院平藏",
+  "file": "luyeyuan-pingcang",
+  "element": "风",
+  "prompt": "鹿野院平藏,棕发,金瞳,侦探风深色短风衣,持法器,机敏, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "早柚",
+  "file": "zaoyou",
+  "element": "风",
+  "prompt": "早柚,浅棕发小萝莉,绿瞳,狸猫兜帽,风元素,活泼, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "珐露珊",
+  "file": "falushan",
+  "element": "风",
+  "prompt": "珐露珊,浅蓝发,蓝瞳,学院风制服,持弓,睿智, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "琳妮特",
+  "file": "linnite",
+  "element": "风",
+  "prompt": "琳妮特,浅蓝发,蓝瞳,猫耳,枫丹魔术师助手服,风元素, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "伊法",
+  "file": "yifa",
+  "element": "风",
+  "prompt": "伊法,浅绿发,绿瞳,风元素少女,轻盈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "雅珂达",
+  "file": "yakeda",
+  "element": "风",
+  "prompt": "雅珂达,银发,蓝瞳,风元素少女,飘逸, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "阿贝多",
+  "file": "abeiduo",
+  "element": "岩",
+  "prompt": "阿贝多,银白金发,蓝瞳,炼金术师白蓝制服,持单手剑,温润, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "荒泷一斗",
+  "file": "huanglong-yidou",
+  "element": "岩",
+  "prompt": "荒泷一斗,灰白长发,金瞳,鬼角,红黑武道服,持大剑,豪迈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "娜维娅",
+  "file": "naweiya",
+  "element": "岩",
+  "prompt": "娜维娅,金发,蓝瞳,蓝白贵族洋装,岩纹,持双手大剑,明艳, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "千织",
+  "file": "qianzhi",
+  "element": "岩",
+  "prompt": "千织,灰白发,蓝瞳,裁缝风服饰,岩元素,雅致, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "希诺宁",
+  "file": "xinuoning",
+  "element": "岩",
+  "prompt": "希诺宁,灰发,蓝瞳,纳塔风轻甲,岩纹,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "诺艾尔",
+  "file": "nuoaier",
+  "element": "岩",
+  "prompt": "诺艾尔,浅金发,绿瞳,女仆风蓝白裙,持大剑,温柔, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "凝光",
+  "file": "ningguang",
+  "element": "岩",
+  "prompt": "凝光,银白长发,金瞳,金色璃月华服,持法器,雍容, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "云堇",
+  "file": "yunjin",
+  "element": "岩",
+  "prompt": "云堇,黑发,棕瞳,京剧风戏服,持长柄武器,典雅, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "五郎",
+  "file": "wulang",
+  "element": "岩",
+  "prompt": "五郎,棕发,蓝瞳,兽耳犬尾,军服,持弓,忠诚, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "卡齐娜",
+  "file": "kaqina",
+  "element": "岩",
+  "prompt": "卡齐娜,灰发,蓝瞳,纳塔风岩元素少女,轻盈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "叶洛亚",
+  "file": "yeluoya",
+  "element": "岩",
+  "prompt": "叶洛亚,浅灰发,蓝瞳,岩元素少女,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "提纳里",
+  "file": "tinali",
+  "element": "草",
+  "prompt": "提纳里,深绿长发,绿瞳,狐耳狐尾,雨林巡林员绿白制服,持弓,温雅, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "艾尔海森",
+  "file": "aierhaisen",
+  "element": "草",
+  "prompt": "艾尔海森,灰白发,蓝绿瞳,灰绿学者制服,持单手剑,冷峻理性, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "白术",
+  "file": "baizhu",
+  "element": "草",
+  "prompt": "白术,浅绿长发,金瞳,白绿医者长袍,颈缠白蛇长生,持法器,儒雅, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "艾梅莉埃",
+  "file": "aimolie",
+  "element": "草",
+  "prompt": "艾梅莉埃,浅绿发,绿瞳,草元素少女,轻盈, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "基尼奇",
+  "file": "jiniqi",
+  "element": "草",
+  "prompt": "基尼奇,绿发,绿瞳,草元素少年,活泼, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "菈乌玛",
+  "file": "lawuma",
+  "element": "草",
+  "prompt": "菈乌玛,浅绿发,绿瞳,草元素少女,灵动, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "奈芙尔",
+  "file": "naifuer",
+  "element": "草",
+  "prompt": "奈芙尔,绿发,绿瞳,草元素少女,自然, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "瑶瑶",
+  "file": "yaoyao",
+  "element": "草",
+  "prompt": "瑶瑶,棕色双丸子头,绿瞳,红白童装,草元素,持长柄武器,可爱, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "柯莱",
+  "file": "kelai",
+  "element": "草",
+  "prompt": "柯莱,深绿长发,绿瞳,草元素巡林员装,持弓,少女, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "卡维",
+  "file": "kawei",
+  "element": "草",
+  "prompt": "卡维,金发,绿瞳,建筑师生装,持大剑,温柔, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "绮良良",
+  "file": "qiliangliang",
+  "element": "草",
+  "prompt": "绮良良,棕发,绿瞳,猫耳猫尾,绿白快递服,持单手剑,活泼, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "法尔伽",
+  "file": "faerjia",
+  "element": "草",
+  "prompt": "法尔伽,深绿发,绿瞳,草元素,自然风服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "尼可",
+  "file": "nike",
+  "element": "冰",
+  "prompt": "尼可,银发,蓝瞳,冰元素,冷峻风服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "杜林",
+  "file": "dulin",
+  "element": "火",
+  "prompt": "杜林,红发,红瞳,火元素,炽热风服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "兹白",
+  "file": "zibai",
+  "element": "岩",
+  "prompt": "兹白,白发,蓝瞳,岩元素,沉稳风服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "洛恩",
+  "file": "luoen",
+  "element": "风",
+  "prompt": "洛恩,浅蓝发,蓝瞳,风元素,飘逸服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "布伦妮",
+  "file": "bulunni",
+  "element": "冰",
+  "prompt": "布伦妮,浅蓝发,蓝瞳,冰元素,清冷服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "奥黛塔",
+  "file": "aodaita",
+  "element": "水",
+  "prompt": "奥黛塔,浅蓝发,蓝瞳,水元素,优雅服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "阿罗夏",
+  "file": "aluoxia",
+  "element": "火",
+  "prompt": "阿罗夏,红发,金瞳,火元素,炽热服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "薇斯纳",
+  "file": "weisina",
+  "element": "风",
+  "prompt": "薇斯纳,浅绿发,绿瞳,风元素,轻盈服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "沃雅妮莎",
+  "file": "woyanisha",
+  "element": "草",
+  "prompt": "沃雅妮莎,绿发,绿瞳,草元素,自然服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "米提亚",
+  "file": "mitiya",
+  "element": "岩",
+  "prompt": "米提亚,灰发,蓝瞳,岩元素,沉稳服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "瓦列里",
+  "file": "walieili",
+  "element": "雷",
+  "prompt": "瓦列里,紫发,紫瞳,雷元素,英气服饰, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "哥伦比娅",
+  "file": "gelunbiya",
+  "element": "水",
+  "prompt": "哥伦比娅,深蓝长发,蓝瞳,水元素,至冬风深色服饰,神秘, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "莉奈娅",
+  "file": "linaiya",
+  "element": "岩",
+  "prompt": "莉奈娅,浅金发,蓝瞳,岩元素,至冬风轻甲,英气, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "桑多涅",
+  "file": "sangduonie",
+  "element": "冰",
+  "prompt": "桑多涅,银白长发,蓝瞳,冰元素,至冬风深色服饰,冷艳, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "艾莉丝",
+  "file": "ailisi",
+  "element": "火",
+  "prompt": "艾莉丝,红棕长发,红瞳,火元素,魔法师风,热情, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "埃洛伊",
+  "file": "ailuoyi",
+  "element": "冰",
+  "prompt": "埃洛伊,棕红长发,绿瞳,冰元素,猎手风皮毛服饰,持弓,野性, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·风",
+  "file": "traveler-feng",
+  "element": "风",
+  "prompt": "旅行者·风,金发双辫少女,金瞳,白绿配色旅行装,风元素青绿色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·岩",
+  "file": "traveler-yan",
+  "element": "岩",
+  "prompt": "旅行者·岩,金发双辫少女,金瞳,白棕配色旅行装,岩元素琥珀色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·雷",
+  "file": "traveler-lei",
+  "element": "雷",
+  "prompt": "旅行者·雷,金发双辫少女,金瞳,白紫配色旅行装,雷元素紫色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·草",
+  "file": "traveler-cao",
+  "element": "草",
+  "prompt": "旅行者·草,金发双辫少女,金瞳,白绿配色旅行装,草元素翠绿色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·水",
+  "file": "traveler-shui",
+  "element": "水",
+  "prompt": "旅行者·水,金发双辫少女,金瞳,白蓝配色旅行装,水元素蓝色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·火",
+  "file": "traveler-huo",
+  "element": "火",
+  "prompt": "旅行者·火,金发双辫少女,金瞳,白红配色旅行装,火元素红色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ },
+ {
+  "name": "旅行者·冰",
+  "file": "traveler-bing",
+  "element": "冰",
+  "prompt": "旅行者·冰,金发双辫少女,金瞳,白蓝配色旅行装,冰元素浅蓝色光效,持单手剑, Genshin Impact style official character portrait, head and upper body, clean cel shading, detailed anime art, soft rim light, solid light background, high quality, 1024x1024, no text, no watermark"
+ }
+]
