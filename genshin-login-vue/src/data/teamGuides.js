@@ -158,6 +158,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
@@ -241,6 +254,45 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜回响",
+            "displayName": "幽夜回响",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量，后台挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星穹之弦",
+            "displayName": "星穹之弦",
+            "rarity": 5,
+            "reason": "新增五星 · 元素充能效率副词条，施放元素爆发后为全队回复能量并提…",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量并提升后台伤害，充能辅助弓适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素充能效率",
+            "subValue": "55.1%"
           }
         ],
         "artifact": {
@@ -442,6 +494,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击率",
             "subValue": "27.6%"
+          },
+          {
+            "name": "山王长牙",
+            "displayName": "山王长牙",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素战技命中后叠层提升暴击伤害与…",
+            "type": "双手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素战技命中后叠层提升暴击伤害与攻击力，夜魂/燃烧主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "赤焰王座",
+            "displayName": "赤焰王座",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，消耗夜魂值/战意后大幅提升攻击力…",
+            "type": "双手剑",
+            "stat": "副属性：攻击力",
+            "desc": "消耗夜魂值/战意后大幅提升攻击力与火伤，火神体系主C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "星陨巨剑",
+            "displayName": "星陨巨剑",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，元素战技命中后叠加暴击率，三段战…",
+            "type": "双手剑",
+            "stat": "副属性：暴击率",
+            "desc": "元素战技命中后叠加暴击率，三段战技与蓄力输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "烬城重锤",
+            "displayName": "烬城重锤",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，队伍体系备选",
+            "type": "双手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后提升全队攻击力，脱手爆发副C适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
@@ -529,16 +633,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -607,6 +724,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，帮助全队循环。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -689,6 +819,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",
@@ -813,6 +956,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击伤害",
             "subValue": "55.1%"
+          },
+          {
+            "name": "真语秘匣",
+            "displayName": "真语秘匣",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发月绽放后提升元素精通与暴击伤…",
+            "type": "法器",
+            "stat": "副属性：暴击率",
+            "desc": "触发月绽放后提升元素精通与暴击伤害，绽放站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "霜华咏叹",
+            "displayName": "霜华咏叹",
+            "rarity": 4,
+            "reason": "新增4星 · 攻击力副词条，可作过渡替代",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "重击命中后叠加攻击力，重击站场法器主C适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "攻击力",
+            "subValue": "41.3%"
+          },
+          {
+            "name": "晨星绪论",
+            "displayName": "晨星绪论",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，站场期间持续叠加暴击率与普攻伤害…",
+            "type": "法器",
+            "stat": "副属性：暴击率",
+            "desc": "站场期间持续叠加暴击率与普攻伤害，法器站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -901,6 +1083,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
@@ -983,6 +1178,45 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜回响",
+            "displayName": "幽夜回响",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量，后台挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星穹之弦",
+            "displayName": "星穹之弦",
+            "rarity": 5,
+            "reason": "新增五星 · 元素充能效率副词条，施放元素爆发后为全队回复能量并提…",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量并提升后台伤害，充能辅助弓适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素充能效率",
+            "subValue": "55.1%"
           }
         ],
         "artifact": {
@@ -1065,16 +1299,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -1179,6 +1426,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "星海之笺",
+            "displayName": "星海之笺",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，普攻与断流命中后叠加暴击率，高频…",
+            "type": "弓",
+            "stat": "副属性：暴击率",
+            "desc": "普攻与断流命中后叠加暴击率，高频站场弓C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -1265,6 +1525,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
@@ -1346,6 +1619,45 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜回响",
+            "displayName": "幽夜回响",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量，后台挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星穹之弦",
+            "displayName": "星穹之弦",
+            "rarity": 5,
+            "reason": "新增五星 · 元素充能效率副词条，施放元素爆发后为全队回复能量并提…",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量并提升后台伤害，充能辅助弓适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素充能效率",
+            "subValue": "55.1%"
           }
         ],
         "artifact": {
@@ -1629,16 +1941,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -1707,6 +2032,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",
@@ -1793,6 +2131,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "柔灯挽歌",
+            "displayName": "柔灯挽歌",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发燃烧相关反应后提升攻击力与元…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发燃烧相关反应后提升攻击力与元素伤害，草火体系后台副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "月轮之誓",
+            "displayName": "月轮之誓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，队伍体系备选",
+            "type": "长柄武器",
+            "stat": "副属性：元素精通",
+            "desc": "触发绽放/燃烧后提升元素精通，草火反应辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -1907,14 +2297,14 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "谐律的异想 4件套",
-          "name": "谐律的异想",
+          "raw": "谐律异想断章 4件套",
+          "name": "谐律异想断章",
           "twoPiece": "攻击力+18%",
-          "fourPiece": "生命之契的数值发生变动时，角色造成的伤害提升18%，持续6秒，最多叠加3层",
-          "flavor": "生命之契体系 · 阿蕾奇诺 / 克洛琳德",
-          "image": "",
-          "themeColor": "#d97a86",
-          "matched": false
+          "fourPiece": "生命之契的数值提升或降低时，装备者造成的伤害+18%，持续6秒，最多叠加3层",
+          "flavor": "生命之契体系",
+          "image": "/artifacts/xielv-yixiang.png",
+          "themeColor": "#c08fd8",
+          "matched": true
         },
         "panel": [
           {
@@ -1986,6 +2376,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，帮助全队循环。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -2071,6 +2474,45 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜回响",
+            "displayName": "幽夜回响",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量，后台挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星穹之弦",
+            "displayName": "星穹之弦",
+            "rarity": 5,
+            "reason": "新增五星 · 元素充能效率副词条，施放元素爆发后为全队回复能量并提…",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量并提升后台伤害，充能辅助弓适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素充能效率",
+            "subValue": "55.1%"
           }
         ],
         "artifact": {
@@ -2152,16 +2594,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -2269,6 +2724,19 @@ export const TEAM_GUIDES = {
             "type": "双手剑",
             "stat": "副属性：攻击力",
             "desc": "命中低血敌人全队加攻，范围伤害。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "赤焰王座",
+            "displayName": "赤焰王座",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，消耗夜魂值/战意后大幅提升攻击力…",
+            "type": "双手剑",
+            "stat": "副属性：攻击力",
+            "desc": "消耗夜魂值/战意后大幅提升攻击力与火伤，火神体系主C适用。",
             "atk1": 46,
             "atk90": 608,
             "subStat": "攻击力",
@@ -2527,16 +2995,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -2644,13 +3125,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "烬城勇者绘卷 4件套",
-          "name": "烬城勇者绘卷",
-          "twoPiece": "队伍中附近的角色触发「夜魂迸发」时，装备者恢复6点元素能量",
-          "fourPiece": "装备者触发对应元素类型的反应后，队伍中该元素类型的角色获得12%元素伤害加成，持续15秒；装备者处于夜魂加持状态时该加成提升至28%",
-          "flavor": "纳塔队伍增伤",
-          "image": "/artifacts/jincheng-yongzhe-huijuan.png",
-          "themeColor": "#e08a5b",
+          "raw": "未竟的遐思 4件套",
+          "name": "未竟的遐思",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "脱离战斗状态3秒后，造成的伤害提升50%；战斗状态下附近不存在燃烧状态的敌人超过6秒后，该增伤每秒降低10%直至0；存在燃烧状态的敌人时每秒提升10%直至50%。装备者处于后台时依然会触发",
+          "flavor": "4.6 燃烧体系 · 持续增伤",
+          "image": "/artifacts/weijing-de-xiasi.png",
+          "themeColor": "#d0a35e",
           "matched": true
         },
         "panel": [
@@ -2728,6 +3209,19 @@ export const TEAM_GUIDES = {
             "atk90": 608,
             "subStat": "元素充能效率",
             "subValue": "55.1%"
+          },
+          {
+            "name": "星陨巨剑",
+            "displayName": "星陨巨剑",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，元素战技命中后叠加暴击率，三段战…",
+            "type": "双手剑",
+            "stat": "副属性：暴击率",
+            "desc": "元素战技命中后叠加暴击率，三段战技与蓄力输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -3020,6 +3514,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "星海之笺",
+            "displayName": "星海之笺",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，普攻与断流命中后叠加暴击率，高频…",
+            "type": "弓",
+            "stat": "副属性：暴击率",
+            "desc": "普攻与断流命中后叠加暴击率，高频站场弓C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -3108,6 +3615,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "柔灯挽歌",
+            "displayName": "柔灯挽歌",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发燃烧相关反应后提升攻击力与元…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发燃烧相关反应后提升攻击力与元素伤害，草火体系后台副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "月轮之誓",
+            "displayName": "月轮之誓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，队伍体系备选",
+            "type": "长柄武器",
+            "stat": "副属性：元素精通",
+            "desc": "触发绽放/燃烧后提升元素精通，草火反应辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -3191,16 +3750,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -3270,6 +3842,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",
@@ -3400,13 +3985,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "回声之林夜话 4件套",
-          "name": "回声之林夜话",
+          "raw": "来歆余响 4件套",
+          "name": "来歆余响",
           "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素战技后的10秒内，岩元素伤害加成+20%；获得结晶反应产生的晶片时，岩元素伤害加成进一步提升，持续10秒",
-          "flavor": "岩系站场C",
-          "image": "/artifacts/huisheng-zhlin-yehua.png",
-          "themeColor": "#d9c07a",
+          "fourPiece": "普通攻击命中敌人时有36%概率触发「幽谷祝祀」，使该次普通攻击伤害提高攻击力的70%；未触发时下一次概率提升20%",
+          "flavor": "普攻特化",
+          "image": "/artifacts/laixin-yuxiang.png",
+          "themeColor": "#e0a86a",
           "matched": true
         },
         "panel": [
@@ -3485,6 +4070,45 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜回响",
+            "displayName": "幽夜回响",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量，后台挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星穹之弦",
+            "displayName": "星穹之弦",
+            "rarity": 5,
+            "reason": "新增五星 · 元素充能效率副词条，施放元素爆发后为全队回复能量并提…",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量并提升后台伤害，充能辅助弓适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素充能效率",
+            "subValue": "55.1%"
           }
         ],
         "artifact": {
@@ -3564,6 +4188,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",
@@ -3651,16 +4288,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -3934,6 +4584,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -4019,13 +4682,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "千岩牢固 4件套",
-          "name": "千岩牢固",
-          "twoPiece": "生命值+20%",
-          "fourPiece": "元素战技命中敌人后，使队伍中附近所有角色攻击力+20%、护盾强效+30%，持续3秒；装备者处于后台时依然能触发该效果",
-          "flavor": "生命辅助 · 护盾",
-          "image": "/artifacts/qianyan-laogu.png",
-          "themeColor": "#d8b36a",
+          "raw": "海染砗磲 4件套",
+          "name": "海染砗磲",
+          "twoPiece": "治疗效果+15%",
+          "fourPiece": "装备者为队伍中角色恢复生命值时，将生成持续3秒的「海染泡沫」，记录治疗量；持续时间结束时对周围敌人造成相当于记录量90%的伤害",
+          "flavor": "治疗转伤害",
+          "image": "/artifacts/hairan-chequ.png",
+          "themeColor": "#6fc7c0",
           "matched": true
         },
         "panel": [
@@ -4137,13 +4800,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "烬城勇者绘卷 4件套",
-          "name": "烬城勇者绘卷",
-          "twoPiece": "队伍中附近的角色触发「夜魂迸发」时，装备者恢复6点元素能量",
-          "fourPiece": "装备者触发对应元素类型的反应后，队伍中该元素类型的角色获得12%元素伤害加成，持续15秒；装备者处于夜魂加持状态时该加成提升至28%",
-          "flavor": "纳塔队伍增伤",
-          "image": "/artifacts/jincheng-yongzhe-huijuan.png",
-          "themeColor": "#e08a5b",
+          "raw": "黑曜秘典 4件套",
+          "name": "黑曜秘典",
+          "twoPiece": "装备者处于夜魂加持状态且在场上时，暴击率+40%",
+          "fourPiece": "装备者在场上消耗1点夜魂值后，暴击率+40%，持续6秒，每1秒至多触发一次",
+          "flavor": "夜魂体系主C",
+          "image": "/artifacts/heiyao-midian.png",
+          "themeColor": "#8f7ec8",
           "matched": true
         },
         "panel": [
@@ -4221,6 +4884,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "柔灯挽歌",
+            "displayName": "柔灯挽歌",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发燃烧相关反应后提升攻击力与元…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发燃烧相关反应后提升攻击力与元素伤害，草火体系后台副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "月轮之誓",
+            "displayName": "月轮之誓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，队伍体系备选",
+            "type": "长柄武器",
+            "stat": "副属性：元素精通",
+            "desc": "触发绽放/燃烧后提升元素精通，草火反应辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -4303,16 +5018,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -4503,6 +5231,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击率",
             "subValue": "27.6%"
+          },
+          {
+            "name": "苍耀",
+            "displayName": "苍耀",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，不依赖元素能量的站场冰C专武，元…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "不依赖元素能量的站场冰C专武，元素战技后大幅提升普攻与爆发伤害。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "晨曦之誓",
+            "displayName": "晨曦之誓",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发激化/超激化后叠加暴击率与元…",
+            "type": "单手剑",
+            "stat": "副属性：暴击率",
+            "desc": "触发激化/超激化后叠加暴击率与元素伤害，雷草站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -4590,6 +5344,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -4672,6 +5478,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -4881,6 +5726,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "香韵奏者",
+            "displayName": "香韵奏者",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，队伍中冰/水角色触发冻结后提升全…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "队伍中冰/水角色触发冻结后提升全队攻击力，冰队增伤辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜的裁决",
+            "displayName": "幽夜的裁决",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，元素爆发期间持续提升暴击率与攻击…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击率",
+            "desc": "元素爆发期间持续提升暴击率与攻击力，长轴激化主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
@@ -5049,6 +5946,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -5133,16 +6043,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -5254,6 +6177,58 @@ export const TEAM_GUIDES = {
             "atk90": 454,
             "subStat": "暴击率",
             "subValue": "36.8%"
+          },
+          {
+            "name": "支离轮光",
+            "displayName": "支离轮光",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发月感电/感电反应后提升攻击力…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击率",
+            "desc": "触发月感电/感电反应后提升攻击力与暴击伤害，雷水体系适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜的裁决",
+            "displayName": "幽夜的裁决",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，元素爆发期间持续提升暴击率与攻击…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击率",
+            "desc": "元素爆发期间持续提升暴击率与攻击力，长轴激化主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "苍穹之楔",
+            "displayName": "苍穹之楔",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，下落攻击与元素爆发伤害提升，长轴…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "下落攻击与元素爆发伤害提升，长轴站场长柄主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -5341,6 +6316,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -5419,6 +6446,45 @@ export const TEAM_GUIDES = {
             "type": "法器",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，辅助法器。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "烬城秘典",
+            "displayName": "烬城秘典",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "法器",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后提升全队元素伤害，增伤辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "无垠蔚蓝之歌",
+            "displayName": "无垠蔚蓝之歌",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：元素充能效率",
+            "desc": "活动限定法器，施放元素爆发后提升全队元素伤害与充能循环。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -5506,6 +6572,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -5627,14 +6732,14 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "谐律的异想 4件套",
-          "name": "谐律的异想",
+          "raw": "谐律异想断章 4件套",
+          "name": "谐律异想断章",
           "twoPiece": "攻击力+18%",
-          "fourPiece": "生命之契的数值发生变动时，角色造成的伤害提升18%，持续6秒，最多叠加3层",
-          "flavor": "生命之契体系 · 阿蕾奇诺 / 克洛琳德",
-          "image": "",
-          "themeColor": "#d97a86",
-          "matched": false
+          "fourPiece": "生命之契的数值提升或降低时，装备者造成的伤害+18%，持续6秒，最多叠加3层",
+          "flavor": "生命之契体系",
+          "image": "/artifacts/xielv-yixiang.png",
+          "themeColor": "#c08fd8",
+          "matched": true
         },
         "panel": [
           {
@@ -5711,6 +6816,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -5793,6 +6950,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -5871,6 +7067,45 @@ export const TEAM_GUIDES = {
             "type": "法器",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，辅助法器。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "烬城秘典",
+            "displayName": "烬城秘典",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "法器",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后提升全队元素伤害，增伤辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "无垠蔚蓝之歌",
+            "displayName": "无垠蔚蓝之歌",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：元素充能效率",
+            "desc": "活动限定法器，施放元素爆发后提升全队元素伤害与充能循环。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -6080,6 +7315,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -6162,6 +7449,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -6371,9 +7697,9 @@ export const TEAM_GUIDES = {
         "artifact": {
           "raw": "穹境示现之夜 4件套",
           "name": "穹境示现之夜",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "队伍中附近的角色触发月曜反应时，若装备者在场上，将获得持续4秒的「月辉明光·蓄念」：队伍月兆为初辉/满辉时，暴击率提升15%/30%。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜主C · 暴击",
           "image": "/artifacts/qiongjing-shixian-zhiye.png",
           "themeColor": "#8f9fd8",
           "matched": true
@@ -6459,9 +7785,9 @@ export const TEAM_GUIDES = {
         "artifact": {
           "raw": "穹境示现之夜 4件套",
           "name": "穹境示现之夜",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "队伍中附近的角色触发月曜反应时，若装备者在场上，将获得持续4秒的「月辉明光·蓄念」：队伍月兆为初辉/满辉时，暴击率提升15%/30%。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜主C · 暴击",
           "image": "/artifacts/qiongjing-shixian-zhiye.png",
           "themeColor": "#8f9fd8",
           "matched": true
@@ -6542,14 +7868,27 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
           }
         ],
         "artifact": {
           "raw": "纺月的夜歌 4件套",
           "name": "纺月的夜歌",
-          "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "造成元素伤害时，获得持续8秒的「月辉明光·崇信」：队伍月兆为初辉/满辉时，队伍中所有角色的元素精通提高60点/120点；装备者处于后台时也能触发。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜辅助 · 全队精通",
           "image": "/artifacts/fangyue-de-yege.png",
           "themeColor": "#a88fd8",
           "matched": true
@@ -6633,13 +7972,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "纺月的夜歌 4件套",
-          "name": "纺月的夜歌",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
           "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/fangyue-de-yege.png",
-          "themeColor": "#a88fd8",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -6755,13 +8094,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "血红之证 4件套",
+          "name": "血红之证",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "装备者触发星扩散反应后的10秒内，暴击率+16%，星扩散反应伤害+40%",
+          "flavor": "7.0 星扩散站场主C",
+          "image": "/artifacts/xuehong-zhi-zheng.png",
+          "themeColor": "#c0454f",
           "matched": true
         },
         "panel": [
@@ -6842,13 +8181,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "影中沉凝的幻灭 4件套",
+          "name": "影中沉凝的幻灭",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "超导反应造成的伤害+80%；装备者攻击受到超导反应影响的敌人时，本次攻击的暴击率+16%",
+          "flavor": "6.7 超导物伤体系",
+          "image": "/artifacts/yingzhong-chenning-de-huanmie.png",
+          "themeColor": "#7f7fb0",
           "matched": true
         },
         "panel": [
@@ -6929,13 +8268,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "绝缘之旗印 4件套",
-          "name": "绝缘之旗印",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "元素爆发造成的伤害提升，提升量相当于元素充能效率超出100%部分的25%，至多通过该效果提升75%",
-          "flavor": "爆发流副C",
-          "image": "/artifacts/jueyuan-zhiqinyin.png",
-          "themeColor": "#8f7ee0",
+          "raw": "炉火融炼之心 4件套",
+          "name": "炉火融炼之心",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "装备者触发星烁反应或造成星烁反应伤害后的12秒内，攻击力+12%，队伍中附近所有角色造成的星烁反应伤害+50%；装备者处于后台时也能触发，同名套装产生的伤害加成无法叠加",
+          "flavor": "7.0 全队星烁反应辅助",
+          "image": "/artifacts/luhuo-ronglian-zhi-xin.png",
+          "themeColor": "#d87050",
           "matched": true
         },
         "panel": [
@@ -7016,13 +8355,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "纺月的夜歌 4件套",
-          "name": "纺月的夜歌",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
           "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/fangyue-de-yege.png",
-          "themeColor": "#a88fd8",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -7138,6 +8477,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -7224,13 +8589,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "千岩牢固 4件套",
-          "name": "千岩牢固",
-          "twoPiece": "生命值+20%",
-          "fourPiece": "元素战技命中敌人后，使队伍中附近所有角色攻击力+20%、护盾强效+30%，持续3秒；装备者处于后台时依然能触发该效果",
-          "flavor": "生命辅助 · 护盾",
-          "image": "/artifacts/qianyan-laogu.png",
-          "themeColor": "#d8b36a",
+          "raw": "海染砗磲 4件套",
+          "name": "海染砗磲",
+          "twoPiece": "治疗效果+15%",
+          "fourPiece": "装备者为队伍中角色恢复生命值时，将生成持续3秒的「海染泡沫」，记录治疗量；持续时间结束时对周围敌人造成相当于记录量90%的伤害",
+          "flavor": "治疗转伤害",
+          "image": "/artifacts/hairan-chequ.png",
+          "themeColor": "#6fc7c0",
           "matched": true
         },
         "panel": [
@@ -7300,6 +8665,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",
@@ -7387,6 +8765,32 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "香韵奏者",
+            "displayName": "香韵奏者",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，队伍中冰/水角色触发冻结后提升全…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "队伍中冰/水角色触发冻结后提升全队攻击力，冰队增伤辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "霜华之矛",
+            "displayName": "霜华之矛",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，基于攻击力为全队提供冰伤加成，冰…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "基于攻击力为全队提供冰伤加成，冰系增伤辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -7506,16 +8910,42 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "物理伤害加成",
             "subValue": "34.5%"
+          },
+          {
+            "name": "碎星之骸",
+            "displayName": "碎星之骸",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，基于防御力或生命上限提升重击伤害…",
+            "type": "双手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "基于防御力或生命上限提升重击伤害，防御型站场C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜噬巨刃",
+            "displayName": "霜噬巨刃",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "双手剑",
+            "stat": "副属性：物理伤害加成",
+            "desc": "触发超导后提升物理伤害与攻击速度，物理重击队适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
-          "raw": "苍白之火 4件套",
-          "name": "苍白之火",
-          "twoPiece": "造成的物理伤害+25%",
-          "fourPiece": "元素战技命中敌人后攻击力+9%，持续7秒，最多叠加2层；叠加2层时2件套的效果提升100%",
-          "flavor": "物理主C",
-          "image": "/artifacts/cangbai-zhihuo.png",
-          "themeColor": "#c9d3e0",
+          "raw": "染血的骑士道 4件套",
+          "name": "染血的骑士道",
+          "twoPiece": "物理伤害加成+25%",
+          "fourPiece": "击败敌人后的10秒内，施放重击不消耗体力，且重击造成的伤害+50%",
+          "flavor": "物理重击主C",
+          "image": "/artifacts/ranxue-de-qishidao.png",
+          "themeColor": "#b8564f",
           "matched": true
         },
         "panel": [
@@ -7593,6 +9023,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "香韵奏者",
+            "displayName": "香韵奏者",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，队伍中冰/水角色触发冻结后提升全…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "队伍中冰/水角色触发冻结后提升全队攻击力，冰队增伤辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "幽夜的裁决",
+            "displayName": "幽夜的裁决",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，元素爆发期间持续提升暴击率与攻击…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击率",
+            "desc": "元素爆发期间持续提升暴击率与攻击力，长轴激化主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
@@ -7675,16 +9157,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "霜华之矛",
+            "displayName": "霜华之矛",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，基于攻击力为全队提供冰伤加成，冰…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "基于攻击力为全队提供冰伤加成，冰系增伤辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
-          "raw": "昔日宗室之仪 4件套",
-          "name": "昔日宗室之仪",
-          "twoPiece": "元素爆发造成的伤害+20%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒，该效果不可叠加",
-          "flavor": "全队增伤辅助",
-          "image": "/artifacts/xiri-zongshi-zhiyi.png",
-          "themeColor": "#6f8fe0",
+          "raw": "影中沉凝的幻灭 4件套",
+          "name": "影中沉凝的幻灭",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "超导反应造成的伤害+80%；装备者攻击受到超导反应影响的敌人时，本次攻击的暴击率+16%",
+          "flavor": "6.7 超导物伤体系",
+          "image": "/artifacts/yingzhong-chenning-de-huanmie.png",
+          "themeColor": "#7f7fb0",
           "matched": true
         },
         "panel": [
@@ -7762,16 +9257,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -7889,6 +9397,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "苍耀",
+            "displayName": "苍耀",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，不依赖元素能量的站场冰C专武，元…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "不依赖元素能量的站场冰C专武，元素战技后大幅提升普攻与爆发伤害。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜庭之刃",
+            "displayName": "霜庭之刃",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，攻击冻结或受冰影响的敌人时提升暴…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "攻击冻结或受冰影响的敌人时提升暴击伤害，永冻冰C专武。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -7973,6 +9507,32 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "香韵奏者",
+            "displayName": "香韵奏者",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，队伍中冰/水角色触发冻结后提升全…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "队伍中冰/水角色触发冻结后提升全队攻击力，冰队增伤辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "霜华之矛",
+            "displayName": "霜华之矛",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，基于攻击力为全队提供冰伤加成，冰…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "基于攻击力为全队提供冰伤加成，冰系增伤辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -8053,6 +9613,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",
@@ -8144,13 +9717,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "千岩牢固 4件套",
-          "name": "千岩牢固",
-          "twoPiece": "生命值+20%",
-          "fourPiece": "元素战技命中敌人后，使队伍中附近所有角色攻击力+20%、护盾强效+30%，持续3秒；装备者处于后台时依然能触发该效果",
-          "flavor": "生命辅助 · 护盾",
-          "image": "/artifacts/qianyan-laogu.png",
-          "themeColor": "#d8b36a",
+          "raw": "海染砗磲 4件套",
+          "name": "海染砗磲",
+          "twoPiece": "治疗效果+15%",
+          "fourPiece": "装备者为队伍中角色恢复生命值时，将生成持续3秒的「海染泡沫」，记录治疗量；持续时间结束时对周围敌人造成相当于记录量90%的伤害",
+          "flavor": "治疗转伤害",
+          "image": "/artifacts/hairan-chequ.png",
+          "themeColor": "#6fc7c0",
           "matched": true
         },
         "panel": [
@@ -8261,6 +9834,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击率",
             "subValue": "27.6%"
+          },
+          {
+            "name": "霜庭之刃",
+            "displayName": "霜庭之刃",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，攻击冻结或受冰影响的敌人时提升暴…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "攻击冻结或受冰影响的敌人时提升暴击伤害，永冻冰C专武。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -8433,13 +10019,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "苍金之翼 4件套",
-          "name": "苍金之翼",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "队伍中角色触发夜魂相关效果时，装备者获得攻击力与伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/cangjin-zhiyi.png",
-          "themeColor": "#d8b06a",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -8515,13 +10101,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "千岩牢固 4件套",
-          "name": "千岩牢固",
-          "twoPiece": "生命值+20%",
-          "fourPiece": "元素战技命中敌人后，使队伍中附近所有角色攻击力+20%、护盾强效+30%，持续3秒；装备者处于后台时依然能触发该效果",
-          "flavor": "生命辅助 · 护盾",
-          "image": "/artifacts/qianyan-laogu.png",
-          "themeColor": "#d8b36a",
+          "raw": "海染砗磲 4件套",
+          "name": "海染砗磲",
+          "twoPiece": "治疗效果+15%",
+          "fourPiece": "装备者为队伍中角色恢复生命值时，将生成持续3秒的「海染泡沫」，记录治疗量；持续时间结束时对周围敌人造成相当于记录量90%的伤害",
+          "flavor": "治疗转伤害",
+          "image": "/artifacts/hairan-chequ.png",
+          "themeColor": "#6fc7c0",
           "matched": true
         },
         "panel": [
@@ -8634,16 +10220,29 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击率",
             "subValue": "27.6%"
+          },
+          {
+            "name": "苍耀",
+            "displayName": "苍耀",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，不依赖元素能量的站场冰C专武，元…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "不依赖元素能量的站场冰C专武，元素战技后大幅提升普攻与爆发伤害。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "深廊终曲 4件套",
+          "name": "深廊终曲",
+          "twoPiece": "冰元素伤害加成+15%",
+          "fourPiece": "装备者元素能量为0时，普通攻击与元素爆发造成的伤害+60%；普攻造成伤害后元素爆发增伤失效6秒，元素爆发造成伤害后普攻增伤失效6秒。角色处于队伍后台时也能触发",
+          "flavor": "5.5 无能量冰C · 丝柯克",
+          "image": "/artifacts/shenlang-zhongqu.png",
+          "themeColor": "#7fb8d8",
           "matched": true
         },
         "panel": [
@@ -8725,13 +10324,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "苍金之翼 4件套",
-          "name": "苍金之翼",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "队伍中角色触发夜魂相关效果时，装备者获得攻击力与伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/cangjin-zhiyi.png",
-          "themeColor": "#d8b06a",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -8888,6 +10487,32 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "香韵奏者",
+            "displayName": "香韵奏者",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，队伍中冰/水角色触发冻结后提升全…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "队伍中冰/水角色触发冻结后提升全队攻击力，冰队增伤辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "霜华之矛",
+            "displayName": "霜华之矛",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，基于攻击力为全队提供冰伤加成，冰…",
+            "type": "长柄武器",
+            "stat": "副属性：攻击力",
+            "desc": "基于攻击力为全队提供冰伤加成，冰系增伤辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -9010,13 +10635,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "风起之日 4件套",
+          "name": "风起之日",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "普通攻击、重击、元素战技或元素爆发命中敌人后，将获得持续6秒的「风与牧歌的眷怜」：攻击力提高25%。若装备者已完成「魔女的课业」，该效果升级为「风与牧歌的决意」，额外使暴击率提升20%。装备者处于后台时也能触发",
+          "flavor": "6.3 攻击增伤 · 魔女课业",
+          "image": "/artifacts/fengqi-zhi-ri.png",
+          "themeColor": "#8fc8b0",
           "matched": true
         },
         "panel": [
@@ -9097,13 +10722,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "苍金之翼 4件套",
-          "name": "苍金之翼",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "队伍中角色触发夜魂相关效果时，装备者获得攻击力与伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/cangjin-zhiyi.png",
-          "themeColor": "#d8b06a",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -9261,13 +10886,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "影中沉凝的幻灭 4件套",
+          "name": "影中沉凝的幻灭",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "超导反应造成的伤害+80%；装备者攻击受到超导反应影响的敌人时，本次攻击的暴击率+16%",
+          "flavor": "6.7 超导物伤体系",
+          "image": "/artifacts/yingzhong-chenning-de-huanmie.png",
+          "themeColor": "#7f7fb0",
           "matched": true
         },
         "panel": [
@@ -9381,16 +11006,42 @@ export const TEAM_GUIDES = {
             "atk90": 454,
             "subStat": "暴击率",
             "subValue": "36.8%"
+          },
+          {
+            "name": "支离轮光",
+            "displayName": "支离轮光",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发月感电/感电反应后提升攻击力…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击率",
+            "desc": "触发月感电/感电反应后提升攻击力与暴击伤害，雷水体系适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "苍穹之楔",
+            "displayName": "苍穹之楔",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，下落攻击与元素爆发伤害提升，长轴…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "下落攻击与元素爆发伤害提升，长轴站场长柄主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
-          "raw": "辰砂往生录 4件套",
-          "name": "辰砂往生录",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后产生持续16秒的「潜光」效果：攻击力+8%；角色生命值降低时攻击力进一步提升10%，至多4次",
-          "flavor": "生命波动主C",
-          "image": "/artifacts/chensha-wangshenglu.png",
-          "themeColor": "#e08a6a",
+          "raw": "长夜之誓 4件套",
+          "name": "长夜之誓",
+          "twoPiece": "下落攻击造成的伤害+25%",
+          "fourPiece": "装备者的下落攻击/重击/元素战技命中敌人后，分别获得1/2/2层「永照的流辉」，各类型每1秒至多触发一次；每层使下落攻击伤害+15%，持续6秒，最多叠加5层，每层持续时间独立计算",
+          "flavor": "5.5 下落攻击主C",
+          "image": "/artifacts/changye-zhishi.png",
+          "themeColor": "#9a8fd0",
           "matched": true
         },
         "panel": [
@@ -9468,6 +11119,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "烬城猎弓",
+            "displayName": "烬城猎弓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散后提升全队元素精通与元素伤害，风系聚怪辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -9550,16 +11214,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -9750,6 +11427,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击伤害",
             "subValue": "55.1%"
+          },
+          {
+            "name": "真语秘匣",
+            "displayName": "真语秘匣",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发月绽放后提升元素精通与暴击伤…",
+            "type": "法器",
+            "stat": "副属性：暴击率",
+            "desc": "触发月绽放后提升元素精通与暴击伤害，绽放站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
+          },
+          {
+            "name": "晨星绪论",
+            "displayName": "晨星绪论",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，站场期间持续叠加暴击率与普攻伤害…",
+            "type": "法器",
+            "stat": "副属性：暴击率",
+            "desc": "站场期间持续叠加暴击率与普攻伤害，法器站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -9837,6 +11540,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "烬城猎弓",
+            "displayName": "烬城猎弓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散后提升全队元素精通与元素伤害，风系聚怪辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -9919,16 +11635,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -10288,16 +12017,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -10491,6 +12233,19 @@ export const TEAM_GUIDES = {
             "atk90": 608,
             "subStat": "元素充能效率",
             "subValue": "55.1%"
+          },
+          {
+            "name": "星陨巨剑",
+            "displayName": "星陨巨剑",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，元素战技命中后叠加暴击率，三段战…",
+            "type": "双手剑",
+            "stat": "副属性：暴击率",
+            "desc": "元素战技命中后叠加暴击率，三段战技与蓄力输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -10581,13 +12336,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "烬城勇者绘卷 4件套",
-          "name": "烬城勇者绘卷",
-          "twoPiece": "队伍中附近的角色触发「夜魂迸发」时，装备者恢复6点元素能量",
-          "fourPiece": "装备者触发对应元素类型的反应后，队伍中该元素类型的角色获得12%元素伤害加成，持续15秒；装备者处于夜魂加持状态时该加成提升至28%",
-          "flavor": "纳塔队伍增伤",
-          "image": "/artifacts/jincheng-yongzhe-huijuan.png",
-          "themeColor": "#e08a5b",
+          "raw": "未竟的遐思 4件套",
+          "name": "未竟的遐思",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "脱离战斗状态3秒后，造成的伤害提升50%；战斗状态下附近不存在燃烧状态的敌人超过6秒后，该增伤每秒降低10%直至0；存在燃烧状态的敌人时每秒提升10%直至50%。装备者处于后台时依然会触发",
+          "flavor": "4.6 燃烧体系 · 持续增伤",
+          "image": "/artifacts/weijing-de-xiasi.png",
+          "themeColor": "#d0a35e",
           "matched": true
         },
         "panel": [
@@ -10873,13 +12628,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "血红之证 4件套",
+          "name": "血红之证",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "装备者触发星扩散反应后的10秒内，暴击率+16%，星扩散反应伤害+40%",
+          "flavor": "7.0 星扩散站场主C",
+          "image": "/artifacts/xuehong-zhi-zheng.png",
+          "themeColor": "#c0454f",
           "matched": true
         },
         "panel": [
@@ -10960,13 +12715,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "影中沉凝的幻灭 4件套",
+          "name": "影中沉凝的幻灭",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "超导反应造成的伤害+80%；装备者攻击受到超导反应影响的敌人时，本次攻击的暴击率+16%",
+          "flavor": "6.7 超导物伤体系",
+          "image": "/artifacts/yingzhong-chenning-de-huanmie.png",
+          "themeColor": "#7f7fb0",
           "matched": true
         },
         "panel": [
@@ -11047,13 +12802,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "风起之日 4件套",
+          "name": "风起之日",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "普通攻击、重击、元素战技或元素爆发命中敌人后，将获得持续6秒的「风与牧歌的眷怜」：攻击力提高25%。若装备者已完成「魔女的课业」，该效果升级为「风与牧歌的决意」，额外使暴击率提升20%。装备者处于后台时也能触发",
+          "flavor": "6.3 攻击增伤 · 魔女课业",
+          "image": "/artifacts/fengqi-zhi-ri.png",
+          "themeColor": "#8fc8b0",
           "matched": true
         },
         "panel": [
@@ -11126,6 +12881,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "烬城猎弓",
+            "displayName": "烬城猎弓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散后提升全队元素精通与元素伤害，风系聚怪辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -11248,6 +13016,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击率",
             "subValue": "27.6%"
+          },
+          {
+            "name": "山王长牙",
+            "displayName": "山王长牙",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素战技命中后叠层提升暴击伤害与…",
+            "type": "双手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素战技命中后叠层提升暴击伤害与攻击力，夜魂/燃烧主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "碎星之骸",
+            "displayName": "碎星之骸",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，基于防御力或生命上限提升重击伤害…",
+            "type": "双手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "基于防御力或生命上限提升重击伤害，防御型站场C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -11331,16 +13125,42 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "幽夜回响",
+            "displayName": "幽夜回响",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量，后台挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星穹之弦",
+            "displayName": "星穹之弦",
+            "rarity": 5,
+            "reason": "新增五星 · 元素充能效率副词条，施放元素爆发后为全队回复能量并提…",
+            "type": "弓",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后为全队回复能量并提升后台伤害，充能辅助弓适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素充能效率",
+            "subValue": "55.1%"
           }
         ],
         "artifact": {
-          "raw": "华馆梦醒形骸记 4件套",
-          "name": "华馆梦醒形骸记",
-          "twoPiece": "防御力+30%",
-          "fourPiece": "场上角色以岩元素攻击命中敌人后获得「问答」：防御力+6%、岩元素伤害加成+6%，持续15秒，最多4层；装备者处于后台时每3秒获得1层；满4层时该效果提升100%",
-          "flavor": "防御型岩C",
-          "image": "/artifacts/huaguan-mengxing.png",
-          "themeColor": "#b9a3d8",
+          "raw": "悠古的磐岩 4件套",
+          "name": "悠古的磐岩",
+          "twoPiece": "岩元素伤害加成+15%",
+          "fourPiece": "获得结晶反应产生的晶片时，队伍中所有角色获得该元素伤害加成+35%，持续10秒",
+          "flavor": "结晶队辅助",
+          "image": "/artifacts/yougu-de-panyan.png",
+          "themeColor": "#d9a95b",
           "matched": true
         },
         "panel": [
@@ -11625,14 +13445,14 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "回响之林 4件套",
-          "name": "回响之林",
+          "raw": "回声之林夜话 4件套",
+          "name": "回声之林夜话",
           "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素战技后的20秒内，岩元素伤害加成+20%；处于结晶反应产生的护盾庇护下时，该效果提升150%",
-          "flavor": "岩系爆发 · 娜维娅",
-          "image": "",
-          "themeColor": "#d6b070",
-          "matched": false
+          "fourPiece": "施放元素战技后的10秒内，岩元素伤害加成+20%；获得结晶反应产生的晶片时，岩元素伤害加成进一步提升，持续10秒",
+          "flavor": "岩系站场C",
+          "image": "/artifacts/huisheng-zhlin-yehua.png",
+          "themeColor": "#d9c07a",
+          "matched": true
         },
         "panel": [
           {
@@ -11792,16 +13612,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -11874,6 +13707,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "柔灯挽歌",
+            "displayName": "柔灯挽歌",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发燃烧相关反应后提升攻击力与元…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发燃烧相关反应后提升攻击力与元素伤害，草火体系后台副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "月轮之誓",
+            "displayName": "月轮之誓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，队伍体系备选",
+            "type": "长柄武器",
+            "stat": "副属性：元素精通",
+            "desc": "触发绽放/燃烧后提升元素精通，草火反应辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -11996,9 +13881,9 @@ export const TEAM_GUIDES = {
         "artifact": {
           "raw": "穹境示现之夜 4件套",
           "name": "穹境示现之夜",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "队伍中附近的角色触发月曜反应时，若装备者在场上，将获得持续4秒的「月辉明光·蓄念」：队伍月兆为初辉/满辉时，暴击率提升15%/30%。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜主C · 暴击",
           "image": "/artifacts/qiongjing-shixian-zhiye.png",
           "themeColor": "#8f9fd8",
           "matched": true
@@ -12354,6 +14239,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -12440,6 +14338,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -12521,6 +14471,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -12602,6 +14591,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "暴击伤害",
             "subValue": "55.1%"
+          },
+          {
+            "name": "寝正月初晴",
+            "displayName": "寝正月初晴",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发扩散反应后提升全队对应元素伤…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发扩散反应后提升全队对应元素伤害，风系扩散副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -12809,6 +14824,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -12891,6 +14958,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -12969,6 +15075,45 @@ export const TEAM_GUIDES = {
             "type": "法器",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，辅助法器。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "烬城秘典",
+            "displayName": "烬城秘典",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "法器",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素爆发后提升全队元素伤害，增伤辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "无垠蔚蓝之歌",
+            "displayName": "无垠蔚蓝之歌",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：元素充能效率",
+            "desc": "活动限定法器，施放元素爆发后提升全队元素伤害与充能循环。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -13089,13 +15234,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "烬城勇者绘卷 4件套",
-          "name": "烬城勇者绘卷",
-          "twoPiece": "队伍中附近的角色触发「夜魂迸发」时，装备者恢复6点元素能量",
-          "fourPiece": "装备者触发对应元素类型的反应后，队伍中该元素类型的角色获得12%元素伤害加成，持续15秒；装备者处于夜魂加持状态时该加成提升至28%",
-          "flavor": "纳塔队伍增伤",
-          "image": "/artifacts/jincheng-yongzhe-huijuan.png",
-          "themeColor": "#e08a5b",
+          "raw": "未竟的遐思 4件套",
+          "name": "未竟的遐思",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "脱离战斗状态3秒后，造成的伤害提升50%；战斗状态下附近不存在燃烧状态的敌人超过6秒后，该增伤每秒降低10%直至0；存在燃烧状态的敌人时每秒提升10%直至50%。装备者处于后台时依然会触发",
+          "flavor": "4.6 燃烧体系 · 持续增伤",
+          "image": "/artifacts/weijing-de-xiasi.png",
+          "themeColor": "#d0a35e",
           "matched": true
         },
         "panel": [
@@ -13172,6 +15317,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -13253,16 +15450,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -13337,13 +15547,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "炽烈的炎之魔女 4件套",
-          "name": "炽烈的炎之魔女",
-          "twoPiece": "火元素伤害加成+15%",
-          "fourPiece": "蒸发、融化反应造成的伤害+15%，超载、燃烧、烈绽放反应伤害+40%；施放元素战技后10秒内，2件套的效果提升50%，最多叠加3层",
-          "flavor": "火系主C · 蒸发融化",
-          "image": "/artifacts/xilie-yan-zhi-monv.png",
-          "themeColor": "#e0604a",
+          "raw": "渡过烈火的贤人 4件套",
+          "name": "渡过烈火的贤人",
+          "twoPiece": "火元素抗性+40%",
+          "fourPiece": "对处于火元素影响下的敌人造成的伤害+35%",
+          "flavor": "火伤抗性对策",
+          "image": "/artifacts/duguo-liehuo-de-xianren.png",
+          "themeColor": "#e08a52",
           "matched": true
         },
         "panel": [
@@ -13456,14 +15666,27 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "真语秘匣",
+            "displayName": "真语秘匣",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发月绽放后提升元素精通与暴击伤…",
+            "type": "法器",
+            "stat": "副属性：暴击率",
+            "desc": "触发月绽放后提升元素精通与暴击伤害，绽放站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
           "raw": "穹境示现之夜 4件套",
           "name": "穹境示现之夜",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "队伍中附近的角色触发月曜反应时，若装备者在场上，将获得持续4秒的「月辉明光·蓄念」：队伍月兆为初辉/满辉时，暴击率提升15%/30%。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜主C · 暴击",
           "image": "/artifacts/qiongjing-shixian-zhiye.png",
           "themeColor": "#8f9fd8",
           "matched": true
@@ -13543,14 +15766,27 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
           }
         ],
         "artifact": {
           "raw": "纺月的夜歌 4件套",
           "name": "纺月的夜歌",
-          "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "造成元素伤害时，获得持续8秒的「月辉明光·崇信」：队伍月兆为初辉/满辉时，队伍中所有角色的元素精通提高60点/120点；装备者处于后台时也能触发。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜辅助 · 全队精通",
           "image": "/artifacts/fangyue-de-yege.png",
           "themeColor": "#a88fd8",
           "matched": true
@@ -13715,13 +15951,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "纺月的夜歌 4件套",
-          "name": "纺月的夜歌",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
           "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/fangyue-de-yege.png",
-          "themeColor": "#a88fd8",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -13842,13 +16078,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "纺月的夜歌 4件套",
-          "name": "纺月的夜歌",
-          "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/fangyue-de-yege.png",
-          "themeColor": "#a88fd8",
+          "raw": "炉火融炼之心 4件套",
+          "name": "炉火融炼之心",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "装备者触发星烁反应或造成星烁反应伤害后的12秒内，攻击力+12%，队伍中附近所有角色造成的星烁反应伤害+50%；装备者处于后台时也能触发，同名套装产生的伤害加成无法叠加",
+          "flavor": "7.0 全队星烁反应辅助",
+          "image": "/artifacts/luhuo-ronglian-zhi-xin.png",
+          "themeColor": "#d87050",
           "matched": true
         },
         "panel": [
@@ -13927,14 +16163,27 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
           }
         ],
         "artifact": {
           "raw": "纺月的夜歌 4件套",
           "name": "纺月的夜歌",
-          "twoPiece": "元素精通+80",
-          "fourPiece": "装备者触发元素反应后，依据队伍中月兆角色的数量为全队提供元素伤害加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "造成元素伤害时，获得持续8秒的「月辉明光·崇信」：队伍月兆为初辉/满辉时，队伍中所有角色的元素精通提高60点/120点；装备者处于后台时也能触发。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜辅助 · 全队精通",
           "image": "/artifacts/fangyue-de-yege.png",
           "themeColor": "#a88fd8",
           "matched": true
@@ -14020,9 +16269,9 @@ export const TEAM_GUIDES = {
         "artifact": {
           "raw": "穹境示现之夜 4件套",
           "name": "穹境示现之夜",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "队伍中附近的角色触发月曜反应时，若装备者在场上，将获得持续4秒的「月辉明光·蓄念」：队伍月兆为初辉/满辉时，暴击率提升15%/30%。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜主C · 暴击",
           "image": "/artifacts/qiongjing-shixian-zhiye.png",
           "themeColor": "#8f9fd8",
           "matched": true
@@ -14108,9 +16357,9 @@ export const TEAM_GUIDES = {
         "artifact": {
           "raw": "穹境示现之夜 4件套",
           "name": "穹境示现之夜",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "队伍中附近的角色触发月曜反应时，若装备者在场上，将获得持续4秒的「月辉明光·蓄念」：队伍月兆为初辉/满辉时，暴击率提升15%/30%。队伍中每拥有一种不同的「月辉明光」效果，全队触发的月曜反应伤害提升10%，由「月辉明光」产生的效果无法叠加",
+          "flavor": "6.0 月曜主C · 暴击",
           "image": "/artifacts/qiongjing-shixian-zhiye.png",
           "themeColor": "#8f9fd8",
           "matched": true
@@ -14478,16 +16727,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -14599,13 +16861,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "冰风迷途的勇士 4件套",
-          "name": "冰风迷途的勇士",
-          "twoPiece": "冰元素伤害加成+15%",
-          "fourPiece": "攻击处于冰元素影响下的敌人时暴击率+20%；若敌人处于冻结状态，暴击率额外+20%",
-          "flavor": "永冻冰C",
-          "image": "/artifacts/bingfeng-mitu-yongshi.png",
-          "themeColor": "#6fc7e8",
+          "raw": "晨星与月的晓歌 4件套",
+          "name": "晨星与月的晓歌",
+          "twoPiece": "元素精通+80",
+          "fourPiece": "装备者处于队伍后台时，造成的月曜反应伤害提升20%；队伍的月兆等级至少为满辉时，造成的月曜反应伤害进一步提升40%。上述效果将在装备者位于场上3秒后移除",
+          "flavor": "6.3 月曜后台副C",
+          "image": "/artifacts/chenxing-yuyue-de-xiaoge.png",
+          "themeColor": "#a8b0e0",
           "matched": true
         },
         "panel": [
@@ -14683,6 +16945,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "苍耀",
+            "displayName": "苍耀",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，不依赖元素能量的站场冰C专武，元…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "不依赖元素能量的站场冰C专武，元素战技后大幅提升普攻与爆发伤害。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜庭之刃",
+            "displayName": "霜庭之刃",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，攻击冻结或受冰影响的敌人时提升暴…",
+            "type": "单手剑",
+            "stat": "副属性：暴击伤害",
+            "desc": "攻击冻结或受冰影响的敌人时提升暴击伤害，永冻冰C专武。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -14847,6 +17135,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -14968,13 +17269,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "炽烈的炎之魔女 4件套",
-          "name": "炽烈的炎之魔女",
-          "twoPiece": "火元素伤害加成+15%",
-          "fourPiece": "蒸发、融化反应造成的伤害+15%，超载、燃烧、烈绽放反应伤害+40%；施放元素战技后10秒内，2件套的效果提升50%，最多叠加3层",
-          "flavor": "火系主C · 蒸发融化",
-          "image": "/artifacts/xilie-yan-zhi-monv.png",
-          "themeColor": "#e0604a",
+          "raw": "风起之日 4件套",
+          "name": "风起之日",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "普通攻击、重击、元素战技或元素爆发命中敌人后，将获得持续6秒的「风与牧歌的眷怜」：攻击力提高25%。若装备者已完成「魔女的课业」，该效果升级为「风与牧歌的决意」，额外使暴击率提升20%。装备者处于后台时也能触发",
+          "flavor": "6.3 攻击增伤 · 魔女课业",
+          "image": "/artifacts/fengqi-zhi-ri.png",
+          "themeColor": "#8fc8b0",
           "matched": true
         },
         "panel": [
@@ -15134,6 +17435,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -15216,16 +17530,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -15334,6 +17661,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -15421,16 +17774,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -15503,6 +17869,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "柔灯挽歌",
+            "displayName": "柔灯挽歌",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发燃烧相关反应后提升攻击力与元…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发燃烧相关反应后提升攻击力与元素伤害，草火体系后台副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "月轮之誓",
+            "displayName": "月轮之誓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，队伍体系备选",
+            "type": "长柄武器",
+            "stat": "副属性：元素精通",
+            "desc": "触发绽放/燃烧后提升元素精通，草火反应辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -15703,6 +18121,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "烬城之钥",
+            "displayName": "烬城之钥",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，双持站场时提升攻击速度与攻击力，…",
+            "type": "单手剑",
+            "stat": "副属性：攻击力",
+            "desc": "双持站场时提升攻击速度与攻击力，纳塔体系近战主C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -15790,6 +18221,19 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -15872,16 +18316,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -15954,6 +18411,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素充能效率",
             "subValue": "45.9%"
+          },
+          {
+            "name": "柔灯挽歌",
+            "displayName": "柔灯挽歌",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发燃烧相关反应后提升攻击力与元…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发燃烧相关反应后提升攻击力与元素伤害，草火体系后台副C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "裁断",
+            "displayName": "裁断",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，元素爆发期间提升攻击力与暴击伤害…",
+            "type": "长柄武器",
+            "stat": "副属性：暴击伤害",
+            "desc": "元素爆发期间提升攻击力与暴击伤害，长轴站场输出适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "星陨之枪",
+            "displayName": "星陨之枪",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "长柄武器",
+            "stat": "副属性：元素充能效率",
+            "desc": "元素爆发命中后为全队回复元素能量，脱手循环辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "月轮之誓",
+            "displayName": "月轮之誓",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，队伍体系备选",
+            "type": "长柄武器",
+            "stat": "副属性：元素精通",
+            "desc": "触发绽放/燃烧后提升元素精通，草火反应辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
@@ -16328,16 +18837,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -16446,6 +18968,19 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "晨曦之誓",
+            "displayName": "晨曦之誓",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击率副词条，触发激化/超激化后叠加暴击率与元…",
+            "type": "单手剑",
+            "stat": "副属性：暴击率",
+            "desc": "触发激化/超激化后叠加暴击率与元素伤害，雷草站场主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击率",
+            "subValue": "22.1%"
           }
         ],
         "artifact": {
@@ -16528,6 +19063,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -16610,6 +19197,45 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "霜羽长弓",
+            "displayName": "霜羽长弓",
+            "rarity": 5,
+            "reason": "新增五星 · 攻击力副词条，攻击受冰影响敌人时提升攻击力与暴…",
+            "type": "弓",
+            "stat": "副属性：攻击力",
+            "desc": "攻击受冰影响敌人时提升攻击力与暴击率，冰系弓C适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
+          },
+          {
+            "name": "月影之弦",
+            "displayName": "月影之弦",
+            "rarity": 4,
+            "reason": "新增4星 · 物理伤害加成副词条，可作过渡替代",
+            "type": "弓",
+            "stat": "副属性：物理伤害加成",
+            "desc": "重击与蓄力箭提升物理伤害，物理弓过渡输出适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "物理伤害加成",
+            "subValue": "34.5%"
           }
         ],
         "artifact": {
@@ -16897,6 +19523,58 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "元素精通",
             "subValue": "165"
+          },
+          {
+            "name": "祭星者之望",
+            "displayName": "祭星者之望",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，施放元素爆发后全队元素精通提升，…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "施放元素爆发后全队元素精通提升，护盾辅助与反应队核心武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "星轨秘录",
+            "displayName": "星轨秘录",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，触发元素反应后叠加暴击伤害与元素…",
+            "type": "法器",
+            "stat": "副属性：暴击伤害",
+            "desc": "触发元素反应后叠加暴击伤害与元素精通，反应型法器主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "月辉之书",
+            "displayName": "月辉之书",
+            "rarity": 5,
+            "reason": "新增五星 · 元素精通副词条，触发月绽放/激化后提升全队元素精…",
+            "type": "法器",
+            "stat": "副属性：元素精通",
+            "desc": "触发月绽放/激化后提升全队元素精通，草系核心辅助适用。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "元素精通",
+            "subValue": "198"
+          },
+          {
+            "name": "鹤鸣余音",
+            "displayName": "鹤鸣余音",
+            "rarity": 5,
+            "reason": "新增5星 · 攻击力副词条，队伍体系备选",
+            "type": "法器",
+            "stat": "副属性：攻击力",
+            "desc": "施放元素战技后全队下落攻击伤害提升，并回复元素能量，风系下落队核心辅助武器。",
+            "atk1": 46,
+            "atk90": 608,
+            "subStat": "攻击力",
+            "subValue": "49.6%"
           }
         ],
         "artifact": {
@@ -16975,6 +19653,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，帮助全队循环。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -17061,16 +19752,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
           }
         ],
         "artifact": {
-          "raw": "饰金之梦 4件套",
-          "name": "饰金之梦",
+          "raw": "乐园遗落之花 4件套",
+          "name": "乐园遗落之花",
           "twoPiece": "元素精通+80",
-          "fourPiece": "触发元素反应后的8秒内，依据队伍中其他角色的元素类型使装备者获得强化：同元素角色使攻击力+14%，不同元素角色使元素精通+50；每类元素至多1层，至多3层",
-          "flavor": "反应型主C",
-          "image": "/artifacts/shijin-zhimeng.png",
-          "themeColor": "#d9b45b",
+          "fourPiece": "装备者造成的绽放、超绽放、烈绽放反应伤害+40%；装备者触发上述反应后，该效果额外提升25%，最多叠加4层",
+          "flavor": "绽放队核心",
+          "image": "/artifacts/leyuan-yiluo-zhihua.png",
+          "themeColor": "#d98fb0",
           "matched": true
         },
         "panel": [
@@ -17339,6 +20043,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素充能效率",
             "desc": "暴击回能，帮助全队循环。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
             "atk1": 44,
             "atk90": 565,
             "subStat": "元素充能效率",
@@ -17630,6 +20347,32 @@ export const TEAM_GUIDES = {
             "atk90": 510,
             "subStat": "攻击力",
             "subValue": "41.3%"
+          },
+          {
+            "name": "星鹫赤羽",
+            "displayName": "星鹫赤羽",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，队伍中存在多种元素时提升重击与元…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "队伍中存在多种元素时提升重击与元素战技伤害，多元素队主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
+          },
+          {
+            "name": "逐星之矢",
+            "displayName": "逐星之矢",
+            "rarity": 5,
+            "reason": "新增五星 · 暴击伤害副词条，重击与蓄力箭命中后叠加暴击伤害，…",
+            "type": "弓",
+            "stat": "副属性：暴击伤害",
+            "desc": "重击与蓄力箭命中后叠加暴击伤害，蓄力弓主C适用。",
+            "atk1": 48,
+            "atk90": 674,
+            "subStat": "暴击伤害",
+            "subValue": "44.1%"
           }
         ],
         "artifact": {
@@ -17712,16 +20455,29 @@ export const TEAM_GUIDES = {
             "atk90": 565,
             "subStat": "元素充能效率",
             "subValue": "30.6%"
+          },
+          {
+            "name": "星语短剑",
+            "displayName": "星语短剑",
+            "rarity": 4,
+            "reason": "新增4星 · 元素充能效率副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素充能效率",
+            "desc": "施放元素战技后为全队回复元素能量，脱手挂元素辅助适用。",
+            "atk1": 44,
+            "atk90": 565,
+            "subStat": "元素充能效率",
+            "subValue": "30.6%"
           }
         ],
         "artifact": {
-          "raw": "宗室之仪 4件套",
-          "name": "宗室之仪",
-          "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后，队伍中所有角色攻击力+20%，持续12秒（4 星版本）",
-          "flavor": "早期增伤辅助",
-          "image": "/artifacts/zongshi-zhiyi.png",
-          "themeColor": "#7f9fe0",
+          "raw": "天之美赐 4件套",
+          "name": "天之美赐",
+          "twoPiece": "元素充能效率+20%",
+          "fourPiece": "若装备者已完成「魔女的课业」，施放元素战技后获得「天光之引」：依据装备者元素类型，使队伍中附近所有角色获得20%对应元素伤害加成，持续20秒，后台亦可触发；队伍拥有「魔导·秘仪」时升级为「凡世颂歌」，加成提升至40%并额外覆盖当前场上角色元素类型，同名套装产生的加成无法叠加",
+          "flavor": "6.7 全队元素增伤辅助",
+          "image": "/artifacts/tian-zhi-meici.png",
+          "themeColor": "#e0c878",
           "matched": true
         },
         "panel": [
@@ -17915,13 +20671,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "穹境示现之夜 4件套",
-          "name": "穹境示现之夜",
+          "raw": "炉火融炼之心 4件套",
+          "name": "炉火融炼之心",
           "twoPiece": "攻击力+18%",
-          "fourPiece": "施放元素爆发后获得持续12秒的增伤与暴击率加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qiongjing-shixian-zhiye.png",
-          "themeColor": "#8f9fd8",
+          "fourPiece": "装备者触发星烁反应或造成星烁反应伤害后的12秒内，攻击力+12%，队伍中附近所有角色造成的星烁反应伤害+50%；装备者处于后台时也能触发，同名套装产生的伤害加成无法叠加",
+          "flavor": "7.0 全队星烁反应辅助",
+          "image": "/artifacts/luhuo-ronglian-zhi-xin.png",
+          "themeColor": "#d87050",
           "matched": true
         },
         "panel": [
@@ -18002,13 +20758,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "血红之证 4件套",
+          "name": "血红之证",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "装备者触发星扩散反应后的10秒内，暴击率+16%，星扩散反应伤害+40%",
+          "flavor": "7.0 星扩散站场主C",
+          "image": "/artifacts/xuehong-zhi-zheng.png",
+          "themeColor": "#c0454f",
           "matched": true
         },
         "panel": [
@@ -18089,13 +20845,13 @@ export const TEAM_GUIDES = {
           }
         ],
         "artifact": {
-          "raw": "奇想乐章 4件套",
-          "name": "奇想乐章",
-          "twoPiece": "元素充能效率+20%",
-          "fourPiece": "施放元素爆发后为队伍提供增伤与元素精通加成（版本较新，效果可在后台修正）",
-          "flavor": "新版本套装 · 可修正",
-          "image": "/artifacts/qixiang-yuezhang.png",
-          "themeColor": "#b88fd8",
+          "raw": "影中沉凝的幻灭 4件套",
+          "name": "影中沉凝的幻灭",
+          "twoPiece": "攻击力+18%",
+          "fourPiece": "超导反应造成的伤害+80%；装备者攻击受到超导反应影响的敌人时，本次攻击的暴击率+16%",
+          "flavor": "6.7 超导物伤体系",
+          "image": "/artifacts/yingzhong-chenning-de-huanmie.png",
+          "themeColor": "#7f7fb0",
           "matched": true
         },
         "panel": [
@@ -18169,6 +20925,19 @@ export const TEAM_GUIDES = {
             "type": "单手剑",
             "stat": "副属性：元素精通",
             "desc": "锻造获取，精通副属性，扩散收益稳定。",
+            "atk1": 42,
+            "atk90": 510,
+            "subStat": "元素精通",
+            "subValue": "165"
+          },
+          {
+            "name": "月桂的证言",
+            "displayName": "月桂的证言",
+            "rarity": 4,
+            "reason": "新增4星 · 元素精通副词条，可作过渡替代",
+            "type": "单手剑",
+            "stat": "副属性：元素精通",
+            "desc": "触发扩散/激化后提升全队元素精通，精通型辅助适用。",
             "atk1": 42,
             "atk90": 510,
             "subStat": "元素精通",

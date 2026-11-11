@@ -17,7 +17,7 @@
       <!-- ===== 模块切换 ===== -->
       <div class="tabs">
         <button v-for="t in tabDefs" :key="t.key"
-                :class="{ active: tab === t.key }" @click="switchTab(t.key)">
+                :class="{ active: tab === t.key, 'tab-paired': !!t.group }" @click="switchTab(t.key)">
           {{ t.label }} <em>{{ datasets[t.key].length }}</em>
         </button>
         <button class="refresh" @click="loadAll">刷新数据</button>
@@ -129,6 +129,8 @@ const isAdd = ref(false)
 const form = ref({})
 const saving = ref(false)
 const saveError = ref('')
+// 连续编辑时清掉上一条提示的定时器，避免新提示被旧定时器提前关闭
+let toastTimer = null
 
 // ---------------- 字段配置 ----------------
 function opts(arr) {
@@ -138,7 +140,7 @@ const RARITY_OPTIONS = [5, 4, 3, 2, 1].map(v => ({ value: v, label: v + ' 星' }
 const STATUS_OPTIONS = [{ value: 1, label: '显示' }, { value: 0, label: '隐藏' }]
 const ELEMENT_OPTIONS = opts(['风', '岩', '雷', '草', '水', '火', '冰', '物理', '攻击', '精通', '充能', '生命', '防御', '暴击', '治疗', '辅助', '战技', '抗性', '纳塔', '生命之契'])
 const WEAPON_TYPE_OPTIONS = opts(['单手剑', '双手剑', '长柄武器', '法器', '弓'])
-const num = (key, label) => ({ key, label, type: 'number' })
+const num = (key, label, extra = {}) => ({ key, label, type: 'number', ...extra })
 const txt = (key, label, extra = {}) => ({ key, label, ...extra })
 const area = (key, label) => ({ key, label, multiline: true })
 
@@ -205,12 +207,55 @@ const ARTIFACT_FIELDS = [
 ]
 
 // ---------------- Tab 配置驱动 ----------------
+const CHAR_TALENT_FIELDS = [
+  txt('characterName', '角色名', { hint: '需与「角色养成」中的角色名一致，首页按名称匹配' }),
+  txt('talentType', '天赋类型', { options: opts(['普通攻击', '元素战技', '元素爆发', '固有天赋', '其它']) }),
+  txt('talentName', '天赋名称'),
+  area('description', '天赋效果描述'),
+  num('priority', '升级优先级（1 最高）', { default: 3, hint: '首页显示「优先 N」徽章，建议填 1~3' }),
+  num('recommendedLevel', '推荐等级', { default: 8, hint: '首页显示 Lv.x 进度条，建议填 1~15' }),
+  num('sortOrder', '展示顺序（小的在前）', { default: 0 }),
+  txt('status', '首页显示状态', { options: STATUS_OPTIONS })
+]
+
+const CHAR_CONSTELLATION_FIELDS = [
+  txt('characterName', '角色名', { hint: '需与「角色养成」中的角色名一致，首页按名称匹配' }),
+  txt('setName', '命座套名', { hint: '可留空；留空时首页标题显示「命之座」' }),
+  num('constLevel', '第几命（1~6）', { default: 1 }),
+  txt('name', '命座名称'),
+  area('description', '命座效果描述'),
+  num('sortOrder', '展示顺序（小的在前）', { default: 0 }),
+  txt('status', '首页显示状态', { options: STATUS_OPTIONS })
+]
+
+const CHAR_SUBSTAT_FIELDS = [
+  txt('characterName', '角色名', { hint: '需与「角色养成」中的角色名一致，首页按名称匹配' }),
+  txt('statName', '副词条名称', { hint: '如 暴击率 / 暴击伤害 / 生命值% / 元素充能效率' }),
+  txt('tier', '优先级档位', { options: opts(['核心', '重要', '可用', '低收益']), default: '可用' }),
+  area('reason', '收益依据', { hint: '说明该词条为何适合这个角色' }),
+  num('sortOrder', '展示顺序（小的在前）', { default: 0 }),
+  txt('status', '首页显示状态', { options: STATUS_OPTIONS })
+]
+
+const CHAR_PANEL_FIELDS = [
+  txt('characterName', '角色名', { hint: '需与「角色养成」中的角色名一致，首页按名称匹配' }),
+  txt('statLabel', '面板词条名', { hint: '如 生命值 / 暴击率 / 元素充能效率 / 治疗加成' }),
+  txt('targetValue', '毕业目标值', { hint: '如 3.0 万+ / 70%+ / 900~1000' }),
+  area('note', '说明', { hint: '为什么这个数值重要、如何达成' }),
+  num('sortOrder', '展示顺序（小的在前）', { default: 0 }),
+  txt('status', '首页显示状态', { options: STATUS_OPTIONS })
+]
+
 const tabDefs = [
   { key: 'characters', label: '角色养成' },
   { key: 'weapons', label: '武器养成' },
   { key: 'charWeapons', label: '武器推荐' },
   { key: 'teams', label: '队伍推荐' },
-  { key: 'artifactSets', label: '圣遗物套装' }
+  { key: 'artifactSets', label: '圣遗物套装' },
+  { key: 'charTalents', label: '天赋详情', group: 'talent' },
+  { key: 'charConstellations', label: '命之座详情', group: 'talent' },
+  { key: 'charSubstats', label: '副词条优先级', group: 'build' },
+  { key: 'charPanels', label: '毕业面板', group: 'build' }
 ]
 
 const CONFIG = {
@@ -299,11 +344,75 @@ const CONFIG = {
       { key: 'status', label: '状态', type: 'status' },
       { key: 'sortOrder', label: '排序', dim: true }
     ]
+  },
+  charTalents: {
+    short: '天赋', path: '/char-talents',
+    placeholder: '搜索角色名 / 天赋类型 / 天赋名 / 效果描述…',
+    searchKeys: ['characterName', 'talentType', 'talentName', 'description'],
+    fields: CHAR_TALENT_FIELDS,
+    columns: [
+      { key: 'id', label: 'ID', dim: true },
+      { key: 'characterName', label: '角色名', name: true },
+      { key: 'talentType', label: '天赋类型' },
+      { key: 'talentName', label: '天赋名称', name: true },
+      { key: 'priority', label: '优先级', dim: true },
+      { key: 'recommendedLevel', label: '推荐等级', dim: true },
+      { key: 'description', label: '效果描述', clip: true, wide: true },
+      { key: 'sortOrder', label: '顺序', dim: true },
+      { key: 'status', label: '状态', type: 'status' }
+    ]
+  },
+  charConstellations: {
+    short: '命座', path: '/char-constellations',
+    placeholder: '搜索角色名 / 命座套名 / 命座名 / 效果描述…',
+    searchKeys: ['characterName', 'setName', 'name', 'description'],
+    fields: CHAR_CONSTELLATION_FIELDS,
+    columns: [
+      { key: 'id', label: 'ID', dim: true },
+      { key: 'characterName', label: '角色名', name: true },
+      { key: 'constLevel', label: '命数', dim: true },
+      { key: 'name', label: '命座名称', name: true },
+      { key: 'setName', label: '命座套名', clip: true },
+      { key: 'description', label: '效果描述', clip: true, wide: true },
+      { key: 'sortOrder', label: '顺序', dim: true },
+      { key: 'status', label: '状态', type: 'status' }
+    ]
+  },
+  charSubstats: {
+    short: '副词条', path: '/char-substats',
+    placeholder: '搜索角色名 / 副词条名 / 档位 / 收益依据…',
+    searchKeys: ['characterName', 'statName', 'tier', 'reason'],
+    fields: CHAR_SUBSTAT_FIELDS,
+    columns: [
+      { key: 'id', label: 'ID', dim: true },
+      { key: 'characterName', label: '角色名', name: true },
+      { key: 'statName', label: '副词条', name: true },
+      { key: 'tier', label: '档位' },
+      { key: 'reason', label: '收益依据', clip: true, wide: true },
+      { key: 'sortOrder', label: '顺序', dim: true },
+      { key: 'status', label: '状态', type: 'status' }
+    ]
+  },
+  charPanels: {
+    short: '毕业面板', path: '/char-panels',
+    placeholder: '搜索角色名 / 词条名 / 目标值 / 说明…',
+    searchKeys: ['characterName', 'statLabel', 'targetValue', 'note'],
+    fields: CHAR_PANEL_FIELDS,
+    columns: [
+      { key: 'id', label: 'ID', dim: true },
+      { key: 'characterName', label: '角色名', name: true },
+      { key: 'statLabel', label: '面板词条', name: true },
+      { key: 'targetValue', label: '毕业目标值' },
+      { key: 'note', label: '说明', clip: true, wide: true },
+      { key: 'sortOrder', label: '顺序', dim: true },
+      { key: 'status', label: '状态', type: 'status' }
+    ]
   }
 }
 
 const datasets = ref({
-  characters: [], weapons: [], charWeapons: [], teams: [], artifactSets: []
+  characters: [], weapons: [], charWeapons: [], teams: [], artifactSets: [],
+  charTalents: [], charConstellations: [], charSubstats: [], charPanels: []
 })
 
 const current = computed(() => CONFIG[tab.value])
@@ -399,7 +508,7 @@ function openEdit(row) {
 function openAdd() {
   const draft = {}
   for (const f of current.value.fields) {
-    draft[f.key] = f.options ? f.options[0].value : (f.type === 'number' ? 0 : '')
+    draft[f.key] = f.options ? f.options[0].value : (f.type === 'number' ? (f.default ?? 0) : '')
   }
   if (current.value.fields.some(f => f.key === 'status')) draft.status = 1
   if (current.value.fields.some(f => f.key === 'rarity')) draft.rarity = 5
@@ -435,8 +544,9 @@ async function save() {
     })
     if (data.code === 200) {
       editing.value = null
+      clearTimeout(toastTimer)
       toast.value = isAdd.value ? '已新增，返回首页即可看到最新数据' : '已保存，返回首页即可看到最新数据'
-      setTimeout(() => { toast.value = '' }, 4000)
+      toastTimer = setTimeout(() => { toast.value = '' }, 4000)
       await loadAll()
     } else if (data.code === 401) {
       goLogin()
@@ -451,13 +561,16 @@ async function save() {
 }
 
 async function remove(row) {
-  const label = row.name || row.characterName || row.weaponName || ('ID ' + row.id)
+  const label = row.characterName
+    ? `${row.characterName} · ${row.talentName || row.name || ('第 ' + row.constLevel + ' 命')}`
+    : (row.name || row.weaponName || ('ID ' + row.id))
   if (!window.confirm(`确定删除「${label}」吗？此操作不可撤销。`)) return
   try {
     const data = await request(`/admin${current.value.path}/${row.id}`, { method: 'DELETE' })
     if (data.code === 200) {
+      clearTimeout(toastTimer)
       toast.value = '已删除'
-      setTimeout(() => { toast.value = '' }, 3000)
+      toastTimer = setTimeout(() => { toast.value = '' }, 3000)
       await loadAll()
     } else if (data.code === 401) {
       goLogin()
@@ -548,6 +661,8 @@ async function logout() {
   transition: 0.2s;
 }
 .tabs button:hover { background: rgba(180, 205, 255, 0.1); }
+/* 「天赋详情 / 命之座详情」同属模块六，用淡蓝边框在视觉上成组 */
+.tabs button.tab-paired:not(.active) { border-color: rgba(138, 164, 248, 0.5); color: #bccbf3; }
 .tabs button.active {
   color: #0a1224;
   border-color: transparent;

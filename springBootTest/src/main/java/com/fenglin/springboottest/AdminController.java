@@ -5,12 +5,20 @@ import com.fenglin.springboottest.common.BusinessException;
 import com.fenglin.springboottest.common.Result;
 import com.fenglin.springboottest.dto.LoginRequest;
 import com.fenglin.springboottest.entity.ArtifactSet;
+import com.fenglin.springboottest.entity.CharPanel;
+import com.fenglin.springboottest.entity.CharSubstat;
 import com.fenglin.springboottest.entity.CharWeapon;
+import com.fenglin.springboottest.entity.CharacterConstellation;
+import com.fenglin.springboottest.entity.CharacterTalent;
 import com.fenglin.springboottest.entity.GenshinCharacter;
 import com.fenglin.springboottest.entity.Team;
 import com.fenglin.springboottest.entity.TeamMember;
 import com.fenglin.springboottest.entity.Weapon;
 import com.fenglin.springboottest.mapper.ArtifactSetMapper;
+import com.fenglin.springboottest.mapper.CharPanelMapper;
+import com.fenglin.springboottest.mapper.CharSubstatMapper;
+import com.fenglin.springboottest.mapper.CharacterConstellationMapper;
+import com.fenglin.springboottest.mapper.CharacterTalentMapper;
 import com.fenglin.springboottest.mapper.CharWeaponMapper;
 import com.fenglin.springboottest.mapper.CharacterMapper;
 import com.fenglin.springboottest.mapper.TeamMapper;
@@ -84,6 +92,18 @@ public class AdminController {
 
     @Autowired
     private ArtifactSetMapper artifactSetMapper;
+
+    @Autowired
+    private CharacterTalentMapper characterTalentMapper;
+
+    @Autowired
+    private CharacterConstellationMapper characterConstellationMapper;
+
+    @Autowired
+    private CharSubstatMapper charSubstatMapper;
+
+    @Autowired
+    private CharPanelMapper charPanelMapper;
 
     /**
      * 管理员登录。普通用户（role=1）即使账号密码正确也会被拒绝。
@@ -572,6 +592,463 @@ public class AdminController {
         }
         artifactSetMapper.deleteById(id);
         return Result.ok();
+    }
+
+    // ==================================================================
+    // 模块：角色天赋详情（t_character_talent）
+    // 对应首页「模块六 · 角色天赋与命之座」，后台维护后首页实时读取 status=1 的记录
+    // ==================================================================
+
+    /** 天赋全量列表（含隐藏记录，按角色名 + 展示顺序）。 */
+    @GetMapping("/char-talents")
+    public Result<List<CharacterTalent>> charTalents(HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        List<CharacterTalent> list = characterTalentMapper.selectList(
+                new LambdaQueryWrapper<CharacterTalent>()
+                        .orderByAsc(CharacterTalent::getCharacterName)
+                        .orderByAsc(CharacterTalent::getSortOrder)
+                        .orderByAsc(CharacterTalent::getId));
+        return Result.ok(list);
+    }
+
+    /** 修改一条天赋详情。 */
+    @PutMapping("/char-talents/{id}")
+    public Result<CharacterTalent> updateCharTalent(@PathVariable("id") Long id,
+                                                     @RequestBody CharacterTalent body,
+                                                     HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getTalentName())) {
+            throw new BusinessException("角色名与天赋名称都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateTalentNumbers(body.getPriority(), body.getRecommendedLevel());
+        if (characterTalentMapper.selectById(id) == null) {
+            throw new BusinessException("记录不存在，可能已被删除（id=" + id + "）");
+        }
+        if (talentDuplicate(body.getCharacterName(), body.getTalentType(), body.getTalentName(), id)) {
+            throw new BusinessException("该角色下已存在同名同类型的天赋，请勿重复");
+        }
+        CharacterTalent patch = new CharacterTalent();
+        patch.setId(id);
+        patch.setCharacterName(body.getCharacterName().trim());
+        patch.setTalentType(body.getTalentType());
+        patch.setTalentName(body.getTalentName().trim());
+        patch.setDescription(body.getDescription());
+        patch.setPriority(body.getPriority());
+        patch.setRecommendedLevel(body.getRecommendedLevel());
+        patch.setSortOrder(body.getSortOrder());
+        patch.setStatus(body.getStatus());
+        characterTalentMapper.updateById(patch);
+        return Result.ok("保存成功", characterTalentMapper.selectById(id));
+    }
+
+    /** 新增一条天赋（可为角色补充固有天赋等额外条目）。 */
+    @PostMapping("/char-talents")
+    public Result<CharacterTalent> addCharTalent(@RequestBody CharacterTalent body,
+                                                  HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getTalentName())) {
+            throw new BusinessException("角色名与天赋名称都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateTalentNumbers(body.getPriority(), body.getRecommendedLevel());
+        if (talentDuplicate(body.getCharacterName(), body.getTalentType(), body.getTalentName(), null)) {
+            throw new BusinessException("该角色下已存在同名同类型的天赋");
+        }
+        body.setId(null);
+        body.setCharacterName(body.getCharacterName().trim());
+        body.setTalentName(body.getTalentName().trim());
+        if (isBlank(body.getTalentType())) {
+            body.setTalentType("固有天赋");
+        }
+        if (body.getPriority() == null) {
+            body.setPriority(3);
+        }
+        if (body.getRecommendedLevel() == null) {
+            body.setRecommendedLevel(8);
+        }
+        if (body.getSortOrder() == null) {
+            body.setSortOrder(0);
+        }
+        if (body.getStatus() == null) {
+            body.setStatus(1);
+        }
+        characterTalentMapper.insert(body);
+        return Result.ok("新增成功", body);
+    }
+
+    /** 删除一条天赋。 */
+    @DeleteMapping("/char-talents/{id}")
+    public Result<Void> deleteCharTalent(@PathVariable("id") Long id,
+                                          HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        characterTalentMapper.deleteById(id);
+        return Result.ok();
+    }
+
+    // ==================================================================
+    // 模块：角色命之座详情（t_character_constellation）
+    // ==================================================================
+
+    /** 命座全量列表（含隐藏记录，按角色名 + 命数）。 */
+    @GetMapping("/char-constellations")
+    public Result<List<CharacterConstellation>> charConstellations(HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        List<CharacterConstellation> list = characterConstellationMapper.selectList(
+                new LambdaQueryWrapper<CharacterConstellation>()
+                        .orderByAsc(CharacterConstellation::getCharacterName)
+                        .orderByAsc(CharacterConstellation::getSortOrder)
+                        .orderByAsc(CharacterConstellation::getConstLevel)
+                        .orderByAsc(CharacterConstellation::getId));
+        return Result.ok(list);
+    }
+
+    /** 修改一条命座详情。 */
+    @PutMapping("/char-constellations/{id}")
+    public Result<CharacterConstellation> updateCharConstellation(@PathVariable("id") Long id,
+                                                                   @RequestBody CharacterConstellation body,
+                                                                   HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getName())) {
+            throw new BusinessException("角色名与命座名称都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateConstLevel(body.getConstLevel());
+        if (characterConstellationMapper.selectById(id) == null) {
+            throw new BusinessException("记录不存在，可能已被删除（id=" + id + "）");
+        }
+        if (constellationDuplicate(body.getCharacterName(), body.getConstLevel(), id)) {
+            throw new BusinessException("该角色下已存在同一命数的命座，请勿重复");
+        }
+        CharacterConstellation patch = new CharacterConstellation();
+        patch.setId(id);
+        patch.setCharacterName(body.getCharacterName().trim());
+        patch.setSetName(body.getSetName());
+        patch.setConstLevel(body.getConstLevel());
+        patch.setName(body.getName().trim());
+        patch.setDescription(body.getDescription());
+        patch.setSortOrder(body.getSortOrder());
+        patch.setStatus(body.getStatus());
+        characterConstellationMapper.updateById(patch);
+        return Result.ok("保存成功", characterConstellationMapper.selectById(id));
+    }
+
+    /** 新增一条命座。 */
+    @PostMapping("/char-constellations")
+    public Result<CharacterConstellation> addCharConstellation(@RequestBody CharacterConstellation body,
+                                                                HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getName())) {
+            throw new BusinessException("角色名与命座名称都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateConstLevel(body.getConstLevel());
+        if (constellationDuplicate(body.getCharacterName(), body.getConstLevel(), null)) {
+            throw new BusinessException("该角色下已存在同一命数的命座");
+        }
+        body.setId(null);
+        body.setCharacterName(body.getCharacterName().trim());
+        body.setName(body.getName().trim());
+        if (body.getConstLevel() == null) {
+            body.setConstLevel(1);
+        }
+        if (body.getSortOrder() == null) {
+            body.setSortOrder(body.getConstLevel() - 1);
+        }
+        if (body.getStatus() == null) {
+            body.setStatus(1);
+        }
+        characterConstellationMapper.insert(body);
+        return Result.ok("新增成功", body);
+    }
+
+    /** 删除一条命座。 */
+    @DeleteMapping("/char-constellations/{id}")
+    public Result<Void> deleteCharConstellation(@PathVariable("id") Long id,
+                                                 HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        characterConstellationMapper.deleteById(id);
+        return Result.ok();
+    }
+
+    // ==================================================================
+    // 模块：角色圣遗物副词条优先级（t_char_substat）
+    // ==================================================================
+
+    /** 副词条优先级全量列表（含隐藏记录，按角色名 + 展示顺序）。 */
+    @GetMapping("/char-substats")
+    public Result<List<CharSubstat>> charSubstats(HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        List<CharSubstat> list = charSubstatMapper.selectList(
+                new LambdaQueryWrapper<CharSubstat>()
+                        .orderByAsc(CharSubstat::getCharacterName)
+                        .orderByAsc(CharSubstat::getSortOrder)
+                        .orderByAsc(CharSubstat::getId));
+        return Result.ok(list);
+    }
+
+    /** 修改一条副词条优先级。 */
+    @PutMapping("/char-substats/{id}")
+    public Result<CharSubstat> updateCharSubstat(@PathVariable("id") Long id,
+                                                 @RequestBody CharSubstat body,
+                                                 HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getStatName())) {
+            throw new BusinessException("角色名与副词条名称都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateTier(body.getTier());
+        validateSortOrder(body.getSortOrder());
+        if (charSubstatMapper.selectById(id) == null) {
+            throw new BusinessException("记录不存在，可能已被删除（id=" + id + "）");
+        }
+        if (substatDuplicate(body.getCharacterName(), body.getStatName(), id)) {
+            throw new BusinessException("该角色下已存在同名副词条，请勿重复");
+        }
+        CharSubstat patch = new CharSubstat();
+        patch.setId(id);
+        patch.setCharacterName(body.getCharacterName().trim());
+        patch.setStatName(body.getStatName().trim());
+        patch.setTier(body.getTier());
+        patch.setReason(body.getReason());
+        patch.setSortOrder(body.getSortOrder());
+        patch.setStatus(body.getStatus());
+        charSubstatMapper.updateById(patch);
+        return Result.ok("保存成功", charSubstatMapper.selectById(id));
+    }
+
+    /** 新增一条副词条优先级。 */
+    @PostMapping("/char-substats")
+    public Result<CharSubstat> addCharSubstat(@RequestBody CharSubstat body,
+                                              HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getStatName())) {
+            throw new BusinessException("角色名与副词条名称都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateTier(body.getTier());
+        validateSortOrder(body.getSortOrder());
+        if (substatDuplicate(body.getCharacterName(), body.getStatName(), null)) {
+            throw new BusinessException("该角色下已存在同名副词条");
+        }
+        body.setId(null);
+        body.setCharacterName(body.getCharacterName().trim());
+        body.setStatName(body.getStatName().trim());
+        if (isBlank(body.getTier())) {
+            body.setTier("可用");
+        }
+        if (body.getSortOrder() == null) {
+            body.setSortOrder(9);
+        }
+        if (body.getStatus() == null) {
+            body.setStatus(1);
+        }
+        charSubstatMapper.insert(body);
+        return Result.ok("新增成功", body);
+    }
+
+    /** 删除一条副词条优先级。 */
+    @DeleteMapping("/char-substats/{id}")
+    public Result<Void> deleteCharSubstat(@PathVariable("id") Long id,
+                                           HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        charSubstatMapper.deleteById(id);
+        return Result.ok();
+    }
+
+    // ==================================================================
+    // 模块：角色毕业面板（t_char_panel）
+    // ==================================================================
+
+    /** 毕业面板全量列表（含隐藏记录，按角色名 + 展示顺序）。 */
+    @GetMapping("/char-panels")
+    public Result<List<CharPanel>> charPanels(HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        List<CharPanel> list = charPanelMapper.selectList(
+                new LambdaQueryWrapper<CharPanel>()
+                        .orderByAsc(CharPanel::getCharacterName)
+                        .orderByAsc(CharPanel::getSortOrder)
+                        .orderByAsc(CharPanel::getId));
+        return Result.ok(list);
+    }
+
+    /** 修改一条毕业面板目标。 */
+    @PutMapping("/char-panels/{id}")
+    public Result<CharPanel> updateCharPanel(@PathVariable("id") Long id,
+                                             @RequestBody CharPanel body,
+                                             HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getStatLabel())) {
+            throw new BusinessException("角色名与面板词条名都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateSortOrder(body.getSortOrder());
+        if (charPanelMapper.selectById(id) == null) {
+            throw new BusinessException("记录不存在，可能已被删除（id=" + id + "）");
+        }
+        if (panelDuplicate(body.getCharacterName(), body.getStatLabel(), id)) {
+            throw new BusinessException("该角色下已存在同名面板词条，请勿重复");
+        }
+        CharPanel patch = new CharPanel();
+        patch.setId(id);
+        patch.setCharacterName(body.getCharacterName().trim());
+        patch.setStatLabel(body.getStatLabel().trim());
+        patch.setTargetValue(body.getTargetValue());
+        patch.setNote(body.getNote());
+        patch.setSortOrder(body.getSortOrder());
+        patch.setStatus(body.getStatus());
+        charPanelMapper.updateById(patch);
+        return Result.ok("保存成功", charPanelMapper.selectById(id));
+    }
+
+    /** 新增一条毕业面板目标。 */
+    @PostMapping("/char-panels")
+    public Result<CharPanel> addCharPanel(@RequestBody CharPanel body,
+                                          HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        if (body == null || isBlank(body.getCharacterName()) || isBlank(body.getStatLabel())) {
+            throw new BusinessException("角色名与面板词条名都不能为空");
+        }
+        validateCommon(null, body.getStatus(), "星级");
+        validateSortOrder(body.getSortOrder());
+        if (panelDuplicate(body.getCharacterName(), body.getStatLabel(), null)) {
+            throw new BusinessException("该角色下已存在同名面板词条");
+        }
+        body.setId(null);
+        body.setCharacterName(body.getCharacterName().trim());
+        body.setStatLabel(body.getStatLabel().trim());
+        if (isBlank(body.getTargetValue())) {
+            body.setTargetValue("待补充");
+        }
+        if (body.getSortOrder() == null) {
+            body.setSortOrder(9);
+        }
+        if (body.getStatus() == null) {
+            body.setStatus(1);
+        }
+        charPanelMapper.insert(body);
+        return Result.ok("新增成功", body);
+    }
+
+    /** 删除一条毕业面板目标。 */
+    @DeleteMapping("/char-panels/{id}")
+    public Result<Void> deleteCharPanel(@PathVariable("id") Long id,
+                                        HttpServletRequest httpRequest) {
+        if (!isAdmin(httpRequest)) {
+            return Result.fail(401, "请先登录后台管理系统");
+        }
+        charPanelMapper.deleteById(id);
+        return Result.ok();
+    }
+
+    private void validateTier(String tier) {
+        if (isBlank(tier)) {
+            return;
+        }
+        if (!"核心".equals(tier) && !"重要".equals(tier)
+                && !"可用".equals(tier) && !"低收益".equals(tier)) {
+            throw new BusinessException("优先级档位只能为 核心 / 重要 / 可用 / 低收益");
+        }
+    }
+
+    private void validateSortOrder(Integer sortOrder) {
+        if (sortOrder != null && (sortOrder < 0 || sortOrder > 99)) {
+            throw new BusinessException("展示顺序需在 0-99 之间");
+        }
+    }
+
+    /** 唯一索引 uk_cs_char_stat(character_name, stat_name) 的友好校验。 */
+    private boolean substatDuplicate(String characterName, String statName, Long excludeId) {
+        LambdaQueryWrapper<CharSubstat> w = new LambdaQueryWrapper<CharSubstat>()
+                .eq(CharSubstat::getCharacterName, characterName.trim())
+                .eq(CharSubstat::getStatName, statName.trim());
+        if (excludeId != null) {
+            w.ne(CharSubstat::getId, excludeId);
+        }
+        Long n = charSubstatMapper.selectCount(w);
+        return n != null && n > 0;
+    }
+
+    /** 唯一索引 uk_cp_char_label(character_name, stat_label) 的友好校验。 */
+    private boolean panelDuplicate(String characterName, String statLabel, Long excludeId) {
+        LambdaQueryWrapper<CharPanel> w = new LambdaQueryWrapper<CharPanel>()
+                .eq(CharPanel::getCharacterName, characterName.trim())
+                .eq(CharPanel::getStatLabel, statLabel.trim());
+        if (excludeId != null) {
+            w.ne(CharPanel::getId, excludeId);
+        }
+        Long n = charPanelMapper.selectCount(w);
+        return n != null && n > 0;
+    }
+
+    private void validateTalentNumbers(Integer priority, Integer recommendedLevel) {
+        if (priority != null && (priority < 1 || priority > 9)) {
+            throw new BusinessException("升级优先级需在 1-9 之间");
+        }
+        if (recommendedLevel != null && (recommendedLevel < 1 || recommendedLevel > 15)) {
+            throw new BusinessException("推荐等级需在 1-15 之间");
+        }
+    }
+
+    private void validateConstLevel(Integer level) {
+        if (level != null && (level < 1 || level > 6)) {
+            throw new BusinessException("命座层数需在 1-6 之间");
+        }
+    }
+
+    /** 唯一索引 uk_ct(character_name, talent_type, talent_name) 的友好校验。 */
+    private boolean talentDuplicate(String characterName, String talentType, String talentName, Long excludeId) {
+        LambdaQueryWrapper<CharacterTalent> w = new LambdaQueryWrapper<CharacterTalent>()
+                .eq(CharacterTalent::getCharacterName, characterName.trim())
+                .eq(CharacterTalent::getTalentType, talentType)
+                .eq(CharacterTalent::getTalentName, talentName.trim());
+        if (excludeId != null) {
+            w.ne(CharacterTalent::getId, excludeId);
+        }
+        Long n = characterTalentMapper.selectCount(w);
+        return n != null && n > 0;
+    }
+
+    /** 唯一索引 uk_cc(character_name, const_level) 的友好校验。 */
+    private boolean constellationDuplicate(String characterName, Integer constLevel, Long excludeId) {
+        LambdaQueryWrapper<CharacterConstellation> w = new LambdaQueryWrapper<CharacterConstellation>()
+                .eq(CharacterConstellation::getCharacterName, characterName.trim())
+                .eq(CharacterConstellation::getConstLevel, constLevel);
+        if (excludeId != null) {
+            w.ne(CharacterConstellation::getId, excludeId);
+        }
+        Long n = characterConstellationMapper.selectCount(w);
+        return n != null && n > 0;
     }
 
     private boolean isBlank(String s) {

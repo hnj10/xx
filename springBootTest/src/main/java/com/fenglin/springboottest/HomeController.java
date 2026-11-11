@@ -1,7 +1,18 @@
 package com.fenglin.springboottest;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.fenglin.springboottest.common.Result;
 import com.fenglin.springboottest.entity.ArtifactSet;
+import com.fenglin.springboottest.entity.CharPanel;
+import com.fenglin.springboottest.entity.CharSubstat;
+import com.fenglin.springboottest.entity.CharacterConstellation;
+import com.fenglin.springboottest.entity.CharacterTalent;
+import com.fenglin.springboottest.entity.GenshinCharacter;
+import com.fenglin.springboottest.mapper.CharPanelMapper;
+import com.fenglin.springboottest.mapper.CharSubstatMapper;
+import com.fenglin.springboottest.mapper.CharacterConstellationMapper;
+import com.fenglin.springboottest.mapper.CharacterMapper;
+import com.fenglin.springboottest.mapper.CharacterTalentMapper;
 import com.fenglin.springboottest.service.HomeService;
 import com.fenglin.springboottest.vo.CharWeaponVO;
 import com.fenglin.springboottest.vo.CharacterDetailVO;
@@ -18,8 +29,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * 首页接口。
@@ -51,6 +66,21 @@ public class HomeController {
 
     @Autowired
     private HomeService homeService;
+
+    @Autowired
+    private CharacterTalentMapper characterTalentMapper;
+
+    @Autowired
+    private CharacterConstellationMapper characterConstellationMapper;
+
+    @Autowired
+    private CharacterMapper characterMapper;
+
+    @Autowired
+    private CharSubstatMapper charSubstatMapper;
+
+    @Autowired
+    private CharPanelMapper charPanelMapper;
 
     /**
      * 角色养成攻略列表。
@@ -152,5 +182,93 @@ public class HomeController {
     @GetMapping("/characters/detail")
     public Result<CharacterDetailVO> characterDetail(@RequestParam("name") String name) {
         return Result.ok(homeService.getCharacterDetail(name));
+    }
+
+    /**
+     * 首页「模块六 · 角色天赋与命之座」的数据源。
+     * 返回 { talents:[...], constellations:[...], priorities:{ 角色名: 天赋升级顺序 } }，
+     * 只取 status=1 的记录；后台管理系统增删改后，首页重新加载即生效。
+     */
+    @GetMapping("/char-talents")
+    public Result<Map<String, Object>> charTalents() {
+        List<CharacterTalent> talents = characterTalentMapper.selectList(
+                new LambdaQueryWrapper<CharacterTalent>()
+                        .eq(CharacterTalent::getStatus, 1)
+                        .orderByAsc(CharacterTalent::getCharacterName)
+                        .orderByAsc(CharacterTalent::getSortOrder)
+                        .orderByAsc(CharacterTalent::getId));
+        List<CharacterConstellation> constellations = characterConstellationMapper.selectList(
+                new LambdaQueryWrapper<CharacterConstellation>()
+                        .eq(CharacterConstellation::getStatus, 1)
+                        .orderByAsc(CharacterConstellation::getCharacterName)
+                        .orderByAsc(CharacterConstellation::getSortOrder)
+                        .orderByAsc(CharacterConstellation::getConstLevel)
+                        .orderByAsc(CharacterConstellation::getId));
+        Map<String, String> priorities = new HashMap<>();
+        for (GenshinCharacter c : characterMapper.selectList(null)) {
+            if (c.getName() != null && c.getTalents() != null) {
+                priorities.put(c.getName(), c.getTalents());
+            }
+        }
+        // 已录入（含隐藏）的角色名清单：前端据此区分「全部隐藏」与「从未录入」
+        Set<String> known = new HashSet<>();
+        for (CharacterTalent t : characterTalentMapper.selectList(
+                new LambdaQueryWrapper<CharacterTalent>().select(CharacterTalent::getCharacterName))) {
+            if (t.getCharacterName() != null) {
+                known.add(t.getCharacterName());
+            }
+        }
+        for (CharacterConstellation c : characterConstellationMapper.selectList(
+                new LambdaQueryWrapper<CharacterConstellation>().select(CharacterConstellation::getCharacterName))) {
+            if (c.getCharacterName() != null) {
+                known.add(c.getCharacterName());
+            }
+        }
+        Map<String, Object> data = new HashMap<>();
+        data.put("talents", talents);
+        data.put("constellations", constellations);
+        data.put("priorities", priorities);
+        data.put("characters", new ArrayList<>(known));
+        return Result.ok(data);
+    }
+
+    /**
+     * 首页「模块一 · 角色养成攻略」的副词条优先级与毕业面板数据源。
+     * 返回 { substats:[...], panels:[...], characters:[已录入角色名] }，
+     * 只取 status=1 的记录；后台管理系统增删改后，首页重新加载即生效。
+     * characters 含隐藏记录，供前端区分「全部隐藏」与「从未录入」。
+     */
+    @GetMapping("/char-builds")
+    public Result<Map<String, Object>> charBuilds() {
+        List<CharSubstat> substats = charSubstatMapper.selectList(
+                new LambdaQueryWrapper<CharSubstat>()
+                        .eq(CharSubstat::getStatus, 1)
+                        .orderByAsc(CharSubstat::getCharacterName)
+                        .orderByAsc(CharSubstat::getSortOrder)
+                        .orderByAsc(CharSubstat::getId));
+        List<CharPanel> panels = charPanelMapper.selectList(
+                new LambdaQueryWrapper<CharPanel>()
+                        .eq(CharPanel::getStatus, 1)
+                        .orderByAsc(CharPanel::getCharacterName)
+                        .orderByAsc(CharPanel::getSortOrder)
+                        .orderByAsc(CharPanel::getId));
+        Set<String> known = new HashSet<>();
+        for (CharSubstat s : charSubstatMapper.selectList(
+                new LambdaQueryWrapper<CharSubstat>().select(CharSubstat::getCharacterName))) {
+            if (s.getCharacterName() != null) {
+                known.add(s.getCharacterName());
+            }
+        }
+        for (CharPanel p : charPanelMapper.selectList(
+                new LambdaQueryWrapper<CharPanel>().select(CharPanel::getCharacterName))) {
+            if (p.getCharacterName() != null) {
+                known.add(p.getCharacterName());
+            }
+        }
+        Map<String, Object> data = new HashMap<>();
+        data.put("substats", substats);
+        data.put("panels", panels);
+        data.put("characters", new ArrayList<>(known));
+        return Result.ok(data);
     }
 }

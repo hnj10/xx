@@ -137,6 +137,7 @@
           <span class="sec-tag c-green">模块一</span>
           <h2>角色养成攻略</h2>
           <span class="sec-count">{{ chars.length }} 位角色</span>
+          <span v-if="buildLive" class="live-badge" title="副词条优先级与毕业面板由后台管理系统维护">● 后台实时数据</span>
           <div v-if="charGroups.length" class="view-toggle">
             <button :class="{ active: charGrouped }" @click="charGrouped = true">按元素</button>
             <button :class="{ active: !charGrouped }" @click="charGrouped = false">平铺</button>
@@ -186,6 +187,8 @@
                 <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
                 <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
                 <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
+                <div class="row build-row"><span class="k">副词条</span><span class="v build-sub">{{ substatLine(c.name) }}</span></div>
+                <div class="row build-row"><span class="k">毕业面板</span><span class="v build-panel">{{ panelLine(c.name) }}</span></div>
                 <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
                 <div class="row weapon-line"><span class="k">推荐武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
                 <p class="summary">{{ c.summary }}</p>
@@ -208,6 +211,8 @@
             <div class="row"><span class="k">天赋</span><span class="v">{{ c.talents }}</span></div>
             <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
             <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
+            <div class="row build-row"><span class="k">副词条</span><span class="v build-sub">{{ substatLine(c.name) }}</span></div>
+            <div class="row build-row"><span class="k">毕业面板</span><span class="v build-panel">{{ panelLine(c.name) }}</span></div>
             <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
             <div class="row weapon-line"><span class="k">推荐武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
             <p class="summary">{{ c.summary }}</p>
@@ -345,7 +350,7 @@
         <div class="sec-head">
           <span class="sec-tag c-gold">模块五</span>
           <h2>圣遗物套装一览</h2>
-          <span class="sec-count">{{ artifactSets.length }} 套圣遗物</span>
+          <span class="sec-count">{{ artifactSets.length }} 套圣遗物 · <em class="cnt-5">{{ artifactCount[5] }} 五星</em> / {{ artifactCount[4] }} 四星 / {{ artifactCount[3] }} 三星</span>
           <div class="view-toggle">
             <button :class="{ active: artifactRarity === 0 }" @click="artifactRarity = 0">全部</button>
             <button :class="{ active: artifactRarity === 5 }" @click="artifactRarity = 5">5★</button>
@@ -386,8 +391,14 @@
         </div>
       </section>
 
+      <!-- 模块 6：角色天赋与命之座（全部 130 位角色） -->
+      <CharTalentModule
+        v-if="activeModule === 'all' || activeModule === 'talents'"
+        :characters="chars"
+      />
+
       <footer class="foot">
-        数据由后台管理系统维护 · 角色 / 武器 / 队伍 / 圣遗物实时读取（/api/home/*）· 点击角色卡片进入角色详情
+        数据由后台管理系统维护 · 角色 / 武器 / 队伍 / 圣遗物 / 天赋命座实时读取（/api/home/*）· 点击角色卡片进入角色详情
       </footer>
     </template>
     </template>
@@ -406,6 +417,7 @@ import { charImg, artifactImg } from '../data/imageMap.js'
 import CharacterDetail from './CharacterDetail.vue'
 import TeamDetail from './TeamDetail.vue'
 import WeaponRecommendDetail from './WeaponRecommendDetail.vue'
+import CharTalentModule from './CharTalentModule.vue'
 import {
   ELEMENT_NATION,
   CHARACTERS,
@@ -415,6 +427,8 @@ import {
 } from '../data/homeData.js'
 import { CHARACTER_MATERIALS, WEAPON_MATERIALS } from '../data/materialsData.js'
 import { ARTIFACT_SETS } from '../data/artifactSets.js'
+import { CHAR_TALENTS } from '../data/charTalents.js'
+import { CHAR_SUBSTATS, CHAR_PANELS } from '../data/charBuilds.js'
 
 defineProps({
   username: { type: String, default: '' }
@@ -497,6 +511,68 @@ function weaponMatLine(name) {
   return `精锻矿 ${s.ore} · 摩拉 ${fmtWan(s.moraTotal)}万${main ? ' · ' + main : ''}`
 }
 
+// ---------------- 圣遗物副词条优先级 / 毕业面板（后台可维护） ----------------
+// buildMap: { 角色名: { category, substats:[{name,tier,reason,sortOrder}], panels:[{label,target,note,sortOrder}] } }
+const buildMap = ref({})
+const buildLive = ref(false)
+
+// 后端不可用时的本地兜底，保证首屏就有内容
+function initBuildFallback() {
+  const m = {}
+  for (const [name, v] of Object.entries(CHAR_SUBSTATS)) {
+    m[name] = {
+      category: v.category,
+      substats: (v.list || []).map(x => ({ ...x })),
+      panels: ((CHAR_PANELS[name] || {}).list || []).map(x => ({ ...x }))
+    }
+  }
+  buildMap.value = m
+}
+initBuildFallback()
+
+// 优先读 /api/home/char-builds：后台改一条，首页重新加载即生效
+async function loadBuilds() {
+  try {
+    const res = await fetch(API + '/home/char-builds')
+    if (!res.ok) return
+    const j = await res.json()
+    const d = j && j.code === 200 ? j.data : null
+    if (!d || !Array.isArray(d.substats) || !d.substats.length) return
+    const m = {}
+    const bucket = (n) => {
+      if (!m[n]) m[n] = { substats: [], panels: [] }
+      return m[n]
+    }
+    for (const x of d.substats) {
+      bucket(x.characterName).substats.push({
+        name: x.statName, tier: x.tier, reason: x.reason, sortOrder: x.sortOrder
+      })
+    }
+    for (const x of (d.panels || [])) {
+      bucket(x.characterName).panels.push({
+        label: x.statLabel, target: x.targetValue, note: x.note, sortOrder: x.sortOrder
+      })
+    }
+    // 已录入但被后台全部隐藏的角色：给空数组，避免回退到旧的兜底数据
+    for (const n of (d.characters || [])) if (!m[n]) bucket(n)
+    buildMap.value = m
+    buildLive.value = true
+  } catch (e) {
+    /* 后端不可用，保持本地兜底 */
+  }
+}
+
+function substatLine(name) {
+  const list = buildMap.value[name]?.substats || []
+  const core = list.filter(x => x.tier === '核心' || x.tier === '重要')
+  const picked = (core.length ? core : list).slice(0, 4)
+  return picked.length ? picked.map(x => x.name).join(' › ') : '—'
+}
+function panelLine(name) {
+  const list = buildMap.value[name]?.panels || []
+  return list.length ? list.slice(0, 4).map(x => `${x.label} ${x.target}`).join(' · ') : '—'
+}
+
 // ---------------- 数据（本地演示，后端接口预留） ----------------
 const chars = ref(CHARACTERS)
 // 旅行者七元素形态：随后端数据动态变化，后台改名/增删后自动跟随
@@ -506,9 +582,23 @@ const weapons = ref(WEAPONS)
 const teams = ref(TEAMS)
 const artifactSets = ref(ARTIFACT_SETS)
 const artifactRarity = ref(0)
+// 星级实时统计（后台改数据后自动跟随）
+const artifactCount = computed(() => {
+  const m = { 5: 0, 4: 0, 3: 0 }
+  for (const a of artifactSets.value) {
+    const k = Number(a.rarity)
+    if (k in m) m[k]++
+  }
+  return m
+})
 const shownArtifactSets = computed(() => {
-  if (!artifactRarity.value) return artifactSets.value
-  return artifactSets.value.filter(a => Number(a.rarity) === artifactRarity.value)
+  const list = artifactRarity.value
+    ? artifactSets.value.filter(a => Number(a.rarity) === artifactRarity.value)
+    : artifactSets.value
+  // 一览按星级降序、同星级按排序号升序，五星始终排在最前
+  return [...list].sort((x, y) =>
+    Number(y.rarity) - Number(x.rarity) ||
+    Number(x.sortOrder || x.id) - Number(y.sortOrder || y.id))
 })
 
 // ---------------- 分级分类数据 ----------------
@@ -560,7 +650,8 @@ const modules = computed(() => [
   { key: 'charWeapons', name: '武器推荐', color: '#f6c35b', count: charWeapons.value.length },
   { key: 'weapons', name: '武器养成', color: '#a781e0', count: weapons.value.length },
   { key: 'teams', name: '队伍推荐', color: '#ff7a59', count: teams.value.length },
-  { key: 'artifacts', name: '圣遗物', color: '#d9a45b', count: artifactSets.value.length }
+  { key: 'artifacts', name: '圣遗物', color: '#d9a45b', count: artifactSets.value.length },
+  { key: 'talents', name: '天赋命座', color: '#8aa4f8', count: Object.keys(CHAR_TALENTS).length }
 ])
 
 // 预留的后端接口加载器：后端实现 /api/home/* 后，返回 code=200 即自动使用接口数据；
@@ -581,6 +672,8 @@ async function loadFromBackend(path, fallback) {
 }
 
 onMounted(async () => {
+  // 副词条 / 毕业面板：独立并行加载，不阻塞其余模块
+  loadBuilds()
   // 接口优先，失败时回退到本地 homeData.js（契约见该文件顶部注释）
   chars.value = await loadFromBackend('/home/characters', CHARACTERS)
   charWeapons.value = await loadFromBackend('/home/char-weapons', CHAR_WEAPONS)
@@ -1059,6 +1152,11 @@ function logout() {
   color: #8295bd;
   letter-spacing: 1px;
 }
+.sec-count .cnt-5 {
+  font-style: normal;
+  font-weight: 700;
+  color: #d9a45b;
+}
 
 /* ===== 视图切换 ===== */
 .view-toggle {
@@ -1307,6 +1405,31 @@ function logout() {
 .row .v {
   color: #c7d4f0;
 }
+
+/* ===== 模块一：圣遗物副词条优先级 / 毕业面板 ===== */
+.build-row { margin-bottom: 6px; }
+.build-row .v {
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  word-break: break-word;
+}
+.build-sub { color: #f0c987; font-weight: 600; }
+.build-panel { color: #7ee0c0; font-weight: 600; }
+.live-badge {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  color: #7ee0c0;
+  background: rgba(111, 214, 192, 0.12);
+  border: 1px solid rgba(111, 214, 192, 0.32);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .build-row .v { font-size: 11.5px; }
+  .live-badge { font-size: 10px; }
+}
+
 .summary {
   margin-top: 10px;
   font-size: 13px;

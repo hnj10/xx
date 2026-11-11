@@ -32,6 +32,43 @@
         </div>
       </section>
 
+      <!-- ===== 圣遗物副词条优先级 ===== -->
+      <section v-if="buildSubstats.length" class="sec">
+        <div class="sec-head">
+          <span class="sec-tag c-gold">副词条</span>
+          <h2>圣遗物副词条优先级</h2>
+          <span class="sec-count">{{ buildSubstats.length }} 条 · {{ buildCategory || '按角色机制定制' }}</span>
+          <span v-if="buildLive" class="live-badge" title="由后台管理系统维护">● 后台实时数据</span>
+        </div>
+        <div class="substat-list">
+          <article v-for="s in buildSubstats" :key="s.name" class="substat-item" :class="tierClass(s.tier)">
+            <div class="ss-head">
+              <span class="ss-rank">{{ s.sortOrder }}</span>
+              <span class="ss-tier">{{ s.tier }}</span>
+              <b class="ss-name">{{ s.name }}</b>
+            </div>
+            <p class="ss-reason">{{ s.reason }}</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 毕业面板（只显示最重要的几个词条） ===== -->
+      <section v-if="buildPanels.length" class="sec">
+        <div class="sec-head">
+          <span class="sec-tag" style="background: rgba(111, 214, 192, 0.18); color: #6fd6c0;">毕业</span>
+          <h2>毕业面板 · 核心词条</h2>
+          <span class="sec-count">{{ buildPanels.length }} 项核心指标</span>
+        </div>
+        <div class="panel-grid">
+          <article v-for="p in buildPanels" :key="p.label" class="panel-card">
+            <span class="p-label">{{ p.label }}</span>
+            <b class="p-target">{{ p.target }}</b>
+            <p class="p-note">{{ p.note }}</p>
+          </article>
+        </div>
+        <p class="notice">{{ BUILD_NOTICE }}</p>
+      </section>
+
       <!-- ===== 养成消耗总览 ===== -->
       <section v-if="detail.material" class="sec">
         <div class="sec-head">
@@ -167,6 +204,7 @@ import { NATIONS, svgFull } from '../data/nations.js'
 import { ELEMENT_NATION, CHARACTERS, CHAR_WEAPONS, WEAPONS, TEAMS } from '../data/homeData.js'
 import { CHARACTER_MATERIALS, WEAPON_MATERIALS, MATERIAL_NOTICE } from '../data/materialsData.js'
 import { charImg } from '../data/imageMap.js'
+import { CHAR_SUBSTATS, CHAR_PANELS, BUILD_NOTICE } from '../data/charBuilds.js'
 
 const WEAPON_ALIAS = { '狼末': '狼的末路', '西风弓': '西风猎弓' }
 
@@ -178,6 +216,42 @@ defineEmits(['back'])
 const API = '/api'
 const loading = ref(true)
 const detail = ref(null)
+
+// 圣遗物副词条优先级 / 毕业面板：优先读后台，失败回退 charBuilds.js
+const buildSubstats = ref([])
+const buildPanels = ref([])
+const buildCategory = ref('')
+const buildLive = ref(false)
+
+function tierClass(t) {
+  return ({ '核心': 't-core', '重要': 't-high', '可用': 't-ok', '低收益': 't-low' })[t] || 't-ok'
+}
+
+async function loadBuilds() {
+  const fb = CHAR_SUBSTATS[props.name]
+  buildSubstats.value = (fb?.list || []).map(x => ({ ...x }))
+  buildPanels.value = ((CHAR_PANELS[props.name] || {}).list || []).map(x => ({ ...x }))
+  buildCategory.value = fb?.category || ''
+  buildLive.value = false
+  try {
+    const res = await fetch(`${API}/home/char-builds`)
+    if (!res.ok) return
+    const j = await res.json()
+    const d = j && j.code === 200 ? j.data : null
+    if (!d || !Array.isArray(d.substats)) return
+    const known = new Set(d.characters || [])
+    if (!known.has(props.name)) return   // 从未录入：保持本地兜底
+    buildSubstats.value = d.substats
+      .filter(x => x.characterName === props.name)
+      .map(x => ({ name: x.statName, tier: x.tier, reason: x.reason, sortOrder: x.sortOrder }))
+    buildPanels.value = (d.panels || [])
+      .filter(x => x.characterName === props.name)
+      .map(x => ({ label: x.statLabel, target: x.targetValue, note: x.note, sortOrder: x.sortOrder }))
+    buildLive.value = true
+  } catch (e) {
+    /* 后端不可用，保持本地兜底 */
+  }
+}
 
 // 后端接口不可用时的本地聚合，形状与 CharacterDetailVO 完全一致
 function localDetail(name) {
@@ -199,6 +273,7 @@ function localDetail(name) {
 
 async function load() {
   loading.value = true
+  loadBuilds()   // 独立并行加载，不阻塞详情主接口
   let data = null
   try {
     const res = await fetch(`${API}/home/characters/detail?name=${encodeURIComponent(props.name)}`)
@@ -504,6 +579,64 @@ function eleSvg(element) {
   color: #e2c48a;
   background: rgba(246, 195, 91, 0.09);
   border: 1px solid rgba(246, 195, 91, 0.24);
+}
+
+/* ===== 圣遗物副词条优先级 ===== */
+.substat-list { display: grid; gap: 10px; }
+.substat-item {
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(16, 24, 46, 0.72);
+  border: 1px solid rgba(180, 205, 255, 0.14);
+  border-left: 3px solid #6b7694;
+}
+.substat-item.t-core { border-left-color: #f6c35b; }
+.substat-item.t-high { border-left-color: #6fd6c0; }
+.substat-item.t-ok { border-left-color: #4ec6f0; }
+.substat-item.t-low { border-left-color: #6b7694; opacity: 0.76; }
+.ss-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ss-rank {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 7px;
+  font-size: 11px; font-weight: 700; color: #0b1020;
+  background: rgba(180, 205, 255, 0.55);
+}
+.t-core .ss-rank { background: #f6c35b; }
+.t-high .ss-rank { background: #6fd6c0; }
+.t-ok .ss-rank { background: #4ec6f0; }
+.ss-tier {
+  padding: 2px 9px; border-radius: 999px; font-size: 11px;
+  color: #b8c6e4; background: rgba(255, 255, 255, 0.08);
+}
+.t-core .ss-tier { color: #f6c35b; background: rgba(246, 195, 91, 0.16); }
+.t-high .ss-tier { color: #6fd6c0; background: rgba(111, 214, 192, 0.16); }
+.ss-name { font-size: 15px; color: #f2f6ff; }
+.ss-reason { margin-top: 6px; font-size: 12px; line-height: 1.7; color: #9fb0d8; }
+
+/* ===== 毕业面板（核心词条） ===== */
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+.panel-card {
+  padding: 16px 14px;
+  border-radius: 14px;
+  background: linear-gradient(150deg, rgba(24, 34, 62, 0.82), rgba(10, 14, 30, 0.74));
+  border: 1px solid rgba(111, 214, 192, 0.24);
+  text-align: center;
+}
+.p-label { display: block; font-size: 12px; color: #9fb0d8; letter-spacing: 1px; }
+.p-target { display: block; margin-top: 8px; font-size: 23px; font-weight: 700; color: #6fd6c0; }
+.p-note { margin-top: 8px; font-size: 11.5px; line-height: 1.6; color: #8fa2c7; }
+.live-badge {
+  padding: 3px 9px; border-radius: 999px; font-size: 11px;
+  color: #6fd6c0; background: rgba(111, 214, 192, 0.12);
+  border: 1px solid rgba(111, 214, 192, 0.32); white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .panel-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .p-target { font-size: 19px; }
 }
 
 .mat-groups {

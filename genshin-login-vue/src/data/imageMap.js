@@ -165,8 +165,18 @@ export const ARTIFACT_NAME_TO_FILE = {
   '如雷的盛怒': 'rulei-de-shengnu',
   '纺月的夜歌': 'fangyue-de-yege',
   '穹境示现之夜': 'qiongjing-shixian-zhiye',
-  '苍金之翼': 'cangjin-zhiyi',
-  '奇想乐章': 'qixiang-yuezhang',
+  '晨星与月的晓歌': 'chenxing-yuyue-de-xiaoge',
+  '风起之日': 'fengqi-zhi-ri',
+  '染血的骑士道': 'ranxue-de-qishidao',
+  '渡过烈火的贤人': 'duguo-liehuo-de-xianren',
+  '平息鸣雷的尊者': 'pingxi-minglei-zunzhe',
+  '未竟的遐思': 'weijing-de-xiasi',
+  '长夜之誓': 'changye-zhishi',
+  '深廊终曲': 'shenlang-zhongqu',
+  '天之美赐': 'tian-zhi-meici',
+  '影中沉凝的幻灭': 'yingzhong-chenning-de-huanmie',
+  '血红之证': 'xuehong-zhi-zheng',
+  '炉火融炼之心': 'luhuo-ronglian-zhi-xin',
 }
 
 // 取角色立绘 URL；没有图片时返回空字符串（模板里 v-if 判断）
