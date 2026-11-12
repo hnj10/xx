@@ -3,15 +3,15 @@
 
  Source Server         : localhost_3306
  Source Server Type    : MySQL
- Source Server Version : 80029 (8.0.29)
+ Source Server Version : 80039 (8.0.39)
  Source Host           : localhost:3306
  Source Schema         : genshin_db
 
  Target Server Type    : MySQL
- Target Server Version : 80029 (8.0.29)
+ Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 12/11/2026 02:31:53
+ Date: 12/11/2026 15:09:32
 */
 
 SET NAMES utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `t_artifact_set`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_artifact_name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '圣遗物套装一览' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '圣遗物套装一览' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_artifact_set
@@ -123,7 +123,7 @@ CREATE TABLE `t_char_panel`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cp_char_label`(`character_name` ASC, `stat_label` ASC) USING BTREE,
   INDEX `idx_cp_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 435 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 435 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_char_panel
@@ -578,7 +578,7 @@ CREATE TABLE `t_char_substat`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cs_char_stat`(`character_name` ASC, `stat_name` ASC) USING BTREE,
   INDEX `idx_cs_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 676 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 676 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_char_substat
@@ -1823,7 +1823,7 @@ CREATE TABLE `t_character_constellation`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cc`(`character_name` ASC, `const_level` ASC) USING BTREE,
   INDEX `idx_cc_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 781 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 781 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_character_constellation
@@ -2628,7 +2628,7 @@ CREATE TABLE `t_character_talent`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_ct`(`character_name` ASC, `talent_type` ASC, `talent_name` ASC) USING BTREE,
   INDEX `idx_ct_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 391 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 391 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_character_talent

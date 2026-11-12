@@ -136,7 +136,7 @@
         <div class="sec-head">
           <span class="sec-tag c-green">模块一</span>
           <h2>角色养成攻略</h2>
-          <span class="sec-count">{{ chars.length }} 位角色</span>
+          <span class="sec-count">{{ chars.length }} 位角色 · 精简速览</span>
           <span v-if="buildLive" class="live-badge" title="副词条优先级与毕业面板由后台管理系统维护">● 后台实时数据</span>
           <div v-if="charGroups.length" class="view-toggle">
             <button :class="{ active: charGrouped }" @click="charGrouped = true">按元素</button>
@@ -188,11 +188,8 @@
                 <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
                 <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
                 <div class="row build-row"><span class="k">副词条</span><span class="v build-sub">{{ substatLine(c.name) }}</span></div>
-                <div class="row build-row"><span class="k">毕业面板</span><span class="v build-panel">{{ panelLine(c.name) }}</span></div>
-                <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
-                <div class="row weapon-line"><span class="k">推荐武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
-                <p class="summary">{{ c.summary }}</p>
-                <div class="detail-link">查看角色详情 →</div>
+                <div class="row weapon-line"><span class="k">优选武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
+                <div class="detail-link">查看完整养成详情 →</div>
               </div>
             </div>
           </div>
@@ -212,11 +209,8 @@
             <div class="row"><span class="k">圣遗物</span><span class="v"><img v-if="artifactImg(c.artifacts)" class="art-icon" :src="artifactImg(c.artifacts)" :alt="c.artifacts" />{{ c.artifacts }}</span></div>
             <div class="row"><span class="k">主词条</span><span class="v">{{ c.mainStats }}</span></div>
             <div class="row build-row"><span class="k">副词条</span><span class="v build-sub">{{ substatLine(c.name) }}</span></div>
-            <div class="row build-row"><span class="k">毕业面板</span><span class="v build-panel">{{ panelLine(c.name) }}</span></div>
-            <div class="row mat-row"><span class="k">养成消耗</span><span class="v">{{ charMatLine(c.name) }}</span></div>
-            <div class="row weapon-line"><span class="k">推荐武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
-            <p class="summary">{{ c.summary }}</p>
-            <div class="detail-link">查看角色详情 →</div>
+            <div class="row weapon-line"><span class="k">优选武器</span><span class="v">{{ charWeaponLine(c.name) }}</span></div>
+            <div class="detail-link">查看完整养成详情 →</div>
           </div>
         </div>
       </section>
@@ -226,10 +220,10 @@
         <div class="sec-head">
           <span class="sec-tag c-gold">模块二</span>
           <h2>角色武器推荐</h2>
-          <span class="sec-count">{{ charWeapons.length }} 条推荐</span>
+          <span class="sec-count">{{ charWeapons.length }} 位角色 · 每角色 2 把优选武器</span>
         </div>
         <div class="grid pair">
-          <div v-for="p in shownCharWeapons" :key="p.character" class="card pair-card" title="点击查看该角色全部可用武器与适配度" @click="openWeaponChar(p.character)">
+          <div v-for="p in briefCharWeapons" :key="p.character" class="card pair-card" title="点击查看该角色全部可用武器与适配度" @click="openWeaponChar(p.character)">
             <div class="pair-char">
               <img v-if="charImg(p.character)" class="char-avatar" :src="charImg(p.character)" :alt="p.character" />
               <span class="ele-dot" :style="{ background: eleColor(p.element) }" v-html="eleSvg(p.element)"></span>
@@ -239,7 +233,10 @@
               <div v-for="w in p.best" :key="w.name" class="pair-item">
                 <div class="p-head">
                   <span class="w-name">{{ w.name }}</span>
-                  <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
+                  <span class="p-tail">
+                    <span class="p-pick" :class="'is' + w.rarity">{{ w.pickTag }}</span>
+                    <span class="stars" :class="'r' + w.rarity">{{ star(w.rarity) }}</span>
+                  </span>
                 </div>
                 <p class="p-reason">{{ w.reason }}</p>
                 <div v-if="w.atk90" class="p-stats">
@@ -635,13 +632,47 @@ const shownCharWeapons = computed(() => (charWeapons.value || []).map(p => ({
     }
   })
 })))
+
+// ---------------- 列表精简：角色全部保留，只做「每卡瘦身」----------------
+// 完整数据仍在详情页（CharacterDetail / WeaponRecommendDetail），列表只是速览。
+// 武器推荐模块：每位角色只展示「最好用的五星」+「最好用的四星」两把。
+// best 数组本身按推荐优先级排序，取各星级的第一个即为该星级最优（专武 / 最优四星）。
+// 少数角色原始数据里只列了同星级武器，此时补一把最接近缺失星级的作为次选，并按真实星级标注。
+const STAR_CN = { 5: '五星', 4: '四星', 3: '三星' }
+function topTwoWeapons(best) {
+  const arr = best || []
+  const five = arr.find(w => Number(w.rarity) === 5)
+  const four = arr.find(w => Number(w.rarity) === 4)
+  const picked = []
+  if (five) picked.push({ ...five, pickTag: '最佳五星' })
+  if (four) picked.push({ ...four, pickTag: '最佳四星' })
+  if (picked.length < 2) {
+    // 缺某个星级时，用剩余里星级最接近的一把补足，保证每位角色都有两把
+    const target = five ? 4 : 5
+    const rest = arr
+      .filter(w => !picked.some(x => x.name === w.name))
+      .sort((a, b) =>
+        Math.abs(Number(a.rarity) - target) - Math.abs(Number(b.rarity) - target) ||
+        Number(b.rarity) - Number(a.rarity))
+    if (rest[0]) {
+      const r = Number(rest[0].rarity)
+      picked.push({ ...rest[0], pickTag: `次选${STAR_CN[r] || r + '星'}` })
+    }
+  }
+  return picked.slice(0, 2)
+}
+
+// 所有角色都在，只把每个人的武器列表收敛到 2 把
+const briefCharWeapons = computed(() =>
+  (shownCharWeapons.value || []).map(p => ({ ...p, best: topTwoWeapons(p.best) })))
+
+// 角色养成卡片里的「优选武器」一行：同样只报五星 + 四星两把的名字
 function charWeaponLine(name) {
   const p = (charWeapons.value || []).find(x => x.character === name)
-  const b = p && p.best && p.best[0]
-  if (!b) return '暂无推荐武器'
-  const w = weapon90Map.value[b.name]
-  if (!w || !w.atk90) return `${b.name} · 90级数值待补充`
-  return `${b.name} · 90级基础攻击力 ${w.atk90}（1级 ${w.atk1}，提升 +${w.atk90 - w.atk1}） · 副词条 ${w.subStat} +${w.subValue}`
+  const picks = topTwoWeapons(p && p.best)
+  if (!picks.length) return '暂无推荐武器'
+  // 卡片宽度有限，这里只报两把名字保持单行；星级 / 90级数值在武器推荐模块和详情页里看
+  return picks.map(w => w.name).join(' · ')
 }
 
 const modules = computed(() => [
@@ -1467,11 +1498,34 @@ function logout() {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
+/* 角标 + 星级打包成一组：窄屏放不下时整组换行，武器名不截断、星级也不会被挤出卡片 */
+.p-tail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+}
+.p-head .w-name { white-space: nowrap; }
 .p-head .stars {
   margin-bottom: 0;
   font-size: 12px;
+  flex: none;
+  white-space: nowrap;
 }
+.p-pick {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+.p-pick.is5 { color: #f6c35b; background: rgba(246, 195, 91, 0.12); border-color: rgba(246, 195, 91, 0.35); }
+.p-pick.is4 { color: #b79bf0; background: rgba(167, 129, 224, 0.12); border-color: rgba(167, 129, 224, 0.35); }
+.p-pick.is3 { color: #9fb0d8; background: rgba(159, 176, 216, 0.1); border-color: rgba(159, 176, 216, 0.3); }
 .p-reason {
   margin-top: 6px;
   font-size: 12px;
