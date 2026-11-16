@@ -11,7 +11,7 @@
  Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 12/11/2026 15:11:31
+ Date: 16/11/2026 09:51:22
 */
 
 SET NAMES utf8mb4;
@@ -123,7 +123,7 @@ CREATE TABLE `t_char_panel`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cp_char_label`(`character_name` ASC, `stat_label` ASC) USING BTREE,
   INDEX `idx_cp_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 435 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 435 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色面板属性推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_char_panel
@@ -578,7 +578,7 @@ CREATE TABLE `t_char_substat`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cs_char_stat`(`character_name` ASC, `stat_name` ASC) USING BTREE,
   INDEX `idx_cs_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 676 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 676 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色副词条推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_char_substat
@@ -1823,7 +1823,7 @@ CREATE TABLE `t_character_constellation`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_cc`(`character_name` ASC, `const_level` ASC) USING BTREE,
   INDEX `idx_cc_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 781 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 781 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色命座效果' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_character_constellation
@@ -2628,7 +2628,7 @@ CREATE TABLE `t_character_talent`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_ct`(`character_name` ASC, `talent_type` ASC, `talent_name` ASC) USING BTREE,
   INDEX `idx_ct_character`(`character_name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 391 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 391 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '角色天赋加点推荐' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_character_talent
@@ -15854,7 +15854,7 @@ CREATE TABLE `t_user`  (
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `uk_username`(`username` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '旅行者(用户)表' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '旅行者(用户)表' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of t_user
@@ -15862,6 +15862,7 @@ CREATE TABLE `t_user`  (
 INSERT INTO `t_user` VALUES (1, 'hhy', '$2a$10$V1Z7392z83TRqyQR0YqBI.a5sdHqf374JeUot9Fun3BTQ9T.z5jl2', 'hhy', '蒙德', 1, 0, '2026-11-02 08:58:32', '2026-11-09 23:10:04');
 INSERT INTO `t_user` VALUES (2, 'paimon', '$2a$10$tQ/Db2XNsWXcpzpmUyCb4uhhckKGAoBgH881/0TY4fJL1NOCzzZJu', 'paimon', '璃月', 1, 1, '2026-11-02 08:58:32', '2026-11-02 08:58:32');
 INSERT INTO `t_user` VALUES (3, '小何露', '$2a$10$9t857MQYl0xY5WNFytNTdOk35UQlsZxeCk7BLIOjIxRzgrVvw0Ojm', '小何露', '蒙德', 1, 1, '2026-11-02 09:08:07', '2026-11-02 09:08:07');
+INSERT INTO `t_user` VALUES (4, 'traveler', '$2a$10$YnSIzLPn2OkhvFtq6fcDaOiR8KnteWV/WD8gMnzjDv8HI8kchWffS', 'traveler', '蒙德', 1, 1, '2026-11-16 08:43:05', '2026-11-16 08:43:05');
 
 -- ----------------------------
 -- Table structure for t_weapon
